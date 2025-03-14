@@ -12,8 +12,8 @@
       --text-color: #fff;
       --secondary-text-color: #a0aec0;
       --highlight-color: #00bfff;
-      --nav-bg: #0d1323;
-      --footer-bg: #0d1323;
+      --nav-bg: rgba(13, 19, 35, 0.8); /* Semi-transparent dark nav */
+      --footer-bg: rgba(13, 19, 35, 0.8); /* Semi-transparent dark footer */
       --timeline-bg: #1b263b;
       --timeline-gradient-start: #1b263b;
       --timeline-gradient-end: #0d1323;
@@ -22,8 +22,8 @@
       --input-bg: #1b263b;
       --input-border: #00b4d8;
       --skill-bar-bg: #555;
-      --particle-color-1: rgba(0, 191, 255, 0.8);
-      --particle-color-2: rgba(138, 43, 226, 0.7);
+      --particle-color-1: rgba(0, 191, 255, 0.6);
+      --particle-color-2: rgba(138, 43, 226, 0.5);
       --section-bg: none;
       --home-bg: linear-gradient(135deg, #0a0f1a, #1b263b);
       --contact-bg: none;
@@ -34,8 +34,8 @@
       --text-color: #333;
       --secondary-text-color: #666;
       --highlight-color: #007bff;
-      --nav-bg: #ffffff;
-      --footer-bg: #ffffff;
+      --nav-bg: rgba(255, 255, 255, 0.8); /* Semi-transparent light nav */
+      --footer-bg: rgba(255, 255, 255, 0.8); /* Semi-transparent light footer */
       --timeline-bg: #f0f4f8;
       --timeline-gradient-start: #f0f4f8;
       --timeline-gradient-end: #e6e6e6;
@@ -44,8 +44,8 @@
       --input-bg: #ffffff;
       --input-border: #007bff;
       --skill-bar-bg: #ccc;
-      --particle-color-1: rgba(0, 123, 255, 0.6);
-      --particle-color-2: rgba(75, 0, 130, 0.5);
+      --particle-color-1: rgba(0, 123, 255, 0.4);
+      --particle-color-2: rgba(75, 0, 130, 0.3);
       --section-bg: none;
       --home-bg: linear-gradient(135deg, #e6f0fa, #ffffff);
       --contact-bg: none;
@@ -73,6 +73,7 @@
       background-color: var(--nav-bg);
       z-index: 1000;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px); /* Subtle blur effect */
     }
 
     .nav-container {
@@ -244,11 +245,18 @@
       color: var(--text-color);
       cursor: pointer;
       border-radius: 5px;
-      transition: background-color 0.3s, color 0.3s;
+      transition: background-color 0.3s, transform 0.2s;
     }
 
     button:hover {
       background-color: var(--button-hover-bg);
+      transform: scale(1.05); /* Slight scale-up on hover */
+    }
+
+    .hero-buttons button {
+      display: inline-block;
+      width: 150px; /* Consistent width for buttons */
+      text-align: center;
     }
 
     section {
@@ -455,7 +463,7 @@
       cursor: pointer;
     }
 
-    .timeline-item:hover .certificate-image {
+    .timeline Fitem:hover .certificate-image {
       display: block;
     }
 
@@ -544,6 +552,7 @@
       text-align: center;
       z-index: 1000;
       box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(5px); /* Subtle blur effect */
     }
 
     footer p {
@@ -666,8 +675,8 @@
       <h3>Cybersecurity Engineer</h3>
       <button onclick="window.location.href='#skills'">Skills</button>
       <div class="hero-buttons">
-        <a href="Sai_Kumar_Cybersecurity.pdf" target="_blank" download="Sai_Kumar_Cybersecurity.pdf" class="btn">Download CV</a>
-        <a href="#contact" class="btn">Contact Me</a>
+        <button onclick="window.location.href='Sai_Kumar_Cybersecurity.pdf'" download="Sai_Kumar_Cybersecurity.pdf">Download CV</button>
+        <button onclick="window.location.href='#contact'">Contact Me</button>
       </div>
       <div class="social-icons">
         <a href="https://www.linkedin.com/in/sai-kumar-vemula1/" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -897,7 +906,7 @@
   </section>
 
   <section id="contact">
-    <h2>Contact Mee</h2>
+    <h2>Contact Me</h2> <!-- Fixed typo "Contact Mee" to "Contact Me" -->
     <form id="contact-form" action="https://formspree.io/f/mpwpwabp" method="POST">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
@@ -1013,7 +1022,7 @@
       updateActiveLink(currentSection);
     }, 10));
 
-    // Matrix Rain Animation
+    // Matrix Rain Animation (Home Section)
     const canvas = document.getElementById('matrix');
     const ctx = canvas.getContext('2d');
     canvas.height = window.innerHeight;
@@ -1049,7 +1058,7 @@
       canvas.height = window.innerHeight;
     }, 100));
 
-    // Nebula-like Background Animation
+    // Improved Particle Animation (Background)
     const backgroundCanvas = document.querySelector('#background-canvas');
     const backgroundCtx = backgroundCanvas.getContext('2d');
     backgroundCanvas.width = window.innerWidth;
@@ -1061,21 +1070,19 @@
       constructor() {
         this.x = Math.random() * backgroundCanvas.width;
         this.y = Math.random() * backgroundCanvas.height;
-        this.size = Math.random() * 3 + 1;
-        this.speedX = Math.random() * 1 - 0.5;
-        this.speedY = Math.random() * 1 + 0.5;
+        this.size = Math.random() * 2 + 1;
+        this.speedX = Math.random() * 0.5 - 0.25;
+        this.speedY = Math.random() * 0.5 - 0.25;
         this.color = Math.random() > 0.5 ? getComputedStyle(document.documentElement).getPropertyValue('--particle-color-1') : getComputedStyle(document.documentElement).getPropertyValue('--particle-color-2');
-        this.opacity = Math.random() * 0.5 + 0.3;
       }
       update() {
         this.x += this.speedX;
         this.y += this.speedY;
         if (this.x < 0 || this.x > backgroundCanvas.width) this.speedX *= -1;
-        if (this.y > backgroundCanvas.height) this.y = 0;
-        this.opacity = Math.sin(Date.now() * 0.001 + this.x * 0.01) * 0.2 + 0.3;
+        if (this.y < 0 || this.y > backgroundCanvas.height) this.speedY *= -1;
       }
       draw() {
-        backgroundCtx.fillStyle = this.color.replace('0.8', this.opacity).replace('0.7', this.opacity).replace('0.6', this.opacity).replace('0.5', this.opacity);
+        backgroundCtx.fillStyle = this.color;
         backgroundCtx.beginPath();
         backgroundCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         backgroundCtx.fill();
@@ -1083,30 +1090,22 @@
     }
 
     function initParticles() {
-      for (let i = 0; i < 150; i++) {
+      for (let i = 0; i < 100; i++) { // Reduced for smoother performance
         particles.push(new Particle());
       }
     }
 
-    function drawNebulaBackground() {
-      const gradient = backgroundCtx.createRadialGradient(
-        backgroundCanvas.width / 2, backgroundCanvas.height / 2, 0,
-        backgroundCanvas.width / 2, backgroundCanvas.height / 2, Math.max(backgroundCanvas.width, backgroundCanvas.height)
-      );
-      gradient.addColorStop(0, 'rgba(0, 0, 0, 0.2)');
-      gradient.addColorStop(1, 'rgba(0, 0, 0, 0.8)');
-      backgroundCtx.fillStyle = gradient;
-      backgroundCtx.fillRect(0, 0, backgroundCanvas.width, backgroundCanvas.height);
-
+    function drawParticles() {
+      backgroundCtx.clearRect(0, 0, backgroundCanvas.width, backgroundCanvas.height); // Clear for a cleaner look
       for (let i = 0; i < particles.length; i++) {
         particles[i].update();
         particles[i].draw();
       }
-      requestAnimationFrame(drawNebulaBackground);
+      requestAnimationFrame(drawParticles);
     }
 
     initParticles();
-    drawNebulaBackground();
+    drawParticles();
 
     window.addEventListener('resize', debounce(() => {
       backgroundCanvas.width = window.innerWidth;
