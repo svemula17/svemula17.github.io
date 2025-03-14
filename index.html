@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sai Kumar | Cybersecurity Engineer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* Define CSS Variables for Themes */
     :root {
       --background-color: #0a0f1a;
       --text-color: #fff;
@@ -53,7 +53,7 @@
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: 'Orbitron', sans-serif;
       background: var(--background-color);
       color: var(--text-color);
       padding-bottom: 60px;
@@ -61,6 +61,7 @@
       position: relative;
       transition: background 0.3s ease;
     }
+
     nav {
       position: fixed;
       top: 0;
@@ -73,6 +74,7 @@
       z-index: 1000;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
+
     .nav-container {
       display: flex;
       justify-content: space-between;
@@ -80,6 +82,7 @@
       width: 90%;
       max-width: 1200px;
     }
+
     .name-btn {
       background: none;
       border: none;
@@ -92,13 +95,16 @@
       position: relative;
       transition: all 0.3s ease;
     }
+
     .name-btn:hover {
       color: var(--highlight-color);
     }
+
     .name-btn.active, .name-btn:hover {
       border-bottom: 3px solid var(--highlight-color);
       color: var(--highlight-color);
     }
+
     .hamburger {
       display: none;
       font-size: 24px;
@@ -108,9 +114,11 @@
       cursor: pointer;
       transition: color 0.3s ease;
     }
+
     .hamburger:hover {
       color: var(--highlight-color);
     }
+
     nav ul {
       display: flex;
       list-style: none;
@@ -118,6 +126,7 @@
       margin: 0;
       align-items: center;
     }
+
     nav a {
       color: var(--text-color);
       text-decoration: none;
@@ -125,13 +134,16 @@
       padding-bottom: 5px;
       transition: all 0.3s ease;
     }
+
     nav a:hover {
       color: var(--highlight-color);
     }
+
     nav a.active {
       border-bottom: 3px solid var(--highlight-color);
       color: var(--highlight-color);
     }
+
     .theme-toggle {
       background: none;
       border: none;
@@ -140,9 +152,11 @@
       cursor: pointer;
       transition: color 0.3s ease;
     }
+
     .theme-toggle:hover {
       color: var(--highlight-color);
     }
+
     .mobile-menu {
       display: none;
       position: fixed;
@@ -156,6 +170,7 @@
       z-index: 1000;
       box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
     }
+
     .mobile-menu a {
       color: var(--text-color);
       text-decoration: none;
@@ -164,6 +179,7 @@
       text-align: center;
       display: block;
     }
+
     .mobile-menu a:hover {
       color: var(--highlight-color);
     }
@@ -180,6 +196,7 @@
       align-items: center;
       justify-content: center;
     }
+
     .matrix-bg {
       position: absolute;
       top: 0;
@@ -190,29 +207,35 @@
       pointer-events: none;
       z-index: 0;
     }
+
     canvas#matrix {
       display: block;
       width: 100%;
       height: 100%;
     }
+
     .header-content {
       position: relative;
       z-index: 1;
     }
+
     .social-icons {
       margin-top: 15px;
       display: flex;
       justify-content: center;
       gap: 15px;
     }
+
     .social-icons a {
       color: var(--text-color);
       font-size: 24px;
       transition: color 0.3s;
     }
+
     .social-icons a:hover {
       color: var(--highlight-color);
     }
+
     button {
       margin: 8px;
       padding: 8px 16px;
@@ -223,9 +246,11 @@
       border-radius: 5px;
       transition: background-color 0.3s, color 0.3s;
     }
+
     button:hover {
       background-color: var(--button-hover-bg);
     }
+
     section {
       padding: 40px 20px;
       text-align: center;
@@ -234,23 +259,29 @@
       z-index: 1;
       background: var(--section-bg);
     }
+
     #home {
       background: var(--home-bg);
       min-height: 100vh;
     }
+
     #about, #my-journey, #skills, #certifications, #projects, #contact {
       background: none;
     }
+
     #skills, #certifications {
       min-height: 50vh;
     }
+
     #projects {
       min-height: 40vh;
     }
+
     #contact {
       min-height: 50vh;
       padding-bottom: 80px;
     }
+
     .container {
       width: 90%;
       max-width: 1200px;
@@ -259,12 +290,14 @@
       position: relative;
       z-index: 2;
     }
+
     .timelines-container {
       display: flex;
       justify-content: space-between;
       gap: 15px;
       flex-wrap: wrap;
     }
+
     .timeline {
       position: relative;
       display: flex;
@@ -274,6 +307,7 @@
       flex: 1;
       min-width: 300px;
     }
+
     .timeline-item {
       position: relative;
       padding: 12px;
@@ -286,22 +320,27 @@
       transition: background-color 0.3s;
       cursor: pointer;
     }
+
     #my-journey .timeline-item {
       min-height: 250px;
       background: linear-gradient(45deg, var(--timeline-gradient-start), var(--timeline-gradient-end));
       animation: journeyPulse 3s infinite;
     }
+
     @keyframes journeyPulse {
       0% { background-position: 0% 0%; }
       50% { background-position: 100% 100%; }
       100% { background-position: 0% 0%; }
     }
+
     #skills .timeline-item {
       min-height: 200px;
     }
+
     #certifications .timeline-item {
       min-height: 180px;
     }
+
     .timeline-item::before {
       content: '';
       position: absolute;
@@ -314,6 +353,7 @@
       border-radius: 50%;
       border: 2px solid var(--text-color);
     }
+
     .timeline-item:not(:last-child)::after {
       content: '';
       position: absolute;
@@ -324,6 +364,7 @@
       background: var(--highlight-color);
       z-index: -1;
     }
+
     .skill-bar {
       width: 100%;
       background-color: var(--skill-bar-bg);
@@ -331,15 +372,18 @@
       height: 5px;
       margin: 4px 0;
     }
+
     .skill-bar-fill {
       height: 100%;
       background-color: var(--highlight-color);
       border-radius: 5px;
     }
+
     .highlight {
       color: var(--highlight-color);
       font-weight: bold;
     }
+
     #about .about-content {
       display: flex;
       align-items: center;
@@ -350,15 +394,18 @@
       position: relative;
       z-index: 2;
     }
+
     #about .about-text {
       flex: 1;
       padding-right: 15px;
     }
+
     #about .about-image {
       flex: 1;
       height: 250px;
       background: url('Sai.jpg') no-repeat center/cover;
     }
+
     .certificate-image {
       display: none;
       position: absolute;
@@ -373,6 +420,7 @@
       transition: opacity 0.3s ease-in-out;
       z-index: 2;
     }
+
     .certificate-popup {
       display: none;
       position: fixed;
@@ -390,10 +438,12 @@
       padding: 20px;
       border-radius: 10px;
     }
+
     .certificate-popup img {
       width: 100%;
       height: auto;
     }
+
     .close-btn {
       position: absolute;
       top: 10px;
@@ -404,38 +454,46 @@
       color: #000;
       cursor: pointer;
     }
+
     .timeline-item:hover .certificate-image {
       display: block;
     }
+
     .timeline-item:hover .certificate-content {
       display: none;
     }
+
     h2 {
       color: var(--highlight-color);
       font-size: 26px;
       margin-bottom: 15px;
     }
+
     h3 {
       color: var(--highlight-color);
       font-size: 18px;
       margin: 4px 0;
     }
+
     p {
       color: var(--secondary-text-color);
       font-size: 13px;
       margin: 4px 0;
     }
+
     ul {
       padding-left: 15px;
       color: var(--secondary-text-color);
       font-size: 13px;
       margin: 4px 0;
     }
+
     #contact form {
       display: flex;
       flex-direction: column;
       align-items: center;
     }
+
     #contact input, #contact textarea {
       margin: 8px 0;
       padding: 8px;
@@ -447,6 +505,7 @@
       color: var(--text-color);
       transition: background-color 0.3s, border-color 0.3s;
     }
+
     .project-titles {
       display: flex;
       justify-content: space-evenly;
@@ -454,6 +513,7 @@
       flex-wrap: wrap;
       gap: 10px;
     }
+
     .project-title {
       background-color: var(--button-bg);
       padding: 8px 16px;
@@ -462,9 +522,11 @@
       transition: background-color 0.3s;
       font-size: 14px;
     }
+
     .project-title:hover {
       background-color: var(--button-hover-bg);
     }
+
     .project-details {
       display: none;
       background-color: var(--timeline-bg);
@@ -472,6 +534,7 @@
       padding: 12px;
       border-radius: 5px;
     }
+
     footer {
       position: fixed;
       bottom: 0;
@@ -482,11 +545,13 @@
       z-index: 1000;
       box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
     }
+
     footer p {
       margin: 0;
       color: var(--secondary-text-color);
       font-size: 12px;
     }
+
     canvas#background-canvas {
       position: fixed;
       top: 0;
@@ -511,8 +576,8 @@
         display: flex;
       }
       .nav-container {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        justify-content: space-between;
       }
       .timelines-container {
         flex-direction: column;
@@ -563,12 +628,11 @@
   </style>
 </head>
 <body>
-
-  <canvas id="background-canvas"></canvas> <!-- Global fixed canvas -->
+  <canvas id="background-canvas"></canvas>
 
   <nav>
     <div class="nav-container">
-      <button class="name-btn" onclick="window.location.href='#home'; document.querySelector('nav a[href=\'#home\']').classList.add('active'); toggleMobileMenu()">Sai Kumar.</button>
+      <button class="name-btn" onclick="navigateTo('#home')">Sai Kumar.</button>
       <button class="hamburger" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
       <ul>
         <li><a href="#home" class="active">Home</a></li>
@@ -581,13 +645,13 @@
         <li><button class="theme-toggle" id="theme-toggle"><i class="fas fa-sun"></i></button></li>
       </ul>
       <div class="mobile-menu" id="mobile-menu">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#my-journey">My Journey</a>
-        <a href="#skills">Skills</a>
-        <a href="#certifications">Certifications</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="#home" onclick="toggleMobileMenu()">Home</a>
+        <a href="#about" onclick="toggleMobileMenu()">About</a>
+        <a href="#my-journey" onclick="toggleMobileMenu()">My Journey</a>
+        <a href="#skills" onclick="toggleMobileMenu()">Skills</a>
+        <a href="#certifications" onclick="toggleMobileMenu()">Certifications</a>
+        <a href="#projects" onclick="toggleMobileMenu()">Projects</a>
+        <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
         <button class="theme-toggle" id="mobile-theme-toggle"><i class="fas fa-sun"></i></button>
       </div>
     </div>
@@ -598,13 +662,13 @@
       <canvas id="matrix"></canvas>
     </div>
     <div class="header-content">
-      <h2>Hi, I'm Sai Sai Kumar Vemula</h2>
+      <h2>Hi, I'm Sai Kumar Vemula</h2>
       <h3>Cybersecurity Engineer</h3>
       <button onclick="window.location.href='#skills'">Skills</button>
       <div class="hero-buttons">
         <a href="resume.pdf" target="_blank" download="Sai_Kumar_Cybersecurity.pdf" class="btn">Download CV</a>
-        <a href="#contact" onclick="scrollToSection('contact')" class="btn">Contact Me</a>
-    </div>
+        <a href="#contact" class="btn">Contact Me</a>
+      </div>
       <div class="social-icons">
         <a href="https://www.linkedin.com/in/sai-kumar-vemula1/" target="_blank"><i class="fab fa-linkedin"></i></a>
         <a href="https://whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i></a>
@@ -752,7 +816,7 @@
                 <li>Put It to Work: Prepare for Cybersecurity Jobs</li>
               </ul>
             </div>
-            <div class="certificate-image" style="background-image: url('Coursera\ 7HOH59U7LKBB.jpg');"></div>
+            <div class="certificate-image" style="background-image: url('Coursera 7HOH59U7LKBB.jpg');"></div>
           </div>
         </div>
         <div class="timeline">
@@ -834,12 +898,10 @@
 
   <section id="contact">
     <h2>Contact Me</h2>
-    <form>
-      <input type="text" placeholder="Full Name">
-      <input type="email" placeholder="Email Address">
-      <input type="text" placeholder="Mobile Number">
-      <input type="text" placeholder="Email Subject">
-      <textarea placeholder="Your Message"></textarea>
+    <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
       <button type="submit">Submit</button>
     </form>
   </section>
@@ -854,6 +916,7 @@
   </div>
 
   <script>
+    // Toggle Project Details
     function toggleDetails(projectId) {
       const allProjects = document.querySelectorAll('.project-details');
       allProjects.forEach(project => {
@@ -865,10 +928,43 @@
       selectedProject.style.display = selectedProject.style.display === "none" || selectedProject.style.display === "" ? "block" : "none";
     }
 
+    // Mobile Menu Toggle
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('active');
+    }
+
+    // Close Mobile Menu on Outside Click
+    document.addEventListener('click', (e) => {
+      const mobileMenu = document.getElementById('mobile-menu');
+      const hamburger = document.querySelector('.hamburger');
+      if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target) && mobileMenu.classList.contains('active')) {
+        mobileMenu.classList.remove('active');
+      }
+    });
+
+    // Navigation Helper
+    function navigateTo(section) {
+      window.location.href = section;
+      toggleMobileMenu();
+      updateActiveLink(section.substring(1));
+    }
+
+    // Update Active Navigation Link
+    function updateActiveLink(sectionId) {
+      document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
+      document.querySelector(`nav a[href="#${sectionId}"]`).classList.add('active');
+      const nameBtn = document.querySelector('.name-btn');
+      nameBtn.classList.toggle('active', sectionId === 'home');
+    }
+
     // Theme Toggle
     const themeToggle = document.getElementById('theme-toggle');
     const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
-    themeToggle.addEventListener('click', () => {
+    themeToggle.addEventListener('click', toggleTheme);
+    mobileThemeToggle.addEventListener('click', toggleTheme);
+
+    function toggleTheme() {
       const currentTheme = document.documentElement.getAttribute('data-theme');
       if (currentTheme === 'dark') {
         document.documentElement.setAttribute('data-theme', 'light');
@@ -880,10 +976,9 @@
         mobileThemeToggle.innerHTML = '<i class="fas fa-sun"></i>';
       }
       document.body.style.background = getComputedStyle(document.documentElement).getPropertyValue('--background-color');
-    });
-    mobileThemeToggle.addEventListener('click', () => themeToggle.click());
+    }
 
-    // Debounce function
+    // Debounce Function
     function debounce(func, wait) {
       let timeout;
       return function (...args) {
@@ -892,10 +987,9 @@
       };
     }
 
+    // Scroll Handling
     window.addEventListener('scroll', debounce(() => {
       const sections = document.querySelectorAll('section, header');
-      const navLinks = document.querySelectorAll('nav a');
-      const nameBtn = document.querySelector('.name-btn');
       const backgroundCanvas = document.querySelector('#background-canvas');
       const homeSection = document.getElementById('home');
       const contactSection = document.getElementById('contact');
@@ -916,27 +1010,15 @@
         backgroundCanvas.style.display = 'none';
       }
 
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href').substring(1) === currentSection) {
-          link.classList.add('active');
-        }
-      });
-
-      nameBtn.classList.remove('active');
-      if (currentSection === 'home') {
-        nameBtn.classList.add('active');
-      }
+      updateActiveLink(currentSection);
     }, 10));
 
-    // Canvas Setup for Home Animation
+    // Matrix Rain Animation
     const canvas = document.getElementById('matrix');
     const ctx = canvas.getContext('2d');
-
     canvas.height = window.innerHeight;
     canvas.width = window.innerWidth;
 
-    // Animation 1: Matrix Rain
     function matrixRain() {
       const chars = '01HACKCYBERSECURITY';
       const fontSize = 14;
@@ -947,12 +1029,10 @@
         ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = '#00bfff';
-        ctx.font = fontSize + 'px monospace';
-
+        ctx.font = `${fontSize}px 'Orbitron', monospace`;
         for (let i = 0; i < drops.length; i++) {
           const text = chars.charAt(Math.floor(Math.random() * chars.length));
           ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-
           if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
             drops[i] = 0;
           }
@@ -962,167 +1042,7 @@
       }
       draw();
     }
-
-    // Animation 2: Cyber Grid
-    function cyberGrid() {
-      const nodes = [];
-      const gridSize = 50;
-      const cols = Math.floor(canvas.width / gridSize);
-      const rows = Math.floor(canvas.height / gridSize);
-
-      for (let i = 0; i < cols; i++) {
-        for (let j = 0; j < rows; j++) {
-          nodes.push({
-            x: i * gridSize + gridSize / 2,
-            y: j * gridSize + gridSize / 2,
-            radius: Math.random() * 2 + 1,
-            pulse: Math.random() * Math.PI * 2,
-          });
-        }
-      }
-
-      function draw() {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.strokeStyle = 'rgba(0, 191, 255, 0.3)';
-        ctx.fillStyle = '#00bfff';
-
-        nodes.forEach(node => {
-          node.pulse += 0.05;
-          const size = node.radius + Math.sin(node.pulse) * 2;
-          ctx.beginPath();
-          ctx.arc(node.x, node.y, size, 0, Math.PI * 2);
-          ctx.fill();
-
-          nodes.forEach(other => {
-            const dist = Math.hypot(node.x - other.x, node.y - other.y);
-            if (dist < gridSize * 1.5) {
-              ctx.beginPath();
-              ctx.moveTo(node.x, node.y);
-              ctx.lineTo(other.x, other.y);
-              ctx.stroke();
-            }
-          });
-        });
-        requestAnimationFrame(draw);
-      }
-      draw();
-    }
-
-    // Animation 3: Binary Orbit
-    function binaryOrbit() {
-      const particles = [];
-      const centerX = canvas.width / 2;
-      const centerY = canvas.height / 2;
-
-      for (let i = 0; i < 50; i++) {
-        particles.push({
-          radius: Math.random() * 100 + 50,
-          angle: Math.random() * Math.PI * 2,
-          speed: Math.random() * 0.02 + 0.01,
-          digit: Math.random() > 0.5 ? '0' : '1',
-        });
-      }
-
-      function draw() {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = '#00bfff';
-        ctx.font = '16px monospace';
-
-        particles.forEach(p => {
-          p.angle += p.speed;
-          const x = centerX + Math.cos(p.angle) * p.radius;
-          const y = centerY + Math.sin(p.angle) * p.radius;
-
-          ctx.fillText(p.digit, x, y);
-        });
-        requestAnimationFrame(draw);
-      }
-      draw();
-    }
-
-    // Animation 4: Digital Waves
-    function digitalWaves() {
-      const waves = [];
-      for (let i = 0; i < 5; i++) {
-        waves.push({
-          y: (canvas.height / 6) * (i + 1),
-          amplitude: Math.random() * 20 + 10,
-          frequency: Math.random() * 0.02 + 0.01,
-          phase: Math.random() * Math.PI * 2,
-        });
-      }
-
-      function draw() {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.strokeStyle = '#00bfff';
-
-        waves.forEach(wave => {
-          wave.phase += 0.05;
-          ctx.beginPath();
-          for (let x = 0; x < canvas.width; x++) {
-            const y = wave.y + Math.sin(x * wave.frequency + wave.phase) * wave.amplitude;
-            if (x === 0) ctx.moveTo(x, y);
-            else ctx.lineTo(x, y);
-          }
-          ctx.stroke();
-        });
-        requestAnimationFrame(draw);
-      }
-      draw();
-    }
-
-    // Animation 5: Hacker Glitch (Fixed)
-    function hackerGlitch() {
-      const texts = ['HACK', 'SECURE', 'DATA', 'CODE', 'FIREWALL'];
-      const glitchEffects = [];
-
-      for (let i = 0; i < 10; i++) {
-        glitchEffects.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          text: texts[Math.floor(Math.random() * texts.length)],
-          glitch: 50,
-        });
-      }
-
-      function draw() {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.1)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.font = '20px monospace';
-
-        glitchEffects.forEach(effect => {
-          effect.glitch += (Math.random() * 2 - 1) * 5;
-          if (effect.glitch > 100) effect.glitch = 100;
-          if (effect.glitch < 0) effect.glitch = 0;
-
-          const opacity = 1 - Math.abs(effect.glitch - 50) / 50;
-          ctx.fillStyle = `rgba(0, 191, 255, ${opacity > 0 ? opacity : 0})`;
-          ctx.fillText(effect.text, effect.x, effect.y);
-
-          if (Math.random() > 0.9) {
-            ctx.fillStyle = 'rgba(255, 0, 0, 0.5)';
-            ctx.fillText(effect.text, effect.x + (Math.random() * 10 - 5), effect.y + (Math.random() * 5 - 2.5));
-          }
-
-          if (Math.random() > 0.98) {
-            effect.x = Math.random() * canvas.width;
-            effect.y = Math.random() * canvas.height;
-            effect.text = texts[Math.floor(Math.random() * texts.length)];
-            effect.glitch = 50;
-          }
-        });
-        requestAnimationFrame(draw);
-      }
-      draw();
-    }
-
-    // Randomly Select Animation on Page Load
-    const animations = [matrixRain, cyberGrid, binaryOrbit, digitalWaves, hackerGlitch];
-    const randomAnimation = animations[Math.floor(Math.random() * animations.length)];
-    randomAnimation();
+    matrixRain();
 
     window.addEventListener('resize', debounce(() => {
       canvas.width = window.innerWidth;
@@ -1132,7 +1052,6 @@
     // Nebula-like Background Animation
     const backgroundCanvas = document.querySelector('#background-canvas');
     const backgroundCtx = backgroundCanvas.getContext('2d');
-
     backgroundCanvas.width = window.innerWidth;
     backgroundCanvas.height = window.innerHeight;
 
@@ -1198,12 +1117,6 @@
       });
     }, 100));
 
-    // Mobile Menu Toggle
-    function toggleMobileMenu() {
-      const mobileMenu = document.getElementById('mobile-menu');
-      mobileMenu.classList.toggle('active');
-    }
-
     // Certificate Popup Functionality
     function showCertificate(imageUrl) {
       const popup = document.getElementById('certificate-popup');
@@ -1217,12 +1130,16 @@
       popup.style.display = 'none';
     }
 
-    // Close popup when clicking outside
     document.addEventListener('click', (e) => {
       const popup = document.getElementById('certificate-popup');
-      if (e.target === popup) {
-        closeCertificate();
-      }
+      if (e.target === popup) closeCertificate();
+    });
+
+    // Contact Form Submission Feedback
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Message sent! I will get back to you soon.');
+      this.reset();
     });
   </script>
 </body>
