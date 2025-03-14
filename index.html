@@ -5,18 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sai Kumar | Cybersecurity Engineer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --background-color: #0a0f1a;
       --text-color: #fff;
       --secondary-text-color: #a0aec0;
       --highlight-color: #00bfff;
-      --nav-bg: rgba(13, 19, 35, 0.8); /* Semi-transparent dark nav */
-      --footer-bg: rgba(13, 19, 35, 0.8); /* Semi-transparent dark footer */
+      --nav-bg: rgba(13, 19, 35, 0.8);
+      --footer-bg: rgba(13, 19, 35, 0.8);
       --timeline-bg: #1b263b;
-      --timeline-gradient-start: #1b263b;
-      --timeline-gradient-end: #0d1323;
       --button-bg: #00bfff;
       --button-hover-bg: #0098cc;
       --input-bg: #1b263b;
@@ -34,11 +32,9 @@
       --text-color: #333;
       --secondary-text-color: #666;
       --highlight-color: #007bff;
-      --nav-bg: rgba(255, 255, 255, 0.8); /* Semi-transparent light nav */
-      --footer-bg: rgba(255, 255, 255, 0.8); /* Semi-transparent light footer */
+      --nav-bg: rgba(255, 255, 255, 0.8);
+      --footer-bg: rgba(255, 255, 255, 0.8);
       --timeline-bg: #f0f4f8;
-      --timeline-gradient-start: #f0f4f8;
-      --timeline-gradient-end: #e6e6e6;
       --button-bg: #007bff;
       --button-hover-bg: #0056b3;
       --input-bg: #ffffff;
@@ -53,7 +49,7 @@
 
     body {
       margin: 0;
-      font-family: 'Orbitron', sans-serif;
+      font-family: 'Roboto', sans-serif;
       background: var(--background-color);
       color: var(--text-color);
       padding-bottom: 60px;
@@ -73,7 +69,7 @@
       background-color: var(--nav-bg);
       z-index: 1000;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(5px); /* Subtle blur effect */
+      backdrop-filter: blur(5px);
     }
 
     .nav-container {
@@ -143,6 +139,11 @@
     nav a.active {
       border-bottom: 3px solid var(--highlight-color);
       color: var(--highlight-color);
+    }
+
+    .theme-toggle-container {
+      display: flex;
+      gap: 10px;
     }
 
     .theme-toggle {
@@ -220,20 +221,20 @@
       z-index: 1;
     }
 
-    .social-icons {
+    .social-icons, .contact-social-icons {
       margin-top: 15px;
       display: flex;
       justify-content: center;
-      gap: 15px;
+      gap: 20px;
     }
 
-    .social-icons a {
+    .social-icons a, .contact-social-icons a {
       color: var(--text-color);
-      font-size: 24px;
+      font-size: 24px; /* Medium size for contact icons */
       transition: color 0.3s;
     }
 
-    .social-icons a:hover {
+    .social-icons a:hover, .contact-social-icons a:hover {
       color: var(--highlight-color);
     }
 
@@ -250,12 +251,12 @@
 
     button:hover {
       background-color: var(--button-hover-bg);
-      transform: scale(1.05); /* Slight scale-up on hover */
+      transform: scale(1.05);
     }
 
     .hero-buttons button {
       display: inline-block;
-      width: 150px; /* Consistent width for buttons */
+      width: 150px;
       text-align: center;
     }
 
@@ -325,28 +326,16 @@
       text-align: left;
       box-sizing: border-box;
       overflow: hidden;
-      transition: background-color 0.3s;
-      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    #my-journey .timeline-item {
-      min-height: 250px;
-      background: linear-gradient(45deg, var(--timeline-gradient-start), var(--timeline-gradient-end));
-      animation: journeyPulse 3s infinite;
+    .timeline-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 191, 255, 0.3);
     }
 
-    @keyframes journeyPulse {
-      0% { background-position: 0% 0%; }
-      50% { background-position: 100% 100%; }
-      100% { background-position: 0% 0%; }
-    }
-
-    #skills .timeline-item {
+    #my-journey .timeline-item, #skills .timeline-item, #certifications .timeline-item {
       min-height: 200px;
-    }
-
-    #certifications .timeline-item {
-      min-height: 180px;
     }
 
     .timeline-item::before {
@@ -463,7 +452,7 @@
       cursor: pointer;
     }
 
-    .timeline Fitem:hover .certificate-image {
+    .timeline-item:hover .certificate-image {
       display: block;
     }
 
@@ -552,7 +541,7 @@
       text-align: center;
       z-index: 1000;
       box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(5px); /* Subtle blur effect */
+      backdrop-filter: blur(5px);
     }
 
     footer p {
@@ -651,7 +640,10 @@
         <li><a href="#certifications">Certifications</a></li>
         <li><a href="#projects">Projects</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><button class="theme-toggle" id="theme-toggle"><i class="fas fa-sun"></i></button></li>
+        <li class="theme-toggle-container">
+          <button class="theme-toggle" id="theme-toggle-light"><i class="fas fa-sun"></i></button>
+          <button class="theme-toggle" id="theme-toggle-dark"><i class="fas fa-moon"></i></button>
+        </li>
       </ul>
       <div class="mobile-menu" id="mobile-menu">
         <a href="#home" onclick="toggleMobileMenu()">Home</a>
@@ -661,7 +653,8 @@
         <a href="#certifications" onclick="toggleMobileMenu()">Certifications</a>
         <a href="#projects" onclick="toggleMobileMenu()">Projects</a>
         <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
-        <button class="theme-toggle" id="mobile-theme-toggle"><i class="fas fa-sun"></i></button>
+        <button class="theme-toggle" id="mobile-theme-toggle-light"><i class="fas fa-sun"></i></button>
+        <button class="theme-toggle" id="mobile-theme-toggle-dark"><i class="fas fa-moon"></i></button>
       </div>
     </div>
   </nav>
@@ -680,9 +673,9 @@
       </div>
       <div class="social-icons">
         <a href="https://www.linkedin.com/in/sai-kumar-vemula1/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
         <a href="https://whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        <a href="https://twitter.com" target="_blank"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i></a>
       </div>
     </div>
   </header>
@@ -906,13 +899,19 @@
   </section>
 
   <section id="contact">
-    <h2>Contact Me</h2> <!-- Fixed typo "Contact Mee" to "Contact Me" -->
+    <h2>Contact Me</h2>
     <form id="contact-form" action="https://formspree.io/f/mpwpwabp" method="POST">
       <input type="text" name="name" placeholder="Your Name" required>
       <input type="email" name="email" placeholder="Your Email" required>
       <textarea name="message" placeholder="Your Message" required></textarea>
       <button type="submit">Submit</button>
-    </form>    
+    </form>
+    <div class="contact-social-icons">
+      <a href="https://www.linkedin.com/in/sai-kumar-vemula1/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:your.email@example.com"><i class="fas fa-envelope"></i></a>
+    </div>
   </section>
 
   <footer>
@@ -968,22 +967,18 @@
     }
 
     // Theme Toggle
-    const themeToggle = document.getElementById('theme-toggle');
-    const mobileThemeToggle = document.getElementById('mobile-theme-toggle');
-    themeToggle.addEventListener('click', toggleTheme);
-    mobileThemeToggle.addEventListener('click', toggleTheme);
+    const themeToggleLight = document.getElementById('theme-toggle-light');
+    const themeToggleDark = document.getElementById('theme-toggle-dark');
+    const mobileThemeToggleLight = document.getElementById('mobile-theme-toggle-light');
+    const mobileThemeToggleDark = document.getElementById('mobile-theme-toggle-dark');
 
-    function toggleTheme() {
-      const currentTheme = document.documentElement.getAttribute('data-theme');
-      if (currentTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'light');
-        themeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-        mobileThemeToggle.innerHTML = '<i class="fas fa-moon"></i>';
-      } else {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        themeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-        mobileThemeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-      }
+    themeToggleLight.addEventListener('click', () => setTheme('light'));
+    themeToggleDark.addEventListener('click', () => setTheme('dark'));
+    mobileThemeToggleLight.addEventListener('click', () => setTheme('light'));
+    mobileThemeToggleDark.addEventListener('click', () => setTheme('dark'));
+
+    function setTheme(theme) {
+      document.documentElement.setAttribute('data-theme', theme);
       document.body.style.background = getComputedStyle(document.documentElement).getPropertyValue('--background-color');
     }
 
@@ -1022,10 +1017,10 @@
       updateActiveLink(currentSection);
     }, 10));
 
-    // Matrix Rain Animation (Home Section)
+    // Matrix Rain Animation (Limited to Header)
     const canvas = document.getElementById('matrix');
     const ctx = canvas.getContext('2d');
-    canvas.height = window.innerHeight;
+    canvas.height = document.getElementById('home').offsetHeight;
     canvas.width = window.innerWidth;
 
     function matrixRain() {
@@ -1038,7 +1033,7 @@
         ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
         ctx.fillStyle = '#00bfff';
-        ctx.font = `${fontSize}px 'Orbitron', monospace`;
+        ctx.font = `${fontSize}px 'Roboto', sans-serif`;
         for (let i = 0; i < drops.length; i++) {
           const text = chars.charAt(Math.floor(Math.random() * chars.length));
           ctx.fillText(text, i * fontSize, drops[i] * fontSize);
@@ -1055,10 +1050,10 @@
 
     window.addEventListener('resize', debounce(() => {
       canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvas.height = document.getElementById('home').offsetHeight;
     }, 100));
 
-    // Improved Particle Animation (Background)
+    // Background Particle Animation
     const backgroundCanvas = document.querySelector('#background-canvas');
     const backgroundCtx = backgroundCanvas.getContext('2d');
     backgroundCanvas.width = window.innerWidth;
@@ -1090,13 +1085,13 @@
     }
 
     function initParticles() {
-      for (let i = 0; i < 100; i++) { // Reduced for smoother performance
+      for (let i = 0; i < 100; i++) {
         particles.push(new Particle());
       }
     }
 
     function drawParticles() {
-      backgroundCtx.clearRect(0, 0, backgroundCanvas.width, backgroundCanvas.height); // Clear for a cleaner look
+      backgroundCtx.clearRect(0, 0, backgroundCanvas.width, backgroundCanvas.height);
       for (let i = 0; i < particles.length; i++) {
         particles[i].update();
         particles[i].draw();
