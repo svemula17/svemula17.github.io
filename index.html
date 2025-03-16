@@ -15,51 +15,51 @@
   </script>
   <style>
     :root {
-      --background-color: #0a0f1a;
+      --background-color: linear-gradient(135deg, #0a0f1a, #1b263b);
       --text-color: #fff;
       --secondary-text-color: #a0aec0;
       --highlight-color: #00bfff;
-      --nav-bg: rgba(13, 19, 35, 0.8);
-      --footer-bg: rgba(13, 19, 35, 0.8);
+      --nav-bg: rgba(13, 19, 35, 0.9);
+      --footer-bg: rgba(13, 19, 35, 0.9);
       --timeline-bg: #1b263b;
       --button-bg: #00bfff;
       --button-hover-bg: #0098cc;
       --input-bg: #1b263b;
       --input-border: #00b4d8;
       --skill-bar-bg: #555;
-      --wave-color-1: rgba(0, 191, 255, 0.2); /* Slightly brighter wave */
-      --wave-color-2: rgba(138, 43, 226, 0.2); /* Slightly brighter wave */
+      --wave-color-1: rgba(0, 191, 255, 0.25); /* Brighter cyan wave */
+      --wave-color-2: rgba(138, 43, 226, 0.25); /* Brighter purple wave */
       --home-bg: linear-gradient(135deg, #0a0f1a, #1b263b);
-      --about-bg: #0a0f1a; /* Vivid deep blue */
-      --journey-bg: #000000; /* Electric purple */
-      --skills-bg: #0a0f1a; /* Bright teal */
-      --certifications-bg: #0a0f1a; /* Neon indigo */
-      --projects-bg: #090a1c; /* Cyber green */
-      --contact-bg: #0b3345; /* Vivid amethyst */
+      --about-bg: #1b263b;
+      --journey-bg: #4a81b8;
+      --skills-bg: #1b263b;
+      --certifications-bg: #192439;
+      --projects-bg: #1b263b;
+      --contact-bg: #1e142a;
     }
 
     [data-theme="light"] {
-      --background-color: #e6f0fa;
+      --background-color: linear-gradient(135deg, #e6f0fa, #ffffff);
       --text-color: #333;
       --secondary-text-color: #666;
       --highlight-color: #007bff;
-      --nav-bg: rgba(255, 255, 255, 0.8);
-      --footer-bg: rgba(255, 255, 255, 0.8);
+      --nav-bg: rgba(255, 255, 255, 0.9);
+      --footer-bg: rgba(255, 255, 255, 0.9);
       --timeline-bg: #f0f4f8;
       --button-bg: #007bff;
       --button-hover-bg: #0056b3;
       --input-bg: #ffffff;
       --input-border: #007bff;
       --skill-bar-bg: #ccc;
-      --wave-color-1: rgba(0, 123, 255, 0.1);
-      --wave-color-2: rgba(75, 0, 130, 0.1);
+      --wave-color-1: rgba(0, 123, 255, 0.15); /* Softer blue wave */
+      --wave-color-2: rgba(75, 0, 130, 0.15); /* Softer purple wave */
       --home-bg: linear-gradient(135deg, #e6f0fa, #ffffff);
-      --about-bg: #d9e8f5; /* Light sky blue */
-      --journey-bg: #e8d9f5; /* Pale lavender */
-      --skills-bg: #d9f5e8; /* Mint glow */
-      --certifications-bg: #e8e8f5; /* Light periwinkle */
-      --projects-bg: #e8f5d9; /* Pale seafoam */
-      --contact-bg: #f5d9e8; /* Light orchid */
+      --about-bg: #d9e8f5;
+      --journey-bg: #e8d9f5;
+      --skills-bg: #d9f5e8;
+      --certifications-bg: #e8e8f5;
+      --projects-bg: #e8f5d9;
+      --contact-bg: #f5d9e8;
     }
 
     body {
@@ -91,13 +91,13 @@
       height: 100%;
       background: var(--wave-color-1);
       animation: waveAnimation 10s infinite linear;
-      opacity: 0.6; /* Increased for visibility */
+      opacity: 0.6;
     }
 
     .wave:nth-child(2) {
       background: var(--wave-color-2);
       animation: waveAnimation 15s infinite linear reverse;
-      opacity: 0.4; /* Increased for visibility */
+      opacity: 0.4;
     }
 
     @keyframes waveAnimation {
@@ -237,7 +237,7 @@
     header {
       text-align: center;
       padding: 60px 20px;
-      background: url('profile-image.jpg') no-repeat center/cover;
+      background: var(--home-bg);
       color: var(--text-color);
       position: relative;
       overflow: hidden;
@@ -314,6 +314,7 @@
       min-height: 60vh;
       position: relative;
       z-index: 1;
+      background: var(--background-color); /* Default section background */
     }
 
     #home {
@@ -323,43 +324,33 @@
 
     #about {
       background: var(--about-bg);
-      position: relative;
-      overflow: hidden;
     }
 
     #my-journey {
-      background: var(--journey-bg);
+      background: var(--journey-bg) fixed;
+      background-attachment: fixed;
       position: relative;
-      overflow: hidden;
+      z-index: 0; /* Lower z-index to allow overlay */
+    }
+
+    #my-journey .wave-bg {
+      background-attachment: fixed; /* Fix waves with the background */
     }
 
     #skills {
       background: var(--skills-bg);
-      position: relative;
-      overflow: hidden;
-      min-height: 50vh;
     }
 
     #certifications {
       background: var(--certifications-bg);
-      position: relative;
-      overflow: hidden;
-      min-height: 50vh;
     }
 
     #projects {
       background: var(--projects-bg);
-      position: relative;
-      overflow: hidden;
-      min-height: 40vh;
     }
 
     #contact {
       background: var(--contact-bg);
-      position: relative;
-      overflow: hidden;
-      min-height: 50vh;
-      padding-bottom: 80px;
     }
 
     .container {
@@ -368,7 +359,7 @@
       margin: auto;
       padding: 15px;
       position: relative;
-      z-index: 2;
+      z-index: 2; /* Ensure content stays above fixed background */
     }
 
     .timelines-container {
@@ -405,7 +396,7 @@
       box-shadow: 0 5px 15px rgba(0, 191, 255, 0.3);
     }
 
-    #my-journey .timeline-item, #skills .timeline-item, #certifications .timeline-item {
+    #my-journey .timeline-item, #certifications .timeline-item {
       min-height: 200px;
     }
 
@@ -433,20 +424,6 @@
       z-index: -1;
     }
 
-    .skill-bar {
-      width: 100%;
-      background-color: var(--skill-bar-bg);
-      border-radius: 5px;
-      height: 5px;
-      margin: 4px 0;
-    }
-
-    .skill-bar-fill {
-      height: 100%;
-      background-color: var(--highlight-color);
-      border-radius: 5px;
-    }
-
     .highlight {
       color: var(--highlight-color);
       font-weight: bold;
@@ -472,6 +449,74 @@
       flex: 1;
       height: 250px;
       background: url('Sai.jpg') no-repeat center/cover;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      padding: 20px 0;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .skills-grid.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .skill-category {
+      background: var(--timeline-bg);
+      padding: 20px;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .skill-category:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0, 191, 255, 0.3);
+    }
+
+    .skill-category h3 {
+      color: var(--highlight-color);
+      font-size: 18px;
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill-item {
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--text-color);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      transition: transform 0.3s ease, background 0.3s ease;
+      cursor: pointer;
+    }
+
+    .skill-item:hover {
+      transform: scale(1.1);
+      background: var(--highlight-color);
+      color: #fff;
+    }
+
+    [data-theme="light"] .skill-item {
+      background: rgba(0, 0, 0, 0.05);
+      color: var(--text-color);
+    }
+
+    [data-theme="light"] .skill-item:hover {
+      background: var(--highlight-color);
+      color: #fff;
     }
 
     .certificate-image {
@@ -681,6 +726,9 @@
       .project-item {
         width: 90%;
       }
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -811,56 +859,38 @@
     </div>
     <div class="container">
       <h2>My Skills</h2>
-      <div class="timelines-container">
-        <div class="timeline">
-          <div class="timeline-item">
-            <h3>Cybersecurity Skills</h3>
-            <p>Kali Linux</p>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 80%;"></div></div>
-            <p>Wireshark</p>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 75%;"></div></div>
-            <p>Network Commands</p>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 70%;"></div></div>
-            <p>Cryptography</p>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 85%;"></div></div>
-            <p>Incident Response</p>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 80%;"></div></div>
-            <p>Risk Assessment</p>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 75%;"></div></div>
+      <div class="skills-grid" id="skills-grid">
+        <div class="skill-category">
+          <h3><i class="fas fa-shield-alt"></i> Cybersecurity Skills</h3>
+          <div class="skill-list">
+            <span class="skill-item">Kali Linux</span>
+            <span class="skill-item">Wireshark</span>
+            <span class="skill-item">Network Commands</span>
+            <span class="skill-item">Cryptography</span>
+            <span class="skill-item">Incident Response</span>
+            <span class="skill-item">Risk Assessment</span>
           </div>
         </div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <h3>Programming Skills</h3>
-            <p>Java</p>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 70%;"></div></div>
-            <p>Python</p>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 85%;"></div></div>
-            <p>SQL</p>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 90%;"></div></div>
-            <p>C</p>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 65%;"></div></div>
-            <p>HTML & CSS</p>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 80%;"></div></div>
-            <p>SAP ABAP</p>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 75%;"></div></div>
+        <div class="skill-category">
+          <h3><i class="fas fa-code"></i> Programming Skills</h3>
+          <div class="skill-list">
+            <span class="skill-item">Java</span>
+            <span class="skill-item">Python</span>
+            <span class="skill-item">SQL</span>
+            <span class="skill-item">C</span>
+            <span class="skill-item">HTML & CSS</span>
+            <span class="skill-item">SAP ABAP</span>
           </div>
         </div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <h3>Other Skills</h3>
-            <p>Linux</p>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 80%;"></div></div>
-            <p>Windows Server</p>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 75%;"></div></div>
-            <p>SAP ABAP</p>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 70%;"></div></div>
-            <p>Excel</p>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 85%;"></div></div>
-            <p>Oracle</p>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 80%;"></div></div>
-            <p>SQL Server</p>
-            <div class="skill-bar"><div class="skill-bar-fill" style="width: 75%;"></div></div>
+        <div class="skill-category">
+          <h3><i class="fas fa-tools"></i> Other Skills</h3>
+          <div class="skill-list">
+            <span class="skill-item">Linux</span>
+            <span class="skill-item">Windows Server</span>
+            <span class="skill-item">SAP ABAP</span>
+            <span class="skill-item">Excel</span>
+            <span class="skill-item">Oracle</span>
+            <span class="skill-item">SQL Server</span>
           </div>
         </div>
       </div>
@@ -1073,7 +1103,21 @@
 
     function setTheme(theme) {
       document.documentElement.setAttribute('data-theme', theme);
-      document.body.style.background = getComputedStyle(document.documentElement).getPropertyValue('--background-color');
+      document.body.style.background = getComputedStyle(document.documentElement).getPropertyValue('--background-color').trim();
+      sectionBackgrounds();
+    }
+
+    // Set section backgrounds dynamically
+    function sectionBackgrounds() {
+      const sections = document.querySelectorAll('section');
+      sections.forEach(section => {
+        const bgVar = getComputedStyle(document.documentElement).getPropertyValue(`--${section.id}-bg`).trim();
+        if (section.id === 'my-journey') {
+          section.style.background = `${bgVar} fixed`;
+        } else {
+          section.style.background = bgVar;
+        }
+      });
     }
 
     // Debounce Function
@@ -1085,7 +1129,7 @@
       };
     }
 
-    // Scroll Handling
+    // Scroll Handling for Active Link and Animations
     window.addEventListener('scroll', debounce(() => {
       const sections = document.querySelectorAll('section, header');
       let currentSection = '';
@@ -1093,6 +1137,15 @@
         const sectionTop = section.offsetTop - 100;
         if (window.scrollY >= sectionTop) {
           currentSection = section.getAttribute('id');
+        }
+
+        // Animate skills section when in view
+        if (section.getAttribute('id') === 'skills') {
+          const skillsGrid = document.getElementById('skills-grid');
+          const sectionBottom = sectionTop + section.offsetHeight;
+          if (window.scrollY >= sectionTop - window.innerHeight / 2 && window.scrollY <= sectionBottom) {
+            skillsGrid.classList.add('visible');
+          }
         }
       });
       updateActiveLink(currentSection);
@@ -1180,6 +1233,9 @@
           alert('Failed to send message. Please try again later.');
         });
     });
+
+    // Initialize backgrounds on load
+    window.onload = sectionBackgrounds;
   </script>
 </body>
 </html>
