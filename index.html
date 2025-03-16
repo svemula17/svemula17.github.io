@@ -6,6 +6,13 @@
   <title>Sai Kumar | Cybersecurity Engineer</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- EmailJS SDK -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      emailjs.init("YWCglQYr_vnTPmBVS"); // Initialize EmailJS with your public key
+    })();
+  </script>
   <style>
     :root {
       --background-color: #0a0f1a;
@@ -20,11 +27,15 @@
       --input-bg: #1b263b;
       --input-border: #00b4d8;
       --skill-bar-bg: #555;
-      --wave-color-1: rgba(0, 191, 255, 0.1);
-      --wave-color-2: rgba(138, 43, 226, 0.1);
-      --section-bg: #0a0f1a;
+      --wave-color-1: rgba(0, 191, 255, 0.2); /* Slightly brighter wave */
+      --wave-color-2: rgba(138, 43, 226, 0.2); /* Slightly brighter wave */
       --home-bg: linear-gradient(135deg, #0a0f1a, #1b263b);
-      --contact-bg: none;
+      --about-bg: #1e3a5f; /* Vivid deep blue */
+      --journey-bg: #3b2e7e; /* Electric purple */
+      --skills-bg: #0f5959; /* Bright teal */
+      --certifications-bg: #2e4a80; /* Neon indigo */
+      --projects-bg: #1a5c3d; /* Cyber green */
+      --contact-bg: #4a2e6b; /* Vivid amethyst */
     }
 
     [data-theme="light"] {
@@ -42,9 +53,13 @@
       --skill-bar-bg: #ccc;
       --wave-color-1: rgba(0, 123, 255, 0.1);
       --wave-color-2: rgba(75, 0, 130, 0.1);
-      --section-bg: #e6f0fa;
       --home-bg: linear-gradient(135deg, #e6f0fa, #ffffff);
-      --contact-bg: none;
+      --about-bg: #d9e8f5; /* Light sky blue */
+      --journey-bg: #e8d9f5; /* Pale lavender */
+      --skills-bg: #d9f5e8; /* Mint glow */
+      --certifications-bg: #e8e8f5; /* Light periwinkle */
+      --projects-bg: #e8f5d9; /* Pale seafoam */
+      --contact-bg: #f5d9e8; /* Light orchid */
     }
 
     body {
@@ -76,13 +91,13 @@
       height: 100%;
       background: var(--wave-color-1);
       animation: waveAnimation 10s infinite linear;
-      opacity: 0.5;
+      opacity: 0.6; /* Increased for visibility */
     }
 
     .wave:nth-child(2) {
       background: var(--wave-color-2);
       animation: waveAnimation 15s infinite linear reverse;
-      opacity: 0.3;
+      opacity: 0.4; /* Increased for visibility */
     }
 
     @keyframes waveAnimation {
@@ -299,7 +314,6 @@
       min-height: 60vh;
       position: relative;
       z-index: 1;
-      background: var(--section-bg);
     }
 
     #home {
@@ -307,20 +321,43 @@
       min-height: 100vh;
     }
 
-    #about, #my-journey, #skills, #certifications, #projects, #contact {
+    #about {
+      background: var(--about-bg);
       position: relative;
       overflow: hidden;
     }
 
-    #skills, #certifications {
+    #my-journey {
+      background: var(--journey-bg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #skills {
+      background: var(--skills-bg);
+      position: relative;
+      overflow: hidden;
+      min-height: 50vh;
+    }
+
+    #certifications {
+      background: var(--certifications-bg);
+      position: relative;
+      overflow: hidden;
       min-height: 50vh;
     }
 
     #projects {
+      background: var(--projects-bg);
+      position: relative;
+      overflow: hidden;
       min-height: 40vh;
     }
 
     #contact {
+      background: var(--contact-bg);
+      position: relative;
+      overflow: hidden;
       min-height: 50vh;
       padding-bottom: 80px;
     }
@@ -968,7 +1005,7 @@
     </div>
     <div class="container">
       <h2>Contact Me</h2>
-      <form id="contact-form" action="https://formspree.io/f/mpwpwabp" method="POST">
+      <form id="contact-form">
         <input type="text" name="name" placeholder="Your Name" required>
         <input type="email" name="email" placeholder="Your Email" required>
         <textarea name="message" placeholder="Your Message" required></textarea>
@@ -1130,11 +1167,18 @@
       });
     });
 
-    // Contact Form Submission Feedback
+    // Contact Form Submission with EmailJS
     document.getElementById('contact-form').addEventListener('submit', function(e) {
       e.preventDefault();
-      alert('Message sent! I will get back to you soon.');
-      this.reset();
+      emailjs.sendForm('service_u921wmg', 'template_p78r3gu', this)
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          alert('Message sent successfully! I will get back to you soon.');
+          document.getElementById('contact-form').reset();
+        }, function(error) {
+          console.log('FAILED...', error);
+          alert('Failed to send message. Please try again later.');
+        });
     });
   </script>
 </body>
