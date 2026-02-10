@@ -1,1242 +1,538 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<!doctype html>
+<html lang="en" data-theme="green" data-ui="dark">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Sai Kumar | Cybersecurity Engineer</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-  <!-- EmailJS SDK -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script type="text/javascript">
-    (function() {
-      emailjs.init("YWCglQYr_vnTPmBVS"); // Initialize EmailJS with your public key
-    })();
-  </script>
-  <style>
-    :root {
-      --background-color: linear-gradient(135deg, #0a0f1a, #1b263b);
-      --text-color: #fff;
-      --secondary-text-color: #a0aec0;
-      --highlight-color: #00bfff;
-      --nav-bg: rgba(13, 19, 35, 0.9);
-      --footer-bg: rgba(13, 19, 35, 0.9);
-      --timeline-bg: #1b263b;
-      --button-bg: #00bfff;
-      --button-hover-bg: #0098cc;
-      --input-bg: #1b263b;
-      --input-border: #00b4d8;
-      --skill-bar-bg: #555;
-      --wave-color-1: rgba(0, 191, 255, 0.25); /* Brighter cyan wave */
-      --wave-color-2: rgba(138, 43, 226, 0.25); /* Brighter purple wave */
-      --home-bg: linear-gradient(135deg, #0a0f1a, #1b263b);
-      --about-bg: #1b263b;
-      --journey-bg: #4a81b8;
-      --skills-bg: #1b263b;
-      --certifications-bg: #192439;
-      --projects-bg: #1b263b;
-      --contact-bg: #1e142a;
-    }
-
-    [data-theme="light"] {
-      --background-color: linear-gradient(135deg, #e6f0fa, #ffffff);
-      --text-color: #333;
-      --secondary-text-color: #666;
-      --highlight-color: #007bff;
-      --nav-bg: rgba(255, 255, 255, 0.9);
-      --footer-bg: rgba(255, 255, 255, 0.9);
-      --timeline-bg: #f0f4f8;
-      --button-bg: #007bff;
-      --button-hover-bg: #0056b3;
-      --input-bg: #ffffff;
-      --input-border: #007bff;
-      --skill-bar-bg: #ccc;
-      --wave-color-1: rgba(0, 123, 255, 0.15); /* Softer blue wave */
-      --wave-color-2: rgba(75, 0, 130, 0.15); /* Softer purple wave */
-      --home-bg: linear-gradient(135deg, #e6f0fa, #ffffff);
-      --about-bg: #d9e8f5;
-      --journey-bg: #e8d9f5;
-      --skills-bg: #d9f5e8;
-      --certifications-bg: #e8e8f5;
-      --projects-bg: #e8f5d9;
-      --contact-bg: #f5d9e8;
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background: var(--background-color);
-      color: var(--text-color);
-      padding-bottom: 60px;
-      overflow-x: hidden;
-      position: relative;
-      transition: background 0.3s ease;
-    }
-
-    .wave-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      overflow: hidden;
-      pointer-events: none;
-    }
-
-    .wave {
-      position: absolute;
-      bottom: 0;
-      width: 200%;
-      height: 100%;
-      background: var(--wave-color-1);
-      animation: waveAnimation 10s infinite linear;
-      opacity: 0.6;
-    }
-
-    .wave:nth-child(2) {
-      background: var(--wave-color-2);
-      animation: waveAnimation 15s infinite linear reverse;
-      opacity: 0.4;
-    }
-
-    @keyframes waveAnimation {
-      0% { transform: translateX(0) translateY(0); }
-      50% { transform: translateX(-25%) translateY(-10px); }
-      100% { transform: translateX(-50%) translateY(0); }
-    }
-
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 15px;
-      background-color: var(--nav-bg);
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(5px);
-    }
-
-    .nav-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 90%;
-      max-width: 1200px;
-    }
-
-    .name-btn {
-      background: none;
-      border: none;
-      color: var(--text-color);
-      font-size: 24px;
-      cursor: pointer;
-      padding: 0;
-      padding-bottom: 5px;
-      font-family: inherit;
-      position: relative;
-      transition: all 0.3s ease;
-    }
-
-    .name-btn:hover {
-      color: var(--highlight-color);
-    }
-
-    .name-btn.active, .name-btn:hover {
-      border-bottom: 3px solid var(--highlight-color);
-      color: var(--highlight-color);
-    }
-
-    .hamburger {
-      display: none;
-      font-size: 24px;
-      background: none;
-      border: none;
-      color: var(--text-color);
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-
-    .hamburger:hover {
-      color: var(--highlight-color);
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 20px;
-      margin: 0;
-      align-items: center;
-    }
-
-    nav a {
-      color: var(--text-color);
-      text-decoration: none;
-      position: relative;
-      padding-bottom: 5px;
-      transition: all 0.3s ease;
-    }
-
-    nav a:hover {
-      color: var(--highlight-color);
-    }
-
-    nav a.active {
-      border-bottom: 3px solid var(--highlight-color);
-      color: var(--highlight-color);
-    }
-
-    .theme-toggle-container {
-      display: flex;
-      gap: 10px;
-    }
-
-    .theme-toggle {
-      background: none;
-      border: none;
-      color: var(--text-color);
-      font-size: 18px;
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-
-    .theme-toggle:hover {
-      color: var(--highlight-color);
-    }
-
-    .mobile-menu {
-      display: none;
-      position: fixed;
-      top: 60px;
-      left: 0;
-      width: 200px;
-      background-color: var(--nav-bg);
-      flex-direction: column;
-      align-items: center;
-      padding: 10px 0;
-      z-index: 1000;
-      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
-    .mobile-menu a {
-      color: var(--text-color);
-      text-decoration: none;
-      padding: 10px;
-      width: 100%;
-      text-align: center;
-      display: block;
-    }
-
-    .mobile-menu a:hover {
-      color: var(--highlight-color);
-    }
-
-    header {
-      text-align: center;
-      padding: 60px 20px;
-      background: var(--home-bg);
-      color: var(--text-color);
-      position: relative;
-      overflow: hidden;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .matrix-bg {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    canvas#matrix {
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
-
-    .header-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .social-icons, .contact-social-icons {
-      margin-top: 15px;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .social-icons a, .contact-social-icons a {
-      color: var(--text-color);
-      font-size: 24px;
-      transition: color 0.3s;
-    }
-
-    .social-icons a:hover, .contact-social-icons a:hover {
-      color: var(--highlight-color);
-    }
-
-    button {
-      margin: 8px;
-      padding: 8px 16px;
-      background-color: var(--button-bg);
-      border: none;
-      color: var(--text-color);
-      cursor: pointer;
-      border-radius: 5px;
-      transition: background-color 0.3s, transform 0.2s;
-    }
-
-    button:hover {
-      background-color: var(--button-hover-bg);
-      transform: scale(1.05);
-    }
-
-    .hero-buttons button {
-      display: inline-block;
-      width: 150px;
-      text-align: center;
-    }
-
-    section {
-      padding: 40px 20px;
-      text-align: center;
-      min-height: 60vh;
-      position: relative;
-      z-index: 1;
-      background: var(--background-color); /* Default section background */
-    }
-
-    #home {
-      background: var(--home-bg);
-      min-height: 100vh;
-    }
-
-    #about {
-      background: var(--about-bg);
-    }
-
-    #my-journey {
-      background: var(--journey-bg) fixed;
-      background-attachment: fixed;
-      position: relative;
-      z-index: 0; /* Lower z-index to allow overlay */
-    }
-
-    #my-journey .wave-bg {
-      background-attachment: fixed; /* Fix waves with the background */
-    }
-
-    #skills {
-      background: var(--skills-bg);
-    }
-
-    #certifications {
-      background: var(--certifications-bg);
-    }
-
-    #projects {
-      background: var(--projects-bg);
-    }
-
-    #contact {
-      background: var(--contact-bg);
-    }
-
-    .container {
-      width: 90%;
-      max-width: 1200px;
-      margin: auto;
-      padding: 15px;
-      position: relative;
-      z-index: 2; /* Ensure content stays above fixed background */
-    }
-
-    .timelines-container {
-      display: flex;
-      justify-content: space-between;
-      gap: 15px;
-      flex-wrap: wrap;
-    }
-
-    .timeline {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-      justify-content: center;
-      flex: 1;
-      min-width: 300px;
-    }
-
-    .timeline-item {
-      position: relative;
-      padding: 12px;
-      border: 2px solid var(--highlight-color);
-      border-radius: 8px;
-      background-color: var(--timeline-bg);
-      text-align: left;
-      box-sizing: border-box;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .timeline-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0, 191, 255, 0.3);
-    }
-
-    #my-journey .timeline-item, #certifications .timeline-item {
-      min-height: 200px;
-    }
-
-    .timeline-item::before {
-      content: '';
-      position: absolute;
-      left: -15px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 12px;
-      height: 12px;
-      background: var(--highlight-color);
-      border-radius: 50%;
-      border: 2px solid var(--text-color);
-    }
-
-    .timeline-item:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      left: -10px;
-      top: calc(50% + 12px);
-      height: calc(100% - 24px);
-      width: 2px;
-      background: var(--highlight-color);
-      z-index: -1;
-    }
-
-    .highlight {
-      color: var(--highlight-color);
-      font-weight: bold;
-    }
-
-    #about .about-content {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      max-height: 70vh;
-      overflow-y: auto;
-      padding: 15px 0;
-      position: relative;
-      z-index: 2;
-    }
-
-    #about .about-text {
-      flex: 1;
-      padding-right: 15px;
-    }
-
-    #about .about-image {
-      flex: 1;
-      height: 250px;
-      background: url('Sai.jpg') no-repeat center/cover;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
-      padding: 20px 0;
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.5s ease, transform 0.5s ease;
-    }
-
-    .skills-grid.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    .skill-category {
-      background: var(--timeline-bg);
-      padding: 20px;
-      border-radius: 10px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .skill-category:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0, 191, 255, 0.3);
-    }
-
-    .skill-category h3 {
-      color: var(--highlight-color);
-      font-size: 18px;
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .skill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .skill-item {
-      background: rgba(255, 255, 255, 0.1);
-      color: var(--text-color);
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 14px;
-      transition: transform 0.3s ease, background 0.3s ease;
-      cursor: pointer;
-    }
-
-    .skill-item:hover {
-      transform: scale(1.1);
-      background: var(--highlight-color);
-      color: #fff;
-    }
-
-    [data-theme="light"] .skill-item {
-      background: rgba(0, 0, 0, 0.05);
-      color: var(--text-color);
-    }
-
-    [data-theme="light"] .skill-item:hover {
-      background: var(--highlight-color);
-      color: #fff;
-    }
-
-    .certificate-image {
-      display: none;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      opacity: 0.7;
-      transition: opacity 0.3s ease-in-out;
-      z-index: 2;
-    }
-
-    .certificate-popup, .project-popup {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80%;
-      max-width: 800px;
-      height: auto;
-      max-height: 90vh;
-      background: var(--timeline-bg);
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-      z-index: 2000;
-      overflow-y: auto;
-      padding: 20px;
-      border-radius: 10px;
-      color: var(--text-color);
-    }
-
-    .certificate-popup img {
-      width: 100%;
-      height: auto;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      background: none;
-      border: none;
-      font-size: 24px;
-      color: var(--text-color);
-      cursor: pointer;
-    }
-
-    .timeline-item:hover .certificate-image {
-      display: block;
-    }
-
-    .timeline-item:hover .certificate-content {
-      display: none;
-    }
-
-    h2 {
-      color: var(--highlight-color);
-      font-size: 26px;
-      margin-bottom: 15px;
-    }
-
-    h3 {
-      color: var(--highlight-color);
-      font-size: 18px;
-      margin: 4px 0;
-    }
-
-    p {
-      color: var(--secondary-text-color);
-      font-size: 13px;
-      margin: 4px 0;
-    }
-
-    ul {
-      padding-left: 15px;
-      color: var(--secondary-text-color);
-      font-size: 13px;
-      margin: 4px 0;
-    }
-
-    #contact form {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    #contact input, #contact textarea {
-      margin: 8px 0;
-      padding: 8px;
-      width: 80%;
-      max-width: 350px;
-      background-color: var(--input-bg);
-      border: 1px solid var(--input-border);
-      border-radius: 5px;
-      color: var(--text-color);
-      transition: background-color 0.3s, border-color 0.3s;
-    }
-
-    .project-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .project-item {
-      background-color: var(--timeline-bg);
-      padding: 15px;
-      border-radius: 8px;
-      width: 80%;
-      max-width: 600px;
-      cursor: pointer;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .project-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0, 191, 255, 0.3);
-    }
-
-    footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background-color: var(--footer-bg);
-      padding: 12px 0;
-      text-align: center;
-      z-index: 1000;
-      box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-      backdrop-filter: blur(5px);
-    }
-
-    footer p {
-      margin: 0;
-      color: var(--secondary-text-color);
-      font-size: 12px;
-    }
-
-    @media (max-width: 768px) {
-      .hamburger {
-        display: block;
-      }
-      nav ul {
-        display: none;
-      }
-      .mobile-menu {
-        display: none;
-        flex-direction: column;
-      }
-      .mobile-menu.active {
-        display: flex;
-      }
-      .nav-container {
-        flex-direction: row;
-        justify-content: space-between;
-      }
-      .timelines-container {
-        flex-direction: column;
-        gap: 10px;
-      }
-      .timeline {
-        width: 100%;
-      }
-      .timeline-item::before {
-        left: -10px;
-      }
-      .timeline-item:not(:last-child)::after {
-        left: -5px;
-      }
-      #about .about-content {
-        flex-direction: column;
-      }
-      #about .about-text, #about .about-image {
-        width: 100%;
-        padding-right: 0;
-      }
-      .certificate-image {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-      }
-      .certificate-popup, .project-popup {
-        width: 90%;
-        max-width: 600px;
-      }
-      nav ul {
-        gap: 10px;
-      }
-      section {
-        padding: 30px 15px;
-        min-height: 50vh;
-      }
-      #skills, #certifications {
-        min-height: 40vh;
-      }
-      #projects {
-        min-height: 30vh;
-      }
-      #contact {
-        min-height: 40vh;
-      }
-      .project-item {
-        width: 90%;
-      }
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sai Kumar | Cybersecurity Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
-  <nav>
-    <div class="nav-container">
-      <button class="name-btn" onclick="navigateTo('#home')">Sai Kumar.</button>
-      <button class="hamburger" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
-      <ul>
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#my-journey">My Journey</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#certifications">Certifications</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li class="theme-toggle-container">
-          <button class="theme-toggle" id="theme-toggle-light"><i class="fas fa-sun"></i></button>
-          <button class="theme-toggle" id="theme-toggle-dark"><i class="fas fa-moon"></i></button>
-        </li>
-      </ul>
-      <div class="mobile-menu" id="mobile-menu">
-        <a href="#home" onclick="toggleMobileMenu()">Home</a>
-        <a href="#about" onclick="toggleMobileMenu()">About</a>
-        <a href="#my-journey" onclick="toggleMobileMenu()">My Journey</a>
-        <a href="#skills" onclick="toggleMobileMenu()">Skills</a>
-        <a href="#certifications" onclick="toggleMobileMenu()">Certifications</a>
-        <a href="#projects" onclick="toggleMobileMenu()">Projects</a>
-        <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
-        <button class="theme-toggle" id="mobile-theme-toggle-light"><i class="fas fa-sun"></i></button>
-        <button class="theme-toggle" id="mobile-theme-toggle-dark"><i class="fas fa-moon"></i></button>
-      </div>
-    </div>
-  </nav>
+  <!-- Background canvas -->
+  <canvas id="fx"></canvas>
 
-  <header id="home">
-    <div class="matrix-bg">
-      <canvas id="matrix"></canvas>
-    </div>
-    <div class="header-content">
-      <h2>Hi, I'm Sai Kumar Vemula</h2>
-      <h3>Cybersecurity Engineer</h3>
-      <button onclick="window.location.href='#skills'">Skills</button>
-      <div class="hero-buttons">
-        <button onclick="window.location.href='Sai_Kumar_Cybersecurity.pdf'" download="Sai_Kumar_Cybersecurity.pdf">Download CV</button>
-        <button onclick="window.location.href='#contact'">Contact Me</button>
-      </div>
-      <div class="social-icons">
-        <a href="https://www.linkedin.com/in/sai-kumar-vemula1/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/svemula17" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        <a href="mailto:saikumarvemula.us@gmail.com"><i class="fas fa-envelope"></i></a>
-      </div>
-    </div>
-  </header>
+  <!-- BOOT SCREEN -->
+  <section id="boot" class="boot2">
+    <div class="boot2Wrap">
+      <div class="boot2Title">SYSTEM INITIALIZING<span class="dots">...</span></div>
 
-  <section id="about">
-    <div class="wave-bg">
-      <div class="wave"></div>
-      <div class="wave"></div>
-    </div>
-    <div class="container">
-      <h2>About Me</h2>
-      <div class="about-content">
-        <div class="about-text">
-          <p>I am Vemula Sai Kumar, a passionate Cybersecurity Engineer currently pursuing a Master of Science in Cybersecurity at <span class="highlight">Yeshiva University’s Katz School of Science and Health</span> (expected May 2026, GPA 3.9), building on a Bachelor of Technology in Mechanical Engineering from <span class="highlight">CMR College of Engineering and Technology</span> (Sep 2021, GPA 3.9). My fascination with cybersecurity stems from a deep curiosity to protect digital landscapes from evolving threats, driving me to master tools like Wireshark, Kali Linux, and Nessus, and to engage in hands-on projects like the Cybersecurity HomeLab, where I configured secure networks with Splunk and OpenVPN. With a strong foundation in programming (Python, Java, SQL) and SAP ABAP, complemented by certifications from Google and Tata, I am committed to innovating resilient security solutions and solving complex cyber challenges with unwavering dedication.</p>
-        </div>
-        <div class="about-image"></div>
+      <div class="boot2Panel">
+        <pre id="bootText" class="boot2Log"></pre>
       </div>
+
+      <div class="boot2Bar">
+        <div id="bootBarFill" class="boot2BarFill"></div>
+      </div>
+
+      <div class="boot2Footer">
+        <div id="bootPct" class="boot2Pct">0%</div>
+        <div id="bootStatus" class="boot2Status">Initializing...</div>
+      </div>
+
+      <div class="boot2Hint">Press <b>Enter</b> to skip</div>
     </div>
   </section>
 
-  <section id="my-journey">
-    <div class="wave-bg">
-      <div class="wave"></div>
-      <div class="wave"></div>
-    </div>
-    <div class="container">
-      <h2>My Journey</h2>
-      <div class="timelines-container">
-        <div class="timeline">
-          <div class="timeline-item">
-            <h3>Education</h3>
-            <p><strong>May 2026</strong></p>
-            <p>Master of Science in Cybersecurity</p>
-            <p>At <span class="highlight">Yeshiva University’s Katz School of Science and Health</span>, New York, NY</p>
-            <p>Overall GPA: 3.9</p>
+  <!-- MAIN SITE -->
+  <div id="site" class="site hidden">
+
+    <!-- FIXED HEADER -->
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Go to home">
+        <span class="brandMark">S</span>
+      </a>
+
+      <nav class="navPill" aria-label="Primary">
+        <a class="navLink active" href="#home">Home</a>
+        <a class="navLink" href="#education">Education</a>
+        <a class="navLink" href="#projects">Projects</a>
+        <a class="navLink" href="#skills">Skills</a>
+        <a class="navLink" href="#experience">Experience</a>
+        <a class="navLink" href="#certifications">Certifications</a>
+        <a class="navLink" href="#contact">Contact</a>
+      </nav>
+
+      <div class="headerRight">
+        <!-- Light/Dark slider -->
+        <div class="modeToggleWrap" aria-label="Light dark mode toggle">
+          <span class="modeLabel">Light</span>
+          <label class="switch" title="Toggle Light/Dark">
+            <input id="uiToggle" type="checkbox" />
+            <span class="slider"></span>
+          </label>
+          <span class="modeLabel">Dark</span>
+        </div>
+
+        <!-- Theme selector (order: red, green, white, blue) -->
+        <div class="themeDots" aria-label="Theme selector">
+          <button class="themeDot tRed" data-theme="red" aria-label="Red theme"></button>
+          <button class="themeDot tGreen" data-theme="green" aria-label="Green theme"></button>
+          <button class="themeDot tMono" data-theme="mono" aria-label="Black & white theme"></button>
+          <button class="themeDot tBlue" data-theme="blue" aria-label="Blue theme"></button>
+        </div>
+      </div>
+    </header>
+
+    <main class="wrap">
+
+      <!-- HOME -->
+      <section id="home" class="hero bgMode" data-bgmode="0">
+        <!-- LEFT -->
+        <div class="heroLeft">
+          <h1 class="heroTitle heroTitleUp">
+            Sai <span class="accentFlow">Kumar</span>
+          </h1>
+
+          <!-- Social links under name -->
+          <div class="socialRow">
+            <a class="socialPill" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a class="socialPill" href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="socialPill" href="mailto:saikumarvemula.us@gmail.com">Email</a>
           </div>
-          <div class="timeline-item">
-            <p><strong>Sep 2021</strong></p>
-            <p>Bachelor of Technology in Mechanical Engineering</p>
-            <p>At <span class="highlight">CMR College of Engineering and Technology</span>, Hyderabad, India</p>
-            <p>Overall GPA: 3.9</p>
+
+          <div class="heroSub glass hoverGlow">
+            <div class="roleLine">
+              <span class="rolePrefix">></span>
+              <span id="rotatingRole" class="roleRotator"></span>
+              <span class="cursor">▍</span>
+            </div>
+
+            <p class="heroDesc">
+              Cybersecurity graduate student (M.S.) with hands-on experience in vulnerability assessment,
+              monitoring basics, and security risk analysis. Focused on building practical projects and labs.
+            </p>
+
+            <div class="ctaRow">
+              <a class="btn primary" href="#projects">→ VIEW PROJECTS</a>
+              <a class="btn ghost" href="Sai_Kumar_Cybersecurity.pdf" download>↓ DOWNLOAD RESUME</a>
+            </div>
           </div>
         </div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <h3>Experience</h3>
-            <p><strong>Aug 2022 – Mar 2023</strong></p>
-            <p>SAP ABAP Consultant</p>
-            <p>At <span class="highlight">Phoenix Business Consulting Pvt Ltd</span>, Hyderabad, India</p>
-            <ul>
-              <li>Designed and managed relational database structures, including Tables, Views, and Search Helps, to optimize data retrieval and streamline system performance.</li>
-              <li>Developed and implemented Classical, Interactive, and ALV (ABAP List Viewer) reports, enhancing data visualization and user decision-making processes.</li>
-              <li>Created and customized SAP Scripts and Smart Forms to generate dynamic, business-critical documents, improving workflow efficiency and document automation.</li>
+
+        <!-- RIGHT (Linux Terminal) -->
+        <div class="heroRight">
+          <div class="terminal glass hoverGlow" aria-label="Linux terminal navigation">
+            <div class="terminalTop">
+              <div class="termDots">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="termTitle">sai@portfolio:~</div>
+              <div class="termHint">type <b>help</b></div>
+            </div>
+
+            <div id="termBody" class="terminalBody" role="log" aria-live="polite"></div>
+
+            <div class="terminalSuggest">
+              <span class="suggestLabel">Suggested:</span>
+              <button class="suggestBtn" data-cmd="help">help</button>
+              <button class="suggestBtn" data-cmd="education">education</button>
+              <button class="suggestBtn" data-cmd="projects">projects</button>
+              <button class="suggestBtn" data-cmd="skills">skills</button>
+              <button class="suggestBtn" data-cmd="experience">experience</button>
+              <button class="suggestBtn" data-cmd="certifications">certifications</button>
+              <button class="suggestBtn" data-cmd="contact">contact</button>
+              <button class="suggestBtn" data-cmd="clear">clear</button>
+            </div>
+
+            <form id="termForm" class="terminalInputRow" autocomplete="off">
+              <span class="prompt">sai@portfolio:~$</span>
+              <input id="termInput" class="terminalInput" type="text" placeholder="Enter command..." />
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- EDUCATION -->
+      <section id="education" class="section bgMode" data-bgmode="4">
+        <div class="sectionHead">
+          <div class="slashes">//</div>
+          <h2 class="sectionTitleSerif themedTitle">Education</h2>
+        </div>
+
+        <div class="aboutGrid">
+          <div class="aboutCard glass hoverGlow">
+            <h3 class="aboutTitle themedTitle">Master of Science — Cybersecurity</h3>
+            <p class="aboutText">Yeshiva University</p>
+            <p>New York City, USA • 2024 - 2026 • CGPA: 3.9</p>
+          </div>
+
+          <div class="aboutCard glass hoverGlow">
+            <h3 class="aboutTitle themedTitle">Bachelor of Technology — Mechanical Engineering</h3>
+            <p>CMR College of Engineering and Technology</p>
+            <p class="aboutText">Hyderabad, India • 2018 — 2021 • CGPA: 3.9</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects" class="section bgMode" data-bgmode="1">
+        <div class="sectionHead">
+          <div class="slashes">//</div>
+          <h2 class="sectionTitleSerif themedTitle">Projects</h2>
+        </div>
+
+        <div class="timelineStack">
+
+          <article class="showcaseRow hoverRow">
+            <div class="showcaseMedia glass hoverGlow">
+              <img
+                src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1600&q=60"
+                alt="Project preview"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="showcaseBody">
+              <div class="showcaseDate">2025</div>
+              <h3 class="showcaseTitle themedTitle">AI-Powered Cloud Security Posture &amp; Deception Platform</h3>
+
+              <p class="showcaseDesc">
+                CyberShield is an automated AWS cloud security scanner that detects misconfigurations,
+                deploys honeypots, sends real-time alerts, and accelerates remediation to prevent cloud breaches.
+              </p>
+
+              <ul class="showcaseBullets">
+                <li>Full-Stack Web Application</li>
+                <li>Cloud Honeypot Deployer</li>
+                <li>Automated Alerting System</li>
+                <li>Remediation Bot</li>
+              </ul>
+
+              <div class="tagRow">
+                <span class="tagPill">Python</span>
+                <span class="tagPill">Flask</span>
+                <span class="tagPill">Boto3(AWS SDK)</span>
+                <span class="tagPill">Javascript</span>
+              </div>
+
+              <div class="showcaseActions">
+                <a class="btn ghost mini" href="#" target="_blank" rel="noreferrer">⌁ View Code</a>
+                <a class="btn ghost mini" href="#" target="_blank" rel="noreferrer">⌁ View Report</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="showcaseRow alt hoverRow">
+            <div class="showcaseMedia glass hoverGlow">
+              <img
+                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1600&q=60"
+                alt="Project preview"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="showcaseBody">
+              <div class="showcaseDate">2025</div>
+              <h3 class="showcaseTitle themedTitle">AWS Image Upload & AI Tagging System</h3>
+
+              <p class="showcaseDesc">
+                A fully serverless AWS application that allows users to upload images, automatically tag them using AI,
+                and search images efficiently—built for scalability, low cost, and real-world usability.
+              </p>
+
+              <ul class="showcaseBullets">
+                <li>Serverless Web Application</li>
+                <li>AI Image Tagging Engine</li>
+                <li>Metadata Storage & Search System</li>
+                <li>Secure API Layer</li>
+              </ul>
+
+              <div class="tagRow">
+                <span class="tagPill">AWS S3</span>
+                <span class="tagPill">Lambda</span>
+                <span class="tagPill">API Gateway</span>
+                <span class="tagPill">DynamoDB</span>
+                <span class="tagPill">Rekognition</span>
+              </div>
+
+              <div class="showcaseActions">
+                <a class="btn ghost mini" href="#" target="_blank" rel="noreferrer">⌁ View Code</a>
+                <a class="btn ghost mini" href="#" target="_blank" rel="noreferrer">⌁ View Report</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="showcaseRow hoverRow">
+            <div class="showcaseMedia glass hoverGlow">
+              <img
+                src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1600&q=60"
+                alt="Project preview"
+                loading="lazy"
+              />
+            </div>
+
+            <div class="showcaseBody">
+              <div class="showcaseDate">2024</div>
+              <h3 class="showcaseTitle themedTitle">AWS Sentiment Analysis System</h3>
+
+              <p class="showcaseDesc">
+                A serverless customer sentiment analysis platform that automatically processes feedback files, 
+                analyzes sentiment in real time, visualizes insights on a dashboard, and sends alerts for 
+                negative feedback—built entirely within AWS Free Tier ($0 monthly cost).
+              </p>
+
+              <ul class="showcaseBullets">
+                <li>Serverless Feedback Processing System</li>
+                <li>Sentiment Analysis Engine</li>
+                <li>Real-Time Dashboard</li>
+              </ul>
+
+              <div class="tagRow">
+                <span class="tagPill">AWS Lambda</span>
+                <span class="tagPill">API Gateway</span>
+                <span class="tagPill">DynamoDB</span>
+                <span class="tagPill">AWS S3</span>
+              </div>
+
+              <div class="showcaseActions">
+                <a class="btn ghost mini" href="#" target="_blank" rel="noreferrer">⌁ View Code</a>
+                <a class="btn ghost mini" href="#" target="_blank" rel="noreferrer">⌁ View Report</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="section bgMode" data-bgmode="2">
+        <div class="sectionHead">
+          <div class="slashes">//</div>
+          <h2 class="sectionTitleSerif themedTitle">Skills &amp; Tools</h2>
+        </div>
+
+        <div class="skillsGrid">
+          <article class="skillCard glass hoverGlow">
+            <div class="skillTop">
+              <div class="skillIcon">⌁</div>
+              <h3 class="skillTitle themedTitle">Security</h3>
+            </div>
+            <ul class="skillList">
+              <li>Vulnerability Assessment</li>
+              <li>Security Risk Management</li>
+              <li>Assets, Threats &amp; Vulnerabilities</li>
+              <li>Detection &amp; Response (Basics)</li>
+              <li>Security Controls (Foundational)</li>
             </ul>
-          </div>
-          <div class="timeline-item">
-            <p><strong>Jul 2021 – Apr 2022</strong></p>
-            <p>Supervisor, Quality Controller</p>
-            <p>At <span class="highlight">Siddhartha Heavy Equipment Limited</span>, Hyderabad, India</p>
-            <ul>
-              <li>Led and monitored daily fabrication activities, ensuring optimal resource allocation, workflow efficiency, and adherence to production schedules.</li>
-              <li>Conducted and enforced rigorous quality control checks, identifying defects early and maintaining compliance with production standards to reduce rework and waste.</li>
-              <li>Analyzed and reported production performance metrics, providing actionable insights to enhance efficiency and drive continuous improvement.</li>
-              <li>Coordinated and delegated tasks among team members, tracking progress and optimizing team performance to meet production goals effectively.</li>
+          </article>
+
+          <article class="skillCard glass hoverGlow">
+            <div class="skillTop">
+              <div class="skillIcon">⌂</div>
+              <h3 class="skillTitle themedTitle">Monitoring / SOC</h3>
+            </div>
+            <ul class="skillList">
+              <li>SOC Lab Fundamentals</li>
+              <li>Log Analysis &amp; Triage</li>
+              <li>SIEM Basics (Splunk)</li>
+              <li>Alert Investigation</li>
+              <li>Threat Intel Basics</li>
             </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+          </article>
 
-  <section id="skills">
-    <div class="wave-bg">
-      <div class="wave"></div>
-      <div class="wave"></div>
-    </div>
-    <div class="container">
-      <h2>My Skills</h2>
-      <div class="skills-grid" id="skills-grid">
-        <div class="skill-category">
-          <h3><i class="fas fa-shield-alt"></i> Cybersecurity Skills</h3>
-          <div class="skill-list">
-            <span class="skill-item">Kali Linux</span>
-            <span class="skill-item">Wireshark</span>
-            <span class="skill-item">Network Commands</span>
-            <span class="skill-item">Cryptography</span>
-            <span class="skill-item">Incident Response</span>
-            <span class="skill-item">Risk Assessment</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3><i class="fas fa-code"></i> Programming Skills</h3>
-          <div class="skill-list">
-            <span class="skill-item">Java</span>
-            <span class="skill-item">Python</span>
-            <span class="skill-item">SQL</span>
-            <span class="skill-item">C</span>
-            <span class="skill-item">HTML & CSS</span>
-            <span class="skill-item">SAP ABAP</span>
-          </div>
-        </div>
-        <div class="skill-category">
-          <h3><i class="fas fa-tools"></i> Other Skills</h3>
-          <div class="skill-list">
-            <span class="skill-item">Linux</span>
-            <span class="skill-item">Windows Server</span>
-            <span class="skill-item">SAP ABAP</span>
-            <span class="skill-item">Excel</span>
-            <span class="skill-item">Oracle</span>
-            <span class="skill-item">SQL Server</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="certifications">
-    <div class="wave-bg">
-      <div class="wave"></div>
-      <div class="wave"></div>
-    </div>
-    <div class="container">
-      <h2>Certifications</h2>
-      <div class="timelines-container">
-        <div class="timeline">
-          <div class="timeline-item" onclick="showCertificate('Coursera 7HOH59U7LKBB.jpg')">
-            <div class="certificate-content">
-              <h3>Google Cybersecurity Professional Certificate</h3>
-              <p>Completed via Coursera</p>
-              <ul>
-                <li>Foundations of Cybersecurity</li>
-                <li>Play It Safe: Manage Security Risks</li>
-                <li>Connect and Protect: Networks and Network Security</li>
-                <li>Tools of the Trade: Linux and SQL</li>
-                <li>Assets, Threats, and Vulnerabilities</li>
-                <li>Sound the Alarm: Detection and Response</li>
-                <li>Automate Cybersecurity Tasks with Python</li>
-                <li>Put It to Work: Prepare for Cybersecurity Jobs</li>
-              </ul>
+          <article class="skillCard glass hoverGlow">
+            <div class="skillTop">
+              <div class="skillIcon">⌘</div>
+              <h3 class="skillTitle themedTitle">Tools</h3>
             </div>
-            <div class="certificate-image" style="background-image: url('Coursera 7HOH59U7LKBB.jpg');"></div>
-          </div>
-        </div>
-        <div class="timeline">
-          <div class="timeline-item" onclick="showCertificate('comptia-security-ce-certification.png')">
-            <div class="certificate-content">
-              <h3>CompTIA security certification.png</h3>
-              <p>Various Online Platforms</p>
-              <ul>
-                <li>Access Control</li>
-                <li>Firewall Configuration</li>
-                <li>Threat Detection</li>
-                <li>Security Policies</li>
-                <li>Cryptography</li>
-                <li>Malware Identification</li>
-                <li>Network Security</li>
-                <li>Security Management</li>
-                <li>Cyber Forensics</li>
-              </ul>
+            <ul class="skillList">
+              <li>Wireshark</li>
+              <li>Nessus</li>
+              <li>Splunk</li>
+              <li>Linux &amp; SQL</li>
+              <li>GitHub</li>
+            </ul>
+          </article>
+
+          <article class="skillCard glass hoverGlow">
+            <div class="skillTop">
+              <div class="skillIcon">⌬</div>
+              <h3 class="skillTitle themedTitle">Scripting / Systems</h3>
             </div>
-            <div class="certificate-image" style="background-image: url('comptia-security-ce-certification.png');"></div>
-          </div>
+            <ul class="skillList">
+              <li>Python for Security Automation (Basics)</li>
+              <li>Bash</li>
+              <li>Windows &amp; Linux</li>
+              <li>Networking Basics (TCP/IP, DNS)</li>
+              <li>Documentation</li>
+            </ul>
+          </article>
         </div>
-        <div class="timeline">
-          <div class="timeline-item" onclick="showCertificate('Tata_footage.jpg')">
-            <div class="certificate-content">
-              <h3>Tata Cybersecurity Security Analyst Job Simulation</h3>
-              <p>Completed on Forage</p>
-              <ul>
-                <li>Introduction to Cybersecurity Risk Management</li>
-                <li>Threat Analysis Fundamentals</li>
-                <li>Incident Response Basics</li>
-                <li>Security Monitoring Techniques</li>
-                <li>Simulation of Real-World Threat Scenarios</li>
-                <li>Reporting and Documentation Practices</li>
-                <li>Collaborative Security Teamwork</li>
-                <li>Final Assessment and Feedback</li>
-              </ul>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="section bgMode" data-bgmode="3">
+        <div class="sectionHead">
+          <div class="slashes">//</div>
+          <h2 class="sectionTitleSerif themedTitle">Experience</h2>
+        </div>
+
+        <div class="timelineStack">
+          <article class="showcaseRow hoverRow">
+            <div class="showcaseMedia glass expMedia hoverGlow">
+              <div class="expBadge">Phoenix Business Consulting Pvt Ltd</div>
+              <div class="expBig">SAP ABAP Consultant</div>
+              <div class="expSmall">Hyderabad, India</div>
             </div>
-            <div class="certificate-image" style="background-image: url('Tata_footage.jpg');"></div>
+
+            <div class="showcaseBody">
+              <div class="showcaseDate">AUG 2022 — SEP 2024</div>
+              <h3 class="showcaseTitle themedTitle">SAP ABAP Consultant</h3>
+
+              <p class="showcaseDesc">
+                Enterprise reporting and automation with performance focus and documentation.
+              </p>
+
+              <ul class="showcaseBullets">
+                <li>Designed DB objects (Tables, Views, Search Helps) for optimized retrieval</li>
+                <li>Built Classical / Interactive / ALV reports for dashboards &amp; analytics</li>
+                <li>Developed SAP Scripts &amp; Smart Forms to improve workflow automation</li>
+              </ul>
+
+              <div class="tagRow">
+                <span class="tagPill">Reporting</span>
+                <span class="tagPill">Automation</span>
+                <span class="tagPill">Documentation</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- CERTIFICATIONS -->
+      <section id="certifications" class="section bgMode" data-bgmode="5">
+        <div class="sectionHead">
+          <div class="slashes">//</div>
+          <h2 class="sectionTitleSerif themedTitle">Certifications</h2>
+        </div>
+
+        <div class="certGrid">
+          <article class="certCard glass hoverGlow">
+            <img src="/Users/saikumarvemula/Documents/GitHub/svemula17.github.io/Comptia.jpg"class="certImg">
+          <div class="certName">CompTIA Security +</div></article>
+          <article class="certCard glass hoverGlow">
+            <img src="/Users/saikumarvemula/Documents/GitHub/svemula17.github.io/blob.png"class="certImg">
+          <div class="certName">Red Hat System Administration I (RH124 - RHA) - Ver. 9.3</div></article>
+          <article class="certCard glass hoverGlow">
+            <img src="/Users/saikumarvemula/Documents/GitHub/svemula17.github.io/Soc.png"class="certImg">
+          <div class="certName">Hands on SOC Lab program</div></article>
+          <article class="certCard glass hoverGlow">
+            <img src="/Users/saikumarvemula/Documents/GitHub/svemula17.github.io/Google cert_page-0001.jpg"class="certImg">
+          <div class="certName">Google Cybersecurity Professional Certificate</div></article>
+          <article class="certCard glass hoverGlow">
+            <img src="/Users/saikumarvemula/Documents/GitHub/svemula17.github.io/foundations.jpg"class="certImg">
+          <div class="certName">Foundations of Cybersecurity</div></article>
+          <article class="certCard glass hoverGlow">
+            <img src="/Users/saikumarvemula/Documents/GitHub/svemula17.github.io/Play it_page-0001.jpg"class="certImg">
+          <div class="certName">Play It Safe: Manage Security Risks</div></article>
+          <article class="certCard glass hoverGlow">
+            <img src="/Users/saikumarvemula/Documents/GitHub/svemula17.github.io/Connect.jpg"class="certImg">
+          <div class="certName">Connect and Protect: Networks and Network Security</div></article>
+          <article class="certCard glass hoverGlow">
+            <img src="/Users/saikumarvemula/Documents/GitHub/svemula17.github.io/Tools.jpg"class="certImg">
+          <div class="certName">Tools of the Trade: Linux and SQL</div></article>
+          <article class="certCard glass hoverGlow">
+            <img src="/Users/saikumarvemula/Documents/GitHub/svemula17.github.io/Assets.jpg"class="certImg">
+          <div class="certName">Assets, Threats, and Vulnerabilities</div></article>
+          <article class="certCard glass hoverGlow">
+            <img src="/Users/saikumarvemula/Documents/GitHub/svemula17.github.io/Sound.jpg"class="certImg">
+          <div class="certName">Sound the Alarm: Detection and Response</div></article>
+          <article class="certCard glass hoverGlow">
+            <img src="/Users/saikumarvemula/Documents/GitHub/svemula17.github.io/Automate.jpg"class="certImg">
+          <div class="certName">Automate Cybersecurity Tasks with Python</div></article>
+          <article class="certCard glass hoverGlow">
+            <img src="/Users/saikumarvemula/Documents/GitHub/svemula17.github.io/Put.jpg"class="certImg">
+          <div class="certName">Put It to Work: Prepare for Cybersecurity Jobs</div></article>
+          <article class="certCard glass hoverGlow">
+            <img src="/Users/saikumarvemula/Documents/GitHub/svemula17.github.io/ISc2.jpg"class="certImg">
+          <div class="certName">Certified in Cybersecurity Specialization — (ISC)² / Coursera</div></article>
+          <article class="certCard glass hoverGlow">
+            <img src="/Users/saikumarvemula/Documents/GitHub/svemula17.github.io/Security.jpg"class="certImg">
+          <div class="certName">Security Principles</div></article>
+        <article class="certCard glass hoverGlow">
+          <img src="/Users/saikumarvemula/Documents/GitHub/svemula17.github.io/Incident.jpg"class="certImg">
+        <div class="certName">Incident Response, BC, and DR Concepts</div></article>
+        <article class="certCard glass hoverGlow">
+          <img src="/Users/saikumarvemula/Documents/GitHub/svemula17.github.io/Access.jpg"class="certImg">
+        <div class="certName">Access Control Concepts</div></article>
+      </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section id="contact" class="section bgMode" data-bgmode="6">
+        <div class="sectionHead">
+          <div class="slashes">//</div>
+          <h2 class="sectionTitleSerif themedTitle">Contact</h2>
+        </div>
+
+        <div class="contactGrid">
+          <form class="contactForm glass hoverGlow" onsubmit="return false;">
+            <label class="field">
+              <span>Name</span>
+              <input type="text" placeholder="Your name" />
+            </label>
+
+            <label class="field">
+              <span>Email</span>
+              <input type="email" placeholder="you@example.com" />
+            </label>
+
+            <label class="field">
+              <span>Message</span>
+              <textarea rows="5" placeholder="Tell me what you need..."></textarea>
+            </label>
+
+            <button class="btn primary" type="button">SUBMIT</button>
+          </form>
+
+          <div class="contactCards">
+            <div class="contactCard glass hoverGlow">
+              <div class="contactLabel">EMAIL</div>
+              <div class="contactValue">saikumarvemula.us@gmail.com</div>
+              <button class="copyBtn" data-copy="saikumarvemula.us@gmail.com">Copy</button>
+            </div>
+
+            <div class="contactCard glass hoverGlow">
+              <div class="contactLabel">PHONE</div>
+              <div class="contactValue">(551) 235-2122</div>
+              <button class="copyBtn" data-copy="(551) 235-2122">Copy</button>
+            </div>
+
+            <div class="contactCard glass hoverGlow">
+              <div class="contactLabel">LOCATION</div>
+              <div class="locTitle">New Jersey, USA</div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <section id="projects">
-    <div class="wave-bg">
-      <div class="wave"></div>
-      <div class="wave"></div>
-    </div>
-    <div class="container">
-      <h2>My Projects</h2>
-      <div class="project-list">
-        <div class="project-item" onclick="showProject('project1')">
-          <h3>Cybersecurity HomeLab Project</h3>
-          <p>Designed a simulated enterprise network to enhance cybersecurity skills, focusing on system security, threat detection, and network administration.</p>
+      <!-- LET'S TALK MARQUEE (NEW) -->
+      <section class="letsTalkWrap">
+        <div class="letsTalkBar">
+          <div class="letsTalkTrack">
+            <span>LET'S TALK!</span><span>LET'S TALK!</span><span>LET'S TALK!</span><span>LET'S TALK!</span><span>LET'S TALK!</span>
+            <span>LET'S TALK!</span><span>LET'S TALK!</span><span>LET'S TALK!</span><span>LET'S TALK!</span><span>LET'S TALK!</span>
+          </div>
         </div>
-        <div class="project-item" onclick="showProject('project2')">
-          <h3>E-Commerce Price Comparison using Web Scraping</h3>
-          <p>Developed a Python-based web scraping tool to extract and compare product prices across multiple e-commerce platforms.</p>
-        </div>
-        <div class="project-item" onclick="showProject('project3')">
-          <h3>Portfolio</h3>
-          <p>Created a personal portfolio website to showcase my skills, projects, and professional journey.</p>
-        </div>
-      </div>
-    </div>
-    <div class="project-popup" id="project1">
-      <button class="close-btn" onclick="closeProject()">×</button>
-      <h3>Cybersecurity HomeLab Project (Aug 2024)</h3>
-      <p><strong>Role:</strong> Team Lead</p>
-      <p><strong>Description:</strong> Designed a simulated enterprise network to enhance cybersecurity skills, focusing on system security, threat detection, and network administration.</p>
-      <h4>Project Details:</h4>
-      <ul>
-        <li><strong>Network Infrastructure:</strong> Configured Windows 10, Ubuntu, VMware Workstation, and Active Directory for centralized management.</li>
-        <li><strong>Security Implementation:</strong> Secured Remote Desktop Protocol (RDP), deployed Palo Alto PAN-OS 8 and PFsense firewall for network protection.</li>
-        <li><strong>Threat Monitoring:</strong> Set up Nessus vulnerability scanner and Splunk SIEM for real-time security event analysis.</li>
-        <li><strong>Secure Access:</strong> Built an OpenVPN server for encrypted remote connectivity.</li>
-      </ul>
-    </div>
-    <div class="project-popup" id="project2">
-      <button class="close-btn" onclick="closeProject()">×</button>
-      <h3>E-Commerce Price Comparison using Web Scraping</h3>
-      <p><strong>Role:</strong> Team Lead</p>
-      <p><strong>Description:</strong> Developed a Python-based web scraping tool to extract and compare product prices across multiple e-commerce platforms.</p>
-      <h4>Project Details:</h4>
-      <ul>
-        <li><strong>Data Extraction:</strong> Automated web scraping from Amazon, Flipkart, eBay, Croma, and Myntra to collect real-time pricing data.</li>
-        <li><strong>Data Processing:</strong> Converted unstructured HTML data into structured format using Python.</li>
-        <li><strong>Price Comparison:</strong> Identified and displayed the best price for each product across platforms.</li>
-        <li><strong>User Benefit:</strong> Helps consumers make cost-effective purchasing decisions by selecting the lowest-priced option.</li>
-      </ul>
-    </div>
-    <div class="project-popup" id="project3">
-      <button class="close-btn" onclick="closeProject()">×</button>
-      <h3>Portfolio</h3>
-      <p><strong>Role:</strong> Team Lead</p>
-      <p><strong>Description:</strong> Created a personal portfolio website to showcase my skills, projects, and professional journey.</p>
-      <h4>Project Details:</h4>
-      <ul>
-        <li><strong>Development:</strong> Designed and developed a responsive website using HTML, CSS, and JavaScript.</li>
-        <li><strong>Features:</strong> Includes sections for skills, certifications, projects, and a contact form.</li>
-        <li><strong>Purpose:</strong> Demonstrates my technical expertise and serves as a professional online presence.</li>
-      </ul>
-    </div>
-  </section>
+      </section>
 
-  <section id="contact">
-    <div class="wave-bg">
-      <div class="wave"></div>
-      <div class="wave"></div>
-    </div>
-    <div class="container">
-      <h2>Contact Me</h2>
-      <form id="contact-form">
-        <input type="text" name="name" placeholder="Your Name" required>
-        <input type="email" name="email" placeholder="Your Email" required>
-        <textarea name="message" placeholder="Your Message" required></textarea>
-        <button type="submit">Submit</button>
-      </form>
-      <div class="contact-social-icons">
-        <a href="https://www.linkedin.com/in/sai-kumar-vemula1/" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/svemula17" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i></a>
-        <a href="mailto:saikumarvemula.us@gmail.com"><i class="fas fa-envelope"></i></a>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2025 Sai Kumar Vemula | All Rights Reserved.</p>
-  </footer>
-
-  <div class="certificate-popup" id="certificate-popup">
-    <button class="close-btn" onclick="closeCertificate()">×</button>
-    <img id="popup-image" src="" alt="Certificate">
+      <footer class="footer">
+        <span>© 2026 Sai Kumar • Cybersecurity Portfolio</span>
+      </footer>
+    </main>
   </div>
 
-  <script>
-    // Mobile Menu Toggle
-    function toggleMobileMenu() {
-      const mobileMenu = document.getElementById('mobile-menu');
-      mobileMenu.classList.toggle('active');
-    }
+  <!-- Floating TOP button -->
+  <button id="toTop" class="toTop" aria-label="Scroll to top" title="Top">↑</button>
 
-    // Close Mobile Menu on Outside Click
-    document.addEventListener('click', (e) => {
-      const mobileMenu = document.getElementById('mobile-menu');
-      const hamburger = document.querySelector('.hamburger');
-      if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target) && mobileMenu.classList.contains('active')) {
-        mobileMenu.classList.remove('active');
-      }
-    });
-
-    // Navigation Helper
-    function navigateTo(section) {
-      window.location.href = section;
-      toggleMobileMenu();
-      updateActiveLink(section.substring(1));
-    }
-
-    // Update Active Navigation Link
-    function updateActiveLink(sectionId) {
-      document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
-      document.querySelector(`nav a[href="#${sectionId}"]`).classList.add('active');
-      const nameBtn = document.querySelector('.name-btn');
-      nameBtn.classList.toggle('active', sectionId === 'home');
-    }
-
-    // Theme Toggle
-    const themeToggleLight = document.getElementById('theme-toggle-light');
-    const themeToggleDark = document.getElementById('theme-toggle-dark');
-    const mobileThemeToggleLight = document.getElementById('mobile-theme-toggle-light');
-    const mobileThemeToggleDark = document.getElementById('mobile-theme-toggle-dark');
-
-    themeToggleLight.addEventListener('click', () => setTheme('light'));
-    themeToggleDark.addEventListener('click', () => setTheme('dark'));
-    mobileThemeToggleLight.addEventListener('click', () => setTheme('light'));
-    mobileThemeToggleDark.addEventListener('click', () => setTheme('dark'));
-
-    function setTheme(theme) {
-      document.documentElement.setAttribute('data-theme', theme);
-      document.body.style.background = getComputedStyle(document.documentElement).getPropertyValue('--background-color').trim();
-      sectionBackgrounds();
-    }
-
-    // Set section backgrounds dynamically
-    function sectionBackgrounds() {
-      const sections = document.querySelectorAll('section');
-      sections.forEach(section => {
-        const bgVar = getComputedStyle(document.documentElement).getPropertyValue(`--${section.id}-bg`).trim();
-        if (section.id === 'my-journey') {
-          section.style.background = `${bgVar} fixed`;
-        } else {
-          section.style.background = bgVar;
-        }
-      });
-    }
-
-    // Debounce Function
-    function debounce(func, wait) {
-      let timeout;
-      return function (...args) {
-        clearTimeout(timeout);
-        timeout = setTimeout(() => func.apply(this, args), wait);
-      };
-    }
-
-    // Scroll Handling for Active Link and Animations
-    window.addEventListener('scroll', debounce(() => {
-      const sections = document.querySelectorAll('section, header');
-      let currentSection = '';
-      sections.forEach(section => {
-        const sectionTop = section.offsetTop - 100;
-        if (window.scrollY >= sectionTop) {
-          currentSection = section.getAttribute('id');
-        }
-
-        // Animate skills section when in view
-        if (section.getAttribute('id') === 'skills') {
-          const skillsGrid = document.getElementById('skills-grid');
-          const sectionBottom = sectionTop + section.offsetHeight;
-          if (window.scrollY >= sectionTop - window.innerHeight / 2 && window.scrollY <= sectionBottom) {
-            skillsGrid.classList.add('visible');
-          }
-        }
-      });
-      updateActiveLink(currentSection);
-    }, 10));
-
-    // Matrix Rain Animation (Limited to Header)
-    const canvas = document.getElementById('matrix');
-    const ctx = canvas.getContext('2d');
-    canvas.height = document.getElementById('home').offsetHeight;
-    canvas.width = window.innerWidth;
-
-    function matrixRain() {
-      const chars = '01HACKCYBERSECURITY';
-      const fontSize = 14;
-      const columns = canvas.width / fontSize;
-      const drops = Array(Math.floor(columns)).fill(1);
-
-      function draw() {
-        ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
-        ctx.fillStyle = '#00bfff';
-        ctx.font = `${fontSize}px 'Roboto', sans-serif`;
-        for (let i = 0; i < drops.length; i++) {
-          const text = chars.charAt(Math.floor(Math.random() * chars.length));
-          ctx.fillText(text, i * fontSize, drops[i] * fontSize);
-          if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
-            drops[i] = 0;
-          }
-          drops[i] += 0.4;
-        }
-        requestAnimationFrame(draw);
-      }
-      draw();
-    }
-    matrixRain();
-
-    window.addEventListener('resize', debounce(() => {
-      canvas.width = window.innerWidth;
-      canvas.height = document.getElementById('home').offsetHeight;
-    }, 100));
-
-    // Certificate Popup Functionality
-    function showCertificate(imageUrl) {
-      const popup = document.getElementById('certificate-popup');
-      const popupImage = document.getElementById('popup-image');
-      popupImage.src = imageUrl;
-      popup.style.display = 'block';
-    }
-
-    function closeCertificate() {
-      const popup = document.getElementById('certificate-popup');
-      popup.style.display = 'none';
-    }
-
-    // Project Popup Functionality
-    function showProject(projectId) {
-      const popup = document.getElementById(projectId);
-      popup.style.display = 'block';
-    }
-
-    function closeProject() {
-      const popups = document.querySelectorAll('.project-popup');
-      popups.forEach(popup => popup.style.display = 'none');
-    }
-
-    document.addEventListener('click', (e) => {
-      const certificatePopup = document.getElementById('certificate-popup');
-      const projectPopups = document.querySelectorAll('.project-popup');
-      if (e.target === certificatePopup) closeCertificate();
-      projectPopups.forEach(popup => {
-        if (e.target === popup) closeProject();
-      });
-    });
-
-    // Contact Form Submission with EmailJS
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      emailjs.sendForm('service_u921wmg', 'template_p78r3gu', this)
-        .then(function(response) {
-          console.log('SUCCESS!', response.status, response.text);
-          alert('Message sent successfully! I will get back to you soon.');
-          document.getElementById('contact-form').reset();
-        }, function(error) {
-          console.log('FAILED...', error);
-          alert('Failed to send message. Please try again later.');
-        });
-    });
-
-    // Initialize backgrounds on load
-    window.onload = sectionBackgrounds;
-  </script>
+  <script src="boot.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
