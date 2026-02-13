@@ -82,7 +82,7 @@
     <main class="wrap">
 
       <!-- HOME -->
-      <section id="home" class="hero bgMode" data-bgmode="0">
+      <section id="home" class="hero bgMode heroDown" data-bgmode="0">
         <!-- LEFT -->
         <div class="heroLeft">
           <h1 class="heroTitle heroTitleUp">
@@ -151,7 +151,7 @@
         </div>
       </section>
 
-      <!-- ABOUT -->
+      <!-- ABOUT (NOW INCLUDES EDUCATION INSIDE) -->
       <section id="about" class="section bgMode" data-bgmode="0">
         <div class="sectionHead">
           <div class="slashes">//</div>
@@ -190,26 +190,26 @@
             </div>
           </div>
         </div>
-      </section>
 
-      <!-- EDUCATION -->
-      <section id="education" class="section bgMode" data-bgmode="4">
-        <div class="sectionHead">
-          <div class="slashes">//</div>
-          <h2 class="sectionTitleSerif themedTitle">Education</h2>
-        </div>
-
-        <div class="aboutGrid">
-          <div class="aboutCard glass hoverGlow">
-            <h3 class="aboutTitle themedTitle">Master of Science — Cybersecurity</h3>
-            <p class="aboutText">Yeshiva University</p>
-            <p>New York City, USA • 2024 - 2026 • CGPA: 3.9</p>
+        <!-- EDUCATION MOVED HERE (kept id="education" so nav + terminal still works) -->
+        <div id="education" class="subSectionTop">
+          <div class="sectionHead sectionHeadMini">
+            <div class="slashes">//</div>
+            <h2 class="sectionTitleSerif themedTitle">Education</h2>
           </div>
 
-          <div class="aboutCard glass hoverGlow">
-            <h3 class="aboutTitle themedTitle">Bachelor of Technology — Mechanical Engineering</h3>
-            <p>CMR College of Engineering and Technology</p>
-            <p class="aboutText">Hyderabad, India • 2018 — 2021 • CGPA: 3.9</p>
+          <div class="aboutGrid">
+            <div class="aboutCard glass hoverGlow">
+              <h3 class="aboutTitle themedTitle">Master of Science — Cybersecurity</h3>
+              <p class="aboutText">Yeshiva University</p>
+              <p>New York City, USA • 2024 - 2026 • CGPA: 3.9</p>
+            </div>
+
+            <div class="aboutCard glass hoverGlow">
+              <h3 class="aboutTitle themedTitle">Bachelor of Technology — Mechanical Engineering</h3>
+              <p>CMR College of Engineering and Technology</p>
+              <p class="aboutText">Hyderabad, India • 2018 — 2021 • CGPA: 3.9</p>
+            </div>
           </div>
         </div>
       </section>
@@ -316,8 +316,8 @@
               <h3 class="showcaseTitle themedTitle">AWS Sentiment Analysis System</h3>
 
               <p class="showcaseDesc">
-                A serverless customer sentiment analysis platform that automatically processes feedback files, 
-                analyzes sentiment in real time, visualizes insights on a dashboard, and sends alerts for 
+                A serverless customer sentiment analysis platform that automatically processes feedback files,
+                analyzes sentiment in real time, visualizes insights on a dashboard, and sends alerts for
                 negative feedback—built entirely within AWS Free Tier ($0 monthly cost).
               </p>
 
@@ -556,7 +556,7 @@
         </div>
       </section>
 
-      <!-- LET'S TALK MARQUEE (NEW) -->
+      <!-- LET'S TALK MARQUEE -->
       <section class="letsTalkWrap">
         <div class="letsTalkBar">
           <div class="letsTalkTrack">

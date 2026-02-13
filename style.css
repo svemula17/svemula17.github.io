@@ -977,3 +977,21 @@ html[data-ui="light"] .miniList{ color: rgba(12,14,20,0.70); }
   .skillsGrid{ grid-template-columns: 1fr; }
   .certGrid{ grid-template-columns: 1fr; }
 }
+/* ...KEEP YOUR EXISTING CSS EXACTLY... */
+
+/* ✅ ADD THIS near your HERO styles (or anywhere in CSS) */
+.heroDown{
+  padding-top: 52px; /* Home little bit down */
+}
+
+/* ✅ ADD THIS near your SECTION styles */
+.subSectionTop{
+  margin-top: 46px;
+}
+
+.sectionHeadMini{
+  margin-top: 18px;
+  margin-bottom: 16px;
+}
+
+/* ...KEEP YOUR EXISTING CSS EXACTLY... */
