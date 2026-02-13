@@ -151,12 +151,18 @@ function termPrint(html) {
 }
 
 const terminalHelp = `
-<span class="out"><b>Commands:</b> help, education, projects, skills, experience, certifications, contact, open &lt;section&gt;, clear</span><br>
-<span class="muted">Examples:</span> <span class="cmd">education</span>, <span class="cmd">open projects</span>, <span class="cmd">clear</span>
+<span class="out"><b>Commands:</b> help, about, education, projects, skills, experience, certifications, contact, open &lt;section&gt;, clear</span><br>
+<span class="muted">Examples:</span> <span class="cmd">about</span>, <span class="cmd">open projects</span>, <span class="cmd">clear</span>
 `;
 
 const terminalData = {
   help: terminalHelp,
+  about: `
+<span class="out"><b>About</b></span><br>
+<span class="out">• Cybersecurity M.S. student focused on practical labs and projects</span><br>
+<span class="out">• OWASP Top 10 testing (DVWA), SIEM basics, and risk analysis</span><br>
+<span class="muted">Tip:</span> <span class="cmd">open about</span> to scroll there
+`,
   education: `
 <span class="out"><b>Education</b></span><br>
 <span class="out">• M.S. Cybersecurity — Yeshiva University, NYC, USA</span><br>
@@ -225,7 +231,7 @@ function handleCommand(raw){
       termPrint(`<span class="muted">Opening section:</span> <span class="cmd">${target}</span>`);
       scrollToSection(target);
     } else {
-      termPrint(`<span class="out">Unknown section: <b>${target}</b>. Try: education/projects/skills/experience/certifications/contact</span>`);
+      termPrint(`<span class="out">Unknown section: <b>${target}</b>. Try: about/education/projects/skills/experience/certifications/contact</span>`);
     }
     return;
   }
@@ -519,3 +525,7 @@ function draw(){
   requestAnimationFrame(draw);
 }
 requestAnimationFrame(draw);
+
+/* Year in footer */
+const yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();

@@ -49,6 +49,7 @@
 
       <nav class="navPill" aria-label="Primary">
         <a class="navLink active" href="#home">Home</a>
+        <a class="navLink" href="#about">About</a>
         <a class="navLink" href="#education">Education</a>
         <a class="navLink" href="#projects">Projects</a>
         <a class="navLink" href="#skills">Skills</a>
@@ -132,6 +133,7 @@
             <div class="terminalSuggest">
               <span class="suggestLabel">Suggested:</span>
               <button class="suggestBtn" data-cmd="help">help</button>
+              <button class="suggestBtn" data-cmd="about">about</button>
               <button class="suggestBtn" data-cmd="education">education</button>
               <button class="suggestBtn" data-cmd="projects">projects</button>
               <button class="suggestBtn" data-cmd="skills">skills</button>
@@ -145,6 +147,47 @@
               <span class="prompt">sai@portfolio:~$</span>
               <input id="termInput" class="terminalInput" type="text" placeholder="Enter command..." />
             </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about" class="section bgMode" data-bgmode="0">
+        <div class="sectionHead">
+          <div class="slashes">//</div>
+          <h2 class="sectionTitleSerif themedTitle">About</h2>
+        </div>
+
+        <div class="aboutMeGrid">
+          <!-- LEFT: Photo -->
+          <div class="aboutMePhoto glass hoverGlow" aria-label="Profile photo">
+            <img src="profile.png" alt="Sai Kumar profile photo" loading="lazy" />
+          </div>
+
+          <!-- RIGHT: About text -->
+          <div class="aboutMeCard glass hoverGlow">
+            <h3 class="aboutMeTitle themedTitle">Hi, I’m Sai Kumar Vemula</h3>
+
+            <p class="aboutMeText">
+              I’m a Cybersecurity M.S. student with hands-on experience in vulnerability assessment,
+              security monitoring basics, and risk analysis. I like building practical labs (DVWA/OWASP Top 10),
+              documenting findings, and turning learning into projects.
+            </p>
+
+            <div class="aboutMeHighlights">
+              <div class="miniTitle">What I’m focused on</div>
+              <ul class="miniList">
+                <li>Vulnerability assessment & remediation (OWASP Top 10)</li>
+                <li>SOC fundamentals: log analysis, alert triage, and SIEM basics</li>
+                <li>Cloud security posture & misconfiguration detection (AWS)</li>
+                <li>Writing clean reports + simple documentation</li>
+              </ul>
+            </div>
+
+            <div class="ctaRow aboutCta">
+              <a class="btn primary" href="#projects">→ SEE MY WORK</a>
+              <a class="btn ghost" href="Sai_Kumar_Cybersecurity.pdf" download>↓ DOWNLOAD RESUME</a>
+            </div>
           </div>
         </div>
       </section>
@@ -456,13 +499,13 @@
           <article class="certCard glass hoverGlow">
             <img src="Security.jpg"class="certImg">
           <div class="certName">Security Principles</div></article>
-        <article class="certCard glass hoverGlow">
-          <img src="Incident.jpg"class="certImg">
-        <div class="certName">Incident Response, BC, and DR Concepts</div></article>
-        <article class="certCard glass hoverGlow">
-          <img src="Access.jpg"class="certImg">
-        <div class="certName">Access Control Concepts</div></article>
-      </div>
+          <article class="certCard glass hoverGlow">
+            <img src="Incident.jpg"class="certImg">
+          <div class="certName">Incident Response, BC, and DR Concepts</div></article>
+          <article class="certCard glass hoverGlow">
+            <img src="Access.jpg"class="certImg">
+          <div class="certName">Access Control Concepts</div></article>
+        </div>
       </section>
 
       <!-- CONTACT -->
@@ -523,13 +566,34 @@
         </div>
       </section>
 
+      <!-- Footer -->
       <footer class="footer">
-        <span>© 2026 Sai Kumar • Cybersecurity Portfolio</span>
+        <div class="footerInner">
+          <div class="footerLeft">
+            <div class="footerBrand">
+              <span class="brandMark mini">S</span>
+              <div>
+                <div class="footerName">Sai Kumar</div>
+                <div class="footerRole">Cybersecurity Portfolio</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="footerRight">
+            <a class="footerLink" href="#home">Home</a>
+            <a class="footerLink" href="#about">About</a>
+            <a class="footerLink" href="#projects">Projects</a>
+            <a class="footerLink" href="#contact">Contact</a>
+          </div>
+        </div>
+        <div class="footerCopy">© <span id="year"></span> Sai Kumar. Built with HTML/CSS/JS.</div>
       </footer>
+
+      <!-- Scroll-to-top -->
+      <button id="toTop" class="toTop" aria-label="Scroll to top">↑</button>
+
     </main>
   </div>
-  <!-- Floating TOP button -->
-  <button id="toTop" class="toTop" aria-label="Scroll to top" title="Top">↑</button>
 
   <script src="boot.js"></script>
   <script src="script.js"></script>

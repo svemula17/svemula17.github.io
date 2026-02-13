@@ -677,143 +677,280 @@ html[data-ui="light"] .skillIcon{
   background: rgba(255,255,255,0.70);
 }
 .skillTitle{ margin:0; font-family: var(--serif); font-size: 22px; color: var(--accent); }
-.skillList{ margin: 16px 0 0; padding: 0 0 0 20px; line-height: 1.9; color: rgba(255,255,255,0.68); }
+.skillList{
+  margin: 0;
+  padding-left: 18px;
+  color: rgba(255,255,255,0.68);
+  line-height: 1.95;
+}
 html[data-ui="light"] .skillList{ color: rgba(12,14,20,0.70); }
 .skillList li::marker{ color: var(--accent); }
 
 /* Education cards */
-.aboutGrid{ display:grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.aboutGrid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
 .aboutCard{ border-radius: 22px; padding: 18px; }
-.aboutTitle{ margin:0; font-family: var(--serif); font-size: 24px; color: var(--accent); }
-.aboutText{ margin: 10px 0 0; line-height: 1.75; color: var(--muted); }
+.aboutTitle{ margin:0 0 8px; font-family: var(--serif); color: var(--accent); font-size: 20px; }
+.aboutText{ color: var(--muted); margin:0 0 10px; }
 
 /* Certifications */
 .certGrid{
   display:grid;
-  grid-template-columns: repeat(4, minmax(0,1fr));
-  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 16px;
 }
 .certCard{
-  border-radius: 18px;
-  padding: 20px;
-  min-height: 100px;
-  display:flex;
-  flex-direction:column;
-  gap: 10px;
+  border-radius: 22px;
+  overflow:hidden;
+  padding: 14px;
 }
-.certName{ color: var(--text); line-height: 1.45; font-size: 13px; letter-spacing: .04em; }
-.certHint{ margin-top: 14px; color: var(--muted); font-size: 13px; }
+.certImg{
+  width:100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+html[data-ui="light"] .certImg{ border: 1px solid rgba(0,0,0,0.10); }
+.certName{ margin-top: 10px; color: var(--muted); line-height: 1.45; }
 
 /* Contact */
-.contactGrid{ display:grid; grid-template-columns: 1.1fr 0.9fr; gap: 16px; }
-.contactForm{ border-radius: 22px; padding: 18px; }
-.field span{ display:block; margin-bottom: 6px; color: var(--muted); }
-.field input,.field textarea{
-  width:100%;
+.contactGrid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items:start;
+}
+.contactForm{
+  border-radius: 22px;
+  padding: 18px;
+}
+.field{ display:flex; flex-direction:column; gap: 8px; margin-bottom: 12px; }
+.field span{ color: var(--muted); font-size: 12px; letter-spacing: .12em; }
+.field input, .field textarea{
+  padding: 12px 12px;
   border-radius: 14px;
   border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(0,0,0,0.22);
+  background: rgba(0,0,0,0.14);
   color: var(--text);
-  padding: 12px 12px;
-  font-family: var(--mono);
   outline:none;
+  font-family: var(--mono);
 }
 html[data-ui="light"] .field input,
 html[data-ui="light"] .field textarea{
   border: 1px solid rgba(0,0,0,0.10);
-  background: rgba(255,255,255,0.78);
+  background: rgba(255,255,255,0.85);
+  color: rgba(12,14,20,0.90);
 }
-.field input:focus,.field textarea:focus{
-  border-color: var(--accentBorder);
-  box-shadow: 0 0 0 4px var(--accentSoft);
-}
+
 .contactCards{ display:grid; gap: 12px; }
-.contactCard{ border-radius: 22px; padding: 16px; }
-.contactLabel{ letter-spacing:.18em; font-size: 11px; color: var(--muted); }
-.contactValue{ margin-top: 8px; }
+.contactCard{
+  border-radius: 22px;
+  padding: 18px;
+  position:relative;
+}
+.contactLabel{ color: var(--accent); font-weight:900; letter-spacing: .14em; font-size: 12px; }
+.contactValue{ margin-top: 10px; font-size: 16px; color: var(--text); }
+.locTitle{ margin-top: 10px; font-size: 16px; color: var(--text); }
 .copyBtn{
-  margin-top: 10px;
-  border-radius: 12px;
-  padding: 10px 12px;
+  margin-top: 12px;
+  border-radius: 14px;
   border: 1px solid rgba(255,255,255,0.10);
-  background: rgba(0,0,0,0.22);
+  background: rgba(0,0,0,0.18);
   color: var(--text);
   cursor:pointer;
+  padding: 10px 12px;
+  font-weight: 900;
+  letter-spacing: .08em;
   transition: 160ms ease;
 }
 html[data-ui="light"] .copyBtn{
   border: 1px solid rgba(0,0,0,0.10);
-  background: rgba(255,255,255,0.78);
+  background: rgba(255,255,255,0.80);
+  color: rgba(12,14,20,0.92);
 }
-.copyBtn:hover{ transform: translateY(-1px); border-color: var(--accentBorder); }
+.copyBtn:hover{
+  transform: translateY(-1px);
+  border-color: var(--accentBorder);
+  box-shadow: 0 0 18px var(--accentSoft);
+}
 
-.locTitle{ color: var(--accent); font-weight: 900; margin-top: 8px; }
-.locSub{ margin-top: 6px; color: var(--muted); }
+/* Let's talk marquee */
+.letsTalkWrap{ padding: 40px 0 10px; }
+.letsTalkBar{
+  border-radius: 999px;
+  overflow:hidden;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(0,0,0,0.16);
+}
+html[data-ui="light"] .letsTalkBar{ border: 1px solid rgba(0,0,0,0.10); background: rgba(255,255,255,0.75); }
+.letsTalkTrack{
+  display:flex;
+  gap: 18px;
+  padding: 12px 0;
+  white-space:nowrap;
+  will-change: transform;
+  animation: marquee 14s linear infinite;
+}
+.letsTalkTrack span{
+  color: var(--accent);
+  font-weight: 900;
+  letter-spacing: .22em;
+}
+@keyframes marquee{
+  0%{ transform: translateX(0%); }
+  100%{ transform: translateX(-50%); }
+}
 
-.footer{ padding: 40px 0 30px; color: var(--muted); font-size: 13px; opacity: .7; }
+/* Footer */
+.footer{
+  padding: 56px 0 22px;
+}
+.footerInner{
+  display:flex;
+  justify-content:space-between;
+  gap: 16px;
+  padding: 16px;
+  border-radius: 22px;
+  background: rgba(0,0,0,0.14);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+html[data-ui="light"] .footerInner{
+  background: rgba(255,255,255,0.70);
+  border: 1px solid rgba(0,0,0,0.10);
+}
+.footerBrand{ display:flex; align-items:center; gap: 12px; }
+.brandMark.mini{ width: 34px; height: 34px; border-radius: 12px; }
+.footerName{ font-weight: 900; letter-spacing: .08em; color: var(--accent); }
+.footerRole{ color: var(--muted); font-size: 12px; letter-spacing: .10em; margin-top: 2px; }
+.footerRight{ display:flex; align-items:center; gap: 10px; flex-wrap:wrap; }
+.footerLink{
+  text-decoration:none;
+  color: var(--muted);
+  border: 1px solid rgba(255,255,255,0.08);
+  padding: 8px 10px;
+  border-radius: 999px;
+  transition: 160ms ease;
+}
+html[data-ui="light"] .footerLink{ border: 1px solid rgba(0,0,0,0.10); }
+.footerLink:hover{
+  color: var(--text);
+  border-color: var(--accentBorder);
+  box-shadow: 0 0 18px var(--accentSoft);
+}
+.footerCopy{
+  margin-top: 12px;
+  text-align:center;
+  color: rgba(255,255,255,0.42);
+  font-size: 12px;
+  letter-spacing: .10em;
+}
+html[data-ui="light"] .footerCopy{ color: rgba(12,14,20,0.48); }
 
-/* Floating top button */
+/* Scroll-to-top */
 .toTop{
   position: fixed;
   right: 18px;
   bottom: 18px;
-  width: 46px;
-  height: 46px;
-  border-radius: 999px;
-  border: 1px solid var(--accentBorder);
-  background: rgba(0,0,0,0.32);
-  backdrop-filter: blur(10px);
+  width: 44px;
+  height: 44px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(0,0,0,0.22);
   color: var(--text);
-  font-weight: 900;
-  cursor: pointer;
-  z-index: 80;
-  display: grid;
-  place-items: center;
+  cursor:pointer;
+  display:grid;
+  place-items:center;
+  z-index: 55;
   opacity: 0;
-  pointer-events: none;
   transform: translateY(10px);
-  transition: 220ms ease;
+  pointer-events:none;
+  transition: 180ms ease;
 }
-html[data-ui="light"] .toTop{ background: rgba(255,255,255,0.76); }
-.toTop.show{ opacity: 1; pointer-events: auto; transform: translateY(0); }
-.toTop:hover{ transform: translateY(-2px); }
+html[data-ui="light"] .toTop{
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(255,255,255,0.75);
+  color: rgba(12,14,20,0.92);
+}
+.toTop.show{
+  opacity: 1;
+  transform: translateY(0px);
+  pointer-events:auto;
+}
+.toTop:hover{
+  border-color: var(--accentBorder);
+  box-shadow: 0 0 18px var(--accentSoft);
+}
 
-/* ✅ LET'S TALK marquee */
-.letsTalkWrap{
-  padding: 26px 0 12px;
+/* ABOUT (after Home) */
+.aboutMeGrid{
+  display:grid;
+  grid-template-columns: 0.95fr 1.05fr;
+  gap: 22px;
+  align-items: stretch;
 }
-.letsTalkBar{
-  width: 100%;
-  overflow: hidden;
-  border-top: 1px solid rgba(255,255,255,0.08);
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  background: rgba(0,0,0,0.18);
+.aboutMePhoto{
+  border-radius: 22px;
+  overflow:hidden;
+  border: 1px solid rgba(255,255,255,0.10);
+  min-height: 360px;
 }
-html[data-ui="light"] .letsTalkBar{
-  border-top: 1px solid rgba(0,0,0,0.10);
-  border-bottom: 1px solid rgba(0,0,0,0.10);
-  background: rgba(255,255,255,0.70);
+html[data-ui="light"] .aboutMePhoto{ border: 1px solid rgba(0,0,0,0.10); }
+.aboutMePhoto img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit: cover;
+  filter: contrast(1.05) saturate(0.95);
+  transform: scale(1.01);
 }
-.letsTalkTrack{
-  display:flex;
-  gap: 72px;
-  white-space: nowrap;
-  padding: 18px 0;
-  animation: marqueeLTR 12s linear infinite;
-  will-change: transform;
+.aboutMeCard{
+  border-radius: 22px;
+  padding: 18px;
 }
-.letsTalkTrack span{
-  font-family: var(--mono);
-  font-size: clamp(18px, 2.3vw, 30px);
-  letter-spacing: .35em;
-  font-style: italic;
+.aboutMeTitle{
+  margin: 0 0 10px;
+  font-family: var(--serif);
+  font-size: clamp(22px, 3vw, 32px);
   color: var(--accent);
-  text-shadow: 0 0 22px var(--accentSoft);
 }
-@keyframes marqueeLTR{
-  from{ transform: translateX(-45%); }
-  to{ transform: translateX(0%); }
+.aboutMeText{
+  margin: 0 0 14px;
+  color: var(--muted);
+  line-height: 1.75;
+  font-size: 16px;
+  max-width: 62ch;
 }
+.aboutMeHighlights{
+  margin-top: 6px;
+  padding: 14px;
+  border-radius: 18px;
+  background: rgba(0,0,0,0.14);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+html[data-ui="light"] .aboutMeHighlights{
+  background: rgba(255,255,255,0.65);
+  border: 1px solid rgba(0,0,0,0.10);
+}
+.miniTitle{
+  color: var(--accent);
+  font-weight: 900;
+  letter-spacing: .10em;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+.miniList{
+  margin:0;
+  padding-left: 18px;
+  color: rgba(255,255,255,0.68);
+  line-height: 1.9;
+}
+html[data-ui="light"] .miniList{ color: rgba(12,14,20,0.70); }
+.miniList li::marker{ color: var(--accent); }
+.aboutCta{ margin-top: 16px; }
 
 /* Responsive */
 @media (max-width: 1100px){
@@ -822,6 +959,7 @@ html[data-ui="light"] .letsTalkBar{
   .skillsGrid{ grid-template-columns: 1fr 1fr; }
   .contactGrid{ grid-template-columns: 1fr; }
   .aboutGrid{ grid-template-columns: 1fr; }
+  .aboutMeGrid{ grid-template-columns: 1fr; }
   .certGrid{ grid-template-columns: 1fr 1fr; }
 
   .showcaseRow,
