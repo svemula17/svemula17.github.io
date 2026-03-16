@@ -171,9 +171,10 @@ const terminalData = {
 `,
   projects: `
 <span class="out"><b>Projects</b></span><br>
-<span class="out">1) AI-Powered Cloud Security Posture & Deception Platform</span><br>
-<span class="out">2) Web App Vulnerability Testing (DVWA)</span><br>
-<span class="out">3) Forensics Toolkit / Log Analysis Lab</span><br>
+<span class="out">1) Smart SIEM Risk Engine & Dashboard</span><br>
+<span class="out">2) AI-Powered Cloud Security Posture Platform</span><br>
+<span class="out">3) AWS Image Upload & AI Tagging System</span><br>
+<span class="out">4) AWS Sentiment Analysis System</span><br>
 <span class="muted">Tip:</span> <span class="cmd">open projects</span> to scroll there
 `,
   skills: `

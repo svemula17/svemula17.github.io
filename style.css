@@ -359,9 +359,9 @@ html[data-ui="light"] .themeDot{ border: 1px solid rgba(0,0,0,0.18); }
 
 /* Layout */
 .wrap{
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: calc(var(--headerH) + 30px) 18px 0;
+  padding: calc(var(--headerH) + 30px) 4% 0;
 }
 
 /* HERO */
@@ -661,7 +661,7 @@ html[data-ui="light"] .tagPill{
 .expSmall{ margin-top: 10px; color: var(--muted); }
 
 /* Skills */
-.skillsGrid{ display:grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 16px; }
+.skillsGrid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
 .skillCard{ border-radius: 26px; padding: 22px; min-height: 340px; }
 .skillTop{ display:flex; align-items:center; gap: 12px; margin-bottom: 12px; }
 .skillIcon{
@@ -677,14 +677,38 @@ html[data-ui="light"] .skillIcon{
   background: rgba(255,255,255,0.70);
 }
 .skillTitle{ margin:0; font-family: var(--serif); font-size: 22px; color: var(--accent); }
-.skillList{
-  margin: 0;
-  padding-left: 18px;
-  color: rgba(255,255,255,0.68);
-  line-height: 1.95;
+
+/* New Skill Tags Redesign */
+.skillTags{
+  display:flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
 }
-html[data-ui="light"] .skillList{ color: rgba(12,14,20,0.70); }
-.skillList li::marker{ color: var(--accent); }
+.skillTag{
+  background: rgba(0,0,0,0.25);
+  border: 1px solid rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.85);
+  padding: 8px 14px;
+  border-radius: 12px;
+  font-size: 13px;
+  transition: all 200ms ease;
+  cursor: default;
+}
+html[data-ui="light"] .skillTag{
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(0,0,0,0.12);
+  color: rgba(12,14,20,0.85);
+}
+.skillTag:hover{
+  transform: translateY(-2px);
+  color: var(--accent);
+  border-color: var(--accentBorder);
+  box-shadow: 0 4px 12px var(--accentSoft);
+}
+.skillTag:active{
+  transform: translateY(0);
+}
 
 /* Education cards */
 .aboutGrid{
@@ -699,7 +723,7 @@ html[data-ui="light"] .skillList{ color: rgba(12,14,20,0.70); }
 /* Certifications */
 .certGrid{
   display:grid;
-  grid-template-columns: repeat(3, minmax(0,1fr));
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 16px;
 }
 .certCard{
