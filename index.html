@@ -389,65 +389,85 @@
           <h2 class="sectionTitleSerif themedTitle">Skills &amp; Tools</h2>
         </div>
 
-        <div class="skillsGrid">
-          <article class="skillCard glass hoverGlow">
-            <div class="skillTop">
-              <div class="skillIcon">⌁</div>
-              <h3 class="skillTitle themedTitle">Security Concepts</h3>
-            </div>
-            <div class="skillTags">
-              <span class="skillTag">Vulnerability Assessment</span>
-              <span class="skillTag">Risk Management</span>
-              <span class="skillTag">Threat Modeling</span>
-              <span class="skillTag">OWASP Top 10</span>
-              <span class="skillTag">Security Controls</span>
-              <span class="skillTag">Incident Response Basics</span>
-            </div>
-          </article>
+        <div class="skillTree">
+          <!-- Top level root node -->
+          <div class="st-root">
+            <div class="st-box st-glow">MY SKILLS</div>
+          </div>
 
-          <article class="skillCard glass hoverGlow">
-            <div class="skillTop">
-              <div class="skillIcon">⌂</div>
-              <h3 class="skillTitle themedTitle">Monitoring & SOC</h3>
-            </div>
-            <div class="skillTags">
-              <span class="skillTag">Log Analysis</span>
-              <span class="skillTag">Alert Triage</span>
-              <span class="skillTag">SIEM (Splunk)</span>
-              <span class="skillTag">Threat Intelligence</span>
-              <span class="skillTag">Network Monitoring</span>
-            </div>
-          </article>
+          <!-- Main trunk line -->
+          <div class="st-trunk"></div>
 
-          <article class="skillCard glass hoverGlow">
-            <div class="skillTop">
-              <div class="skillIcon">⌘</div>
-              <h3 class="skillTitle themedTitle">Tools & Platforms</h3>
-            </div>
-            <div class="skillTags">
-              <span class="skillTag">Wireshark</span>
-              <span class="skillTag">Nessus</span>
-              <span class="skillTag">AWS Cloud</span>
-              <span class="skillTag">Burp Suite (Basics)</span>
-              <span class="skillTag">Linux CLI</span>
-              <span class="skillTag">Git / GitHub</span>
-            </div>
-          </article>
+          <!-- The branching layout -->
+          <div class="st-branches">
+             <!-- Left group -->
+             <div class="st-branch st-left">
+               <div class="st-arm"></div>
+               <div class="st-drop"></div>
+               <div class="st-nodes">
+                 <span class="st-node glass hoverGlow">SIEM (Splunk)</span>
+                 <span class="st-node glass hoverGlow">Security Monitoring</span>
+                 <span class="st-node glass hoverGlow">Log Analysis</span>
+                 <span class="st-node glass hoverGlow">Alert Investigation</span>
+                 <span class="st-node glass hoverGlow">Event Correlation</span>
+                 <span class="st-node glass hoverGlow">Incident Detection</span>
+                 <span class="st-node glass hoverGlow">Basic Threat Hunting</span>
+                 <span class="st-node glass hoverGlow">Wireshark</span>
+                 <span class="st-node glass hoverGlow">Packet Analysis</span>
+                 <span class="st-node glass hoverGlow">TCP/IP</span>
+                 <span class="st-node glass hoverGlow">DNS</span>
+                 <span class="st-node glass hoverGlow">VPNs</span>
+                 <span class="st-node glass hoverGlow">Firewalls</span>
+                 <span class="st-node glass hoverGlow">Network Traffic Inspection</span>
+                 <span class="st-node glass hoverGlow">IDS/IPS Concepts</span>
+               </div>
+             </div>
 
-          <article class="skillCard glass hoverGlow">
-            <div class="skillTop">
-              <div class="skillIcon">⌬</div>
-              <h3 class="skillTitle themedTitle">Development & Systems</h3>
-            </div>
-            <div class="skillTags">
-              <span class="skillTag">Python</span>
-              <span class="skillTag">Bash Scripting</span>
-              <span class="skillTag">SQL</span>
-              <span class="skillTag">HTML / CSS / JS</span>
-              <span class="skillTag">TCP/IP & DNS</span>
-              <span class="skillTag">REST APIs (Flask)</span>
-            </div>
-          </article>
+             <!-- Right group -->
+             <div class="st-branch st-right">
+               <div class="st-arm"></div>
+               <div class="st-drop"></div>
+               <div class="st-nodes">
+                 <span class="st-node glass hoverGlow">Vulnerability Assessment</span>
+                 <span class="st-node glass hoverGlow">Security Misconfigurations</span>
+                 <span class="st-node glass hoverGlow">Risk Analysis</span>
+                 <span class="st-node glass hoverGlow">Security Controls</span>
+                 <span class="st-node glass hoverGlow">Incident Awareness</span>
+                 <span class="st-node glass hoverGlow">Python</span>
+                 <span class="st-node glass hoverGlow">Bash</span>
+                 <span class="st-node glass hoverGlow">GitHub</span>
+                 <span class="st-node glass hoverGlow">DVWA</span>
+                 <span class="st-node glass hoverGlow">AWS (S3, Lambda, DynamoDB)</span>
+                 <span class="st-node glass hoverGlow">AWS API Gateway</span>
+                 <span class="st-node glass hoverGlow">AWS Rekognition</span>
+                 <span class="st-node glass hoverGlow">Boto3</span>
+                 <span class="st-node glass hoverGlow">REST APIs</span>
+                 <span class="st-node glass hoverGlow">Flask</span>
+                 <span class="st-node glass hoverGlow">HTML/CSS & JavaScript</span>
+               </div>
+             </div>
+          </div>
+
+          <!-- Bottom group extending from trunk -->
+          <div class="st-trunk-long"></div>
+          <div class="st-bottom">
+             <div class="st-nodes center">
+               <span class="st-node glass hoverGlow">Microsoft Excel</span>
+               <span class="st-node glass hoverGlow">Word</span>
+               <span class="st-node glass hoverGlow">PowerPoint</span>
+               <span class="st-node glass hoverGlow">SharePoint</span>
+               <span class="st-node glass hoverGlow">Office 365</span>
+               <span class="st-node glass hoverGlow">Adobe Acrobat</span>
+               <span class="st-node glass hoverGlow">Project Management</span>
+               <span class="st-node glass hoverGlow">Critical Thinking</span>
+               <span class="st-node glass hoverGlow">Analytical Skills</span>
+               <span class="st-node glass hoverGlow">Communication</span>
+               <span class="st-node glass hoverGlow">Attention to Detail</span>
+               <span class="st-node glass hoverGlow">Initiative-Driven</span>
+               <span class="st-node glass hoverGlow">Curiosity</span>
+               <span class="st-node glass hoverGlow">Resilience</span>
+             </div>
+          </div>
         </div>
       </section>
 

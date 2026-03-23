@@ -660,55 +660,137 @@ html[data-ui="light"] .tagPill{
 .expBig{ color: var(--accent); font-weight: 900; letter-spacing: .06em; font-size: 20px; }
 .expSmall{ margin-top: 10px; color: var(--muted); }
 
-/* Skills */
-.skillsGrid{ display:grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
-.skillCard{ border-radius: 26px; padding: 22px; min-height: 340px; }
-.skillTop{ display:flex; align-items:center; gap: 12px; margin-bottom: 12px; }
-.skillIcon{
-  width: 40px; height: 40px; border-radius: 14px;
-  display:grid; place-items:center;
-  border: 1px solid rgba(255,255,255,0.12);
-  background: rgba(0,0,0,0.18);
+/* Skills Tree Redesign */
+.skillTree {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.st-root {
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+.st-box {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid var(--accent);
   color: var(--accent);
   font-weight: 900;
+  letter-spacing: 0.15em;
+  padding: 14px 28px;
+  border-radius: 8px;
+  box-shadow: 0 0 16px var(--accentSoft);
+  font-size: 16px;
+  text-transform: uppercase;
+  backdrop-filter: blur(10px);
 }
-html[data-ui="light"] .skillIcon{
-  border: 1px solid rgba(0,0,0,0.10);
-  background: rgba(255,255,255,0.70);
+html[data-ui="light"] .st-box {
+  background: rgba(255,255,255,0.8);
+  box-shadow: 0 0 16px rgba(0,0,0,0.06);
 }
-.skillTitle{ margin:0; font-family: var(--serif); font-size: 22px; color: var(--accent); }
 
-/* New Skill Tags Redesign */
-.skillTags{
-  display:flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 8px;
+/* Lines */
+.st-trunk {
+  width: 2px;
+  height: 48px;
+  background: var(--accentBorder);
 }
-.skillTag{
+html[data-ui="light"] .st-trunk,
+html[data-ui="light"] .st-trunk-long,
+html[data-ui="light"] .st-branch::before,
+html[data-ui="light"] .st-branch::after,
+html[data-ui="light"] .st-branch-spacer {
+  background: rgba(0,0,0,0.15) !important;
+}
+
+.st-branches {
+  display: flex;
+  width: 100%;
+  max-width: 1000px;
+  position: relative;
+}
+
+/* Each branch gets half width, plus a pseudo-element for horizontal line and a pseudo for the drop */
+.st-branch {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-top: 36px;
+}
+
+/* Left branch horizontal arm */
+.st-branch.st-left::before {
+  content: ""; position: absolute; top: 0; left: 50%; right: -50%;
+  height: 2px; background: var(--accentBorder);
+}
+/* Right branch horizontal arm */
+.st-branch.st-right::before {
+  content: ""; position: absolute; top: 0; left: -50%; right: 50%;
+  height: 2px; background: var(--accentBorder);
+}
+/* The drop down to the nodes */
+.st-branch::after {
+  content: ""; position: absolute; top: 0; left: 50%;
+  width: 2px; height: 36px; background: var(--accentBorder);
+  transform: translateX(-50%);
+}
+
+.st-nodes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding: 0 20px;
+}
+
+.st-trunk-long {
+  width: 2px;
+  height: 56px;
+  background: var(--accentBorder);
+}
+.st-bottom {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.st-bottom .st-nodes {
+  max-width: 800px;
+  padding: 0;
+}
+
+/* Nodes / Tags */
+.st-node {
   background: rgba(0,0,0,0.25);
-  border: 1px solid rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.10);
   color: rgba(255,255,255,0.85);
-  padding: 8px 14px;
-  border-radius: 12px;
+  font-family: var(--mono);
+  padding: 10px 16px;
+  border-radius: 6px;
   font-size: 13px;
+  letter-spacing: 0.04em;
   transition: all 200ms ease;
   cursor: default;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
 }
-html[data-ui="light"] .skillTag{
-  background: rgba(255,255,255,0.85);
+html[data-ui="light"] .st-node {
+  background: rgba(255,255,255,0.75);
   border: 1px solid rgba(0,0,0,0.12);
   color: rgba(12,14,20,0.85);
 }
-.skillTag:hover{
+.st-node:hover {
   transform: translateY(-2px);
   color: var(--accent);
   border-color: var(--accentBorder);
   box-shadow: 0 4px 12px var(--accentSoft);
 }
-.skillTag:active{
-  transform: translateY(0);
-}
+
 
 /* Education cards */
 .aboutGrid{
@@ -980,7 +1062,6 @@ html[data-ui="light"] .miniList{ color: rgba(12,14,20,0.70); }
 @media (max-width: 1100px){
   .hero{ grid-template-columns: 1fr; }
   .heroRight{ justify-content:flex-start; }
-  .skillsGrid{ grid-template-columns: 1fr 1fr; }
   .contactGrid{ grid-template-columns: 1fr; }
   .aboutGrid{ grid-template-columns: 1fr; }
   .aboutMeGrid{ grid-template-columns: 1fr; }
@@ -995,10 +1076,35 @@ html[data-ui="light"] .miniList{ color: rgba(12,14,20,0.70); }
 @media (max-width: 820px){
   .navPill{ gap:6px; padding: 8px 10px; }
   .navLink{ padding: 7px 10px; font-size: 13px; }
+  
+  /* Make skill tree vertical on smaller screens */
+  .st-branches {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+  }
+  .st-branch.st-left::before,
+  .st-branch.st-right::before,
+  .st-branch::after {
+    display: none !important;
+  }
+  .st-branch {
+    padding-top: 0;
+  }
+  /* Re-add simple vertical connectors between stacked branches */
+  .st-branch:not(:first-child)::before {
+    content: "";
+    display: block !important;
+    position: static;
+    width: 2px;
+    height: 24px;
+    background: var(--accentBorder);
+    margin: 0 auto 16px;
+  }
+  .st-trunk-long { height: 24px; margin-top: 12px; }
 }
 @media (max-width: 720px){
   .navPill{ display:none; }
-  .skillsGrid{ grid-template-columns: 1fr; }
   .certGrid{ grid-template-columns: 1fr; }
 }
 
