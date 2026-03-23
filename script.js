@@ -525,3 +525,21 @@ requestAnimationFrame(draw);
 /* Year in footer */
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+/* =========================
+   Projects & Certificates Toggle
+========================= */
+function switchTab(tabId) {
+  // Update buttons
+  document.querySelectorAll('.toggle-btn').forEach(btn => {
+    btn.classList.remove('active');
+  });
+  document.getElementById('btn-' + tabId).classList.add('active');
+
+  // Update tabs
+  document.querySelectorAll('.tab-content').forEach(tab => {
+    tab.style.display = 'none';
+  });
+  document.getElementById('tab-' + tabId).style.display = 'block';
+}
+window.switchTab = switchTab;

@@ -217,168 +217,147 @@
 
       <!-- PROJECTS -->
       <section id="projects" class="section bgMode" data-bgmode="1">
-        <div class="sectionHead">
-          <div class="slashes">//</div>
-          <h2 class="sectionTitleSerif themedTitle">Projects</h2>
+        <div class="sectionHead" style="display:flex; justify-content:center; align-items:center; gap: 15px; margin-bottom: 40px; text-transform: uppercase;">
+          <span style="color:var(--accent); font-size:40px;">⑂</span>
+          <h2 class="sectionTitleSerif themedTitle" style="font-size: 36px; margin:0;">Projects & Certificates</h2>
         </div>
 
-        <div class="timelineStack">
+        <div class="toggle-pill-container" style="display:flex; justify-content:center; margin-bottom: 50px;">
+          <div class="toggle-pill">
+            <button class="toggle-btn active" id="btn-projects" onclick="switchTab('projects')">Projects</button>
+            <button class="toggle-btn" id="btn-certs" onclick="switchTab('certs')">Certificates</button>
+          </div>
+        </div>
 
-          <article class="showcaseRow hoverRow">
-            <div class="showcaseMedia glass hoverGlow">
-              <img
-                src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=60"
-                alt="Smart SIEM Dashboard"
-                loading="lazy"
-              />
-            </div>
-
-            <div class="showcaseBody">
-              <div class="showcaseDate">2026</div>
-              <h3 class="showcaseTitle themedTitle">Smart SIEM Risk Engine & Dashboard</h3>
-
-              <p class="showcaseDesc">
-                A custom SIEM risk engine that dynamically calculates risk scores based on asset criticality and vulnerability metrics. It features a fully documented REST API and an interactive web dashboard for real-time threat monitoring and management.
-              </p>
-
-              <ul class="showcaseBullets">
-                <li>Dynamic Risk Scoring Algorithm</li>
-                <li>Comprehensive REST API (Python/Flask)</li>
-                <li>Interactive Web Dashboard (HTML/CSS/JS)</li>
-                <li>Threat Modeling & Data Persistence</li>
-              </ul>
-
-              <div class="tagRow">
-                <span class="tagPill">Python</span>
-                <span class="tagPill">Flask</span>
-                <span class="tagPill">REST API</span>
-                <span class="tagPill">JavaScript</span>
+        <!-- PROJECTS TAB -->
+        <div id="tab-projects" class="tab-content" style="display: block;">
+          <div class="pc-grid">
+            <!-- Project 1 -->
+            <article class="pc-card glass hoverGlow">
+              <h3 class="pc-title">Smart SIEM Risk Engine</h3>
+              <div class="pc-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=60" alt="Smart SIEM Dashboard" loading="lazy">
               </div>
+              <p class="pc-desc">A custom SIEM risk engine that dynamically calculates risk scores based on asset criticality and vulnerability metrics.</p>
+              <a class="pc-btn" href="#" target="_blank" rel="noreferrer">View Project ⇗</a>
+            </article>
 
-              <div class="showcaseActions">
-                <a class="btn ghost mini" href="#" target="_blank" rel="noreferrer">⌁ View Code</a>
+            <!-- Project 2 -->
+            <article class="pc-card glass hoverGlow">
+              <h3 class="pc-title">AI Cloud Posture Platform</h3>
+              <div class="pc-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1600&q=60" alt="Cloud Posture" loading="lazy">
               </div>
-            </div>
-          </article>
+              <p class="pc-desc">An automated AWS cloud security scanner mimicking a honeypot deployer with real-time alerting to prevent breaches.</p>
+              <a class="pc-btn" href="#" target="_blank" rel="noreferrer">View Project ⇗</a>
+            </article>
 
-          <article class="showcaseRow hoverRow">
-            <div class="showcaseMedia glass hoverGlow">
-              <img
-                src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1600&q=60"
-                alt="Project preview"
-                loading="lazy"
-              />
-            </div>
-
-            <div class="showcaseBody">
-              <div class="showcaseDate">2025</div>
-              <h3 class="showcaseTitle themedTitle">AI-Powered Cloud Security Posture &amp; Deception Platform</h3>
-
-              <p class="showcaseDesc">
-                CyberShield is an automated AWS cloud security scanner that detects misconfigurations,
-                deploys honeypots, sends real-time alerts, and accelerates remediation to prevent cloud breaches.
-              </p>
-
-              <ul class="showcaseBullets">
-                <li>Full-Stack Web Application</li>
-                <li>Cloud Honeypot Deployer</li>
-                <li>Automated Alerting System</li>
-                <li>Remediation Bot</li>
-              </ul>
-
-              <div class="tagRow">
-                <span class="tagPill">Python</span>
-                <span class="tagPill">Flask</span>
-                <span class="tagPill">Boto3(AWS SDK)</span>
-                <span class="tagPill">Javascript</span>
+            <!-- Project 3 -->
+            <article class="pc-card glass hoverGlow">
+              <h3 class="pc-title">AWS Image AI Tagging</h3>
+              <div class="pc-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1600&q=60" alt="AWS Image Upload" loading="lazy">
               </div>
+              <p class="pc-desc">Serverless AWS app to upload images, auto-tag via AI (Rekognition), and search metadata efficiently using DynamoDB.</p>
+              <a class="pc-btn" href="#" target="_blank" rel="noreferrer">View Project ⇗</a>
+            </article>
 
-              <div class="showcaseActions">
-                <a class="btn ghost mini" href="#" target="_blank" rel="noreferrer">⌁ View Code</a>
-                <a class="btn ghost mini" href="#" target="_blank" rel="noreferrer">⌁ View Report</a>
+            <!-- Project 4 -->
+            <article class="pc-card glass hoverGlow">
+              <h3 class="pc-title">AWS Sentiment Analysis</h3>
+              <div class="pc-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1600&q=60" alt="Sentiment Analysis" loading="lazy">
               </div>
-            </div>
-          </article>
+              <p class="pc-desc">Serverless feedback platform processing text sentiment in real time, alerting for negative feedback autonomously.</p>
+              <a class="pc-btn" href="#" target="_blank" rel="noreferrer">View Project ⇗</a>
+            </article>
+          </div>
+        </div>
 
-          <article class="showcaseRow alt hoverRow">
-            <div class="showcaseMedia glass hoverGlow">
-              <img
-                src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1600&q=60"
-                alt="Project preview"
-                loading="lazy"
-              />
-            </div>
-
-            <div class="showcaseBody">
-              <div class="showcaseDate">2025</div>
-              <h3 class="showcaseTitle themedTitle">AWS Image Upload & AI Tagging System</h3>
-
-              <p class="showcaseDesc">
-                A fully serverless AWS application that allows users to upload images, automatically tag them using AI,
-                and search images efficiently—built for scalability, low cost, and real-world usability.
-              </p>
-
-              <ul class="showcaseBullets">
-                <li>Serverless Web Application</li>
-                <li>AI Image Tagging Engine</li>
-                <li>Metadata Storage & Search System</li>
-                <li>Secure API Layer</li>
-              </ul>
-
-              <div class="tagRow">
-                <span class="tagPill">AWS S3</span>
-                <span class="tagPill">Lambda</span>
-                <span class="tagPill">API Gateway</span>
-                <span class="tagPill">DynamoDB</span>
-                <span class="tagPill">Rekognition</span>
-              </div>
-
-              <div class="showcaseActions">
-                <a class="btn ghost mini" href="#" target="_blank" rel="noreferrer">⌁ View Code</a>
-                <a class="btn ghost mini" href="#" target="_blank" rel="noreferrer">⌁ View Report</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="showcaseRow hoverRow">
-            <div class="showcaseMedia glass hoverGlow">
-              <img
-                src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1600&q=60"
-                alt="Project preview"
-                loading="lazy"
-              />
-            </div>
-
-            <div class="showcaseBody">
-              <div class="showcaseDate">2024</div>
-              <h3 class="showcaseTitle themedTitle">AWS Sentiment Analysis System</h3>
-
-              <p class="showcaseDesc">
-                A serverless customer sentiment analysis platform that automatically processes feedback files,
-                analyzes sentiment in real time, visualizes insights on a dashboard, and sends alerts for
-                negative feedback—built entirely within AWS Free Tier ($0 monthly cost).
-              </p>
-
-              <ul class="showcaseBullets">
-                <li>Serverless Feedback Processing System</li>
-                <li>Sentiment Analysis Engine</li>
-                <li>Real-Time Dashboard</li>
-              </ul>
-
-              <div class="tagRow">
-                <span class="tagPill">AWS Lambda</span>
-                <span class="tagPill">API Gateway</span>
-                <span class="tagPill">DynamoDB</span>
-                <span class="tagPill">AWS S3</span>
-              </div>
-
-              <div class="showcaseActions">
-                <a class="btn ghost mini" href="#" target="_blank" rel="noreferrer">⌁ View Code</a>
-                <a class="btn ghost mini" href="#" target="_blank" rel="noreferrer">⌁ View Report</a>
-              </div>
-            </div>
-          </article>
-
+        <!-- CERTIFICATES TAB -->
+        <div id="tab-certs" class="tab-content" style="display: none;">
+          <div class="pc-grid">
+            <article class="cc-card glass hoverGlow">
+              <img src="Comptia.jpg" class="cc-img" loading="lazy">
+              <h3 class="cc-title">CompTIA Security+</h3>
+              <p class="cc-issuer">CompTIA</p>
+            </article>
+            <article class="cc-card glass hoverGlow">
+              <img src="blob.png" class="cc-img" loading="lazy">
+              <h3 class="cc-title">Red Hat System Admin I</h3>
+              <p class="cc-issuer">Red Hat (RH124)</p>
+            </article>
+            <article class="cc-card glass hoverGlow">
+              <img src="Soc.png" class="cc-img" loading="lazy">
+              <h3 class="cc-title">Hands on SOC Lab program</h3>
+              <p class="cc-issuer">SOC Experts</p>
+            </article>
+            <article class="cc-card glass hoverGlow">
+              <img src="Google cert_page-0001.jpg" class="cc-img" loading="lazy">
+              <h3 class="cc-title">Cybersecurity Professional</h3>
+              <p class="cc-issuer">Google</p>
+            </article>
+            <article class="cc-card glass hoverGlow">
+              <img src="foundations.jpg" class="cc-img" loading="lazy">
+              <h3 class="cc-title">Foundations of Cybersecurity</h3>
+              <p class="cc-issuer">Google</p>
+            </article>
+            <article class="cc-card glass hoverGlow">
+              <img src="Play it_page-0001.jpg" class="cc-img" loading="lazy">
+              <h3 class="cc-title">Play It Safe: Security Risks</h3>
+              <p class="cc-issuer">Google</p>
+            </article>
+            <article class="cc-card glass hoverGlow">
+              <img src="Connect.jpg" class="cc-img" loading="lazy">
+              <h3 class="cc-title">Connect and Protect: Networks</h3>
+              <p class="cc-issuer">Google</p>
+            </article>
+            <article class="cc-card glass hoverGlow">
+              <img src="Tools.jpg" class="cc-img" loading="lazy">
+              <h3 class="cc-title">Tools of the Trade: Linux & SQL</h3>
+              <p class="cc-issuer">Google</p>
+            </article>
+            <article class="cc-card glass hoverGlow">
+              <img src="Assets.jpg" class="cc-img" loading="lazy">
+              <h3 class="cc-title">Assets, Threats, and Vulnerabilities</h3>
+              <p class="cc-issuer">Google</p>
+            </article>
+            <article class="cc-card glass hoverGlow">
+              <img src="Sound.jpg" class="cc-img" loading="lazy">
+              <h3 class="cc-title">Sound the Alarm: Detection and Response</h3>
+              <p class="cc-issuer">Google</p>
+            </article>
+            <article class="cc-card glass hoverGlow">
+              <img src="Automate.jpg" class="cc-img" loading="lazy">
+              <h3 class="cc-title">Automate Cybersecurity Tasks with Python</h3>
+              <p class="cc-issuer">Google</p>
+            </article>
+            <article class="cc-card glass hoverGlow">
+              <img src="Put.jpg" class="cc-img" loading="lazy">
+              <h3 class="cc-title">Put It to Work: Prepare for Cybersecurity Jobs</h3>
+              <p class="cc-issuer">Google</p>
+            </article>
+            <article class="cc-card glass hoverGlow">
+              <img src="ISc2.jpg" class="cc-img" loading="lazy">
+              <h3 class="cc-title">Certified in Cybersecurity Specialization</h3>
+              <p class="cc-issuer">(ISC)² / Coursera</p>
+            </article>
+            <article class="cc-card glass hoverGlow">
+              <img src="Security.jpg" class="cc-img" loading="lazy">
+              <h3 class="cc-title">Security Principles</h3>
+              <p class="cc-issuer">Multiple</p>
+            </article>
+            <article class="cc-card glass hoverGlow">
+              <img src="Incident.jpg" class="cc-img" loading="lazy">
+              <h3 class="cc-title">Incident Response, BC, and DR Concepts</h3>
+              <p class="cc-issuer">Multiple</p>
+            </article>
+            <article class="cc-card glass hoverGlow">
+              <img src="Access.jpg" class="cc-img" loading="lazy">
+              <h3 class="cc-title">Access Control Concepts</h3>
+              <p class="cc-issuer">Multiple</p>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -389,85 +368,118 @@
           <h2 class="sectionTitleSerif themedTitle">Skills &amp; Tools</h2>
         </div>
 
-        <div class="org-tree">
-          <!-- Root Node (MY SKILLS) -->
-          <div class="org-root">
-            <div class="org-node root-node">MY SKILLS</div>
+        <div class="skillsLayout">
+          
+          <!-- Category 1 -->
+          <div class="skillCategory">
+            <div class="sc-header">
+              <span class="sc-icon">&lt;/&gt;</span>
+              <h3 class="sc-title">Programming Languages</h3>
+            </div>
+            <div class="sc-grid">
+              <div class="sc-card glass hoverGlow">
+                <div class="sc-card-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"></div>
+                <div class="sc-card-name">Python</div>
+                <div class="sc-card-bar"><div class="sc-card-fill" style="width: 85%;"></div></div>
+              </div>
+              <div class="sc-card glass hoverGlow">
+                <div class="sc-card-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript"></div>
+                <div class="sc-card-name">JavaScript</div>
+                <div class="sc-card-bar"><div class="sc-card-fill" style="width: 80%;"></div></div>
+              </div>
+              <div class="sc-card glass hoverGlow">
+                <div class="sc-card-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML"></div>
+                <div class="sc-card-name">HTML</div>
+                <div class="sc-card-bar"><div class="sc-card-fill" style="width: 95%;"></div></div>
+              </div>
+              <div class="sc-card glass hoverGlow">
+                <div class="sc-card-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS"></div>
+                <div class="sc-card-name">CSS</div>
+                <div class="sc-card-bar"><div class="sc-card-fill" style="width: 90%;"></div></div>
+              </div>
+              <div class="sc-card glass hoverGlow">
+                <div class="sc-card-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-original.svg" alt="Bash"></div>
+                <div class="sc-card-name">Bash</div>
+                <div class="sc-card-bar"><div class="sc-card-fill" style="width: 75%;"></div></div>
+              </div>
+              <div class="sc-card glass hoverGlow">
+                <div class="sc-card-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="SQL"></div>
+                <div class="sc-card-name">SQL</div>
+                <div class="sc-card-bar"><div class="sc-card-fill" style="width: 85%;"></div></div>
+              </div>
+            </div>
           </div>
 
-          <!-- Trunk -->
-          <div class="org-connector"></div>
-
-          <!-- Branches Wrapper -->
-          <div class="org-branches-wrapper">
-             <div class="org-branches">
-                <!-- The horizontal line spanning left to right -->
-                <div class="org-horizontal-line"></div>
-
-                <!-- Left Branch -->
-                <div class="org-branch">
-                   <div class="org-branch-drop"></div>
-                   <div class="org-nodes">
-                     <span class="org-node">SIEM (Splunk)</span>
-                     <span class="org-node">Security Monitoring</span>
-                     <span class="org-node">Log Analysis</span>
-                     <span class="org-node">Alert Investigation</span>
-                     <span class="org-node">Event Correlation</span>
-                     <span class="org-node">Incident Detection</span>
-                     <span class="org-node">Basic Threat Hunting</span>
-                     <span class="org-node">Wireshark</span>
-                     <span class="org-node">Packet Analysis</span>
-                     <span class="org-node">TCP/IP</span>
-                     <span class="org-node">DNS</span>
-                     <span class="org-node">VPNs</span>
-                     <span class="org-node">Firewalls</span>
-                     <span class="org-node">Network Traffic Inspection</span>
-                     <span class="org-node">IDS/IPS Concepts</span>
-                   </div>
-                </div>
-
-                <!-- Right Branch -->
-                <div class="org-branch">
-                   <div class="org-branch-drop"></div>
-                   <div class="org-nodes">
-                     <span class="org-node">Vulnerability Assessment</span>
-                     <span class="org-node">Security Misconfigurations</span>
-                     <span class="org-node">Risk Analysis</span>
-                     <span class="org-node">Security Controls</span>
-                     <span class="org-node">Incident Awareness</span>
-                     <span class="org-node">Python</span>
-                     <span class="org-node">Bash</span>
-                     <span class="org-node">GitHub</span>
-                     <span class="org-node">DVWA</span>
-                     <span class="org-node">AWS (S3, Lambda, DynamoDB)</span>
-                     <span class="org-node">AWS API Gateway</span>
-                     <span class="org-node">AWS Rekognition</span>
-                     <span class="org-node">Boto3</span>
-                     <span class="org-node">REST APIs</span>
-                     <span class="org-node">Flask</span>
-                     <span class="org-node">HTML/CSS & JavaScript</span>
-                   </div>
-                </div>
-             </div>
+          <!-- Category 2 -->
+          <div class="skillCategory">
+            <div class="sc-header">
+              <span class="sc-icon">⚙️</span>
+              <h3 class="sc-title">Tools & Frameworks</h3>
+            </div>
+            <div class="sc-grid">
+              <div class="sc-card glass hoverGlow">
+                <div class="sc-card-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS"></div>
+                <div class="sc-card-name">AWS Cloud</div>
+                <div class="sc-card-bar"><div class="sc-card-fill" style="width: 85%;"></div></div>
+              </div>
+              <div class="sc-card glass hoverGlow">
+                <div class="sc-card-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg" alt="Flask"></div>
+                <div class="sc-card-name">Flask</div>
+                <div class="sc-card-bar"><div class="sc-card-fill" style="width: 80%;"></div></div>
+              </div>
+              <div class="sc-card glass hoverGlow">
+                <div class="sc-card-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub"></div>
+                <div class="sc-card-name">Git & GitHub</div>
+                <div class="sc-card-bar"><div class="sc-card-fill" style="width: 90%;"></div></div>
+              </div>
+              <div class="sc-card glass hoverGlow">
+                <div class="sc-card-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux"></div>
+                <div class="sc-card-name">Linux</div>
+                <div class="sc-card-bar"><div class="sc-card-fill" style="width: 85%;"></div></div>
+              </div>
+            </div>
           </div>
 
-          <!-- Central Bottom Branch (Separated cluster without connecting line) -->
-          <div class="org-bottom-nodes">
-             <span class="org-node">Microsoft Excel</span>
-             <span class="org-node">Word</span>
-             <span class="org-node">PowerPoint</span>
-             <span class="org-node">SharePoint</span>
-             <span class="org-node">Office 365</span>
-             <span class="org-node">Adobe Acrobat</span>
-             <span class="org-node">Project Management</span>
-             <span class="org-node">Critical Thinking</span>
-             <span class="org-node">Analytical Skills</span>
-             <span class="org-node">Communication</span>
-             <span class="org-node">Attention to Detail</span>
-             <span class="org-node">Initiative-Driven</span>
-             <span class="org-node">Curiosity</span>
-             <span class="org-node">Resilience</span>
+          <!-- Category 3 -->
+          <div class="skillCategory">
+            <div class="sc-header">
+              <span class="sc-icon">🛡️</span>
+              <h3 class="sc-title">Security Tools</h3>
+            </div>
+            <div class="sc-grid">
+              <div class="sc-card glass hoverGlow">
+                <div class="sc-card-icon"><span style="font-size: 40px;">🔍</span></div>
+                <div class="sc-card-name">Splunk (SIEM)</div>
+                <div class="sc-card-bar"><div class="sc-card-fill" style="width: 80%;"></div></div>
+              </div>
+              <div class="sc-card glass hoverGlow">
+                <div class="sc-card-icon"><span style="font-size: 40px;">🦈</span></div>
+                <div class="sc-card-name">Wireshark</div>
+                <div class="sc-card-bar"><div class="sc-card-fill" style="width: 85%;"></div></div>
+              </div>
+              <div class="sc-card glass hoverGlow">
+                <div class="sc-card-icon"><span style="font-size: 40px;">🕷️</span></div>
+                <div class="sc-card-name">Burp Suite</div>
+                <div class="sc-card-bar"><div class="sc-card-fill" style="width: 70%;"></div></div>
+              </div>
+              <div class="sc-card glass hoverGlow">
+                <div class="sc-card-icon"><span style="font-size: 40px;">🎯</span></div>
+                <div class="sc-card-name">Nessus</div>
+                <div class="sc-card-bar"><div class="sc-card-fill" style="width: 75%;"></div></div>
+              </div>
+              <div class="sc-card glass hoverGlow">
+                <div class="sc-card-icon"><span style="font-size: 40px;">🚨</span></div>
+                <div class="sc-card-name">Nmap</div>
+                <div class="sc-card-bar"><div class="sc-card-fill" style="width: 80%;"></div></div>
+              </div>
+              <div class="sc-card glass hoverGlow">
+                <div class="sc-card-icon"><span style="font-size: 40px;">🧪</span></div>
+                <div class="sc-card-name">Metasploit</div>
+                <div class="sc-card-bar"><div class="sc-card-fill" style="width: 65%;"></div></div>
+              </div>
+            </div>
           </div>
+
         </div>
       </section>
 
@@ -510,80 +522,7 @@
         </div>
       </section>
 
-      <!-- CERTIFICATIONS -->
-      <section id="certifications" class="section bgMode" data-bgmode="5">
-        <div class="sectionHead">
-          <div class="slashes">//</div>
-          <h2 class="sectionTitleSerif themedTitle">Certifications</h2>
-        </div>
 
-        <div class="certGrid">
-          <article class="certCard glass hoverGlow">
-            <img src="Comptia.jpg" class="certImg">
-            <div class="certName">CompTIA Security +</div>
-          </article>
-          <article class="certCard glass hoverGlow">
-            <img src="blob.png" class="certImg">
-            <div class="certName">Red Hat System Administration I (RH124 - RHA) - Ver. 9.3</div>
-          </article>
-          <article class="certCard glass hoverGlow">
-            <img src="Soc.png" class="certImg">
-            <div class="certName">Hands on SOC Lab program</div>
-          </article>
-          <article class="certCard glass hoverGlow">
-            <img src="Google cert_page-0001.jpg" class="certImg">
-            <div class="certName">Google Cybersecurity Professional Certificate</div>
-          </article>
-          <article class="certCard glass hoverGlow">
-            <img src="foundations.jpg" class="certImg">
-            <div class="certName">Foundations of Cybersecurity</div>
-          </article>
-          <article class="certCard glass hoverGlow">
-            <img src="Play it_page-0001.jpg" class="certImg">
-            <div class="certName">Play It Safe: Manage Security Risks</div>
-          </article>
-          <article class="certCard glass hoverGlow">
-            <img src="Connect.jpg" class="certImg">
-            <div class="certName">Connect and Protect: Networks and Network Security</div>
-          </article>
-          <article class="certCard glass hoverGlow">
-            <img src="Tools.jpg" class="certImg">
-            <div class="certName">Tools of the Trade: Linux and SQL</div>
-          </article>
-          <article class="certCard glass hoverGlow">
-            <img src="Assets.jpg" class="certImg">
-            <div class="certName">Assets, Threats, and Vulnerabilities</div>
-          </article>
-          <article class="certCard glass hoverGlow">
-            <img src="Sound.jpg" class="certImg">
-            <div class="certName">Sound the Alarm: Detection and Response</div>
-          </article>
-          <article class="certCard glass hoverGlow">
-            <img src="Automate.jpg" class="certImg">
-            <div class="certName">Automate Cybersecurity Tasks with Python</div>
-          </article>
-          <article class="certCard glass hoverGlow">
-            <img src="Put.jpg" class="certImg">
-            <div class="certName">Put It to Work: Prepare for Cybersecurity Jobs</div>
-          </article>
-          <article class="certCard glass hoverGlow">
-            <img src="ISc2.jpg" class="certImg">
-            <div class="certName">Certified in Cybersecurity Specialization — (ISC)² / Coursera</div>
-          </article>
-          <article class="certCard glass hoverGlow">
-            <img src="Security.jpg" class="certImg">
-            <div class="certName">Security Principles</div>
-          </article>
-          <article class="certCard glass hoverGlow">
-            <img src="Incident.jpg" class="certImg">
-            <div class="certName">Incident Response, BC, and DR Concepts</div>
-          </article>
-          <article class="certCard glass hoverGlow">
-            <img src="Access.jpg" class="certImg">
-            <div class="certName">Access Control Concepts</div>
-          </article>
-        </div>
-      </section>
 
       <!-- CONTACT -->
       <section id="contact" class="section bgMode" data-bgmode="6">
@@ -673,6 +612,6 @@
   </div>
 
   <script src="boot.js"></script>
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>
