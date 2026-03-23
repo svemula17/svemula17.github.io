@@ -302,15 +302,15 @@ window.addEventListener("click", (e) => {
 });
 
 const P = [];
-const COUNT = Math.min(260, Math.floor((window.innerWidth * window.innerHeight) / 7600));
+const COUNT = Math.min(80, Math.floor((window.innerWidth * window.innerHeight) / 20000));
 for (let i = 0; i < COUNT; i++) {
   P.push({
     x: rand(0, W),
     y: rand(0, H),
-    vx: rand(-0.25, 0.25),
-    vy: rand(-0.22, 0.22),
+    vx: rand(-0.15, 0.15),
+    vy: rand(-0.15, 0.15),
     r: rand(0.6, 2.0),
-    a: rand(0.05, 0.30)
+    a: rand(0.05, 0.20)
   });
 }
 
@@ -437,9 +437,9 @@ function drawRadar(accent, t, driftY) {
 
 function drawParticles(mode, accent, driftY) {
   ctx.save();
-  const baseSpd = 1 + mode * 0.25;
-  const spd = baseSpd * (mouse.active ? 1.55 : 1.0); /* ✅ cursor makes animation move more */
-  const linkDist = (110 + mode * 20) * DPR;
+  const baseSpd = 0.5 + mode * 0.15;
+  const spd = baseSpd * (mouse.active ? 1.2 : 1.0); /* ✅ cursor makes animation move more */
+  const linkDist = (80 + mode * 10) * DPR;
   const scrollDrift = driftY * 0.18;
 
   const mouseDriftX = mouse.active ? (mouse.x - W * 0.5) * 0.00015 : 0;
