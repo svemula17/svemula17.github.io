@@ -273,14 +273,28 @@ const canvas = document.getElementById("fx");
 const ctx = canvas.getContext("2d");
 let W, H, DPR;
 
+let lastW = 0;
+let lastH = 0;
 function resize() {
+  const newW = window.innerWidth;
+  const newH = window.innerHeight;
+  // Ignore minor height changes (e.g. mobile address bar) to prevent animation jumping
+  if (lastW === newW && Math.abs(lastH - newH) < 100) return;
+  
+  lastW = newW;
+  lastH = newH;
+  
   DPR = Math.min(window.devicePixelRatio || 1, 2);
-  W = canvas.width = Math.floor(window.innerWidth * DPR);
-  H = canvas.height = Math.floor(window.innerHeight * DPR);
-  canvas.style.width = window.innerWidth + "px";
-  canvas.style.height = window.innerHeight + "px";
+  W = canvas.width = Math.floor(newW * DPR);
+  H = canvas.height = Math.floor(newH * DPR);
+  canvas.style.width = newW + "px";
+  canvas.style.height = newH + "px";
 }
-window.addEventListener("resize", resize);
+let resizeTimeout;
+window.addEventListener("resize", () => {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(resize, 200);
+});
 resize();
 
 function cssVar(name){
@@ -314,27 +328,9 @@ for (let i = 0; i < COUNT; i++) {
   });
 }
 
-let targetMode = 0;
 let mode = 0;
-const modeSections = [...document.querySelectorAll(".bgMode")];
-const modeBySection = modeSections.map(s => ({
-  el: s,
-  mode: parseInt(s.getAttribute("data-bgmode") || "0", 10)
-}));
-
-function updateMode() {
-  const mid = window.innerHeight * 0.55;
-  let best = { mode: 0, dist: 1e9 };
-  for (const s of modeBySection) {
-    const r = s.el.getBoundingClientRect();
-    const center = r.top + r.height / 2;
-    const d = Math.abs(center - mid);
-    if (d < best.dist) best = { mode: s.mode, dist: d };
-  }
-  targetMode = best.mode;
-}
-window.addEventListener("scroll", updateMode, { passive: true });
-updateMode();
+// Target mode removed to persist home animation style across the website
+// window.addEventListener("scroll", updateMode, { passive: true });
 
 let lastScrollY = window.scrollY;
 let scrollImpulse = 0;
@@ -500,7 +496,6 @@ function draw(){
   const accent2 = cssVar("--accent2") || "rgba(83,243,255,0.85)";
   const fxFade = cssVar("--fxFade") || "rgba(0,0,0,0.18)";
 
-  mode += (targetMode - mode) * 0.04;
   t += 0.015;
 
   scrollImpulse *= 0.86;
