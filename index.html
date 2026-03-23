@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css?v=5" />
 </head>
 
 <body>
@@ -389,84 +389,84 @@
           <h2 class="sectionTitleSerif themedTitle">Skills &amp; Tools</h2>
         </div>
 
-        <div class="skillTree">
-          <!-- Top level root node -->
-          <div class="st-root">
-            <div class="st-box st-glow">MY SKILLS</div>
+        <div class="org-tree">
+          <!-- Root Node (MY SKILLS) -->
+          <div class="org-root">
+            <div class="org-node root-node">MY SKILLS</div>
           </div>
 
-          <!-- Main trunk line -->
-          <div class="st-trunk"></div>
+          <!-- Trunk -->
+          <div class="org-connector"></div>
 
-          <!-- The branching layout -->
-          <div class="st-branches">
-             <!-- Left group -->
-             <div class="st-branch st-left">
-               <div class="st-arm"></div>
-               <div class="st-drop"></div>
-               <div class="st-nodes">
-                 <span class="st-node glass hoverGlow">SIEM (Splunk)</span>
-                 <span class="st-node glass hoverGlow">Security Monitoring</span>
-                 <span class="st-node glass hoverGlow">Log Analysis</span>
-                 <span class="st-node glass hoverGlow">Alert Investigation</span>
-                 <span class="st-node glass hoverGlow">Event Correlation</span>
-                 <span class="st-node glass hoverGlow">Incident Detection</span>
-                 <span class="st-node glass hoverGlow">Basic Threat Hunting</span>
-                 <span class="st-node glass hoverGlow">Wireshark</span>
-                 <span class="st-node glass hoverGlow">Packet Analysis</span>
-                 <span class="st-node glass hoverGlow">TCP/IP</span>
-                 <span class="st-node glass hoverGlow">DNS</span>
-                 <span class="st-node glass hoverGlow">VPNs</span>
-                 <span class="st-node glass hoverGlow">Firewalls</span>
-                 <span class="st-node glass hoverGlow">Network Traffic Inspection</span>
-                 <span class="st-node glass hoverGlow">IDS/IPS Concepts</span>
-               </div>
-             </div>
+          <!-- Branches Wrapper -->
+          <div class="org-branches-wrapper">
+             <div class="org-branches">
+                <!-- The horizontal line spanning left to right -->
+                <div class="org-horizontal-line"></div>
 
-             <!-- Right group -->
-             <div class="st-branch st-right">
-               <div class="st-arm"></div>
-               <div class="st-drop"></div>
-               <div class="st-nodes">
-                 <span class="st-node glass hoverGlow">Vulnerability Assessment</span>
-                 <span class="st-node glass hoverGlow">Security Misconfigurations</span>
-                 <span class="st-node glass hoverGlow">Risk Analysis</span>
-                 <span class="st-node glass hoverGlow">Security Controls</span>
-                 <span class="st-node glass hoverGlow">Incident Awareness</span>
-                 <span class="st-node glass hoverGlow">Python</span>
-                 <span class="st-node glass hoverGlow">Bash</span>
-                 <span class="st-node glass hoverGlow">GitHub</span>
-                 <span class="st-node glass hoverGlow">DVWA</span>
-                 <span class="st-node glass hoverGlow">AWS (S3, Lambda, DynamoDB)</span>
-                 <span class="st-node glass hoverGlow">AWS API Gateway</span>
-                 <span class="st-node glass hoverGlow">AWS Rekognition</span>
-                 <span class="st-node glass hoverGlow">Boto3</span>
-                 <span class="st-node glass hoverGlow">REST APIs</span>
-                 <span class="st-node glass hoverGlow">Flask</span>
-                 <span class="st-node glass hoverGlow">HTML/CSS & JavaScript</span>
-               </div>
+                <!-- Left Branch -->
+                <div class="org-branch">
+                   <div class="org-branch-drop"></div>
+                   <div class="org-nodes">
+                     <span class="org-node">SIEM (Splunk)</span>
+                     <span class="org-node">Security Monitoring</span>
+                     <span class="org-node">Log Analysis</span>
+                     <span class="org-node">Alert Investigation</span>
+                     <span class="org-node">Event Correlation</span>
+                     <span class="org-node">Incident Detection</span>
+                     <span class="org-node">Basic Threat Hunting</span>
+                     <span class="org-node">Wireshark</span>
+                     <span class="org-node">Packet Analysis</span>
+                     <span class="org-node">TCP/IP</span>
+                     <span class="org-node">DNS</span>
+                     <span class="org-node">VPNs</span>
+                     <span class="org-node">Firewalls</span>
+                     <span class="org-node">Network Traffic Inspection</span>
+                     <span class="org-node">IDS/IPS Concepts</span>
+                   </div>
+                </div>
+
+                <!-- Right Branch -->
+                <div class="org-branch">
+                   <div class="org-branch-drop"></div>
+                   <div class="org-nodes">
+                     <span class="org-node">Vulnerability Assessment</span>
+                     <span class="org-node">Security Misconfigurations</span>
+                     <span class="org-node">Risk Analysis</span>
+                     <span class="org-node">Security Controls</span>
+                     <span class="org-node">Incident Awareness</span>
+                     <span class="org-node">Python</span>
+                     <span class="org-node">Bash</span>
+                     <span class="org-node">GitHub</span>
+                     <span class="org-node">DVWA</span>
+                     <span class="org-node">AWS (S3, Lambda, DynamoDB)</span>
+                     <span class="org-node">AWS API Gateway</span>
+                     <span class="org-node">AWS Rekognition</span>
+                     <span class="org-node">Boto3</span>
+                     <span class="org-node">REST APIs</span>
+                     <span class="org-node">Flask</span>
+                     <span class="org-node">HTML/CSS & JavaScript</span>
+                   </div>
+                </div>
              </div>
           </div>
 
-          <!-- Bottom group extending from trunk -->
-          <div class="st-trunk-long"></div>
-          <div class="st-bottom">
-             <div class="st-nodes center">
-               <span class="st-node glass hoverGlow">Microsoft Excel</span>
-               <span class="st-node glass hoverGlow">Word</span>
-               <span class="st-node glass hoverGlow">PowerPoint</span>
-               <span class="st-node glass hoverGlow">SharePoint</span>
-               <span class="st-node glass hoverGlow">Office 365</span>
-               <span class="st-node glass hoverGlow">Adobe Acrobat</span>
-               <span class="st-node glass hoverGlow">Project Management</span>
-               <span class="st-node glass hoverGlow">Critical Thinking</span>
-               <span class="st-node glass hoverGlow">Analytical Skills</span>
-               <span class="st-node glass hoverGlow">Communication</span>
-               <span class="st-node glass hoverGlow">Attention to Detail</span>
-               <span class="st-node glass hoverGlow">Initiative-Driven</span>
-               <span class="st-node glass hoverGlow">Curiosity</span>
-               <span class="st-node glass hoverGlow">Resilience</span>
-             </div>
+          <!-- Central Bottom Branch (Separated cluster without connecting line) -->
+          <div class="org-bottom-nodes">
+             <span class="org-node">Microsoft Excel</span>
+             <span class="org-node">Word</span>
+             <span class="org-node">PowerPoint</span>
+             <span class="org-node">SharePoint</span>
+             <span class="org-node">Office 365</span>
+             <span class="org-node">Adobe Acrobat</span>
+             <span class="org-node">Project Management</span>
+             <span class="org-node">Critical Thinking</span>
+             <span class="org-node">Analytical Skills</span>
+             <span class="org-node">Communication</span>
+             <span class="org-node">Attention to Detail</span>
+             <span class="org-node">Initiative-Driven</span>
+             <span class="org-node">Curiosity</span>
+             <span class="org-node">Resilience</span>
           </div>
         </div>
       </section>
