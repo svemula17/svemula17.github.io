@@ -1136,7 +1136,7 @@ html[data-ui="light"] .aboutMePhoto{ border: 1px solid rgba(0,0,0,0.10); }
   height:100%;
   display:block;
   object-fit: cover;
-  object-position: center;
+  object-position: center top;
   filter: contrast(1.05) saturate(0.95);
 }
 .aboutMeCard{
