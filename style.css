@@ -1129,15 +1129,14 @@ html[data-ui="light"] .toTop{
   background: rgba(0,0,0,0.15);
   display: flex;
   justify-content: center;
-  max-height: 480px;
 }
 html[data-ui="light"] .aboutMePhoto{ border: 1px solid rgba(0,0,0,0.10); }
 .aboutMePhoto img{
   width:100%;
   height:100%;
   display:block;
-  object-fit: contain;
-  object-position: top;
+  object-fit: cover;
+  object-position: center;
   filter: contrast(1.05) saturate(0.95);
 }
 .aboutMeCard{
