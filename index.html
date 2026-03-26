@@ -51,10 +51,9 @@
         <a class="navLink active" href="#home">Home</a>
         <a class="navLink" href="#about">About</a>
         <a class="navLink" href="#education">Education</a>
-        <a class="navLink" href="#projects">Projects</a>
+        <a class="navLink" href="#projects">Projects/Certs</a>
         <a class="navLink" href="#skills">Skills</a>
         <a class="navLink" href="#experience">Experience</a>
-        <a class="navLink" href="#certifications">Certifications</a>
         <a class="navLink" href="#contact">Contact</a>
       </nav>
 
@@ -148,9 +147,31 @@
             </form>
           </div>
         </div>
+
+        <!-- EDUCATION SECTION -->
+        <div id="education" class="subSectionTop" style="grid-column: 1 / -1; margin-top: -10px;">
+          <div class="sectionHead sectionHeadMini">
+            <div class="slashes">//</div>
+            <h2 class="sectionTitleSerif themedTitle">Education</h2>
+          </div>
+
+          <div class="aboutGrid">
+            <div class="aboutCard glass hoverGlow">
+              <h3 class="aboutTitle themedTitle">Master of Science — Cybersecurity</h3>
+              <p class="aboutText">Yeshiva University</p>
+              <p>New York City, USA • 2024 - 2026 • CGPA: 3.9</p>
+            </div>
+
+            <div class="aboutCard glass hoverGlow">
+              <h3 class="aboutTitle themedTitle">Bachelor of Technology — Mechanical Engineering</h3>
+              <p>CMR College of Engineering and Technology</p>
+              <p class="aboutText">Hyderabad, India • 2018 — 2021 • CGPA: 3.9</p>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <!-- ABOUT (NOW INCLUDES EDUCATION INSIDE) -->
+      <!-- ABOUT -->
       <section id="about" class="section bgMode" data-bgmode="0">
         <div class="sectionHead">
           <div class="slashes">//</div>
@@ -190,28 +211,6 @@
             </div>
           </div>
         </div>
-
-        <!-- EDUCATION MOVED HERE (kept id="education" so nav + terminal still works) -->
-        <div id="education" class="subSectionTop">
-          <div class="sectionHead sectionHeadMini">
-            <div class="slashes">//</div>
-            <h2 class="sectionTitleSerif themedTitle">Education</h2>
-          </div>
-
-          <div class="aboutGrid">
-            <div class="aboutCard glass hoverGlow">
-              <h3 class="aboutTitle themedTitle">Master of Science — Cybersecurity</h3>
-              <p class="aboutText">Yeshiva University</p>
-              <p>New York City, USA • 2024 - 2026 • CGPA: 3.9</p>
-            </div>
-
-            <div class="aboutCard glass hoverGlow">
-              <h3 class="aboutTitle themedTitle">Bachelor of Technology — Mechanical Engineering</h3>
-              <p>CMR College of Engineering and Technology</p>
-              <p class="aboutText">Hyderabad, India • 2018 — 2021 • CGPA: 3.9</p>
-            </div>
-          </div>
-        </div>
       </section>
 
       <!-- PROJECTS -->
@@ -238,17 +237,27 @@
                 <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=60" alt="Smart SIEM Dashboard" loading="lazy">
               </div>
               <p class="pc-desc">A custom SIEM risk engine that dynamically calculates risk scores based on asset criticality and vulnerability metrics.</p>
-              <a class="pc-btn" href="#" target="_blank" rel="noreferrer">View Project ⇗</a>
+              <a class="pc-btn" href="https://github.com/svemula17/smart-siem-risk-engine" target="_blank" rel="noreferrer">View Project ⇗</a>
             </article>
 
             <!-- Project 2 -->
             <article class="pc-card glass hoverGlow">
               <h3 class="pc-title">AI Cloud Posture Platform</h3>
               <div class="pc-image-wrapper">
-                <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=1600&q=60" alt="Cloud Posture" loading="lazy">
+                <img src="https://images.unsplash.com/photo-1614064641913-6b7140414c71?auto=format&fit=crop&w=1600&q=60" alt="Cloud Posture" loading="lazy">
               </div>
               <p class="pc-desc">An automated AWS cloud security scanner mimicking a honeypot deployer with real-time alerting to prevent breaches.</p>
-              <a class="pc-btn" href="#" target="_blank" rel="noreferrer">View Project ⇗</a>
+              <a class="pc-btn" href="https://github.com/saivarmadpr/Cloud_Security_Posture_-_Deception_Platform" target="_blank" rel="noreferrer">View Project ⇗</a>
+            </article>
+
+            <!-- Project: Attack Identification Tool -->
+            <article class="pc-card glass hoverGlow">
+              <h3 class="pc-title">Attack Identification Tool</h3>
+              <div class="pc-image-wrapper">
+                <img src="https://images.unsplash.com/photo-1555949963-aa79dcee57d5?auto=format&fit=crop&w=1600&q=60" alt="Attack Identification Tool" loading="lazy">
+              </div>
+              <p class="pc-desc">An advanced tool designed to identify, analyze, and characterize various cyber attacks accurately and in real-time.</p>
+              <a class="pc-btn" href="https://github.com/svemula17/attack_identification_tool" target="_blank" rel="noreferrer">View Project ⇗</a>
             </article>
 
             <!-- Project 3 -->
@@ -258,7 +267,7 @@
                 <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1600&q=60" alt="AWS Image Upload" loading="lazy">
               </div>
               <p class="pc-desc">Serverless AWS app to upload images, auto-tag via AI (Rekognition), and search metadata efficiently using DynamoDB.</p>
-              <a class="pc-btn" href="#" target="_blank" rel="noreferrer">View Project ⇗</a>
+              <a class="pc-btn" href="https://github.com/PeterMangoro/cloudComputingDiscussion1" target="_blank" rel="noreferrer">View Project ⇗</a>
             </article>
 
             <!-- Project 4 -->
@@ -268,7 +277,7 @@
                 <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1600&q=60" alt="Sentiment Analysis" loading="lazy">
               </div>
               <p class="pc-desc">Serverless feedback platform processing text sentiment in real time, alerting for negative feedback autonomously.</p>
-              <a class="pc-btn" href="#" target="_blank" rel="noreferrer">View Project ⇗</a>
+              <a class="pc-btn" href="https://github.com/PeterMangoro/cloudComputingDiscussion1" target="_blank" rel="noreferrer">View Project ⇗</a>
             </article>
           </div>
         </div>
@@ -406,6 +415,16 @@
                 <div class="sc-card-name">SQL</div>
                 <div class="sc-card-bar"><div class="sc-card-fill" style="width: 85%;"></div></div>
               </div>
+              <div class="sc-card glass hoverGlow">
+                <div class="sc-card-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java"></div>
+                <div class="sc-card-name">Java</div>
+                <div class="sc-card-bar"><div class="sc-card-fill" style="width: 80%;"></div></div>
+              </div>
+              <div class="sc-card glass hoverGlow">
+                <div class="sc-card-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C"></div>
+                <div class="sc-card-name">C Programming</div>
+                <div class="sc-card-bar"><div class="sc-card-fill" style="width: 75%;"></div></div>
+              </div>
             </div>
           </div>
 
@@ -422,11 +441,6 @@
                 <div class="sc-card-bar"><div class="sc-card-fill" style="width: 85%;"></div></div>
               </div>
               <div class="sc-card glass hoverGlow">
-                <div class="sc-card-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg" alt="Flask"></div>
-                <div class="sc-card-name">Flask</div>
-                <div class="sc-card-bar"><div class="sc-card-fill" style="width: 80%;"></div></div>
-              </div>
-              <div class="sc-card glass hoverGlow">
                 <div class="sc-card-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub"></div>
                 <div class="sc-card-name">Git & GitHub</div>
                 <div class="sc-card-bar"><div class="sc-card-fill" style="width: 90%;"></div></div>
@@ -434,6 +448,11 @@
               <div class="sc-card glass hoverGlow">
                 <div class="sc-card-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg" alt="Linux"></div>
                 <div class="sc-card-name">Linux</div>
+                <div class="sc-card-bar"><div class="sc-card-fill" style="width: 85%;"></div></div>
+              </div>
+              <div class="sc-card glass hoverGlow">
+                <div class="sc-card-icon"><span style="font-size: 40px;">📜</span></div>
+                <div class="sc-card-name">NIST Framework</div>
                 <div class="sc-card-bar"><div class="sc-card-fill" style="width: 85%;"></div></div>
               </div>
             </div>
@@ -460,11 +479,6 @@
                 <div class="sc-card-icon"><span style="font-size: 40px;">🕷️</span></div>
                 <div class="sc-card-name">Burp Suite</div>
                 <div class="sc-card-bar"><div class="sc-card-fill" style="width: 70%;"></div></div>
-              </div>
-              <div class="sc-card glass hoverGlow">
-                <div class="sc-card-icon"><span style="font-size: 40px;">🎯</span></div>
-                <div class="sc-card-name">Nessus</div>
-                <div class="sc-card-bar"><div class="sc-card-fill" style="width: 75%;"></div></div>
               </div>
               <div class="sc-card glass hoverGlow">
                 <div class="sc-card-icon"><span style="font-size: 40px;">🚨</span></div>
