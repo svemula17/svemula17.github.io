@@ -54,7 +54,7 @@ toTopBtn?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "s
 /* =========================
    Typing roles
 ========================= */
-const roles = ["Cybersecurity Analyst","SOC Analyst","Red Hat Administration","Vulnerability Assessment"];
+const roles = ["Cybersecurity Analyst","SOC Analyst (Blue Team)","Penetration Tester (Red Team)","Threat Hunter","Cloud Security Engineer"];
 const roleEl = document.getElementById("rotatingRole");
 let roleIndex = 0, charIndex = 0, deleting = false;
 
