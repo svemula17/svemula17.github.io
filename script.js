@@ -549,6 +549,25 @@ projectDots.forEach(dot => {
 });
 syncProjectSlider();
 
+
+
+/* =========================
+   Scroll reveal polish
+========================= */
+const revealTargets = document.querySelectorAll(".premiumSection, .statCard, .experienceCard, .skillBlock, .certRow, .contactBand");
+revealTargets.forEach(el => el.classList.add("revealUp"));
+
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("in-view");
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+
+revealTargets.forEach(el => revealObserver.observe(el));
+
 /* Year in footer */
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
