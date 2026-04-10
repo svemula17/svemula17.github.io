@@ -554,7 +554,7 @@ syncProjectSlider();
 /* =========================
    Scroll reveal polish
 ========================= */
-const revealTargets = document.querySelectorAll(".premiumSection, .statCard, .experienceCard, .skillBlock, .certRow, .contactBand, .eduMiniCard, .projectSlide");
+const revealTargets = document.querySelectorAll(".premiumSection, .statCard, .experienceCard, .skillBlock, .certRow, .contactBand, .eduMiniCard, .projectSlide, .snapshotPanel, .projectCtaBand, .socVisual, .projectMockup, .roleTargetNote");
 revealTargets.forEach((el, index) => {
   el.classList.add("revealUp");
   el.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 55}ms`);
@@ -673,3 +673,53 @@ window.addEventListener("keydown", (event) => {
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+
+/* =========================
+   Premium interaction polish
+========================= */
+const railFill = document.getElementById("railFill");
+const railLinks = [...document.querySelectorAll("[data-rail]")];
+function syncProgressRail() {
+  const doc = document.documentElement;
+  const max = Math.max(doc.scrollHeight - window.innerHeight, 1);
+  const pct = Math.max(0, Math.min(1, window.scrollY / max));
+  if (railFill) railFill.style.height = `${pct * 100}%`;
+  const active = document.querySelector(".navLink.active")?.getAttribute("href")?.replace("#", "");
+  railLinks.forEach(link => link.classList.toggle("active", link.dataset.rail === active));
+}
+window.addEventListener("scroll", syncProgressRail, { passive: true });
+window.addEventListener("resize", syncProgressRail);
+syncProgressRail();
+
+document.querySelectorAll(".experienceCard").forEach((card, index) => {
+  const toggle = card.querySelector(".experienceToggle");
+  if (!toggle) return;
+  const setOpen = (open) => {
+    card.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", String(open));
+    toggle.textContent = open ? "Hide details" : "Tap to view details";
+  };
+  if (index === 0 && window.innerWidth <= 860) setOpen(true);
+  toggle.addEventListener("click", () => {
+    const next = !card.classList.contains("is-open");
+    document.querySelectorAll(".experienceCard.is-open").forEach(openCard => {
+      if (openCard !== card) {
+        openCard.classList.remove("is-open");
+        const openToggle = openCard.querySelector(".experienceToggle");
+        openToggle?.setAttribute("aria-expanded", "false");
+        if (openToggle) openToggle.textContent = "Tap to view details";
+      }
+    });
+    setOpen(next);
+  });
+});
+
+const certToggle = document.getElementById("certToggle");
+const certMore = document.getElementById("certMore");
+certToggle?.addEventListener("click", () => {
+  if (!certMore) return;
+  const shouldOpen = certMore.hasAttribute("hidden");
+  certMore.toggleAttribute("hidden", !shouldOpen);
+  certToggle.setAttribute("aria-expanded", String(shouldOpen));
+  certToggle.textContent = shouldOpen ? "Show fewer certifications" : "View all certifications";
+});

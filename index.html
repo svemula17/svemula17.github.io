@@ -13,7 +13,7 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="style.css?v=8" />
-  <link rel="stylesheet" href="polish.css?v=1" />
+  <link rel="stylesheet" href="polish.css?v=3" />
 </head>
 
 <body>
@@ -68,6 +68,17 @@
       </div>
     </header>
 
+    <aside class="sectionRail" aria-label="Page progress">
+      <span class="railTrack"><span id="railFill" class="railFill"></span></span>
+      <a href="#home" data-rail="home" aria-label="Home"></a>
+      <a href="#about" data-rail="about" aria-label="About"></a>
+      <a href="#experience" data-rail="experience" aria-label="Experience"></a>
+      <a href="#skills" data-rail="skills" aria-label="Skills"></a>
+      <a href="#projects" data-rail="projects" aria-label="Projects"></a>
+      <a href="#certifications" data-rail="certifications" aria-label="Certifications"></a>
+      <a href="#contact" data-rail="contact" aria-label="Contact"></a>
+    </aside>
+
     <main class="wrap premiumPortfolio">
       <section id="home" class="hero premiumHero bgMode" data-bgmode="0">
         <div class="heroCopy">
@@ -101,6 +112,15 @@
             <span id="rotatingRole" class="roleRotator"></span>
             <span class="cursor">|</span>
           </div>
+          <div class="socVisual" aria-label="SOC alert dashboard preview">
+            <div class="socVisualTop"><span>live-soc-feed</span><strong>healthy</strong></div>
+            <div class="socPulseMap"><span></span><span></span><span></span></div>
+            <div class="socRows">
+              <div><span class="sev high">High</span><p>Suspicious login pattern</p><strong>MITRE T1110</strong></div>
+              <div><span class="sev med">Med</span><p>Endpoint policy drift</p><strong>EDR</strong></div>
+              <div><span class="sev low">Low</span><p>Cloud config review</p><strong>AWS</strong></div>
+            </div>
+          </div>
           <div class="heroStatsClean">
             <div><strong>4+</strong><span>Years IT and security</span></div>
             <div><strong>100+</strong><span>Alerts triaged daily</span></div>
@@ -128,6 +148,23 @@
           <div class="statCard glass hoverGlow"><div class="statNum">4</div><div class="statLabel">Experience Areas</div></div>
           <div class="statCard glass hoverGlow"><div class="statNum">6</div><div class="statLabel">Security Projects</div></div>
           <div class="statCard glass hoverGlow"><div class="statNum">16+</div><div class="statLabel">Certifications</div></div>
+        </div>
+      </section>
+
+      <section id="snapshot" class="section recruiterSnapshot bgMode" data-bgmode="1" aria-label="Recruiter snapshot">
+        <div class="snapshotPanel glass hoverGlow">
+          <div>
+            <p class="eyebrow">Recruiter Snapshot</p>
+            <h2>Security analyst ready for SOC, cloud security, and threat detection work.</h2>
+          </div>
+          <div class="snapshotGrid">
+            <span>SOC alert triage</span>
+            <span>Splunk SIEM</span>
+            <span>Nessus / Qualys</span>
+            <span>AWS security projects</span>
+            <span>CompTIA Security+</span>
+            <span>Python automation</span>
+          </div>
         </div>
       </section>
 
@@ -193,6 +230,7 @@
             <h3>Deloitte</h3>
             <h4>Cybersecurity Analyst L1</h4>
             <p class="experienceSummary">High-volume SOC operations, SIEM triage, investigations, and vulnerability lifecycle support.</p>
+            <button class="experienceToggle" type="button" aria-expanded="false">Tap to view details</button>
             <div class="experienceDetails">
               <ul>
                 <li>Triaged 100+ daily alerts using Splunk SIEM and documented investigation outcomes.</li>
@@ -209,6 +247,7 @@
             <h3>Phoenix Business Consulting</h3>
             <h4>Cybersecurity Engineer</h4>
             <p class="experienceSummary">Network hardening, endpoint protection, DLP support, and vulnerability remediation.</p>
+            <button class="experienceToggle" type="button" aria-expanded="false">Tap to view details</button>
             <div class="experienceDetails">
               <ul>
                 <li>Reviewed firewall rules and supported network security audit activities.</li>
@@ -225,6 +264,7 @@
             <h3>Siddhartha Heavy Equipment</h3>
             <h4>IT Support Technician</h4>
             <p class="experienceSummary">Systems support foundation across identity, access, endpoint troubleshooting, and monitoring.</p>
+            <button class="experienceToggle" type="button" aria-expanded="false">Tap to view details</button>
             <div class="experienceDetails">
               <ul>
                 <li>Resolved user support tickets involving hardware, software, and account access issues.</li>
@@ -241,6 +281,7 @@
             <h3>Yeshiva University</h3>
             <h4>Student Assistant - IT Department</h4>
             <p class="experienceSummary">Supporting campus IT operations through user support, troubleshooting, access assistance, and reliable service delivery.</p>
+            <button class="experienceToggle" type="button" aria-expanded="false">Tap to view details</button>
             <div class="experienceDetails">
               <ul>
                 <li>Assist students, faculty, and staff with technical support requests across accounts, devices, applications, and campus systems.</li>
@@ -259,10 +300,10 @@
           <h2>Technical Skills</h2>
         </div>
         <div class="skillBoard">
-          <article class="skillBlock glass hoverGlow"><p class="cardLabel">SOC and Detection</p><h3>Investigate fast, document clearly.</h3><div class="skillChips"><span>Splunk SIEM</span><span>Alert Triage</span><span>Threat Hunting</span><span>Incident Response</span><span>Wireshark</span></div></article>
-          <article class="skillBlock glass hoverGlow"><p class="cardLabel">Vulnerability Management</p><h3>Find, prioritize, and remediate risk.</h3><div class="skillChips"><span>Nessus</span><span>Qualys</span><span>Patch Management</span><span>Nmap</span><span>Remediation SLAs</span></div></article>
-          <article class="skillBlock glass hoverGlow"><p class="cardLabel">Offensive Security</p><h3>Think like an attacker to defend better.</h3><div class="skillChips"><span>Burp Suite</span><span>OWASP Top 10</span><span>DVWA</span><span>Metasploit</span><span>Web Testing</span></div></article>
-          <article class="skillBlock glass hoverGlow"><p class="cardLabel">Cloud and Automation</p><h3>Build useful security workflows.</h3><div class="skillChips"><span>AWS</span><span>Python</span><span>Linux</span><span>Bash</span><span>SQL</span><span>Java</span></div></article>
+          <article class="skillBlock glass hoverGlow"><p class="cardLabel">SOC and Detection</p><h3>Investigate fast, document clearly.</h3><div class="skillChips"><span>Splunk SIEM</span><span>Alert Triage</span><span>Threat Hunting</span><span>Incident Response</span><span>Wireshark</span></div><p class="skillUse">Used in: daily alert triage, investigation notes, escalation context, and detection review.</p></article>
+          <article class="skillBlock glass hoverGlow"><p class="cardLabel">Vulnerability Management</p><h3>Find, prioritize, and remediate risk.</h3><div class="skillChips"><span>Nessus</span><span>Qualys</span><span>Patch Management</span><span>Nmap</span><span>Remediation SLAs</span></div><p class="skillUse">Used in: scan review, risk prioritization, patch tracking, and remediation follow-up.</p></article>
+          <article class="skillBlock glass hoverGlow"><p class="cardLabel">Offensive Security</p><h3>Think like an attacker to defend better.</h3><div class="skillChips"><span>Burp Suite</span><span>OWASP Top 10</span><span>DVWA</span><span>Metasploit</span><span>Web Testing</span></div><p class="skillUse">Used in: lab testing, attack-path documentation, and remediation-minded reporting.</p></article>
+          <article class="skillBlock glass hoverGlow"><p class="cardLabel">Cloud and Automation</p><h3>Build useful security workflows.</h3><div class="skillChips"><span>AWS</span><span>Python</span><span>Linux</span><span>Bash</span><span>SQL</span><span>Java</span></div><p class="skillUse">Used in: cloud workflows, scripting, Linux operations, dashboards, and data handling.</p></article>
         </div>
       </section>
 
@@ -287,7 +328,9 @@
                   <div class="tagRow"><span class="tagPill">Python</span><span class="tagPill">FastAPI</span><span class="tagPill">SQLite</span><span class="tagPill">MITRE</span></div>
                   <div class="projectActions"><button class="pc-btn caseStudyBtn" type="button" data-case="siem">Case Study</button><a class="pc-btn" href="https://github.com/svemula17/smart-siem-risk-engine" target="_blank" rel="noreferrer">GitHub</a></div>
                 </div>
-                <div class="projectSlideVisual"><img src="Smart Risk Engine.png" alt="Smart SIEM Risk Engine dashboard" loading="lazy"></div>
+                <div class="projectSlideVisual projectMockup siemMockup" aria-label="Smart SIEM dashboard mockup">
+                  <div class="mockWindow"><div class="mockBar"><span></span><span></span><span></span><strong>risk-engine</strong></div><div class="mockGrid"><div class="mockMetric hot">87</div><div class="mockChart"><i></i><i></i><i></i><i></i></div><div class="mockFeed"><span>MITRE T1110</span><span>Risk: High</span><span>Playbook: Block</span></div></div></div>
+                </div>
               </article>
 
               <article class="projectSlide" data-project="02">
@@ -299,7 +342,9 @@
                   <div class="tagRow"><span class="tagPill">AWS</span><span class="tagPill">Deception</span><span class="tagPill">Cloud Security</span></div>
                   <div class="projectActions"><button class="pc-btn caseStudyBtn" type="button" data-case="cloud">Case Study</button><a class="pc-btn" href="https://github.com/saivarmadpr/Cloud_Security_Posture_-_Deception_Platform" target="_blank" rel="noreferrer">GitHub</a></div>
                 </div>
-                <div class="projectSlideVisual"><img src="cloud_posture.png" alt="Cloud posture platform" loading="lazy"></div>
+                <div class="projectSlideVisual projectMockup cloudMockup" aria-label="Cloud deception architecture mockup">
+                  <div class="cloudNodes"><span>AWS</span><span>Honey Asset</span><span>Alert Sink</span><span>Attacker Signal</span></div><div class="cloudBeam"></div>
+                </div>
               </article>
 
               <article class="projectSlide" data-project="03">
@@ -323,7 +368,9 @@
                   <div class="tagRow"><span class="tagPill">Detection</span><span class="tagPill">Analysis</span><span class="tagPill">Python</span></div>
                   <div class="projectActions"><button class="pc-btn caseStudyBtn" type="button" data-case="attack">Case Study</button><a class="pc-btn" href="https://github.com/svemula17/attack_identification_tool" target="_blank" rel="noreferrer">GitHub</a></div>
                 </div>
-                <div class="projectSlideVisual"><img src="attack_identification.png" alt="Attack identification tool" loading="lazy"></div>
+                <div class="projectSlideVisual projectMockup attackMockup" aria-label="Attack classification mockup">
+                  <div class="attackConsole"><p>$ classify --ioc suspicious_auth.json</p><span>[+] brute force pattern</span><span>[+] mapped to credential access</span><span>[+] analyst priority: elevated</span></div>
+                </div>
               </article>
 
               <article class="projectSlide" data-project="05">
@@ -335,7 +382,9 @@
                   <div class="tagRow"><span class="tagPill">AWS</span><span class="tagPill">AI</span><span class="tagPill">Serverless</span></div>
                   <div class="projectActions"><button class="pc-btn caseStudyBtn" type="button" data-case="image">Case Study</button><a class="pc-btn" href="https://github.com/PeterMangoro/cloudComputingDiscussion1" target="_blank" rel="noreferrer">GitHub</a></div>
                 </div>
-                <div class="projectSlideVisual"><img src="image_tagging.png" alt="AWS image tagging app" loading="lazy"></div>
+                <div class="projectSlideVisual projectMockup imageMockup" aria-label="Image tagging workflow mockup">
+                  <div class="tagCloud"><span>S3 Upload</span><span>Object Metadata</span><span>AI Tags</span><span>Search Index</span></div><div class="imageTiles"><i></i><i></i><i></i></div>
+                </div>
               </article>
 
               <article class="projectSlide" data-project="06">
@@ -347,7 +396,9 @@
                   <div class="tagRow"><span class="tagPill">AWS Lambda</span><span class="tagPill">DynamoDB</span><span class="tagPill">Vue</span></div>
                   <div class="projectActions"><button class="pc-btn caseStudyBtn" type="button" data-case="sentiment">Case Study</button><a class="pc-btn" href="https://github.com/PeterMangoro/cloudComputingDiscussion1" target="_blank" rel="noreferrer">GitHub</a></div>
                 </div>
-                <div class="projectSlideVisual"><img src="sentiment_analysis.png" alt="AWS sentiment analysis app" loading="lazy"></div>
+                <div class="projectSlideVisual projectMockup sentimentMockup" aria-label="Sentiment dashboard mockup">
+                  <div class="sentimentPanel"><strong>Feedback sentiment</strong><div class="sentBars"><span style="--h:72%"></span><span style="--h:44%"></span><span style="--h:64%"></span><span style="--h:28%"></span></div><p>SNS alert: negative trend detected</p></div>
+                </div>
               </article>
             </div>
 
@@ -361,6 +412,17 @@
               <button class="projectDot" data-slide="5" aria-label="Show project 6"></button>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section class="projectCtaBand glass hoverGlow" aria-label="Project call to action">
+        <div>
+          <p class="eyebrow">Want the technical proof?</p>
+          <h2>Explore the code, then reach out for the story behind the build.</h2>
+        </div>
+        <div class="projectCtaActions">
+          <a class="btn primary" href="https://github.com/svemula17" target="_blank" rel="noreferrer">Open GitHub</a>
+          <a class="btn ghost" href="mailto:saikumarvemula.us@gmail.com">Contact Me</a>
         </div>
       </section>
 
@@ -380,12 +442,17 @@
             <a class="certRow hoverGlow" href="Google cert_page-0001.jpg" target="_blank" rel="noreferrer"><img src="Google cert_page-0001.jpg" alt="Google Cybersecurity certificate"><div><h3>Google Cybersecurity Professional Certificate</h3><p>Google | View certificate</p></div></a>
             <a class="certRow hoverGlow" href="Soc.png" target="_blank" rel="noreferrer"><img src="Soc.png" alt="Hands-on SOC Lab certificate"><div><h3>Hands-on SOC Lab Program</h3><p>SOC Experts | View certificate</p></div></a>
             <a class="certRow hoverGlow" href="blob.png" target="_blank" rel="noreferrer"><img src="blob.png" alt="Red Hat certificate"><div><h3>Red Hat System Administration I</h3><p>Red Hat RH124 | View certificate</p></div></a>
-            <a class="certRow hoverGlow" href="ISc2.jpg" target="_blank" rel="noreferrer"><img src="ISc2.jpg" alt="ISC2 certificate"><div><h3>Certified in Cybersecurity Specialization</h3><p>(ISC)2 / Coursera | View certificate</p></div></a>
-            <a class="certRow hoverGlow" href="Automate.jpg" target="_blank" rel="noreferrer"><img src="Automate.jpg" alt="Python automation certificate"><div><h3>Automate Cybersecurity Tasks with Python</h3><p>Google | View certificate</p></div></a>
           </div>
 
-          <div class="additionalCerts">
-            <span>Foundations of Cybersecurity</span><span>Play It Safe: Manage Security Risks</span><span>Connect and Protect Networks</span><span>Tools of the Trade: Linux and SQL</span><span>Assets, Threats, and Vulnerabilities</span><span>Sound the Alarm: Detection and Response</span><span>Incident Response, BC, and DR Concepts</span><span>Access Control Concepts</span>
+          <button id="certToggle" class="certToggle btn ghost" type="button" aria-expanded="false" aria-controls="certMore">View all certifications</button>
+          <div id="certMore" class="certMore" hidden>
+            <div class="certGridFeatured certGridMore">
+              <a class="certRow hoverGlow" href="ISc2.jpg" target="_blank" rel="noreferrer"><img src="ISc2.jpg" alt="ISC2 certificate"><div><h3>Certified in Cybersecurity Specialization</h3><p>(ISC)2 / Coursera | View certificate</p></div></a>
+              <a class="certRow hoverGlow" href="Automate.jpg" target="_blank" rel="noreferrer"><img src="Automate.jpg" alt="Python automation certificate"><div><h3>Automate Cybersecurity Tasks with Python</h3><p>Google | View certificate</p></div></a>
+            </div>
+            <div class="additionalCerts">
+              <span>Foundations of Cybersecurity</span><span>Play It Safe: Manage Security Risks</span><span>Connect and Protect Networks</span><span>Tools of the Trade: Linux and SQL</span><span>Assets, Threats, and Vulnerabilities</span><span>Sound the Alarm: Detection and Response</span><span>Incident Response, BC, and DR Concepts</span><span>Access Control Concepts</span>
+            </div>
           </div>
         </div>
       </section>
@@ -405,6 +472,9 @@
             <button class="btn ghost copyBtn" data-copy="saikumarvemula.us@gmail.com">Copy Email</button>
             <a class="btn ghost" href="https://github.com/svemula17" target="_blank" rel="noreferrer">GitHub</a>
             <a class="btn ghost" href="Sai_Kumar_Cybersecurity.pdf" download>Resume</a>
+          </div>
+          <div class="roleTargetNote">
+            I am looking for SOC Analyst, Cybersecurity Analyst, Cloud Security, and Threat Detection roles where I can investigate real alerts, document clearly, and build practical security workflows.
           </div>
           <div class="contactMeta" aria-label="Contact details">
             <span>saikumarvemula.us@gmail.com</span>
@@ -443,7 +513,7 @@
   </div>
 
   <script src="boot.js"></script>
-  <script src="script.js?v=5"></script>
+  <script src="script.js?v=7"></script>
 </body>
 
 </html>
