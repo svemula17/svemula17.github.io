@@ -568,6 +568,102 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 revealTargets.forEach(el => revealObserver.observe(el));
 
+
+
+/* =========================
+   Project case-study modal
+========================= */
+const caseStudies = {
+  siem: {
+    title: "Smart SIEM Risk Engine",
+    problem: "SOC teams face alert fatigue when high-volume IDS and network logs are not normalized, scored, or prioritized for analyst action.",
+    built: "A Python/FastAPI pipeline that validates raw alerts, normalizes fields, scores risk, maps MITRE ATT&CK techniques, triggers playbook-style responses, and streams updates to a WebSocket dashboard.",
+    tools: "Python, FastAPI, WebSockets, SQLite, Pydantic, Chart.js, Jinja2, MITRE ATT&CK, Suricata/Zeek-style datasets.",
+    outcome: "A stronger analyst workflow with risk bands, active blocked-IP state, live threat feeds, hunting queries, and clearer escalation context.",
+    link: "https://github.com/svemula17/smart-siem-risk-engine"
+  },
+  cloud: {
+    title: "AI Cloud Posture Platform",
+    problem: "Cloud misconfigurations and exposed services are easier to understand when defenders can observe how attackers discover and interact with risky assets.",
+    built: "A controlled cloud security and deception lab that deploys intentionally monitored cloud assets to convert attacker curiosity into defensive intelligence.",
+    tools: "AWS, cloud security posture concepts, deception services, alerting, defensive research workflow.",
+    outcome: "A practical cloud security lab showing attacker behavior patterns and how deception can support detection strategy.",
+    link: "https://github.com/saivarmadpr/Cloud_Security_Posture_-_Deception_Platform"
+  },
+  dvwa: {
+    title: "DVWA Vulnerability Testing Lab",
+    problem: "Defenders need hands-on familiarity with common web attack paths to validate controls and write better remediation guidance.",
+    built: "A DVWA lab workflow for testing SQL injection, XSS, CSRF, and related OWASP Top 10 issues with documented attack steps and remediation notes.",
+    tools: "DVWA, Burp Suite, browser tooling, OWASP Top 10 testing methodology.",
+    outcome: "Improved offensive-security understanding that translates directly into clearer defensive recommendations.",
+    link: "https://github.com/svemula17"
+  },
+  attack: {
+    title: "Attack Identification Tool",
+    problem: "Analysts need clearer ways to turn indicators and observed behavior into attack classifications they can investigate.",
+    built: "A security-analysis tooling concept focused on organizing attack signals into cleaner classifications and analyst-friendly output.",
+    tools: "Python, detection logic, classification workflow, security analysis documentation.",
+    outcome: "A portfolio-ready detection support concept that complements SOC triage and investigation workflows.",
+    link: "https://github.com/svemula17/attack_identification_tool"
+  },
+  image: {
+    title: "AWS Image AI Tagging",
+    problem: "Uploaded image assets become difficult to organize and search without useful metadata extraction.",
+    built: "A cloud-native image workflow using upload, tagging, and searchable metadata patterns for asset organization.",
+    tools: "AWS storage patterns, metadata tagging, serverless workflow concepts.",
+    outcome: "A clearer pattern for searchable cloud-hosted media assets and automated metadata enrichment.",
+    link: "https://github.com/PeterMangoro/cloudComputingDiscussion1"
+  },
+  sentiment: {
+    title: "AWS Sentiment Analysis System",
+    problem: "Fintech teams receive large volumes of feedback that are slow to manually review, especially when negative sentiment needs fast attention.",
+    built: "A serverless AWS system that processes CSV/JSON/TXT feedback through Lambda, stores results in DynamoDB, displays trends in a Nuxt/Vue dashboard, and sends SNS alerts.",
+    tools: "AWS S3, Lambda, DynamoDB, API Gateway, SNS, CloudWatch, Nuxt/Vue, Chart.js, Tailwind CSS.",
+    outcome: "A free-tier optimized platform with real-time insights, exportable results, negative sentiment alerts, and documented cost savings versus paid alternatives.",
+    link: "https://github.com/PeterMangoro/cloudComputingDiscussion1"
+  }
+};
+
+const caseModal = document.getElementById("caseModal");
+const caseTitle = document.getElementById("caseModalTitle");
+const caseProblem = document.getElementById("caseProblem");
+const caseBuilt = document.getElementById("caseBuilt");
+const caseTools = document.getElementById("caseTools");
+const caseOutcome = document.getElementById("caseOutcome");
+const caseLink = document.getElementById("caseLink");
+let lastCaseTrigger = null;
+
+function openCaseStudy(key, trigger) {
+  const data = caseStudies[key];
+  if (!caseModal || !data) return;
+  lastCaseTrigger = trigger || null;
+  caseTitle.textContent = data.title;
+  caseProblem.textContent = data.problem;
+  caseBuilt.textContent = data.built;
+  caseTools.textContent = data.tools;
+  caseOutcome.textContent = data.outcome;
+  caseLink.href = data.link;
+  caseModal.classList.add("open");
+  caseModal.setAttribute("aria-hidden", "false");
+  document.body.classList.add("case-modal-open");
+}
+
+function closeCaseStudy() {
+  if (!caseModal) return;
+  caseModal.classList.remove("open");
+  caseModal.setAttribute("aria-hidden", "true");
+  document.body.classList.remove("case-modal-open");
+  lastCaseTrigger?.focus?.();
+}
+
+document.querySelectorAll(".caseStudyBtn").forEach(btn => {
+  btn.addEventListener("click", () => openCaseStudy(btn.dataset.case, btn));
+});
+document.querySelectorAll("[data-close-case]").forEach(btn => btn.addEventListener("click", closeCaseStudy));
+window.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && caseModal?.classList.contains("open")) closeCaseStudy();
+});
+
 /* Year in footer */
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
