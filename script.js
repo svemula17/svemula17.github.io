@@ -554,8 +554,13 @@ syncProjectSlider();
 /* =========================
    Scroll reveal polish
 ========================= */
-const revealTargets = document.querySelectorAll(".premiumSection, .statCard, .experienceCard, .skillBlock, .certRow, .contactBand");
-revealTargets.forEach(el => el.classList.add("revealUp"));
+const revealTargets = document.querySelectorAll(".premiumSection, .statCard, .experienceCard, .skillBlock, .certRow, .contactBand, .eduMiniCard, .projectSlide");
+revealTargets.forEach((el, index) => {
+  el.classList.add("revealUp");
+  el.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 55}ms`);
+  if (index % 3 === 1) el.classList.add("fx-left");
+  if (index % 3 === 2) el.classList.add("fx-right");
+});
 
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
