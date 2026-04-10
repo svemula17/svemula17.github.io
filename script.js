@@ -173,8 +173,10 @@ const terminalData = {
 <span class="out"><b>Projects</b></span><br>
 <span class="out">1) Smart SIEM Risk Engine & Dashboard</span><br>
 <span class="out">2) AI-Powered Cloud Security Posture Platform</span><br>
-<span class="out">3) AWS Image Upload & AI Tagging System</span><br>
-<span class="out">4) AWS Sentiment Analysis System</span><br>
+<span class="out">3) DVWA Vulnerability Testing Lab (OWASP Top 10)</span><br>
+<span class="out">4) Attack Identification Tool</span><br>
+<span class="out">5) AWS Image Upload & AI Tagging System</span><br>
+<span class="out">6) AWS Sentiment Analysis System</span><br>
 <span class="muted">Tip:</span> <span class="cmd">open projects</span> to scroll there
 `,
   skills: `
@@ -187,9 +189,12 @@ const terminalData = {
 `,
   experience: `
 <span class="out"><b>Experience</b></span><br>
-<span class="out">SAP ABAP Consultant — Phoenix Business Consulting Pvt Ltd</span><br>
-<span class="out">Aug 2022 – Sep 2024 • Hyderabad, India</span><br>
-<span class="out">• DB Objects • Reports (ALV) • SmartForms/SAP Scripts</span><br>
+<span class="out">🏢 Cybersecurity Analyst L1 — Deloitte</span><br>
+<span class="out">   Mar 2023 – Apr 2025 • 100+ alerts/day • Splunk SIEM • Nessus</span><br>
+<span class="out">🏢 Cybersecurity Engineer — Phoenix Business Consulting</span><br>
+<span class="out">   Aug 2022 – Feb 2023 • Firewalls • Vuln Mgmt • DLP</span><br>
+<span class="out">🏢 IT Support Technician — Siddhartha Heavy Equipment</span><br>
+<span class="out">   Jun 2021 – Jul 2022 • Active Directory • Access Control</span><br>
 <span class="muted">Tip:</span> <span class="cmd">open experience</span>
 `,
   certifications: `

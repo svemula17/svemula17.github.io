@@ -1250,3 +1250,110 @@ html[data-ui="light"] .miniList{ color: rgba(12,14,20,0.70); }
   margin-top: 18px;
   margin-bottom: 16px;
 }
+
+/* ===========================
+   STATS BAR
+=========================== */
+.statsBar {
+  padding: 0 clamp(20px, 5vw, 80px) 60px;
+}
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+@media (max-width: 700px) {
+  .statsGrid { grid-template-columns: repeat(2, 1fr); }
+}
+.statCard {
+  border-radius: 16px;
+  padding: 28px 20px 22px;
+  text-align: center;
+  border: 1px solid var(--accentBorder);
+  transition: transform 0.2s;
+}
+.statCard:hover { transform: translateY(-4px); }
+.statNum {
+  font-family: var(--mono);
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.statSup {
+  font-size: 22px;
+  vertical-align: super;
+}
+.statLabel {
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ===========================
+   DVWA TERMINAL PLACEHOLDER
+=========================== */
+.dvwa-placeholder {
+  background: #0a0e14 !important;
+  display: flex;
+  align-items: stretch;
+  padding: 0 !important;
+  border: 1px solid rgba(0,255,170,0.15) !important;
+}
+.dvwa-terminal {
+  width: 100%;
+  font-family: var(--mono);
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+}
+.dvwa-bar {
+  background: rgba(255,255,255,0.04);
+  padding: 8px 12px;
+  display: flex;
+  gap: 6px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.dvwa-dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+.dvwa-dot.r { background: #ff5f57; }
+.dvwa-dot.y { background: #febc2e; }
+.dvwa-dot.g { background: #28c840; }
+.dvwa-lines {
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+.dvwa-prompt { color: var(--accent); margin-right: 6px; }
+.dvwa-cmd { color: rgba(255,255,255,0.80); }
+.dvwa-out { color: rgba(0,255,170,0.55); padding-left: 14px; }
+
+/* ===========================
+   CYSA+ IN-PROGRESS CERT
+=========================== */
+.cc-badge-placeholder {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.25) !important;
+  border: 2px dashed var(--accentBorder) !important;
+  border-radius: 8px;
+  gap: 8px;
+}
+.cc-badge-icon { font-size: 40px; }
+.cc-inprogress-label {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  border: 1px solid var(--accentBorder);
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+html[data-ui="light"] .dvwa-placeholder { background: #1a1e26 !important; }

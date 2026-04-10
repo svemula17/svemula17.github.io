@@ -177,6 +177,28 @@
         </div>
       </section>
 
+      <!-- STATS BAR -->
+      <section class="statsBar">
+        <div class="statsGrid">
+          <div class="statCard glass hoverGlow">
+            <div class="statNum">4<span class="statSup">+</span></div>
+            <div class="statLabel">Years in IT &amp; Security</div>
+          </div>
+          <div class="statCard glass hoverGlow">
+            <div class="statNum">3</div>
+            <div class="statLabel">Companies</div>
+          </div>
+          <div class="statCard glass hoverGlow">
+            <div class="statNum">100<span class="statSup">+</span></div>
+            <div class="statLabel">Alerts Triaged Daily</div>
+          </div>
+          <div class="statCard glass hoverGlow">
+            <div class="statNum">16<span class="statSup">+</span></div>
+            <div class="statLabel">Certifications</div>
+          </div>
+        </div>
+      </section>
+
       <!-- ABOUT -->
       <section id="about" class="section bgMode" data-bgmode="0">
         <div class="sectionHead">
@@ -187,7 +209,7 @@
         <div class="aboutMeGrid">
           <!-- LEFT: Photo -->
           <div class="aboutMePhoto glass hoverGlow" aria-label="Profile photo">
-            <img src="profile.png" alt="Sai Kumar profile photo" loading="lazy" />
+            <img src="profile_new.jpg" alt="Sai Kumar profile photo" loading="lazy" />
           </div>
 
           <!-- RIGHT: About text -->
@@ -195,21 +217,21 @@
             <h3 class="aboutMeTitle themedTitle">Hi, I’m Sai Kumar Vemula</h3>
 
             <p class="aboutMeText">
-              I am a dedicated cybersecurity professional currently pursuing an M.S. in Cybersecurity at Yeshiva
-              University. I believe in a hands-on approach to security, focusing on practical implementation over
-              theory.
+              Cybersecurity professional with 4+ years of IT and security experience, currently pursuing an M.S. in
+              Cybersecurity at Yeshiva University. Most recently a <strong>Cybersecurity Analyst L1 at Deloitte</strong>,
+              where I triaged 100+ security alerts daily and led hands-on incident response investigations.
             </p>
             <p class="aboutMeText">
-              My daily work involves building home labs, deploying AWS honeypots, and engineering Splunk SIEM
-              dashboards. I am eager to apply my skills in threat hunting, vulnerability assessment, and cloud security
-              to protect organizations from modern cyber threats.
+              I bridge offensive and defensive security — running vulnerability assessments with Nessus & Qualys,
+              hunting threats via Splunk SIEM, and stress-testing environments against OWASP Top 10 using tools like
+              Burp Suite and DVWA. I build for resilience, not just compliance.
             </p>
 
             <div class="aboutMeHighlights">
               <div class="miniTitle">Core Competencies</div>
               <ul class="miniList">
-                <li>Vulnerability assessment & remediation (OWASP Top 10)</li>
-                <li>SOC fundamentals: log analysis, alert triage, and SIEM (Splunk)</li>
+                <li>SOC operations: alert triage, incident response & SIEM (Splunk)</li>
+                <li>Vulnerability assessment & remediation (Nessus, Qualys, OWASP Top 10)</li>
                 <li>Cloud security posture & misconfiguration detection (AWS)</li>
                 <li>Security scripting & automation (Python, Bash)</li>
               </ul>
@@ -265,6 +287,26 @@
                 target="_blank" rel="noreferrer">View Project ⇗</a>
             </article>
 
+            <!-- Project: DVWA Vulnerability Testing Lab -->
+            <article class="pc-card glass hoverGlow">
+              <h3 class="pc-title">DVWA Vulnerability Testing Lab</h3>
+              <div class="pc-image-wrapper dvwa-placeholder">
+                <div class="dvwa-terminal">
+                  <div class="dvwa-bar"><span class="dvwa-dot r"></span><span class="dvwa-dot y"></span><span class="dvwa-dot g"></span></div>
+                  <div class="dvwa-lines">
+                    <div><span class="dvwa-prompt">$</span> <span class="dvwa-cmd">sqlmap -u target --dbs</span></div>
+                    <div><span class="dvwa-out">[+] SQL injection found</span></div>
+                    <div><span class="dvwa-prompt">$</span> <span class="dvwa-cmd">burpsuite --proxy intercept</span></div>
+                    <div><span class="dvwa-out">[+] XSS payload captured</span></div>
+                    <div><span class="dvwa-prompt">$</span> <span class="dvwa-cmd">nikto -h localhost/dvwa</span></div>
+                    <div><span class="dvwa-out">[+] 12 vulnerabilities found</span></div>
+                  </div>
+                </div>
+              </div>
+              <p class="pc-desc">Hands-on penetration testing lab using DVWA to practice and document OWASP Top 10 vulnerabilities — SQL injection, XSS, CSRF, and file inclusion.</p>
+              <a class="pc-btn" href="https://github.com/svemula17" target="_blank" rel="noreferrer">View Project ⇗</a>
+            </article>
+
             <!-- Project: Attack Identification Tool -->
             <article class="pc-card glass hoverGlow">
               <h3 class="pc-title">Attack Identification Tool</h3>
@@ -306,6 +348,15 @@
         <!-- CERTIFICATES TAB -->
         <div id="tab-certs" class="tab-content" style="display: none;">
           <div class="pc-grid">
+            <!-- CySA+ In Progress -->
+            <article class="cc-card glass hoverGlow cc-inprogress">
+              <div class="cc-img cc-badge-placeholder">
+                <span class="cc-badge-icon">🎯</span>
+                <span class="cc-inprogress-label">IN PROGRESS</span>
+              </div>
+              <h3 class="cc-title">CompTIA CySA+</h3>
+              <p class="cc-issuer">CompTIA — <em>Exam Pending</em></p>
+            </article>
             <article class="cc-card glass hoverGlow">
               <img src="Comptia.jpg" class="cc-img" alt="" loading="lazy">
               <h3 class="cc-title">CompTIA Security+</h3>
@@ -546,34 +597,102 @@
         </div>
 
         <div class="timelineStack">
+
+          <!-- Role 1: Deloitte -->
           <article class="showcaseRow hoverRow">
             <div class="showcaseMedia glass expMedia hoverGlow">
-              <div class="expBadge">Phoenix Business Consulting Pvt Ltd</div>
-              <div class="expBig">SAP ABAP Consultant</div>
+              <div class="expBadge">Deloitte</div>
+              <div class="expBig">Cybersecurity Analyst L1</div>
+              <div class="expSmall">USA (Remote)</div>
+            </div>
+
+            <div class="showcaseBody">
+              <div class="showcaseDate">MAR 2023 — APR 2025</div>
+              <h3 class="showcaseTitle themedTitle">Cybersecurity Analyst L1</h3>
+
+              <p class="showcaseDesc">
+                SOC operations at enterprise scale — alert triage, threat investigation, and vulnerability lifecycle management.
+              </p>
+
+              <ul class="showcaseBullets">
+                <li>Monitored and triaged <strong>100+ security alerts daily</strong> using Splunk SIEM</li>
+                <li>Investigated phishing, malware, and unauthorized access incidents end-to-end</li>
+                <li>Conducted vulnerability assessments using Nessus and Qualys; tracked remediation SLAs</li>
+                <li>Collaborated on incident response playbooks, reducing MTTR across the team</li>
+              </ul>
+
+              <div class="tagRow">
+                <span class="tagPill">Splunk</span>
+                <span class="tagPill">SIEM</span>
+                <span class="tagPill">Incident Response</span>
+                <span class="tagPill">Nessus</span>
+                <span class="tagPill">Qualys</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Role 2: Phoenix Business Consulting -->
+          <article class="showcaseRow hoverRow">
+            <div class="showcaseMedia glass expMedia hoverGlow">
+              <div class="expBadge">Phoenix Business Consulting</div>
+              <div class="expBig">Cybersecurity Engineer</div>
               <div class="expSmall">Hyderabad, India</div>
             </div>
 
             <div class="showcaseBody">
-              <div class="showcaseDate">AUG 2022 — SEP 2024</div>
-              <h3 class="showcaseTitle themedTitle">SAP ABAP Consultant</h3>
+              <div class="showcaseDate">AUG 2022 — FEB 2023</div>
+              <h3 class="showcaseTitle themedTitle">Cybersecurity Engineer</h3>
 
               <p class="showcaseDesc">
-                Enterprise reporting and automation with performance focus and documentation.
+                Network security hardening, vulnerability remediation, and endpoint protection configuration.
               </p>
 
               <ul class="showcaseBullets">
-                <li>Designed DB objects (Tables, Views, Search Helps) for optimized retrieval</li>
-                <li>Built Classical / Interactive / ALV reports for dashboards &amp; analytics</li>
-                <li>Developed SAP Scripts &amp; Smart Forms to improve workflow automation</li>
+                <li>Performed network security audits and firewall rule reviews (pfSense)</li>
+                <li>Supported vulnerability remediation and patch management cycles</li>
+                <li>Configured endpoint protection and DLP tools across the organization</li>
               </ul>
 
               <div class="tagRow">
-                <span class="tagPill">Reporting</span>
-                <span class="tagPill">Automation</span>
-                <span class="tagPill">Documentation</span>
+                <span class="tagPill">Network Security</span>
+                <span class="tagPill">Firewalls</span>
+                <span class="tagPill">Vulnerability Mgmt</span>
+                <span class="tagPill">DLP</span>
               </div>
             </div>
           </article>
+
+          <!-- Role 3: Siddhartha Heavy Equipment -->
+          <article class="showcaseRow hoverRow">
+            <div class="showcaseMedia glass expMedia hoverGlow">
+              <div class="expBadge">Siddhartha Heavy Equipment</div>
+              <div class="expBig">IT Support Technician</div>
+              <div class="expSmall">Hyderabad, India</div>
+            </div>
+
+            <div class="showcaseBody">
+              <div class="showcaseDate">JUN 2021 — JUL 2022</div>
+              <h3 class="showcaseTitle themedTitle">IT Support Technician</h3>
+
+              <p class="showcaseDesc">
+                End-user support, identity management, and systems monitoring across the organization.
+              </p>
+
+              <ul class="showcaseBullets">
+                <li>Provided hardware/software technical support and resolved security-related tickets</li>
+                <li>Managed user accounts, access controls, and Active Directory provisioning</li>
+                <li>Monitored system performance and escalated anomalies to the security team</li>
+              </ul>
+
+              <div class="tagRow">
+                <span class="tagPill">IT Support</span>
+                <span class="tagPill">Active Directory</span>
+                <span class="tagPill">Access Control</span>
+                <span class="tagPill">Systems Monitoring</span>
+              </div>
+            </div>
+          </article>
+
         </div>
       </section>
 
