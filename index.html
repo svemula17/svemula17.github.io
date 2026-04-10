@@ -48,7 +48,23 @@
         <a class="navLink" href="#contact">Contact</a>
       </nav>
 
-      <a class="headerResume" href="Sai_Kumar_Cybersecurity.pdf" download>Resume</a>
+      <div class="headerTools">
+        <div class="modeToggleWrap compactMode" aria-label="Light dark mode toggle">
+          <span class="modeLabel">Light</span>
+          <label class="switch" title="Toggle Light/Dark">
+            <input id="uiToggle" type="checkbox" />
+            <span class="slider"></span>
+          </label>
+          <span class="modeLabel">Dark</span>
+        </div>
+        <div class="themeDots compactThemes" aria-label="Theme selector">
+          <button class="themeDot tRed" data-theme="red" aria-label="Red theme"></button>
+          <button class="themeDot tGreen" data-theme="green" aria-label="Green theme"></button>
+          <button class="themeDot tMono" data-theme="mono" aria-label="Black and white theme"></button>
+          <button class="themeDot tBlue" data-theme="blue" aria-label="Blue theme"></button>
+        </div>
+        <a class="headerResume" href="Sai_Kumar_Cybersecurity.pdf" download>Resume</a>
+      </div>
     </header>
 
     <main class="wrap premiumPortfolio">
@@ -207,17 +223,17 @@
 
           <article class="experienceCard glass hoverGlow">
             <span class="experienceIndex">04</span>
-            <p class="experienceDate">2024 - Present</p>
-            <h3>Security Labs & Research</h3>
-            <h4>Cloud, AI, and Offensive Security Projects</h4>
-            <p class="experienceSummary">Hands-on graduate and portfolio projects that turn security concepts into working systems.</p>
+            <p class="experienceDate">Jun 2025 - Present</p>
+            <h3>Yeshiva University</h3>
+            <h4>Student Assistant - IT Department</h4>
+            <p class="experienceSummary">Supporting campus IT operations through user support, troubleshooting, access assistance, and reliable service delivery.</p>
             <div class="experienceDetails">
               <ul>
-                <li>Built a Smart SIEM Risk Engine using asset criticality and vulnerability-driven scoring.</li>
-                <li>Created AWS security and AI projects for cloud posture, image tagging, and sentiment analysis.</li>
-                <li>Practiced OWASP Top 10 testing through DVWA labs and documented attack paths.</li>
+                <li>Assist students, faculty, and staff with technical support requests across accounts, devices, applications, and campus systems.</li>
+                <li>Troubleshoot hardware, software, network connectivity, and access-related issues while documenting resolutions clearly.</li>
+                <li>Support IT service workflows with a security-aware mindset around account access, data handling, and timely escalation.</li>
               </ul>
-              <div class="tagRow"><span class="tagPill">AWS</span><span class="tagPill">Python</span><span class="tagPill">OWASP</span><span class="tagPill">Risk Scoring</span></div>
+              <div class="tagRow"><span class="tagPill">IT Support</span><span class="tagPill">Troubleshooting</span><span class="tagPill">Access Support</span><span class="tagPill">Service Desk</span></div>
             </div>
           </article>
         </div>
@@ -236,34 +252,95 @@
         </div>
       </section>
 
-      <section id="projects" class="section premiumSection bgMode" data-bgmode="1">
-        <div class="sectionHeading splitHeading">
+      <section id="projects" class="section premiumSection projectScrollSection bgMode" data-bgmode="1">
+        <div class="sectionHeading splitHeading projectIntro">
           <div>
             <p class="eyebrow">Projects</p>
             <h2>Selected security case studies.</h2>
           </div>
-          <a class="sectionLink" href="https://github.com/svemula17" target="_blank" rel="noreferrer">GitHub Profile</a>
+          <p>Scroll through the project showcase. Each case study slides into focus with a clean, presentation-style layout.</p>
         </div>
 
-        <div class="featuredProjects">
-          <article class="projectFeature glass hoverGlow">
-            <img src="Smart Risk Engine.png" alt="Smart SIEM Risk Engine dashboard" loading="lazy">
-            <div><p class="cardLabel">Featured Project</p><h3>Smart SIEM Risk Engine</h3><p>Designed a risk scoring workflow that combines asset criticality and vulnerability context so analysts can prioritize what matters first.</p><div class="tagRow"><span class="tagPill">SIEM</span><span class="tagPill">Risk Scoring</span><span class="tagPill">Dashboard</span></div><a class="pc-btn" href="https://github.com/svemula17/smart-siem-risk-engine" target="_blank" rel="noreferrer">View Project</a></div>
-          </article>
-          <article class="projectFeature glass hoverGlow">
-            <img src="cloud_posture.png" alt="Cloud posture platform" loading="lazy">
-            <div><p class="cardLabel">Cloud Security</p><h3>AI Cloud Posture Platform</h3><p>Built a cloud security posture concept with AWS-focused scanning, alerting, and deception-inspired defensive thinking.</p><div class="tagRow"><span class="tagPill">AWS</span><span class="tagPill">Cloud Posture</span><span class="tagPill">Alerting</span></div><a class="pc-btn" href="https://github.com/saivarmadpr/Cloud_Security_Posture_-_Deception_Platform" target="_blank" rel="noreferrer">View Project</a></div>
-          </article>
-          <article class="projectFeature glass hoverGlow">
-            <div class="dvwa-placeholder projectTerminal"><div class="dvwa-terminal"><div class="dvwa-bar"><span class="dvwa-dot r"></span><span class="dvwa-dot y"></span><span class="dvwa-dot g"></span></div><div class="dvwa-lines"><div><span class="dvwa-prompt">$</span> <span class="dvwa-cmd">test OWASP_TOP_10</span></div><div><span class="dvwa-out">[+] SQLi, XSS, CSRF documented</span></div><div><span class="dvwa-prompt">$</span> <span class="dvwa-cmd">write remediation_notes.md</span></div></div></div></div>
-            <div><p class="cardLabel">Offensive Lab</p><h3>DVWA Vulnerability Testing Lab</h3><p>Practiced exploitation and documentation across OWASP Top 10 categories to better understand attacker behavior and remediation.</p><div class="tagRow"><span class="tagPill">OWASP</span><span class="tagPill">Burp Suite</span><span class="tagPill">DVWA</span></div><a class="pc-btn" href="https://github.com/svemula17" target="_blank" rel="noreferrer">View Project</a></div>
-          </article>
-        </div>
+        <div class="projectScroller" id="projectScroller">
+          <div class="projectViewport glass hoverGlow">
+            <div class="projectSlideTrack" id="projectSlideTrack">
+              <article class="projectSlide is-active" data-project="01">
+                <div class="projectSlideCopy">
+                  <p class="cardLabel">Featured Project</p>
+                  <h3>Smart SIEM Risk Engine</h3>
+                  <p>Designed a risk scoring workflow that combines asset criticality and vulnerability context so analysts can prioritize what matters first.</p>
+                  <div class="tagRow"><span class="tagPill">SIEM</span><span class="tagPill">Risk Scoring</span><span class="tagPill">Dashboard</span></div>
+                  <a class="pc-btn" href="https://github.com/svemula17/smart-siem-risk-engine" target="_blank" rel="noreferrer">View Project</a>
+                </div>
+                <div class="projectSlideVisual"><img src="Smart Risk Engine.png" alt="Smart SIEM Risk Engine dashboard" loading="lazy"></div>
+              </article>
 
-        <div class="supportProjects">
-          <a class="supportProject glass hoverGlow" href="https://github.com/svemula17/attack_identification_tool" target="_blank" rel="noreferrer"><strong>Attack Identification Tool</strong><span>Attack analysis and classification concept</span></a>
-          <a class="supportProject glass hoverGlow" href="https://github.com/PeterMangoro/cloudComputingDiscussion1" target="_blank" rel="noreferrer"><strong>AWS Image AI Tagging</strong><span>Serverless image metadata workflow</span></a>
-          <a class="supportProject glass hoverGlow" href="https://github.com/PeterMangoro/cloudComputingDiscussion1" target="_blank" rel="noreferrer"><strong>AWS Sentiment Analysis</strong><span>Serverless feedback processing pipeline</span></a>
+              <article class="projectSlide" data-project="02">
+                <div class="projectSlideCopy">
+                  <p class="cardLabel">Cloud Security</p>
+                  <h3>AI Cloud Posture Platform</h3>
+                  <p>Built a cloud security posture concept with AWS-focused scanning, alerting, and deception-inspired defensive thinking.</p>
+                  <div class="tagRow"><span class="tagPill">AWS</span><span class="tagPill">Cloud Posture</span><span class="tagPill">Alerting</span></div>
+                  <a class="pc-btn" href="https://github.com/saivarmadpr/Cloud_Security_Posture_-_Deception_Platform" target="_blank" rel="noreferrer">View Project</a>
+                </div>
+                <div class="projectSlideVisual"><img src="cloud_posture.png" alt="Cloud posture platform" loading="lazy"></div>
+              </article>
+
+              <article class="projectSlide" data-project="03">
+                <div class="projectSlideCopy">
+                  <p class="cardLabel">Offensive Lab</p>
+                  <h3>DVWA Vulnerability Testing Lab</h3>
+                  <p>Practiced exploitation and documentation across OWASP Top 10 categories to better understand attacker behavior and remediation.</p>
+                  <div class="tagRow"><span class="tagPill">OWASP</span><span class="tagPill">Burp Suite</span><span class="tagPill">DVWA</span></div>
+                  <a class="pc-btn" href="https://github.com/svemula17" target="_blank" rel="noreferrer">View Project</a>
+                </div>
+                <div class="projectSlideVisual projectTerminal"><div class="dvwa-terminal"><div class="dvwa-bar"><span class="dvwa-dot r"></span><span class="dvwa-dot y"></span><span class="dvwa-dot g"></span></div><div class="dvwa-lines"><div><span class="dvwa-prompt">$</span> <span class="dvwa-cmd">test OWASP_TOP_10</span></div><div><span class="dvwa-out">[+] SQLi, XSS, CSRF documented</span></div><div><span class="dvwa-prompt">$</span> <span class="dvwa-cmd">write remediation_notes.md</span></div></div></div></div>
+              </article>
+
+              <article class="projectSlide" data-project="04">
+                <div class="projectSlideCopy">
+                  <p class="cardLabel">Analysis Tool</p>
+                  <h3>Attack Identification Tool</h3>
+                  <p>Tooling concept for identifying, analyzing, and characterizing cyber attacks with clean classification output.</p>
+                  <div class="tagRow"><span class="tagPill">Detection</span><span class="tagPill">Analysis</span><span class="tagPill">Python</span></div>
+                  <a class="pc-btn" href="https://github.com/svemula17/attack_identification_tool" target="_blank" rel="noreferrer">View Project</a>
+                </div>
+                <div class="projectSlideVisual"><img src="attack_identification.png" alt="Attack identification tool" loading="lazy"></div>
+              </article>
+
+              <article class="projectSlide" data-project="05">
+                <div class="projectSlideCopy">
+                  <p class="cardLabel">Serverless AI</p>
+                  <h3>AWS Image AI Tagging</h3>
+                  <p>Serverless image upload system using AI tagging and searchable metadata patterns for cloud-native workflows.</p>
+                  <div class="tagRow"><span class="tagPill">AWS</span><span class="tagPill">AI</span><span class="tagPill">Serverless</span></div>
+                  <a class="pc-btn" href="https://github.com/PeterMangoro/cloudComputingDiscussion1" target="_blank" rel="noreferrer">View Project</a>
+                </div>
+                <div class="projectSlideVisual"><img src="image_tagging.png" alt="AWS image tagging app" loading="lazy"></div>
+              </article>
+
+              <article class="projectSlide" data-project="06">
+                <div class="projectSlideCopy">
+                  <p class="cardLabel">Serverless Pipeline</p>
+                  <h3>AWS Sentiment Analysis</h3>
+                  <p>Serverless feedback processing pipeline that analyzes text sentiment and can alert on negative signals.</p>
+                  <div class="tagRow"><span class="tagPill">AWS</span><span class="tagPill">Comprehend</span><span class="tagPill">Pipeline</span></div>
+                  <a class="pc-btn" href="https://github.com/PeterMangoro/cloudComputingDiscussion1" target="_blank" rel="noreferrer">View Project</a>
+                </div>
+                <div class="projectSlideVisual"><img src="sentiment_analysis.png" alt="AWS sentiment analysis app" loading="lazy"></div>
+              </article>
+            </div>
+
+            <div class="projectProgress" aria-hidden="true">
+              <span>Scroll</span>
+              <button class="projectDot is-active" data-slide="0" aria-label="Show project 1"></button>
+              <button class="projectDot" data-slide="1" aria-label="Show project 2"></button>
+              <button class="projectDot" data-slide="2" aria-label="Show project 3"></button>
+              <button class="projectDot" data-slide="3" aria-label="Show project 4"></button>
+              <button class="projectDot" data-slide="4" aria-label="Show project 5"></button>
+              <button class="projectDot" data-slide="5" aria-label="Show project 6"></button>
+            </div>
+          </div>
         </div>
       </section>
 

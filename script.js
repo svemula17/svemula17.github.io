@@ -167,7 +167,7 @@ const terminalData = {
 <span class="out">1. Deloitte - Cybersecurity Analyst L1</span><br>
 <span class="out">2. Phoenix Business Consulting - Cybersecurity Engineer</span><br>
 <span class="out">3. Siddhartha Heavy Equipment - IT Support Technician</span><br>
-<span class="out">4. Security Labs & Research - Cloud, AI, and offensive security projects</span><br>
+<span class="out">4. Yeshiva University - Student Assistant, IT Department</span><br>
 <span class="muted">Tip:</span> <span class="cmd">open experience</span>
 `,
   skills: `
@@ -509,6 +509,45 @@ function draw(){
   requestAnimationFrame(draw);
 }
 requestAnimationFrame(draw);
+
+
+
+/* =========================
+   Scroll-driven project slider
+========================= */
+const projectScroller = document.getElementById("projectScroller");
+const projectSlideTrack = document.getElementById("projectSlideTrack");
+const projectDots = [...document.querySelectorAll(".projectDot")];
+const projectSlides = [...document.querySelectorAll(".projectSlide")];
+
+function setProjectSlide(index) {
+  if (!projectSlideTrack || !projectSlides.length) return;
+  const safeIndex = Math.max(0, Math.min(index, projectSlides.length - 1));
+  projectSlideTrack.style.transform = `translateX(-${safeIndex * 100}%)`;
+  projectSlides.forEach((slide, i) => slide.classList.toggle("is-active", i === safeIndex));
+  projectDots.forEach((dot, i) => dot.classList.toggle("is-active", i === safeIndex));
+}
+
+function syncProjectSlider() {
+  if (!projectScroller || !projectSlides.length || window.innerWidth <= 860) return;
+  const rect = projectScroller.getBoundingClientRect();
+  const scrollable = projectScroller.offsetHeight - window.innerHeight;
+  const progress = Math.max(0, Math.min(1, -rect.top / Math.max(scrollable, 1)));
+  setProjectSlide(Math.round(progress * (projectSlides.length - 1)));
+}
+
+window.addEventListener("scroll", syncProjectSlider, { passive: true });
+window.addEventListener("resize", syncProjectSlider);
+projectDots.forEach(dot => {
+  dot.addEventListener("click", () => {
+    const index = Number(dot.dataset.slide || 0);
+    if (!projectScroller || !projectSlides.length) return;
+    const scrollable = projectScroller.offsetHeight - window.innerHeight;
+    const top = projectScroller.offsetTop + (scrollable * (index / Math.max(projectSlides.length - 1, 1)));
+    window.scrollTo({ top, behavior: "smooth" });
+  });
+});
+syncProjectSlider();
 
 /* Year in footer */
 const yearEl = document.getElementById("year");
