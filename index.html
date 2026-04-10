@@ -12,7 +12,7 @@
     href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Playfair+Display:wght@500;700&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css?v=5" />
+  <link rel="stylesheet" href="style.css?v=6" />
 </head>
 
 <body>
@@ -50,12 +50,13 @@
         <span class="brandMark">S</span>
       </a>
 
-      <nav class="navPill" aria-label="Primary">
+<nav class="navPill" aria-label="Primary">
         <a class="navLink active" href="#home">Home</a>
         <a class="navLink" href="#about">About</a>
-        <a class="navLink" href="#projects">Projects/Certs</a>
-        <a class="navLink" href="#skills">Skills</a>
         <a class="navLink" href="#experience">Experience</a>
+        <a class="navLink" href="#skills">Skills</a>
+        <a class="navLink" href="#projects">Projects</a>
+        <a class="navLink" href="#certifications">Certifications</a>
         <a class="navLink" href="#contact">Contact</a>
       </nav>
 
@@ -80,45 +81,49 @@
       </div>
     </header>
 
-    <main class="wrap">
+    <main class="wrap professionalWrap">
 
       <!-- HOME -->
-      <section id="home" class="hero bgMode heroDown" data-bgmode="0">
-        <!-- LEFT -->
+      <section id="home" class="hero proHero bgMode heroDown" data-bgmode="0">
         <div class="heroLeft">
+          <p class="eyebrow">Cybersecurity Portfolio</p>
           <h1 class="heroTitle heroTitleUp">
-            Sai <span class="accentFlow">Kumar</span>
+            Sai <span class="accentFlow">Kumar</span> Vemula
           </h1>
 
-          <!-- Social links under name -->
           <div class="socialRow">
             <a class="socialPill" href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a>
-            <a class="socialPill" href="https://github.com" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="socialPill" href="https://github.com/svemula17" target="_blank" rel="noreferrer">GitHub</a>
             <a class="socialPill" href="mailto:saikumarvemula.us@gmail.com">Email</a>
           </div>
 
-          <div class="heroSub glass hoverGlow">
+          <div class="heroSub glass hoverGlow proHeroCard">
             <div class="roleLine">
-              <span class="rolePrefix">></span>
+              <span class="rolePrefix">&gt;</span>
               <span id="rotatingRole" class="roleRotator"></span>
               <span class="cursor">▍</span>
             </div>
 
             <p class="heroDesc">
-              Understanding the attacker's mindset (Red Team) to engineer stronger defenses (Blue Team). I specialize in
-              vulnerability assessments, hands-on SOC operations, and threat hunting. By bridging offensive testing with
-              defensive logging and automation, I build resilient, threat-aware environments.
+              Cybersecurity analyst and engineer focused on practical defense: SIEM monitoring, incident response,
+              vulnerability management, cloud security posture, and hands-on offensive testing. I connect attacker
+              mindset with operational controls so teams can detect faster, remediate cleaner, and build safer systems.
             </p>
 
+            <div class="heroMetricStrip">
+              <span><strong>4+</strong> years IT & security</span>
+              <span><strong>100+</strong> alerts triaged daily</span>
+              <span><strong>16+</strong> certifications</span>
+            </div>
+
             <div class="ctaRow">
-              <a class="btn primary" href="#projects">→ VIEW PROJECTS</a>
-              <a class="btn ghost" href="Sai_Kumar_Cybersecurity.pdf" download>↓ DOWNLOAD RESUME</a>
-              <a class="btn ghost" href="#contact">LET'S CONNECT</a>
+              <a class="btn primary" href="#experience">View Experience</a>
+              <a class="btn ghost" href="Sai_Kumar_Cybersecurity.pdf" download>Download Resume</a>
+              <a class="btn ghost" href="#contact">Let's Connect</a>
             </div>
           </div>
         </div>
 
-        <!-- RIGHT (Linux Terminal) -->
         <div class="heroRight">
           <div class="terminal glass hoverGlow" aria-label="Linux terminal navigation">
             <div class="terminalTop">
@@ -137,10 +142,9 @@
               <span class="suggestLabel">Suggested:</span>
               <button class="suggestBtn" data-cmd="help">help</button>
               <button class="suggestBtn" data-cmd="about">about</button>
-              <button class="suggestBtn" data-cmd="education">education</button>
-              <button class="suggestBtn" data-cmd="projects">projects</button>
-              <button class="suggestBtn" data-cmd="skills">skills</button>
               <button class="suggestBtn" data-cmd="experience">experience</button>
+              <button class="suggestBtn" data-cmd="skills">skills</button>
+              <button class="suggestBtn" data-cmd="projects">projects</button>
               <button class="suggestBtn" data-cmd="certifications">certifications</button>
               <button class="suggestBtn" data-cmd="contact">contact</button>
               <button class="suggestBtn" data-cmd="clear">clear</button>
@@ -153,40 +157,18 @@
             </form>
           </div>
         </div>
-
-        <!-- EDUCATION SECTION -->
-        <div id="education" class="subSectionTop" style="grid-column: 1 / -1; margin-top: -10px;">
-          <div class="sectionHead sectionHeadMini">
-            <div class="slashes">//</div>
-            <h2 class="sectionTitleSerif themedTitle">Education</h2>
-          </div>
-
-          <div class="aboutGrid">
-            <div class="aboutCard glass hoverGlow">
-              <h3 class="aboutTitle themedTitle">Master of Science — Cybersecurity</h3>
-              <p class="aboutText">Yeshiva University</p>
-              <p>New York City, USA • 2024 - 2026 • CGPA: 3.9</p>
-            </div>
-
-            <div class="aboutCard glass hoverGlow">
-              <h3 class="aboutTitle themedTitle">Bachelor of Technology — Mechanical Engineering</h3>
-              <p>CMR College of Engineering and Technology</p>
-              <p class="aboutText">Hyderabad, India • 2018 — 2021 • CGPA: 3.9</p>
-            </div>
-          </div>
-        </div>
       </section>
 
       <!-- STATS BAR -->
-      <section class="statsBar">
+      <section class="statsBar proStats">
         <div class="statsGrid">
           <div class="statCard glass hoverGlow">
             <div class="statNum">4<span class="statSup">+</span></div>
-            <div class="statLabel">Years in IT &amp; Security</div>
+            <div class="statLabel">Years in IT & Security</div>
           </div>
           <div class="statCard glass hoverGlow">
-            <div class="statNum">3</div>
-            <div class="statLabel">Companies</div>
+            <div class="statNum">4</div>
+            <div class="statLabel">Experience Chapters</div>
           </div>
           <div class="statCard glass hoverGlow">
             <div class="statNum">100<span class="statSup">+</span></div>
@@ -200,596 +182,310 @@
       </section>
 
       <!-- ABOUT -->
-      <section id="about" class="section bgMode" data-bgmode="0">
-        <div class="sectionHead">
+      <section id="about" class="section proSection bgMode" data-bgmode="0">
+        <div class="sectionHead proSectionHead">
           <div class="slashes">//</div>
-          <h2 class="sectionTitleSerif themedTitle">About</h2>
+          <div>
+            <p class="sectionKicker">About</p>
+            <h2 class="sectionTitleSerif themedTitle">Security-minded builder with blue-team depth</h2>
+          </div>
         </div>
 
-        <div class="aboutMeGrid">
-          <!-- LEFT: Photo -->
+        <div class="aboutMeGrid proAboutGrid">
           <div class="aboutMePhoto glass hoverGlow" aria-label="Profile photo">
-            <img src="profile_new.jpg" alt="Sai Kumar profile photo" loading="lazy" />
+            <img src="profile_new.jpg" alt="Sai Kumar Vemula profile photo" loading="lazy" />
           </div>
 
-          <!-- RIGHT: About text -->
-          <div class="aboutMeCard glass hoverGlow">
-            <h3 class="aboutMeTitle themedTitle">Hi, I’m Sai Kumar Vemula</h3>
-
+          <div class="aboutMeCard glass hoverGlow proAboutCard">
+            <h3 class="aboutMeTitle themedTitle">Hi, I'm Sai Kumar Vemula</h3>
             <p class="aboutMeText">
-              Cybersecurity professional with 4+ years of IT and security experience, currently pursuing an M.S. in
-              Cybersecurity at Yeshiva University. Most recently a <strong>Cybersecurity Analyst L1 at Deloitte</strong>,
-              where I triaged 100+ security alerts daily and led hands-on incident response investigations.
+              I am a cybersecurity professional pursuing an M.S. in Cybersecurity at Yeshiva University, with 4+ years
+              across SOC operations, security engineering, IT support, and applied security projects. My work sits at
+              the useful intersection of detection, investigation, automation, and secure system design.
             </p>
             <p class="aboutMeText">
-              I bridge offensive and defensive security — running vulnerability assessments with Nessus & Qualys,
-              hunting threats via Splunk SIEM, and stress-testing environments against OWASP Top 10 using tools like
-              Burp Suite and DVWA. I build for resilience, not just compliance.
+              At Deloitte, I handled high-volume SIEM alert triage and incident investigations. Before that, I supported
+              firewall reviews, endpoint protection, vulnerability remediation, identity/access workflows, and production
+              IT support. I also build cloud and AI-assisted security projects to turn theory into evidence.
             </p>
 
-            <div class="aboutMeHighlights">
-              <div class="miniTitle">Core Competencies</div>
-              <ul class="miniList">
-                <li>SOC operations: alert triage, incident response & SIEM (Splunk)</li>
-                <li>Vulnerability assessment & remediation (Nessus, Qualys, OWASP Top 10)</li>
-                <li>Cloud security posture & misconfiguration detection (AWS)</li>
-                <li>Security scripting & automation (Python, Bash)</li>
-              </ul>
+            <div class="aboutMeHighlights proHighlights">
+              <div class="miniTitle">Education</div>
+              <div class="educationRail">
+                <div>
+                  <strong>M.S. Cybersecurity</strong>
+                  <span>Yeshiva University, New York City • 2024 - 2026 • CGPA: 3.9</span>
+                </div>
+                <div>
+                  <strong>B.Tech Mechanical Engineering</strong>
+                  <span>CMR College of Engineering and Technology, Hyderabad • 2018 - 2021 • CGPA: 3.9</span>
+                </div>
+              </div>
             </div>
 
             <div class="ctaRow aboutCta">
-              <a class="btn primary" href="#projects">→ SEE MY WORK</a>
-              <a class="btn ghost" href="Sai_Kumar_Cybersecurity.pdf" download>↓ DOWNLOAD RESUME</a>
+              <a class="btn primary" href="#projects">See Projects</a>
+              <a class="btn ghost" href="Sai_Kumar_Cybersecurity.pdf" download>Download Resume</a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="section proSection bgMode" data-bgmode="3">
+        <div class="sectionHead proSectionHead">
+          <div class="slashes">//</div>
+          <div>
+            <p class="sectionKicker">Experience</p>
+            <h2 class="sectionTitleSerif themedTitle">Four-part experience stack</h2>
+          </div>
+        </div>
+
+        <div class="experienceIntro glass hoverGlow">
+          <p>Hover a card to open the role details. Each panel is designed as one chapter of the same security story: support, engineering, SOC operations, and applied research.</p>
+        </div>
+
+        <div class="experiencePanels" aria-label="Four expandable experience panels">
+          <article class="experiencePanel glass hoverGlow is-featured">
+            <div class="panelNumber">01</div>
+            <div class="panelTopline">Mar 2023 - Apr 2025 • USA Remote</div>
+            <h3>Deloitte</h3>
+            <h4>Cybersecurity Analyst L1</h4>
+            <p class="panelSummary">Enterprise SOC operations, alert triage, threat investigation, and vulnerability lifecycle support.</p>
+            <div class="panelReveal">
+              <ul>
+                <li>Monitored and triaged 100+ security alerts daily using Splunk SIEM.</li>
+                <li>Investigated phishing, malware, suspicious login, and unauthorized access events.</li>
+                <li>Used Nessus and Qualys to support vulnerability assessment, prioritization, and remediation tracking.</li>
+                <li>Improved incident response handoffs with clearer playbook-driven documentation.</li>
+              </ul>
+              <div class="tagRow">
+                <span class="tagPill">Splunk</span><span class="tagPill">SIEM</span><span class="tagPill">IR</span><span class="tagPill">Nessus</span><span class="tagPill">Qualys</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="experiencePanel glass hoverGlow">
+            <div class="panelNumber">02</div>
+            <div class="panelTopline">Aug 2022 - Feb 2023 • Hyderabad</div>
+            <h3>Phoenix Business Consulting</h3>
+            <h4>Cybersecurity Engineer</h4>
+            <p class="panelSummary">Security hardening across network controls, endpoints, DLP, and remediation workflows.</p>
+            <div class="panelReveal">
+              <ul>
+                <li>Reviewed firewall rules and supported network security audits for safer access paths.</li>
+                <li>Helped coordinate patch management and vulnerability remediation cycles.</li>
+                <li>Configured endpoint protection and DLP controls to reduce operational security gaps.</li>
+              </ul>
+              <div class="tagRow">
+                <span class="tagPill">Firewalls</span><span class="tagPill">DLP</span><span class="tagPill">Endpoint Security</span><span class="tagPill">Vulnerability Mgmt</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="experiencePanel glass hoverGlow">
+            <div class="panelNumber">03</div>
+            <div class="panelTopline">Jun 2021 - Jul 2022 • Hyderabad</div>
+            <h3>Siddhartha Heavy Equipment</h3>
+            <h4>IT Support Technician</h4>
+            <p class="panelSummary">Identity, access, endpoint, and user-support foundation for reliable security operations.</p>
+            <div class="panelReveal">
+              <ul>
+                <li>Resolved hardware, software, and security-related support tickets for internal users.</li>
+                <li>Managed account provisioning, access controls, and Active Directory workflows.</li>
+                <li>Monitored systems and escalated anomalies before they became larger incidents.</li>
+              </ul>
+              <div class="tagRow">
+                <span class="tagPill">Active Directory</span><span class="tagPill">Access Control</span><span class="tagPill">Troubleshooting</span><span class="tagPill">Monitoring</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="experiencePanel glass hoverGlow">
+            <div class="panelNumber">04</div>
+            <div class="panelTopline">2024 - Present • Graduate Projects</div>
+            <h3>Security Labs & Research</h3>
+            <h4>Cloud, AI, and Offensive Security Projects</h4>
+            <p class="panelSummary">Hands-on portfolio work translating coursework into working detection and assessment systems.</p>
+            <div class="panelReveal">
+              <ul>
+                <li>Built a Smart SIEM Risk Engine with dynamic asset and vulnerability-based scoring.</li>
+                <li>Created AWS cloud posture, image tagging, and sentiment-analysis systems using serverless services.</li>
+                <li>Practiced OWASP Top 10 exploitation and documentation in a DVWA testing lab.</li>
+              </ul>
+              <div class="tagRow">
+                <span class="tagPill">AWS</span><span class="tagPill">Python</span><span class="tagPill">OWASP</span><span class="tagPill">Risk Scoring</span><span class="tagPill">AI Security</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section id="skills" class="section proSection bgMode" data-bgmode="2">
+        <div class="sectionHead proSectionHead">
+          <div class="slashes">//</div>
+          <div>
+            <p class="sectionKicker">Skills</p>
+            <h2 class="sectionTitleSerif themedTitle">Tools I use to investigate, defend, and build</h2>
+          </div>
+        </div>
+
+        <div class="skillsMatrix">
+          <div class="skillColumn glass hoverGlow">
+            <h3>Blue Team Operations</h3>
+            <p>Splunk SIEM, alert triage, incident response, threat hunting, log analysis, phishing investigation, malware investigation.</p>
+            <div class="skillChips"><span>Splunk</span><span>Wireshark</span><span>IR Playbooks</span><span>Detection</span></div>
+          </div>
+          <div class="skillColumn glass hoverGlow">
+            <h3>Vulnerability & Offensive Testing</h3>
+            <p>Nessus, Qualys, Nmap, Burp Suite, Metasploit, OWASP Top 10 validation, remediation prioritization.</p>
+            <div class="skillChips"><span>Nessus</span><span>Qualys</span><span>Burp Suite</span><span>Nmap</span></div>
+          </div>
+          <div class="skillColumn glass hoverGlow">
+            <h3>Cloud & Engineering</h3>
+            <p>AWS security posture, Python automation, Linux, Bash, SQL, Java, serverless workflows, dashboards, and secure architecture.</p>
+            <div class="skillChips"><span>AWS</span><span>Python</span><span>Linux</span><span>SQL</span></div>
+          </div>
+          <div class="skillColumn glass hoverGlow">
+            <h3>Governance & Foundations</h3>
+            <p>NIST-aligned thinking, access control, DLP support, endpoint protection, patch management, documentation, and stakeholder handoffs.</p>
+            <div class="skillChips"><span>NIST</span><span>DLP</span><span>AD</span><span>Access Control</span></div>
           </div>
         </div>
       </section>
 
       <!-- PROJECTS -->
-      <section id="projects" class="section bgMode" data-bgmode="1">
-        <div class="sectionHead"
-          style="display:flex; justify-content:center; align-items:center; gap: 15px; margin-bottom: 40px; text-transform: uppercase;">
-          <span style="color:var(--accent); font-size:40px;">⑂</span>
-          <h2 class="sectionTitleSerif themedTitle" style="font-size: 36px; margin:0;">Projects & Certificates</h2>
-        </div>
-
-        <div class="toggle-pill-container" style="display:flex; justify-content:center; margin-bottom: 50px;">
-          <div class="toggle-pill">
-            <button class="toggle-btn active" id="btn-projects" onclick="switchTab('projects')">Projects</button>
-            <button class="toggle-btn" id="btn-certs" onclick="switchTab('certs')">Certificates</button>
-          </div>
-        </div>
-
-        <!-- PROJECTS TAB -->
-        <div id="tab-projects" class="tab-content" style="display: block;">
-          <div class="pc-grid">
-            <!-- Project 1 -->
-            <article class="pc-card glass hoverGlow">
-              <h3 class="pc-title">Smart SIEM Risk Engine</h3>
-              <div class="pc-image-wrapper">
-                <img src="Smart Risk Engine.png" alt="Smart SIEM Dashboard" loading="lazy">
-              </div>
-              <p class="pc-desc">A custom SIEM risk engine that dynamically calculates risk scores based on asset
-                criticality and vulnerability metrics.</p>
-              <a class="pc-btn" href="https://github.com/svemula17/smart-siem-risk-engine" target="_blank"
-                rel="noreferrer">View Project ⇗</a>
-            </article>
-
-            <!-- Project 2 -->
-            <article class="pc-card glass hoverGlow">
-              <h3 class="pc-title">AI Cloud Posture Platform</h3>
-              <div class="pc-image-wrapper">
-                <img src="cloud_posture.png" alt="Cloud Posture" loading="lazy">
-              </div>
-              <p class="pc-desc">An automated AWS cloud security scanner mimicking a honeypot deployer with real-time
-                alerting to prevent breaches.</p>
-              <a class="pc-btn" href="https://github.com/saivarmadpr/Cloud_Security_Posture_-_Deception_Platform"
-                target="_blank" rel="noreferrer">View Project ⇗</a>
-            </article>
-
-            <!-- Project: DVWA Vulnerability Testing Lab -->
-            <article class="pc-card glass hoverGlow">
-              <h3 class="pc-title">DVWA Vulnerability Testing Lab</h3>
-              <div class="pc-image-wrapper dvwa-placeholder">
-                <div class="dvwa-terminal">
-                  <div class="dvwa-bar"><span class="dvwa-dot r"></span><span class="dvwa-dot y"></span><span class="dvwa-dot g"></span></div>
-                  <div class="dvwa-lines">
-                    <div><span class="dvwa-prompt">$</span> <span class="dvwa-cmd">sqlmap -u target --dbs</span></div>
-                    <div><span class="dvwa-out">[+] SQL injection found</span></div>
-                    <div><span class="dvwa-prompt">$</span> <span class="dvwa-cmd">burpsuite --proxy intercept</span></div>
-                    <div><span class="dvwa-out">[+] XSS payload captured</span></div>
-                    <div><span class="dvwa-prompt">$</span> <span class="dvwa-cmd">nikto -h localhost/dvwa</span></div>
-                    <div><span class="dvwa-out">[+] 12 vulnerabilities found</span></div>
-                  </div>
-                </div>
-              </div>
-              <p class="pc-desc">Hands-on penetration testing lab using DVWA to practice and document OWASP Top 10 vulnerabilities — SQL injection, XSS, CSRF, and file inclusion.</p>
-              <a class="pc-btn" href="https://github.com/svemula17" target="_blank" rel="noreferrer">View Project ⇗</a>
-            </article>
-
-            <!-- Project: Attack Identification Tool -->
-            <article class="pc-card glass hoverGlow">
-              <h3 class="pc-title">Attack Identification Tool</h3>
-              <div class="pc-image-wrapper">
-                <img src="attack_identification.png" alt="Attack Identification Tool" loading="lazy">
-              </div>
-              <p class="pc-desc">An advanced tool designed to identify, analyze, and characterize various cyber attacks
-                accurately and in real-time.</p>
-              <a class="pc-btn" href="https://github.com/svemula17/attack_identification_tool" target="_blank"
-                rel="noreferrer">View Project ⇗</a>
-            </article>
-
-            <!-- Project 3 -->
-            <article class="pc-card glass hoverGlow">
-              <h3 class="pc-title">AWS Image AI Tagging</h3>
-              <div class="pc-image-wrapper">
-                <img src="image_tagging.png" alt="AWS Image AI Tagging" loading="lazy">
-              </div>
-              <p class="pc-desc">Serverless AWS app to upload images, auto-tag via AI (Rekognition), and search metadata
-                efficiently using DynamoDB.</p>
-              <a class="pc-btn" href="https://github.com/PeterMangoro/cloudComputingDiscussion1" target="_blank"
-                rel="noreferrer">View Project ⇗</a>
-            </article>
-
-            <!-- Project 4 -->
-            <article class="pc-card glass hoverGlow">
-              <h3 class="pc-title">AWS Sentiment Analysis</h3>
-              <div class="pc-image-wrapper">
-                <img src="sentiment_analysis.png" alt="AWS Sentiment Analysis" loading="lazy">
-              </div>
-              <p class="pc-desc">Serverless feedback platform processing text sentiment in real time, alerting for
-                negative feedback autonomously.</p>
-              <a class="pc-btn" href="https://github.com/PeterMangoro/cloudComputingDiscussion1" target="_blank"
-                rel="noreferrer">View Project ⇗</a>
-            </article>
-          </div>
-        </div>
-
-        <!-- CERTIFICATES TAB -->
-        <div id="tab-certs" class="tab-content" style="display: none;">
-          <div class="pc-grid">
-            <!-- CySA+ In Progress -->
-            <article class="cc-card glass hoverGlow cc-inprogress">
-              <div class="cc-img cc-badge-placeholder">
-                <span class="cc-badge-icon">🎯</span>
-                <span class="cc-inprogress-label">IN PROGRESS</span>
-              </div>
-              <h3 class="cc-title">CompTIA CySA+</h3>
-              <p class="cc-issuer">CompTIA — <em>Exam Pending</em></p>
-            </article>
-            <article class="cc-card glass hoverGlow">
-              <img src="Comptia.jpg" class="cc-img" alt="" loading="lazy">
-              <h3 class="cc-title">CompTIA Security+</h3>
-              <p class="cc-issuer">CompTIA</p>
-            </article>
-            <article class="cc-card glass hoverGlow">
-              <img src="blob.png" class="cc-img" alt="" loading="lazy">
-              <h3 class="cc-title">Red Hat System Admin I</h3>
-              <p class="cc-issuer">Red Hat (RH124)</p>
-            </article>
-            <article class="cc-card glass hoverGlow">
-              <img src="Soc.png" class="cc-img" alt="" loading="lazy">
-              <h3 class="cc-title">Hands on SOC Lab program</h3>
-              <p class="cc-issuer">SOC Experts</p>
-            </article>
-            <article class="cc-card glass hoverGlow">
-              <img src="Google cert_page-0001.jpg" class="cc-img" alt="" loading="lazy">
-              <h3 class="cc-title">Cybersecurity Professional</h3>
-              <p class="cc-issuer">Google</p>
-            </article>
-            <article class="cc-card glass hoverGlow">
-              <img src="foundations.jpg" class="cc-img" alt="" loading="lazy">
-              <h3 class="cc-title">Foundations of Cybersecurity</h3>
-              <p class="cc-issuer">Google</p>
-            </article>
-            <article class="cc-card glass hoverGlow">
-              <img src="Play it_page-0001.jpg" class="cc-img" alt="" loading="lazy">
-              <h3 class="cc-title">Play It Safe: Security Risks</h3>
-              <p class="cc-issuer">Google</p>
-            </article>
-            <article class="cc-card glass hoverGlow">
-              <img src="Connect.jpg" class="cc-img" alt="" loading="lazy">
-              <h3 class="cc-title">Connect and Protect: Networks</h3>
-              <p class="cc-issuer">Google</p>
-            </article>
-            <article class="cc-card glass hoverGlow">
-              <img src="Tools.jpg" class="cc-img" alt="" loading="lazy">
-              <h3 class="cc-title">Tools of the Trade: Linux & SQL</h3>
-              <p class="cc-issuer">Google</p>
-            </article>
-            <article class="cc-card glass hoverGlow">
-              <img src="Assets.jpg" class="cc-img" alt="" loading="lazy">
-              <h3 class="cc-title">Assets, Threats, and Vulnerabilities</h3>
-              <p class="cc-issuer">Google</p>
-            </article>
-            <article class="cc-card glass hoverGlow">
-              <img src="Sound.jpg" class="cc-img" alt="" loading="lazy">
-              <h3 class="cc-title">Sound the Alarm: Detection and Response</h3>
-              <p class="cc-issuer">Google</p>
-            </article>
-            <article class="cc-card glass hoverGlow">
-              <img src="Automate.jpg" class="cc-img" alt="" loading="lazy">
-              <h3 class="cc-title">Automate Cybersecurity Tasks with Python</h3>
-              <p class="cc-issuer">Google</p>
-            </article>
-            <article class="cc-card glass hoverGlow">
-              <img src="Put.jpg" class="cc-img" alt="" loading="lazy">
-              <h3 class="cc-title">Put It to Work: Prepare for Cybersecurity Jobs</h3>
-              <p class="cc-issuer">Google</p>
-            </article>
-            <article class="cc-card glass hoverGlow">
-              <img src="ISc2.jpg" class="cc-img" alt="" loading="lazy">
-              <h3 class="cc-title">Certified in Cybersecurity Specialization</h3>
-              <p class="cc-issuer">(ISC)² / Coursera</p>
-            </article>
-            <article class="cc-card glass hoverGlow">
-              <img src="Security.jpg" class="cc-img" alt="" loading="lazy">
-              <h3 class="cc-title">Security Principles</h3>
-              <p class="cc-issuer">Multiple</p>
-            </article>
-            <article class="cc-card glass hoverGlow">
-              <img src="Incident.jpg" class="cc-img" alt="" loading="lazy">
-              <h3 class="cc-title">Incident Response, BC, and DR Concepts</h3>
-              <p class="cc-issuer">Multiple</p>
-            </article>
-            <article class="cc-card glass hoverGlow">
-              <img src="Access.jpg" class="cc-img" alt="" loading="lazy">
-              <h3 class="cc-title">Access Control Concepts</h3>
-              <p class="cc-issuer">Multiple</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- SKILLS -->
-      <section id="skills" class="section bgMode" data-bgmode="2">
-        <div class="sectionHead">
+      <section id="projects" class="section proSection bgMode" data-bgmode="1">
+        <div class="sectionHead proSectionHead">
           <div class="slashes">//</div>
-          <h2 class="sectionTitleSerif themedTitle">Skills &amp; Tools</h2>
+          <div>
+            <p class="sectionKicker">Projects</p>
+            <h2 class="sectionTitleSerif themedTitle">Applied security work</h2>
+          </div>
         </div>
 
-        <div class="skillsLayout">
-
-          <!-- Blue Team -->
-          <div class="skillCategory">
-            <div class="sc-header">
-              <span class="sc-icon">🛡️</span>
-              <h3 class="sc-title">Blue Team (Defense & Operations)</h3>
+        <div class="pc-grid proProjectGrid">
+          <article class="pc-card glass hoverGlow">
+            <h3 class="pc-title">Smart SIEM Risk Engine</h3>
+            <div class="pc-image-wrapper"><img src="Smart Risk Engine.png" alt="Smart SIEM dashboard" loading="lazy"></div>
+            <p class="pc-desc">Dynamic risk scoring based on asset criticality, vulnerability data, and analyst-friendly dashboarding.</p>
+            <a class="pc-btn" href="https://github.com/svemula17/smart-siem-risk-engine" target="_blank" rel="noreferrer">View Project</a>
+          </article>
+          <article class="pc-card glass hoverGlow">
+            <h3 class="pc-title">AI Cloud Posture Platform</h3>
+            <div class="pc-image-wrapper"><img src="cloud_posture.png" alt="Cloud posture platform" loading="lazy"></div>
+            <p class="pc-desc">AWS cloud security scanner and deception-inspired posture workflow with real-time alerting concepts.</p>
+            <a class="pc-btn" href="https://github.com/saivarmadpr/Cloud_Security_Posture_-_Deception_Platform" target="_blank" rel="noreferrer">View Project</a>
+          </article>
+          <article class="pc-card glass hoverGlow">
+            <h3 class="pc-title">DVWA Vulnerability Testing Lab</h3>
+            <div class="pc-image-wrapper dvwa-placeholder">
+              <div class="dvwa-terminal"><div class="dvwa-bar"><span class="dvwa-dot r"></span><span class="dvwa-dot y"></span><span class="dvwa-dot g"></span></div><div class="dvwa-lines"><div><span class="dvwa-prompt">$</span> <span class="dvwa-cmd">sqlmap -u target --dbs</span></div><div><span class="dvwa-out">[+] SQL injection found</span></div><div><span class="dvwa-prompt">$</span> <span class="dvwa-cmd">burpsuite --proxy intercept</span></div><div><span class="dvwa-out">[+] XSS payload captured</span></div></div></div>
             </div>
-            <div class="sc-grid">
-              <div class="sc-card glass hoverGlow">
-                <div class="sc-card-icon"><span style="font-size: 40px;">🔍</span></div>
-                <div class="sc-card-name">Splunk (SIEM) & Log Analysis</div>
-                <div class="sc-card-bar">
-                  <div class="sc-card-fill" style="width: 85%;"></div>
-                </div>
-              </div>
-              <div class="sc-card glass hoverGlow">
-                <div class="sc-card-icon"><span style="font-size: 40px;">🚨</span></div>
-                <div class="sc-card-name">Incident Detection & Response</div>
-                <div class="sc-card-bar">
-                  <div class="sc-card-fill" style="width: 80%;"></div>
-                </div>
-              </div>
-              <div class="sc-card glass hoverGlow">
-                <div class="sc-card-icon"><span style="font-size: 40px;">🦈</span></div>
-                <div class="sc-card-name">Wireshark (Network Sec)</div>
-                <div class="sc-card-bar">
-                  <div class="sc-card-fill" style="width: 85%;"></div>
-                </div>
-              </div>
-              <div class="sc-card glass hoverGlow">
-                <div class="sc-card-icon"><span style="font-size: 40px;">🎯</span></div>
-                <div class="sc-card-name">Vulnerability Management</div>
-                <div class="sc-card-bar">
-                  <div class="sc-card-fill" style="width: 85%;"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Red Team -->
-          <div class="skillCategory">
-            <div class="sc-header">
-              <span class="sc-icon">⚔️</span>
-              <h3 class="sc-title">Red Team (Offense & Assessment)</h3>
-            </div>
-            <div class="sc-grid">
-              <div class="sc-card glass hoverGlow">
-                <div class="sc-card-icon"><span style="font-size: 40px;">🕷️</span></div>
-                <div class="sc-card-name">Burp Suite (OWASP Top 10)</div>
-                <div class="sc-card-bar">
-                  <div class="sc-card-fill" style="width: 75%;"></div>
-                </div>
-              </div>
-              <div class="sc-card glass hoverGlow">
-                <div class="sc-card-icon"><span style="font-size: 40px;">🕸️</span></div>
-                <div class="sc-card-name">Nmap & Network Scanning</div>
-                <div class="sc-card-bar">
-                  <div class="sc-card-fill" style="width: 85%;"></div>
-                </div>
-              </div>
-              <div class="sc-card glass hoverGlow">
-                <div class="sc-card-icon"><span style="font-size: 40px;">🧪</span></div>
-                <div class="sc-card-name">Metasploit & Exploitation</div>
-                <div class="sc-card-bar">
-                  <div class="sc-card-fill" style="width: 70%;"></div>
-                </div>
-              </div>
-              <div class="sc-card glass hoverGlow">
-                <div class="sc-card-icon"><span style="font-size: 40px;">🕵️</span></div>
-                <div class="sc-card-name">Threat Intelligence & OSINT</div>
-                <div class="sc-card-bar">
-                  <div class="sc-card-fill" style="width: 75%;"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Security Engineering -->
-          <div class="skillCategory">
-            <div class="sc-header">
-              <span class="sc-icon">⚙️</span>
-              <h3 class="sc-title">Engineering & Architecture</h3>
-            </div>
-            <div class="sc-grid">
-              <div class="sc-card glass hoverGlow">
-                <div class="sc-card-icon"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
-                    alt="Python"></div>
-                <div class="sc-card-name">Python Automation (Security)</div>
-                <div class="sc-card-bar">
-                  <div class="sc-card-fill" style="width: 85%;"></div>
-                </div>
-              </div>
-              <div class="sc-card glass hoverGlow">
-                <div class="sc-card-icon"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
-                    alt="Linux"></div>
-                <div class="sc-card-name">Linux & Windows Security</div>
-                <div class="sc-card-bar">
-                  <div class="sc-card-fill" style="width: 85%;"></div>
-                </div>
-              </div>
-              <div class="sc-card glass hoverGlow">
-                <div class="sc-card-icon"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
-                    alt="AWS"></div>
-                <div class="sc-card-name">AWS Cloud Posture</div>
-                <div class="sc-card-bar">
-                  <div class="sc-card-fill" style="width: 85%;"></div>
-                </div>
-              </div>
-              <div class="sc-card glass hoverGlow">
-                <div class="sc-card-icon"><img
-                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
-                    alt="SQL/Java/C"></div>
-                <div class="sc-card-name">Programming (Java/C/SQL)</div>
-                <div class="sc-card-bar">
-                  <div class="sc-card-fill" style="width: 80%;"></div>
-                </div>
-              </div>
-              <div class="sc-card glass hoverGlow">
-                <div class="sc-card-icon"><span style="font-size: 40px;">🧱</span></div>
-                <div class="sc-card-name">Firewalls (pfSense) & VPN</div>
-                <div class="sc-card-bar">
-                  <div class="sc-card-fill" style="width: 80%;"></div>
-                </div>
-              </div>
-              <div class="sc-card glass hoverGlow">
-                <div class="sc-card-icon"><span style="font-size: 40px;">📜</span></div>
-                <div class="sc-card-name">NIST Framework</div>
-                <div class="sc-card-bar">
-                  <div class="sc-card-fill" style="width: 85%;"></div>
-                </div>
-              </div>
-            </div>
-          </div>
-
+            <p class="pc-desc">Hands-on OWASP Top 10 practice covering SQL injection, XSS, CSRF, and file inclusion documentation.</p>
+            <a class="pc-btn" href="https://github.com/svemula17" target="_blank" rel="noreferrer">View Project</a>
+          </article>
+          <article class="pc-card glass hoverGlow">
+            <h3 class="pc-title">Attack Identification Tool</h3>
+            <div class="pc-image-wrapper"><img src="attack_identification.png" alt="Attack identification tool" loading="lazy"></div>
+            <p class="pc-desc">Tooling concept for identifying, analyzing, and characterizing cyber attacks in near real time.</p>
+            <a class="pc-btn" href="https://github.com/svemula17/attack_identification_tool" target="_blank" rel="noreferrer">View Project</a>
+          </article>
+          <article class="pc-card glass hoverGlow">
+            <h3 class="pc-title">AWS Image AI Tagging</h3>
+            <div class="pc-image-wrapper"><img src="image_tagging.png" alt="AWS image tagging app" loading="lazy"></div>
+            <p class="pc-desc">Serverless image upload system using AI tagging and searchable metadata patterns.</p>
+            <a class="pc-btn" href="https://github.com/PeterMangoro/cloudComputingDiscussion1" target="_blank" rel="noreferrer">View Project</a>
+          </article>
+          <article class="pc-card glass hoverGlow">
+            <h3 class="pc-title">AWS Sentiment Analysis</h3>
+            <div class="pc-image-wrapper"><img src="sentiment_analysis.png" alt="AWS sentiment analysis app" loading="lazy"></div>
+            <p class="pc-desc">Serverless feedback pipeline that processes text sentiment and can alert on negative signals.</p>
+            <a class="pc-btn" href="https://github.com/PeterMangoro/cloudComputingDiscussion1" target="_blank" rel="noreferrer">View Project</a>
+          </article>
         </div>
       </section>
 
-      <!-- EXPERIENCE -->
-      <section id="experience" class="section bgMode" data-bgmode="3">
-        <div class="sectionHead">
-          <div class="slashes">//</div>
-          <h2 class="sectionTitleSerif themedTitle">Experience</h2>
-        </div>
-
-        <div class="timelineStack">
-
-          <!-- Role 1: Deloitte -->
-          <article class="showcaseRow hoverRow">
-            <div class="showcaseMedia glass expMedia hoverGlow">
-              <div class="expBadge">Deloitte</div>
-              <div class="expBig">Cybersecurity Analyst L1</div>
-              <div class="expSmall">USA (Remote)</div>
+      <!-- CERTIFICATIONS -->
+      <section id="certifications" class="section proSection bgMode" data-bgmode="4">
+        <div class="certShowcase glass hoverGlow">
+          <div class="certAura" aria-hidden="true"></div>
+          <div class="certHeader">
+            <div>
+              <p class="certEyebrow"><span></span> Certifications</p>
+              <h2>Professional Certifications</h2>
+              <p>Tech Arsenal</p>
             </div>
-
-            <div class="showcaseBody">
-              <div class="showcaseDate">MAR 2023 — APR 2025</div>
-              <h3 class="showcaseTitle themedTitle">Cybersecurity Analyst L1</h3>
-
-              <p class="showcaseDesc">
-                SOC operations at enterprise scale — alert triage, threat investigation, and vulnerability lifecycle management.
-              </p>
-
-              <ul class="showcaseBullets">
-                <li>Monitored and triaged <strong>100+ security alerts daily</strong> using Splunk SIEM</li>
-                <li>Investigated phishing, malware, and unauthorized access incidents end-to-end</li>
-                <li>Conducted vulnerability assessments using Nessus and Qualys; tracked remediation SLAs</li>
-                <li>Collaborated on incident response playbooks, reducing MTTR across the team</li>
-              </ul>
-
-              <div class="tagRow">
-                <span class="tagPill">Splunk</span>
-                <span class="tagPill">SIEM</span>
-                <span class="tagPill">Incident Response</span>
-                <span class="tagPill">Nessus</span>
-                <span class="tagPill">Qualys</span>
-              </div>
+            <div class="certBadgeArt" aria-hidden="true">
+              <div class="certRings"><span></span><span></span><span></span></div>
+              <div class="certIcon">CERT</div>
             </div>
-          </article>
+          </div>
 
-          <!-- Role 2: Phoenix Business Consulting -->
-          <article class="showcaseRow hoverRow">
-            <div class="showcaseMedia glass expMedia hoverGlow">
-              <div class="expBadge">Phoenix Business Consulting</div>
-              <div class="expBig">Cybersecurity Engineer</div>
-              <div class="expSmall">Hyderabad, India</div>
-            </div>
+          <div class="certList">
+            <a class="certItem hoverGlow" href="Comptia.jpg" target="_blank" rel="noreferrer"><img src="Comptia.jpg" alt="CompTIA Security+ certificate"><div><h3>CompTIA Security+</h3><p>CompTIA • Click to view certificate</p></div></a>
+            <a class="certItem hoverGlow" href="Google cert_page-0001.jpg" target="_blank" rel="noreferrer"><img src="Google cert_page-0001.jpg" alt="Google Cybersecurity certificate"><div><h3>Google Cybersecurity Professional Certificate</h3><p>Google • Click to view certificate</p></div></a>
+            <a class="certItem hoverGlow" href="Soc.png" target="_blank" rel="noreferrer"><img src="Soc.png" alt="Hands on SOC Lab certificate"><div><h3>Hands-on SOC Lab Program</h3><p>SOC Experts • Click to view certificate</p></div></a>
+            <a class="certItem hoverGlow" href="blob.png" target="_blank" rel="noreferrer"><img src="blob.png" alt="Red Hat System Admin certificate"><div><h3>Red Hat System Administration I</h3><p>Red Hat RH124 • Click to view certificate</p></div></a>
+            <a class="certItem hoverGlow" href="ISc2.jpg" target="_blank" rel="noreferrer"><img src="ISc2.jpg" alt="ISC2 certificate"><div><h3>Certified in Cybersecurity Specialization</h3><p>(ISC)2 / Coursera • Click to view certificate</p></div></a>
+            <a class="certItem hoverGlow" href="Automate.jpg" target="_blank" rel="noreferrer"><img src="Automate.jpg" alt="Python automation certificate"><div><h3>Automate Cybersecurity Tasks with Python</h3><p>Google • Click to view certificate</p></div></a>
+            <a class="certItem hoverGlow" href="Assets.jpg" target="_blank" rel="noreferrer"><img src="Assets.jpg" alt="Assets threats vulnerabilities certificate"><div><h3>Assets, Threats, and Vulnerabilities</h3><p>Google • Click to view certificate</p></div></a>
+            <a class="certItem hoverGlow" href="Sound.jpg" target="_blank" rel="noreferrer"><img src="Sound.jpg" alt="Detection response certificate"><div><h3>Sound the Alarm: Detection and Response</h3><p>Google • Click to view certificate</p></div></a>
+          </div>
 
-            <div class="showcaseBody">
-              <div class="showcaseDate">AUG 2022 — FEB 2023</div>
-              <h3 class="showcaseTitle themedTitle">Cybersecurity Engineer</h3>
-
-              <p class="showcaseDesc">
-                Network security hardening, vulnerability remediation, and endpoint protection configuration.
-              </p>
-
-              <ul class="showcaseBullets">
-                <li>Performed network security audits and firewall rule reviews (pfSense)</li>
-                <li>Supported vulnerability remediation and patch management cycles</li>
-                <li>Configured endpoint protection and DLP tools across the organization</li>
-              </ul>
-
-              <div class="tagRow">
-                <span class="tagPill">Network Security</span>
-                <span class="tagPill">Firewalls</span>
-                <span class="tagPill">Vulnerability Mgmt</span>
-                <span class="tagPill">DLP</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Role 3: Siddhartha Heavy Equipment -->
-          <article class="showcaseRow hoverRow">
-            <div class="showcaseMedia glass expMedia hoverGlow">
-              <div class="expBadge">Siddhartha Heavy Equipment</div>
-              <div class="expBig">IT Support Technician</div>
-              <div class="expSmall">Hyderabad, India</div>
-            </div>
-
-            <div class="showcaseBody">
-              <div class="showcaseDate">JUN 2021 — JUL 2022</div>
-              <h3 class="showcaseTitle themedTitle">IT Support Technician</h3>
-
-              <p class="showcaseDesc">
-                End-user support, identity management, and systems monitoring across the organization.
-              </p>
-
-              <ul class="showcaseBullets">
-                <li>Provided hardware/software technical support and resolved security-related tickets</li>
-                <li>Managed user accounts, access controls, and Active Directory provisioning</li>
-                <li>Monitored system performance and escalated anomalies to the security team</li>
-              </ul>
-
-              <div class="tagRow">
-                <span class="tagPill">IT Support</span>
-                <span class="tagPill">Active Directory</span>
-                <span class="tagPill">Access Control</span>
-                <span class="tagPill">Systems Monitoring</span>
-              </div>
-            </div>
-          </article>
-
+          <div class="certFooter">
+            <a class="btn ghost" href="https://github.com/svemula17" target="_blank" rel="noreferrer">View Full Profile</a>
+          </div>
         </div>
       </section>
-
-
 
       <!-- CONTACT -->
-      <section id="contact" class="section bgMode" data-bgmode="6">
-        <div class="sectionHead">
+      <section id="contact" class="section proSection bgMode" data-bgmode="6">
+        <div class="sectionHead proSectionHead">
           <div class="slashes">//</div>
-          <h2 class="sectionTitleSerif themedTitle">Contact</h2>
+          <div>
+            <p class="sectionKicker">Contact</p>
+            <h2 class="sectionTitleSerif themedTitle">Let's build something safer</h2>
+          </div>
         </div>
 
-        <div class="contactGrid">
+        <div class="contactGrid proContactGrid">
           <form class="contactForm glass hoverGlow" onsubmit="return false;">
-            <label class="field">
-              <span>Name</span>
-              <input type="text" placeholder="Your name" required />
-            </label>
-
-            <label class="field">
-              <span>Email</span>
-              <input type="email" placeholder="you@example.com" required />
-            </label>
-
-            <label class="field">
-              <span>Message</span>
-              <textarea rows="5" placeholder="Tell me what you need..." required></textarea>
-            </label>
-
-            <button class="btn primary" type="submit"
-              onclick="alert('Thanks for reaching out! Form processing is coming soon. Please email me directly using the button below.');">SUBMIT</button>
+            <label class="field"><span>Name</span><input type="text" placeholder="Your name" required /></label>
+            <label class="field"><span>Email</span><input type="email" placeholder="you@example.com" required /></label>
+            <label class="field"><span>Message</span><textarea rows="5" placeholder="Tell me what you need..." required></textarea></label>
+            <button class="btn primary" type="submit" onclick="alert('Thanks for reaching out! Please email me directly for now.');">Submit</button>
           </form>
 
           <div class="contactCards">
-            <div class="contactCard glass hoverGlow">
-              <div class="contactLabel">EMAIL</div>
-              <div class="contactValue">saikumarvemula.us@gmail.com</div>
-              <button class="copyBtn" data-copy="saikumarvemula.us@gmail.com">Copy</button>
-            </div>
-
-            <div class="contactCard glass hoverGlow">
-              <div class="contactLabel">PHONE</div>
-              <div class="contactValue">(917) 516-6967</div>
-              <button class="copyBtn" data-copy="(917) 516-6967">Copy</button>
-            </div>
-
-            <div class="contactCard glass hoverGlow">
-              <div class="contactLabel">LOCATION</div>
-              <div class="locTitle">New Jersey, USA</div>
-            </div>
+            <div class="contactCard glass hoverGlow"><div class="contactLabel">Email</div><div class="contactValue">saikumarvemula.us@gmail.com</div><button class="copyBtn" data-copy="saikumarvemula.us@gmail.com">Copy</button></div>
+            <div class="contactCard glass hoverGlow"><div class="contactLabel">Phone</div><div class="contactValue">(917) 516-6967</div><button class="copyBtn" data-copy="(917) 516-6967">Copy</button></div>
+            <div class="contactCard glass hoverGlow"><div class="contactLabel">Location</div><div class="locTitle">New Jersey, USA</div></div>
+            <div class="contactCard glass hoverGlow"><div class="contactLabel">Profiles</div><div class="profileLinks"><a href="https://github.com/svemula17" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com" target="_blank" rel="noreferrer">LinkedIn</a></div></div>
           </div>
         </div>
       </section>
 
-      <!-- LET'S TALK MARQUEE -->
       <section class="letsTalkWrap">
-        <div class="letsTalkBar">
-          <div class="letsTalkTrack">
-            <span>LET'S TALK!</span><span>LET'S TALK!</span><span>LET'S TALK!</span><span>LET'S TALK!</span><span>LET'S
-              TALK!</span>
-            <span>LET'S TALK!</span><span>LET'S TALK!</span><span>LET'S TALK!</span><span>LET'S TALK!</span><span>LET'S
-              TALK!</span>
-          </div>
-        </div>
+        <div class="letsTalkBar"><div class="letsTalkTrack"><span>LET'S TALK!</span><span>SECURE BY DESIGN</span><span>THREAT-AWARE SYSTEMS</span><span>LET'S TALK!</span><span>SECURE BY DESIGN</span><span>THREAT-AWARE SYSTEMS</span></div></div>
       </section>
 
-      <!-- Footer -->
       <footer class="footer">
         <div class="footerInner">
-          <div class="footerLeft">
-            <div class="footerBrand">
-              <span class="brandMark mini">S</span>
-              <div>
-                <div class="footerName">Sai Kumar</div>
-                <div class="footerRole">Cybersecurity Portfolio</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="footerRight">
-            <a class="footerLink" href="#home">Home</a>
-            <a class="footerLink" href="#about">About</a>
-            <a class="footerLink" href="#projects">Projects</a>
-            <a class="footerLink" href="#contact">Contact</a>
-          </div>
+          <div class="footerLeft"><div class="footerBrand"><span class="brandMark mini">S</span><div><div class="footerName">Sai Kumar</div><div class="footerRole">Cybersecurity Portfolio</div></div></div></div>
+          <div class="footerRight"><a class="footerLink" href="#home">Home</a><a class="footerLink" href="#about">About</a><a class="footerLink" href="#experience">Experience</a><a class="footerLink" href="#skills">Skills</a><a class="footerLink" href="#certifications">Certifications</a><a class="footerLink" href="#contact">Contact</a></div>
         </div>
         <div class="footerCopy">© <span id="year"></span> Sai Kumar. Built with HTML/CSS/JS.</div>
       </footer>
 
-      <!-- Scroll-to-top -->
       <button id="toTop" class="toTop" aria-label="Scroll to top">↑</button>
 
     </main>
   </div>
 
   <script src="boot.js"></script>
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
 </body>
 
 </html>

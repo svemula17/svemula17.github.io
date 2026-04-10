@@ -1355,3 +1355,432 @@ html[data-ui="light"] .miniList{ color: rgba(12,14,20,0.70); }
   border-radius: 4px;
 }
 html[data-ui="light"] .dvwa-placeholder { background: #1a1e26 !important; }
+
+/* ===========================
+   Professional Portfolio Refresh
+=========================== */
+:root{
+  --radius-xl: 30px;
+  --radius-lg: 22px;
+  --line: rgba(180, 232, 238, 0.18);
+}
+.professionalWrap{
+  padding-left: clamp(18px, 4vw, 72px);
+  padding-right: clamp(18px, 4vw, 72px);
+}
+.eyebrow,
+.sectionKicker,
+.certEyebrow{
+  margin: 0 0 12px;
+  color: var(--accent2);
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  font-size: 12px;
+  font-weight: 900;
+}
+.proHero{
+  min-height: calc(100vh - var(--headerH));
+  align-items: center;
+  gap: clamp(24px, 5vw, 72px);
+}
+.proHero .heroTitle{
+  font-size: clamp(48px, 7.8vw, 110px);
+  line-height: .95;
+  letter-spacing: -0.05em;
+}
+.proHeroCard{
+  margin-top: 24px;
+  padding: clamp(20px, 3vw, 30px);
+  border-radius: var(--radius-xl);
+  border-color: var(--line);
+}
+.heroMetricStrip{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-top: 18px;
+}
+.heroMetricStrip span{
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 16px;
+  padding: 12px;
+  color: var(--muted);
+  background: rgba(0,0,0,.14);
+  font-size: 12px;
+  line-height: 1.45;
+}
+.heroMetricStrip strong{
+  display: block;
+  color: var(--accent);
+  font-size: 22px;
+  line-height: 1;
+}
+.proStats{
+  padding-left: 0;
+  padding-right: 0;
+}
+.proSection{
+  padding-top: clamp(70px, 9vw, 120px);
+}
+.proSectionHead{
+  align-items: flex-start;
+  margin-bottom: 26px;
+}
+.proSectionHead .sectionTitleSerif{
+  max-width: 920px;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+}
+.proAboutGrid{
+  grid-template-columns: minmax(280px, .78fr) minmax(320px, 1.22fr);
+}
+.proAboutCard{
+  padding: clamp(22px, 3vw, 34px);
+}
+.proHighlights{
+  margin-top: 20px;
+}
+.educationRail{
+  display: grid;
+  gap: 12px;
+}
+.educationRail div{
+  display: grid;
+  gap: 5px;
+  padding-left: 14px;
+  border-left: 2px solid var(--accentBorder);
+}
+.educationRail strong{
+  color: var(--text);
+}
+.educationRail span{
+  color: var(--muted);
+  line-height: 1.55;
+}
+.experienceIntro{
+  border-radius: var(--radius-lg);
+  padding: 18px 22px;
+  margin-bottom: 18px;
+  color: var(--muted);
+  max-width: 920px;
+}
+.experienceIntro p{ margin: 0; line-height: 1.7; }
+.experiencePanels{
+  display: grid;
+  grid-template-columns: repeat(4, minmax(150px, 1fr));
+  gap: 16px;
+  min-height: 560px;
+}
+.experiencePanel{
+  position: relative;
+  border-radius: 28px;
+  padding: 24px;
+  min-width: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  isolation: isolate;
+  transition: flex .45s ease, transform .25s ease, border-color .25s ease, box-shadow .25s ease, background .25s ease;
+}
+.experiencePanels:hover .experiencePanel{
+  opacity: .68;
+}
+.experiencePanels .experiencePanel:hover,
+.experiencePanel.is-featured{
+  opacity: 1;
+}
+.experiencePanel:hover{
+  transform: translateY(-8px) scale(1.01);
+  z-index: 4;
+}
+.experiencePanel::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.42) 100%),
+    radial-gradient(700px 340px at 25% 15%, var(--accentSoft), transparent 62%);
+  opacity: .8;
+}
+.panelNumber{
+  position:absolute;
+  top: 20px;
+  right: 22px;
+  color: rgba(255,255,255,.22);
+  font-size: clamp(42px, 6vw, 78px);
+  font-weight: 900;
+  letter-spacing: -.08em;
+}
+.panelTopline{
+  color: var(--accent2);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  margin-bottom: 12px;
+}
+.experiencePanel h3{
+  margin: 0 0 8px;
+  font-family: var(--serif);
+  font-size: clamp(23px, 3vw, 36px);
+  line-height: 1;
+  color: var(--text);
+}
+.experiencePanel h4{
+  margin: 0 0 12px;
+  color: var(--accent);
+  font-size: 15px;
+  letter-spacing: .06em;
+}
+.panelSummary{
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.65;
+}
+.panelReveal{
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transform: translateY(14px);
+  transition: grid-template-rows .42s ease, opacity .35s ease, transform .35s ease;
+}
+.panelReveal > *{
+  overflow: hidden;
+}
+.experiencePanel:hover .panelReveal,
+.experiencePanel:focus-within .panelReveal{
+  grid-template-rows: 1fr;
+  opacity: 1;
+  transform: translateY(0);
+}
+.panelReveal ul{
+  margin: 18px 0 12px;
+  padding-left: 18px;
+  color: rgba(255,255,255,.76);
+  line-height: 1.75;
+}
+.panelReveal li::marker{ color: var(--accent); }
+.skillsMatrix{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(190px, 1fr));
+  gap: 16px;
+}
+.skillColumn{
+  border-radius: 26px;
+  padding: 24px;
+  min-height: 280px;
+}
+.skillColumn h3{
+  margin: 0 0 14px;
+  font-family: var(--serif);
+  font-size: 25px;
+  line-height: 1.1;
+  color: var(--accent);
+}
+.skillColumn p{
+  color: var(--muted);
+  line-height: 1.7;
+  margin: 0 0 18px;
+}
+.skillChips{
+  display:flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.skillChips span{
+  border: 1px solid var(--accentBorder);
+  background: var(--accentSoft);
+  color: var(--text);
+  border-radius: 999px;
+  padding: 8px 10px;
+  font-size: 12px;
+}
+.proProjectGrid .pc-card{
+  border-radius: 24px;
+}
+.certShowcase{
+  position: relative;
+  overflow: hidden;
+  border-radius: 34px;
+  padding: clamp(24px, 4vw, 48px);
+  border: 1px solid rgba(174, 226, 234, .28);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.04), 0 28px 90px rgba(0,0,0,.28);
+}
+.certShowcase::before,
+.certShowcase::after{
+  content:"";
+  position:absolute;
+  pointer-events:none;
+}
+.certShowcase::before{
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(83,243,255,.95), transparent 90px) top left/100% 2px no-repeat,
+    linear-gradient(180deg, rgba(83,243,255,.95), transparent 90px) top left/2px 100% no-repeat,
+    linear-gradient(270deg, rgba(0,255,170,.85), transparent 90px) bottom right/100% 2px no-repeat,
+    linear-gradient(0deg, rgba(0,255,170,.85), transparent 90px) bottom right/2px 100% no-repeat;
+  opacity: .85;
+}
+.certShowcase::after{
+  inset: -20%;
+  background:
+    radial-gradient(circle at 43% 30%, rgba(255, 30, 84, .18), transparent 12%),
+    radial-gradient(circle at 56% 27%, rgba(119, 170, 255, .16), transparent 14%),
+    radial-gradient(circle at 14% 14%, rgba(0,255,170,.10), transparent 24%);
+  filter: blur(10px);
+  z-index: -1;
+}
+.certHeader{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap: 22px;
+  margin-bottom: 28px;
+}
+.certEyebrow{
+  display:flex;
+  align-items:center;
+  gap: 14px;
+}
+.certEyebrow span{
+  width: 13px;
+  height: 13px;
+  border-radius: 999px;
+  background: var(--accent2);
+  box-shadow: 0 0 24px var(--accent2);
+}
+.certHeader h2{
+  margin: 0 0 10px;
+  font-family: var(--serif);
+  font-size: clamp(36px, 5vw, 64px);
+  letter-spacing: -0.05em;
+  color: var(--text);
+}
+.certHeader p:last-child{
+  margin: 0;
+  color: var(--muted);
+  font-size: 18px;
+  letter-spacing: .08em;
+}
+.certBadgeArt{
+  width: 176px;
+  height: 122px;
+  border-radius: 20px;
+  border: 1px solid rgba(83,243,255,.25);
+  background: linear-gradient(135deg, rgba(83,243,255,.18), rgba(255,255,255,.04));
+  display:grid;
+  place-items:center;
+  position: relative;
+  overflow:hidden;
+}
+.certRings span{
+  position:absolute;
+  inset: 24px;
+  border: 2px solid rgba(180, 232, 238, .25);
+  border-radius: 50%;
+  animation: certPulse 2.8s ease-in-out infinite;
+}
+.certRings span:nth-child(2){ inset: 32px; animation-delay: .4s; }
+.certRings span:nth-child(3){ inset: 42px; animation-delay: .8s; }
+.certIcon{
+  position:relative;
+  z-index:1;
+  border: 1px solid rgba(255,255,255,.25);
+  border-radius: 10px;
+  padding: 10px 8px;
+  color: var(--accent2);
+  font-weight: 900;
+  background: rgba(0,0,0,.28);
+  font-size: 12px;
+  letter-spacing: .16em;
+}
+@keyframes certPulse{
+  50%{ transform: scale(1.08); opacity: .55; }
+}
+.certList{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));
+  gap: 14px;
+}
+.certItem{
+  text-decoration:none;
+  color: inherit;
+  display:grid;
+  grid-template-columns: 82px 1fr;
+  align-items:center;
+  gap: 20px;
+  border: 1px solid rgba(174,226,234,.14);
+  border-radius: 22px;
+  padding: 18px 20px;
+  background: rgba(5, 8, 18, .42);
+  min-height: 112px;
+}
+.certItem img{
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  border-radius: 18px;
+  background: #fff;
+  padding: 8px;
+}
+.certItem h3{
+  margin: 0 0 10px;
+  color: var(--text);
+  line-height: 1.35;
+  font-size: clamp(16px, 2vw, 23px);
+  font-family: var(--mono);
+  letter-spacing: .02em;
+}
+.certItem p{
+  margin:0;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  font-size: 12px;
+}
+.certFooter{
+  margin-top: 22px;
+}
+.profileLinks{
+  display:flex;
+  gap: 10px;
+  margin-top: 12px;
+  flex-wrap:wrap;
+}
+.profileLinks a{
+  color: var(--accent);
+  text-decoration:none;
+  border: 1px solid var(--accentBorder);
+  border-radius: 999px;
+  padding: 8px 10px;
+}
+html[data-ui="light"] .heroMetricStrip span,
+html[data-ui="light"] .certItem{
+  background: rgba(255,255,255,.72);
+  border-color: rgba(0,0,0,.10);
+}
+html[data-ui="light"] .panelReveal ul{ color: rgba(12,14,20,.72); }
+html[data-ui="light"] .panelNumber{ color: rgba(12,14,20,.16); }
+html[data-ui="light"] .certHeader h2{ color: rgba(12,14,20,.94); }
+@media (min-width: 1060px){
+  .experiencePanels{ display:flex; }
+  .experiencePanel{ flex: 1; min-height: 560px; }
+  .experiencePanel:hover{ flex: 2.35; }
+}
+@media (max-width: 1120px){
+  .skillsMatrix{ grid-template-columns: repeat(2, 1fr); }
+  .certList{ grid-template-columns: 1fr; }
+  .experiencePanels{ grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 720px){
+  .proHero{ align-items:start; }
+  .heroMetricStrip{ grid-template-columns: 1fr; }
+  .experiencePanels{ grid-template-columns: 1fr; min-height: auto; }
+  .experiencePanel{ min-height: 420px; }
+  .skillsMatrix{ grid-template-columns: 1fr; }
+  .certHeader{ align-items:flex-start; flex-direction:column; }
+  .certBadgeArt{ width: 100%; }
+  .certItem{ grid-template-columns: 64px 1fr; padding: 14px; }
+  .certItem img{ width: 56px; height: 56px; border-radius: 14px; }
+}

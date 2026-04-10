@@ -54,7 +54,7 @@ toTopBtn?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "s
 /* =========================
    Typing roles
 ========================= */
-const roles = ["Cybersecurity Analyst","SOC Analyst (Blue Team)","Penetration Tester (Red Team)","Threat Hunter","Cloud Security Engineer"];
+const roles = ["Cybersecurity Analyst", "SOC Analyst", "Security Engineer", "Threat Hunter", "Cloud Security Builder"];
 const roleEl = document.getElementById("rotatingRole");
 let roleIndex = 0, charIndex = 0, deleting = false;
 
@@ -151,63 +151,54 @@ function termPrint(html) {
 }
 
 const terminalHelp = `
-<span class="out"><b>Commands:</b> help, about, education, projects, skills, experience, certifications, contact, open &lt;section&gt;, clear</span><br>
-<span class="muted">Examples:</span> <span class="cmd">about</span>, <span class="cmd">open projects</span>, <span class="cmd">clear</span>
+<span class="out"><b>Commands:</b> help, about, experience, skills, projects, certifications, contact, open &lt;section&gt;, clear</span><br>
+<span class="muted">Examples:</span> <span class="cmd">experience</span>, <span class="cmd">open certifications</span>, <span class="cmd">clear</span>
 `;
 
 const terminalData = {
   help: terminalHelp,
   about: `
 <span class="out"><b>About</b></span><br>
-<span class="out">• Cybersecurity M.S. student focused on practical labs and projects</span><br>
-<span class="out">• OWASP Top 10 testing (DVWA), SIEM basics, and risk analysis</span><br>
-<span class="muted">Tip:</span> <span class="cmd">open about</span> to scroll there
-`,
-  education: `
-<span class="out"><b>Education</b></span><br>
-<span class="out">• M.S. Cybersecurity — Yeshiva University, NYC, USA</span><br>
-<span class="out">• B.Tech Mechanical Engineering — Hyderabad, India (2018–2021) • CGPA 3.9</span><br>
-<span class="muted">Tip:</span> <span class="cmd">open education</span> to scroll there
-`,
-  projects: `
-<span class="out"><b>Projects</b></span><br>
-<span class="out">1) Smart SIEM Risk Engine & Dashboard</span><br>
-<span class="out">2) AI-Powered Cloud Security Posture Platform</span><br>
-<span class="out">3) DVWA Vulnerability Testing Lab (OWASP Top 10)</span><br>
-<span class="out">4) Attack Identification Tool</span><br>
-<span class="out">5) AWS Image Upload & AI Tagging System</span><br>
-<span class="out">6) AWS Sentiment Analysis System</span><br>
-<span class="muted">Tip:</span> <span class="cmd">open projects</span> to scroll there
-`,
-  skills: `
-<span class="out"><b>Skills</b></span><br>
-<span class="out">• Vulnerability Assessment • Security Risks • Detection Basics</span><br>
-<span class="out">• SOC Lab • Log Triage • SIEM Basics</span><br>
-<span class="out">• Wireshark • Nessus • Splunk • Linux • SQL</span><br>
-<span class="out">• Python (basic automation) • Bash • TCP/IP • DNS</span><br>
-<span class="muted">Tip:</span> <span class="cmd">open skills</span>
+<span class="out">• M.S. Cybersecurity student at Yeshiva University</span><br>
+<span class="out">• 4+ years across SOC, security engineering, IT support, and security labs</span><br>
+<span class="muted">Tip:</span> <span class="cmd">open about</span>
 `,
   experience: `
 <span class="out"><b>Experience</b></span><br>
-<span class="out">🏢 Cybersecurity Analyst L1 — Deloitte</span><br>
-<span class="out">   Mar 2023 – Apr 2025 • 100+ alerts/day • Splunk SIEM • Nessus</span><br>
-<span class="out">🏢 Cybersecurity Engineer — Phoenix Business Consulting</span><br>
-<span class="out">   Aug 2022 – Feb 2023 • Firewalls • Vuln Mgmt • DLP</span><br>
-<span class="out">🏢 IT Support Technician — Siddhartha Heavy Equipment</span><br>
-<span class="out">   Jun 2021 – Jul 2022 • Active Directory • Access Control</span><br>
+<span class="out">• Deloitte — Cybersecurity Analyst L1</span><br>
+<span class="out">• Phoenix Business Consulting — Cybersecurity Engineer</span><br>
+<span class="out">• Siddhartha Heavy Equipment — IT Support Technician</span><br>
+<span class="out">• Security Labs & Research — Cloud, AI, and offensive security projects</span><br>
 <span class="muted">Tip:</span> <span class="cmd">open experience</span>
+`,
+  skills: `
+<span class="out"><b>Skills</b></span><br>
+<span class="out">• Splunk SIEM • Incident Response • Threat Hunting • Wireshark</span><br>
+<span class="out">• Nessus • Qualys • Burp Suite • Nmap • Metasploit • OWASP Top 10</span><br>
+<span class="out">• AWS • Python • Linux • Bash • SQL • Java • NIST • DLP</span><br>
+<span class="muted">Tip:</span> <span class="cmd">open skills</span>
+`,
+  projects: `
+<span class="out"><b>Projects</b></span><br>
+<span class="out">1) Smart SIEM Risk Engine</span><br>
+<span class="out">2) AI Cloud Posture Platform</span><br>
+<span class="out">3) DVWA Vulnerability Testing Lab</span><br>
+<span class="out">4) Attack Identification Tool</span><br>
+<span class="out">5) AWS Image AI Tagging</span><br>
+<span class="out">6) AWS Sentiment Analysis</span><br>
+<span class="muted">Tip:</span> <span class="cmd">open projects</span>
 `,
   certifications: `
 <span class="out"><b>Certifications</b></span><br>
-<span class="out">• CompTIA Security+</span><br>
-<span class="out">• Google Cybersecurity Professional Certificate (and modules)</span><br>
-<span class="out">• SOC Lab Program • (ISC)² CC Specialization • More...</span><br>
+<span class="out">• CompTIA Security+ • Google Cybersecurity Professional Certificate</span><br>
+<span class="out">• Hands-on SOC Lab • Red Hat System Administration I • (ISC)2 Specialization</span><br>
+<span class="out">• Google detection, response, Python automation, and vulnerability modules</span><br>
 <span class="muted">Tip:</span> <span class="cmd">open certifications</span>
 `,
   contact: `
 <span class="out"><b>Contact</b></span><br>
 <span class="out">Email: saikumarvemula.us@gmail.com</span><br>
-<span class="out">Phone: (551) 235-2122</span><br>
+<span class="out">Phone: (917) 516-6967</span><br>
 <span class="out">Location: New Jersey, USA</span><br>
 <span class="muted">Tip:</span> <span class="cmd">open contact</span>
 `
@@ -237,7 +228,7 @@ function handleCommand(raw){
       termPrint(`<span class="muted">Opening section:</span> <span class="cmd">${target}</span>`);
       scrollToSection(target);
     } else {
-      termPrint(`<span class="out">Unknown section: <b>${target}</b>. Try: about/education/projects/skills/experience/certifications/contact</span>`);
+      termPrint(`<span class="out">Unknown section: <b>${target}</b>. Try: about/projects/skills/experience/certifications/contact</span>`);
     }
     return;
   }
@@ -531,20 +522,3 @@ requestAnimationFrame(draw);
 const yearEl = document.getElementById("year");
 if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-/* =========================
-   Projects & Certificates Toggle
-========================= */
-function switchTab(tabId) {
-  // Update buttons
-  document.querySelectorAll('.toggle-btn').forEach(btn => {
-    btn.classList.remove('active');
-  });
-  document.getElementById('btn-' + tabId).classList.add('active');
-
-  // Update tabs
-  document.querySelectorAll('.tab-content').forEach(tab => {
-    tab.style.display = 'none';
-  });
-  document.getElementById('tab-' + tabId).style.display = 'block';
-}
-window.switchTab = switchTab;
