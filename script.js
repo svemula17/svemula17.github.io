@@ -54,7 +54,7 @@ toTopBtn?.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "s
 /* =========================
    Typing roles
 ========================= */
-const roles = ["Cybersecurity Analyst", "SOC Analyst", "Security Engineer", "Threat Hunter", "Cloud Security Builder"];
+const roles = ["Cybersecurity Analyst", "SOC Analyst", "Cloud Security Builder", "Threat Detection", "Vulnerability Management"];
 const roleEl = document.getElementById("rotatingRole");
 let roleIndex = 0, charIndex = 0, deleting = false;
 
@@ -152,53 +152,45 @@ function termPrint(html) {
 
 const terminalHelp = `
 <span class="out"><b>Commands:</b> help, about, experience, skills, projects, certifications, contact, open &lt;section&gt;, clear</span><br>
-<span class="muted">Examples:</span> <span class="cmd">experience</span>, <span class="cmd">open certifications</span>, <span class="cmd">clear</span>
+<span class="muted">Try:</span> <span class="cmd">experience</span>, <span class="cmd">projects</span>, <span class="cmd">open contact</span>
 `;
 
 const terminalData = {
   help: terminalHelp,
   about: `
 <span class="out"><b>About</b></span><br>
-<span class="out">• M.S. Cybersecurity student at Yeshiva University</span><br>
-<span class="out">• 4+ years across SOC, security engineering, IT support, and security labs</span><br>
+<span class="out">Security analyst with 4+ years across SOC, engineering, IT support, and cloud/security labs.</span><br>
 <span class="muted">Tip:</span> <span class="cmd">open about</span>
 `,
   experience: `
 <span class="out"><b>Experience</b></span><br>
-<span class="out">• Deloitte — Cybersecurity Analyst L1</span><br>
-<span class="out">• Phoenix Business Consulting — Cybersecurity Engineer</span><br>
-<span class="out">• Siddhartha Heavy Equipment — IT Support Technician</span><br>
-<span class="out">• Security Labs & Research — Cloud, AI, and offensive security projects</span><br>
+<span class="out">1. Deloitte - Cybersecurity Analyst L1</span><br>
+<span class="out">2. Phoenix Business Consulting - Cybersecurity Engineer</span><br>
+<span class="out">3. Siddhartha Heavy Equipment - IT Support Technician</span><br>
+<span class="out">4. Security Labs & Research - Cloud, AI, and offensive security projects</span><br>
 <span class="muted">Tip:</span> <span class="cmd">open experience</span>
 `,
   skills: `
 <span class="out"><b>Skills</b></span><br>
-<span class="out">• Splunk SIEM • Incident Response • Threat Hunting • Wireshark</span><br>
-<span class="out">• Nessus • Qualys • Burp Suite • Nmap • Metasploit • OWASP Top 10</span><br>
-<span class="out">• AWS • Python • Linux • Bash • SQL • Java • NIST • DLP</span><br>
+<span class="out">SOC: Splunk, alert triage, incident response, threat hunting</span><br>
+<span class="out">Risk: Nessus, Qualys, Nmap, patching, remediation tracking</span><br>
+<span class="out">Build: AWS, Python, Linux, Bash, SQL, Java</span><br>
 <span class="muted">Tip:</span> <span class="cmd">open skills</span>
 `,
   projects: `
 <span class="out"><b>Projects</b></span><br>
-<span class="out">1) Smart SIEM Risk Engine</span><br>
-<span class="out">2) AI Cloud Posture Platform</span><br>
-<span class="out">3) DVWA Vulnerability Testing Lab</span><br>
-<span class="out">4) Attack Identification Tool</span><br>
-<span class="out">5) AWS Image AI Tagging</span><br>
-<span class="out">6) AWS Sentiment Analysis</span><br>
+<span class="out">Smart SIEM Risk Engine, AI Cloud Posture Platform, DVWA Testing Lab, Attack Identification Tool, AWS AI systems.</span><br>
 <span class="muted">Tip:</span> <span class="cmd">open projects</span>
 `,
   certifications: `
 <span class="out"><b>Certifications</b></span><br>
-<span class="out">• CompTIA Security+ • Google Cybersecurity Professional Certificate</span><br>
-<span class="out">• Hands-on SOC Lab • Red Hat System Administration I • (ISC)2 Specialization</span><br>
-<span class="out">• Google detection, response, Python automation, and vulnerability modules</span><br>
+<span class="out">CompTIA Security+, Google Cybersecurity, SOC Lab, Red Hat RH124, ISC2/Coursera, and Google security modules.</span><br>
 <span class="muted">Tip:</span> <span class="cmd">open certifications</span>
 `,
   contact: `
 <span class="out"><b>Contact</b></span><br>
 <span class="out">Email: saikumarvemula.us@gmail.com</span><br>
-<span class="out">Phone: (917) 516-6967</span><br>
+<span class="out">GitHub: github.com/svemula17</span><br>
 <span class="out">Location: New Jersey, USA</span><br>
 <span class="muted">Tip:</span> <span class="cmd">open contact</span>
 `

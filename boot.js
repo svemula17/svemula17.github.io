@@ -13,15 +13,10 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   const lines = [
-    ">> Initializing kernel modules...",
-    ">> Loading system drivers...",
-    ">> Mounting file systems...",
-    ">> Scanning network interfaces...",
-    ">> Initializing 3D renderer...",
-    ">> Loading security protocols...",
-    ">> Establishing secure connection...",
-    ">> Compiling portfolio data...",
-    ">> System check complete."
+    ">> Loading portfolio data...",
+    ">> Preparing security profile...",
+    ">> Rendering case studies...",
+    ">> Portfolio ready."
   ];
 
   let i = 0;
@@ -52,11 +47,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
     if (pct >= 100) {
       done = true;
-      setTimeout(finishBoot, 350);
+      setTimeout(finishBoot, 160);
       return;
     }
 
-    setTimeout(step, 250);
+    setTimeout(step, 95);
   }
 
   document.body.style.overflow = "hidden";
@@ -68,7 +63,7 @@ window.addEventListener("DOMContentLoaded", () => {
       bootBarFill.style.width = "100%";
       bootPct.textContent = "100%";
       bootStatus.textContent = "System check complete.";
-      setTimeout(finishBoot, 250);
+      setTimeout(finishBoot, 120);
     }
   });
 });
