@@ -13,9 +13,16 @@ window.addEventListener("DOMContentLoaded", () => {
   }
 
   const lines = [
-    ">> Loading portfolio data...",
-    ">> Preparing security profile...",
-    ">> Rendering case studies...",
+    ">> Initializing secure portfolio shell...",
+    ">> Loading navigation, themes, and visual layers...",
+    ">> Mounting cybersecurity profile workspace...",
+    ">> Syncing certifications, projects, and experience modules...",
+    ">> Verifying local assets and portfolio references...",
+    ">> Preparing SOC, cloud security, and detection highlights...",
+    ">> Wiring live case studies and interactive sections...",
+    ">> Building recruiter-ready portfolio surfaces...",
+    ">> Activating terminal preview and final motion pass...",
+    ">> Running presentation hardening checks...",
     ">> Portfolio ready."
   ];
 
@@ -40,7 +47,7 @@ window.addEventListener("DOMContentLoaded", () => {
       i++;
     }
 
-    pct = Math.min(100, pct + Math.floor(Math.random() * 10) + 6);
+    pct = Math.min(100, pct + Math.floor(Math.random() * 7) + 5);
     bootBarFill.style.width = pct + "%";
     bootPct.textContent = pct + "%";
     bootStatus.textContent = lines[Math.min(lines.length - 1, i - 1)] || "Initializing...";
@@ -51,7 +58,7 @@ window.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    setTimeout(step, 95);
+    setTimeout(step, 120);
   }
 
   document.body.style.overflow = "hidden";
