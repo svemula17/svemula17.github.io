@@ -1095,27 +1095,38 @@
   display: flex;
   gap: 8px;
 }
-.musicControls i{
-  width: 10px;
-  height: 10px;
+.musicCtrlBtn{
+  width: 34px;
+  height: 34px;
   border-radius: 50%;
-  background: var(--accent);
-  opacity: .75;
+  border: 1px solid var(--premium-line);
+  background: rgba(255,255,255,.05);
+  color: var(--text);
+  cursor: pointer;
 }
-.musicWave{
-  height: 52px;
+.musicCtrlBtn:hover{
+  border-color: var(--accentBorder);
+  color: var(--accent);
+}
+.musicEmbedWrap{
   margin: 14px 0;
   border-radius: 18px;
-  background:
-    linear-gradient(90deg, transparent 0 3%, rgba(255,255,255,.07) 3% 6%, transparent 6% 10%, rgba(255,255,255,.12) 10% 13%, transparent 13% 18%, rgba(255,255,255,.08) 18% 22%, transparent 22% 27%, rgba(255,255,255,.16) 27% 31%, transparent 31% 36%, rgba(255,255,255,.1) 36% 39%, transparent 39% 44%, rgba(255,255,255,.14) 44% 48%, transparent 48% 54%, rgba(255,255,255,.09) 54% 58%, transparent 58% 64%, rgba(255,255,255,.15) 64% 68%, transparent 68% 73%, rgba(255,255,255,.08) 73% 77%, transparent 77% 83%, rgba(255,255,255,.12) 83% 88%, transparent 88% 100%),
-    linear-gradient(135deg, rgba(0,255,170,.22), rgba(83,243,255,.08));
+  overflow: hidden;
+  border: 1px solid var(--premium-line);
+  background: rgba(0,0,0,.2);
+}
+.musicEmbedWrap iframe{
+  width: 100%;
+  height: 210px;
+  border: 0;
 }
 .songList{
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
 }
-.songList span{
+.songItem{
+  text-align: left;
   border: 1px solid var(--premium-line);
   border-radius: 14px;
   padding: 8px 10px;
@@ -1123,6 +1134,13 @@
   background: rgba(255,255,255,.03);
   font-size: 12px;
   line-height: 1.35;
+  cursor: pointer;
+}
+.songItem.is-active,
+.songItem:hover{
+  color: var(--text);
+  border-color: var(--accentBorder);
+  background: rgba(0,255,170,.08);
 }
 .aboutStoryProgress{
   display: flex;

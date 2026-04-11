@@ -582,6 +582,31 @@ aboutDots.forEach(dot => {
 });
 syncAboutSlider();
 
+const musicFrame = document.getElementById("musicFrame");
+const musicNowPlaying = document.getElementById("musicNowPlaying");
+const musicPrev = document.getElementById("musicPrev");
+const musicNext = document.getElementById("musicNext");
+const songItems = [...document.querySelectorAll(".songItem")];
+let currentSongIndex = 0;
+
+function updateMusicPlayer(index) {
+  if (!musicFrame || !songItems.length) return;
+  currentSongIndex = (index + songItems.length) % songItems.length;
+  const activeSong = songItems[currentSongIndex];
+  const youtubeId = activeSong.dataset.youtube;
+  const title = activeSong.dataset.title || activeSong.textContent.trim();
+  musicFrame.src = `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
+  if (musicNowPlaying) musicNowPlaying.textContent = title;
+  songItems.forEach((item, i) => item.classList.toggle("is-active", i === currentSongIndex));
+}
+
+songItems.forEach((item, index) => {
+  item.addEventListener("click", () => updateMusicPlayer(index));
+});
+
+musicPrev?.addEventListener("click", () => updateMusicPlayer(currentSongIndex - 1));
+musicNext?.addEventListener("click", () => updateMusicPlayer(currentSongIndex + 1));
+
 
 
 /* =========================

@@ -221,32 +221,44 @@
                     <div class="musicPlayerTop">
                       <div>
                         <span>Now Playing</span>
-                        <strong>Sai's Focus Playlist</strong>
+                        <strong id="musicNowPlaying">Benson Boone - Beautiful Things</strong>
                       </div>
-                      <div class="musicControls"><i></i><i></i><i></i></div>
+                      <div class="musicControls">
+                        <button id="musicPrev" class="musicCtrlBtn" type="button" aria-label="Previous song">◀</button>
+                        <button id="musicNext" class="musicCtrlBtn" type="button" aria-label="Next song">▶</button>
+                      </div>
                     </div>
-                    <div class="musicWave"></div>
-                    <div class="songList">
-                      <span>Blinding Lights</span>
-                      <span>Shape of You</span>
-                      <span>Perfect</span>
-                      <span>Someone You Loved</span>
-                      <span>Closer</span>
-                      <span>Believer</span>
-                      <span>Attention</span>
-                      <span>Levitating</span>
-                      <span>As It Was</span>
-                      <span>Sunflower</span>
-                      <span>Heat Waves</span>
-                      <span>Peaches</span>
-                      <span>Stay</span>
-                      <span>Lovely</span>
-                      <span>Senorita</span>
-                      <span>Counting Stars</span>
-                      <span>See You Again</span>
-                      <span>Bad Guy</span>
-                      <span>One Dance</span>
-                      <span>Photograph</span>
+                    <div class="musicEmbedWrap">
+                      <iframe
+                        id="musicFrame"
+                        src="https://www.youtube-nocookie.com/embed/Oa_RSwwpPaA?rel=0&modestbranding=1&playsinline=1"
+                        title="Sai Kumar playlist player"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen></iframe>
+                    </div>
+                    <div class="songList" id="songList">
+                      <button class="songItem is-active" type="button" data-title="Benson Boone - Beautiful Things" data-youtube="Oa_RSwwpPaA">Benson Boone - Beautiful Things</button>
+                      <button class="songItem" type="button" data-title="Sabrina Carpenter - Espresso" data-youtube="eVli-tstM5E">Sabrina Carpenter - Espresso</button>
+                      <button class="songItem" type="button" data-title="Tommy Richman - MILLION DOLLAR BABY" data-youtube="Zf1d9WJg7KQ">Tommy Richman - MILLION DOLLAR BABY</button>
+                      <button class="songItem" type="button" data-title="Tyla - Water" data-youtube="XoiOOiuH8iI">Tyla - Water</button>
+                      <button class="songItem" type="button" data-title="Billie Eilish - BIRDS OF A FEATHER" data-youtube="DyDfgMOUjCI">Billie Eilish - BIRDS OF A FEATHER</button>
+                      <button class="songItem" type="button" data-title="Taylor Swift ft. Post Malone - Fortnight" data-youtube="q3zqJs7JUCQ">Taylor Swift ft. Post Malone - Fortnight</button>
+                      <button class="songItem" type="button" data-title="David Kushner - Daylight" data-youtube="MoN9ql6Yymw">David Kushner - Daylight</button>
+                      <button class="songItem" type="button" data-title="SZA - Saturn" data-youtube="K6i8oM9Qe6c">SZA - Saturn</button>
+                      <button class="songItem" type="button" data-title="Dua Lipa - Houdini" data-youtube="suAR1PYFNYA">Dua Lipa - Houdini</button>
+                      <button class="songItem" type="button" data-title="Imagine Dragons - Eyes Closed" data-youtube="eYDI8b5Nn5s">Imagine Dragons - Eyes Closed</button>
+                      <button class="songItem" type="button" data-title="Kygo & Ava Max - Whatever" data-youtube="Etc8qdqiR5k">Kygo & Ava Max - Whatever</button>
+                      <button class="songItem" type="button" data-title="Coldplay - feelslikeimfallinginlove" data-youtube="ZV3X4q3EbxA">Coldplay - feelslikeimfallinginlove</button>
+                      <button class="songItem" type="button" data-title="Doja Cat - Paint The Town Red" data-youtube="m4_9TFeMfJE">Doja Cat - Paint The Town Red</button>
+                      <button class="songItem" type="button" data-title="Post Malone ft. Morgan Wallen - I Had Some Help" data-youtube="4QpA6T4Y1eE">Post Malone ft. Morgan Wallen - I Had Some Help</button>
+                      <button class="songItem" type="button" data-title="Ariana Grande - yes, and?" data-youtube="eB6txyhHFG4">Ariana Grande - yes, and?</button>
+                      <button class="songItem" type="button" data-title="Jack Harlow - Lovin On Me" data-youtube="KX6qTL3p7sU">Jack Harlow - Lovin On Me</button>
+                      <button class="songItem" type="button" data-title="Ed Sheeran - Bad Habits" data-youtube="orJSJGHjBLI">Ed Sheeran - Bad Habits</button>
+                      <button class="songItem" type="button" data-title="Miley Cyrus - Flowers" data-youtube="G7KNmW9a75Y">Miley Cyrus - Flowers</button>
+                      <button class="songItem" type="button" data-title="Rema & Selena Gomez - Calm Down" data-youtube="WcIcVapfqXw">Rema & Selena Gomez - Calm Down</button>
+                      <button class="songItem" type="button" data-title="Dua Lipa - Levitating" data-youtube="TUVcZfQe-Kw">Dua Lipa - Levitating</button>
                     </div>
                   </div>
                 </article>
