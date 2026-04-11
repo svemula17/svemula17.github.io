@@ -948,7 +948,7 @@
 }
 .aboutStoryScroller{
   position: relative;
-  min-height: 230vh;
+  min-height: 160vh;
 }
 .aboutStoryViewport{
   position: sticky;
@@ -956,7 +956,8 @@
   overflow: hidden;
   padding: 0;
   border-radius: 30px;
-  min-height: 620px;
+  min-height: 500px;
+  max-height: 540px;
 }
 .aboutStoryTrack{
   display: flex;
@@ -967,8 +968,8 @@
   flex: 0 0 calc(100% / 3);
   width: calc(100% / 3);
   min-width: calc(100% / 3);
-  padding: 28px;
-  min-height: 620px;
+  padding: 22px;
+  min-height: 500px;
   background: linear-gradient(180deg, rgba(8,19,27,.72), rgba(4,10,15,.88));
 }
 .aboutSlideHeader{
@@ -992,23 +993,23 @@
   font-size: 13px;
 }
 .aboutPanelSlide h3{
-  margin: 0 0 14px;
+  margin: 0 0 12px;
   color: var(--text);
-  font-size: clamp(26px, 2.5vw, 34px);
-  line-height: 1.08;
+  font-size: clamp(22px, 2vw, 30px);
+  line-height: 1.12;
   letter-spacing: -.04em;
 }
 .aboutPanelSlide p{
-  margin: 0 0 14px;
+  margin: 0 0 12px;
   color: var(--muted);
-  font-size: 16px;
-  line-height: 1.72;
+  font-size: 14px;
+  line-height: 1.62;
 }
 .aboutLifeGrid{
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-  margin-top: 18px;
+  gap: 10px;
+  margin-top: 14px;
 }
 .aboutPhotoCard{
   border: 1px solid var(--premium-line);
@@ -1018,12 +1019,12 @@
 }
 .aboutPhotoCard img{
   width: 100%;
-  height: 190px;
+  height: 140px;
   object-fit: cover;
   display: block;
 }
 .aboutPhotoCard div{
-  padding: 14px;
+  padding: 12px;
 }
 .aboutPhotoCard span{
   display: inline-block;
@@ -1037,7 +1038,7 @@
 .aboutPhotoCard strong{
   display: block;
   color: var(--text);
-  font-size: 20px;
+  font-size: 17px;
 }
 .cricketCard{
   grid-column: span 2;
@@ -1045,7 +1046,7 @@
 .musicPlayerCard{
   border: 1px solid var(--premium-line);
   border-radius: 24px;
-  padding: 20px;
+  padding: 16px;
   background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
 }
 .musicPlayerTop{
@@ -1065,7 +1066,7 @@
 }
 .musicPlayerTop strong{
   color: var(--text);
-  font-size: 24px;
+  font-size: 20px;
 }
 .musicControls{
   display: flex;
@@ -1079,8 +1080,8 @@
   opacity: .75;
 }
 .musicWave{
-  height: 72px;
-  margin: 18px 0;
+  height: 52px;
+  margin: 14px 0;
   border-radius: 18px;
   background:
     linear-gradient(90deg, transparent 0 3%, rgba(255,255,255,.07) 3% 6%, transparent 6% 10%, rgba(255,255,255,.12) 10% 13%, transparent 13% 18%, rgba(255,255,255,.08) 18% 22%, transparent 22% 27%, rgba(255,255,255,.16) 27% 31%, transparent 31% 36%, rgba(255,255,255,.1) 36% 39%, transparent 39% 44%, rgba(255,255,255,.14) 44% 48%, transparent 48% 54%, rgba(255,255,255,.09) 54% 58%, transparent 58% 64%, rgba(255,255,255,.15) 64% 68%, transparent 68% 73%, rgba(255,255,255,.08) 73% 77%, transparent 77% 83%, rgba(255,255,255,.12) 83% 88%, transparent 88% 100%),
@@ -1089,22 +1090,22 @@
 .songList{
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 10px;
+  gap: 8px;
 }
 .songList span{
   border: 1px solid var(--premium-line);
   border-radius: 14px;
-  padding: 10px 12px;
+  padding: 8px 10px;
   color: var(--muted);
   background: rgba(255,255,255,.03);
-  font-size: 13px;
-  line-height: 1.4;
+  font-size: 12px;
+  line-height: 1.35;
 }
 .aboutStoryProgress{
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 0 28px 24px;
+  padding: 0 22px 18px;
   font-family: var(--mono);
   text-transform: uppercase;
   letter-spacing: .12em;
@@ -1252,6 +1253,7 @@
     position: relative;
     top: 0;
     min-height: auto;
+    max-height: none;
   }
   .aboutStoryTrack{
     width: 100%;
@@ -1298,6 +1300,6 @@
     padding: 20px;
   }
   .aboutPhotoCard img{
-    height: 160px;
+    height: 150px;
   }
 }
