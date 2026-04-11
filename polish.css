@@ -964,8 +964,9 @@
   transition: transform .7s var(--ease-out-pro);
 }
 .aboutPanelSlide{
-  width: 100%;
-  min-width: 100%;
+  flex: 0 0 calc(100% / 3);
+  width: calc(100% / 3);
+  min-width: calc(100% / 3);
   padding: 28px;
   min-height: 620px;
   background: linear-gradient(180deg, rgba(8,19,27,.72), rgba(4,10,15,.88));
@@ -1259,6 +1260,7 @@
     transform: none !important;
   }
   .aboutPanelSlide{
+    flex: none;
     min-height: auto;
     width: auto;
     min-width: 0;
