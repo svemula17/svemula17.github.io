@@ -554,7 +554,7 @@ syncProjectSlider();
 /* =========================
    Scroll reveal polish
 ========================= */
-const revealTargets = document.querySelectorAll(".premiumSection, .statCard, .experienceCard, .skillBlock, .certRow, .contactBand, .eduMiniCard, .projectSlide, .snapshotPanel, .projectCtaBand, .socVisual, .projectMockup, .roleTargetNote");
+const revealTargets = document.querySelectorAll(".premiumSection, .statCard, .experienceCard, .skillBlock, .certRow, .contactBand, .eduMiniCard, .projectSlide, .snapshotPanel, .socVisual, .projectShot, .aboutSlide, .roleTargetNote");
 revealTargets.forEach((el, index) => {
   el.classList.add("revealUp");
   el.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 55}ms`);
@@ -723,3 +723,12 @@ certToggle?.addEventListener("click", () => {
   certToggle.setAttribute("aria-expanded", String(shouldOpen));
   certToggle.textContent = shouldOpen ? "Show fewer certifications" : "View all certifications";
 });
+
+const aboutHoverRail = document.getElementById("aboutHoverRail");
+aboutHoverRail?.addEventListener("wheel", (event) => {
+  event.preventDefault();
+  aboutHoverRail.scrollBy({
+    left: event.deltaY * 1.2,
+    behavior: "smooth"
+  });
+}, { passive: false });

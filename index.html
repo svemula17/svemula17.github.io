@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sai Kumar Vemula | Cybersecurity Portfolio</title>
+  <title>Sai Kumar Vemula</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,7 +13,7 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="style.css?v=8" />
-  <link rel="stylesheet" href="polish.css?v=3" />
+  <link rel="stylesheet" href="polish.css?v=4" />
 </head>
 
 <body>
@@ -83,8 +83,7 @@
       <section id="home" class="hero premiumHero bgMode" data-bgmode="0">
         <div class="heroCopy">
           <p class="eyebrow">Cybersecurity Analyst | SOC | Cloud Security</p>
-          <p class="heroNameLine">Sai Kumar Vemula</p>
-          <h1>Cybersecurity Portfolio</h1>
+          <h1>Sai Kumar Vemula</h1>
           <p class="heroLead">
             Practical security work across SOC investigations, cloud posture, vulnerability management,
             and detection engineering, presented with clear evidence and clean execution.
@@ -120,11 +119,6 @@
               <div><span class="sev med">Med</span><p>Endpoint policy drift</p><strong>EDR</strong></div>
               <div><span class="sev low">Low</span><p>Cloud config review</p><strong>AWS</strong></div>
             </div>
-          </div>
-          <div class="heroStatsClean">
-            <div><strong>4+</strong><span>Years IT and security</span></div>
-            <div><strong>100+</strong><span>Alerts triaged daily</span></div>
-            <div><strong>16+</strong><span>Certifications and labs</span></div>
           </div>
           <div class="miniTerminal" aria-label="Quick navigation terminal">
             <div id="termBody" class="terminalBody" role="log" aria-live="polite"></div>
@@ -192,6 +186,33 @@
               <div><span>Strength</span><strong>Detection and response</strong></div>
               <div><span>Tools</span><strong>Splunk, Nessus, Qualys, AWS, Python</strong></div>
               <div><span>Mindset</span><strong>Threat-aware, practical, documented</strong></div>
+            </div>
+            <div class="aboutScrollerIntro">
+              <span>Beyond Security</span>
+              <p>Hover this strip and scroll to slide through a few favorite things outside work.</p>
+            </div>
+            <div id="aboutHoverRail" class="aboutHoverRail" aria-label="Favorite things">
+              <article class="aboutSlide cricketSlide">
+                <div class="aboutSlideContent">
+                  <span>Favorite Thing</span>
+                  <h3>Playing Cricket</h3>
+                  <p>Competitive energy, quick decisions, and team rhythm are a big part of why I enjoy cricket.</p>
+                </div>
+              </article>
+              <article class="aboutSlide biryaniSlide">
+                <div class="aboutSlideContent">
+                  <span>Favorite Food</span>
+                  <h3>Biryani</h3>
+                  <p>A proper biryani always wins. It is the comfort food that never gets old.</p>
+                </div>
+              </article>
+              <article class="aboutSlide chickenSlide">
+                <div class="aboutSlideContent">
+                  <span>Favorite Food</span>
+                  <h3>Chicken Fry</h3>
+                  <p>Crisp, spicy, and simple. It is one of my go-to favorites when I want something bold.</p>
+                </div>
+              </article>
             </div>
           </div>
           <div class="educationCard glass hoverGlow">
@@ -328,8 +349,8 @@
                   <div class="tagRow"><span class="tagPill">Python</span><span class="tagPill">FastAPI</span><span class="tagPill">SQLite</span><span class="tagPill">MITRE</span></div>
                   <div class="projectActions"><button class="pc-btn caseStudyBtn" type="button" data-case="siem">Case Study</button><a class="pc-btn" href="https://github.com/svemula17/smart-siem-risk-engine" target="_blank" rel="noreferrer">GitHub</a></div>
                 </div>
-                <div class="projectSlideVisual projectMockup siemMockup" aria-label="Smart SIEM dashboard mockup">
-                  <div class="mockWindow"><div class="mockBar"><span></span><span></span><span></span><strong>risk-engine</strong></div><div class="mockGrid"><div class="mockMetric hot">87</div><div class="mockChart"><i></i><i></i><i></i><i></i></div><div class="mockFeed"><span>MITRE T1110</span><span>Risk: High</span><span>Playbook: Block</span></div></div></div>
+                <div class="projectSlideVisual projectShot" aria-label="Smart SIEM dashboard">
+                  <img src="Smart Risk Engine.png" alt="Smart SIEM Risk Engine dashboard" loading="lazy">
                 </div>
               </article>
 
@@ -342,8 +363,8 @@
                   <div class="tagRow"><span class="tagPill">AWS</span><span class="tagPill">Deception</span><span class="tagPill">Cloud Security</span></div>
                   <div class="projectActions"><button class="pc-btn caseStudyBtn" type="button" data-case="cloud">Case Study</button><a class="pc-btn" href="https://github.com/saivarmadpr/Cloud_Security_Posture_-_Deception_Platform" target="_blank" rel="noreferrer">GitHub</a></div>
                 </div>
-                <div class="projectSlideVisual projectMockup cloudMockup" aria-label="Cloud deception architecture mockup">
-                  <div class="cloudNodes"><span>AWS</span><span>Honey Asset</span><span>Alert Sink</span><span>Attacker Signal</span></div><div class="cloudBeam"></div>
+                <div class="projectSlideVisual projectShot" aria-label="Cloud deception platform">
+                  <img src="cloud_posture.png" alt="Cloud posture platform screenshot" loading="lazy">
                 </div>
               </article>
 
@@ -368,8 +389,8 @@
                   <div class="tagRow"><span class="tagPill">Detection</span><span class="tagPill">Analysis</span><span class="tagPill">Python</span></div>
                   <div class="projectActions"><button class="pc-btn caseStudyBtn" type="button" data-case="attack">Case Study</button><a class="pc-btn" href="https://github.com/svemula17/attack_identification_tool" target="_blank" rel="noreferrer">GitHub</a></div>
                 </div>
-                <div class="projectSlideVisual projectMockup attackMockup" aria-label="Attack classification mockup">
-                  <div class="attackConsole"><p>$ classify --ioc suspicious_auth.json</p><span>[+] brute force pattern</span><span>[+] mapped to credential access</span><span>[+] analyst priority: elevated</span></div>
+                <div class="projectSlideVisual projectShot" aria-label="Attack identification tool screenshot">
+                  <img src="attack_identification.png" alt="Attack identification tool screenshot" loading="lazy">
                 </div>
               </article>
 
@@ -382,8 +403,8 @@
                   <div class="tagRow"><span class="tagPill">AWS</span><span class="tagPill">AI</span><span class="tagPill">Serverless</span></div>
                   <div class="projectActions"><button class="pc-btn caseStudyBtn" type="button" data-case="image">Case Study</button><a class="pc-btn" href="https://github.com/PeterMangoro/cloudComputingDiscussion1" target="_blank" rel="noreferrer">GitHub</a></div>
                 </div>
-                <div class="projectSlideVisual projectMockup imageMockup" aria-label="Image tagging workflow mockup">
-                  <div class="tagCloud"><span>S3 Upload</span><span>Object Metadata</span><span>AI Tags</span><span>Search Index</span></div><div class="imageTiles"><i></i><i></i><i></i></div>
+                <div class="projectSlideVisual projectShot" aria-label="Image tagging workflow screenshot">
+                  <img src="image_tagging.png" alt="Image tagging project screenshot" loading="lazy">
                 </div>
               </article>
 
@@ -396,8 +417,8 @@
                   <div class="tagRow"><span class="tagPill">AWS Lambda</span><span class="tagPill">DynamoDB</span><span class="tagPill">Vue</span></div>
                   <div class="projectActions"><button class="pc-btn caseStudyBtn" type="button" data-case="sentiment">Case Study</button><a class="pc-btn" href="https://github.com/PeterMangoro/cloudComputingDiscussion1" target="_blank" rel="noreferrer">GitHub</a></div>
                 </div>
-                <div class="projectSlideVisual projectMockup sentimentMockup" aria-label="Sentiment dashboard mockup">
-                  <div class="sentimentPanel"><strong>Feedback sentiment</strong><div class="sentBars"><span style="--h:72%"></span><span style="--h:44%"></span><span style="--h:64%"></span><span style="--h:28%"></span></div><p>SNS alert: negative trend detected</p></div>
+                <div class="projectSlideVisual projectShot" aria-label="Sentiment dashboard screenshot">
+                  <img src="sentiment_analysis.png" alt="Sentiment analysis dashboard" loading="lazy">
                 </div>
               </article>
             </div>
@@ -412,17 +433,6 @@
               <button class="projectDot" data-slide="5" aria-label="Show project 6"></button>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section class="projectCtaBand glass hoverGlow" aria-label="Project call to action">
-        <div>
-          <p class="eyebrow">Want the technical proof?</p>
-          <h2>Explore the code, then reach out for the story behind the build.</h2>
-        </div>
-        <div class="projectCtaActions">
-          <a class="btn primary" href="https://github.com/svemula17" target="_blank" rel="noreferrer">Open GitHub</a>
-          <a class="btn ghost" href="mailto:saikumarvemula.us@gmail.com">Contact Me</a>
         </div>
       </section>
 
@@ -449,9 +459,16 @@
             <div class="certGridFeatured certGridMore">
               <a class="certRow hoverGlow" href="ISc2.jpg" target="_blank" rel="noreferrer"><img src="ISc2.jpg" alt="ISC2 certificate"><div><h3>Certified in Cybersecurity Specialization</h3><p>(ISC)2 / Coursera | View certificate</p></div></a>
               <a class="certRow hoverGlow" href="Automate.jpg" target="_blank" rel="noreferrer"><img src="Automate.jpg" alt="Python automation certificate"><div><h3>Automate Cybersecurity Tasks with Python</h3><p>Google | View certificate</p></div></a>
-            </div>
-            <div class="additionalCerts">
-              <span>Foundations of Cybersecurity</span><span>Play It Safe: Manage Security Risks</span><span>Connect and Protect Networks</span><span>Tools of the Trade: Linux and SQL</span><span>Assets, Threats, and Vulnerabilities</span><span>Sound the Alarm: Detection and Response</span><span>Incident Response, BC, and DR Concepts</span><span>Access Control Concepts</span>
+              <a class="certRow hoverGlow" href="foundations.jpg" target="_blank" rel="noreferrer"><img src="foundations.jpg" alt="Foundations of Cybersecurity certificate"><div><h3>Foundations of Cybersecurity</h3><p>Google | View certificate</p></div></a>
+              <a class="certRow hoverGlow" href="Play it_page-0001.jpg" target="_blank" rel="noreferrer"><img src="Play it_page-0001.jpg" alt="Play It Safe certificate"><div><h3>Play It Safe: Manage Security Risks</h3><p>Google | View certificate</p></div></a>
+              <a class="certRow hoverGlow" href="Connect.jpg" target="_blank" rel="noreferrer"><img src="Connect.jpg" alt="Connect and Protect Networks certificate"><div><h3>Connect and Protect Networks</h3><p>Google | View certificate</p></div></a>
+              <a class="certRow hoverGlow" href="Tools.jpg" target="_blank" rel="noreferrer"><img src="Tools.jpg" alt="Linux and SQL certificate"><div><h3>Tools of the Trade: Linux and SQL</h3><p>Google | View certificate</p></div></a>
+              <a class="certRow hoverGlow" href="Assets.jpg" target="_blank" rel="noreferrer"><img src="Assets.jpg" alt="Assets threats and vulnerabilities certificate"><div><h3>Assets, Threats, and Vulnerabilities</h3><p>Google | View certificate</p></div></a>
+              <a class="certRow hoverGlow" href="Sound.jpg" target="_blank" rel="noreferrer"><img src="Sound.jpg" alt="Detection and response certificate"><div><h3>Sound the Alarm: Detection and Response</h3><p>Google | View certificate</p></div></a>
+              <a class="certRow hoverGlow" href="Incident.jpg" target="_blank" rel="noreferrer"><img src="Incident.jpg" alt="Incident response certificate"><div><h3>Incident Response, BC, and DR Concepts</h3><p>Google | View certificate</p></div></a>
+              <a class="certRow hoverGlow" href="Access.jpg" target="_blank" rel="noreferrer"><img src="Access.jpg" alt="Access control certificate"><div><h3>Access Control Concepts</h3><p>Google | View certificate</p></div></a>
+              <a class="certRow hoverGlow" href="Security.jpg" target="_blank" rel="noreferrer"><img src="Security.jpg" alt="Security operations certificate"><div><h3>Security Operations</h3><p>Google | View certificate</p></div></a>
+              <a class="certRow hoverGlow" href="Put.jpg" target="_blank" rel="noreferrer"><img src="Put.jpg" alt="Prepare for cybersecurity jobs certificate"><div><h3>Put It to Work: Prepare for Cybersecurity Jobs</h3><p>Google | View certificate</p></div></a>
             </div>
           </div>
         </div>
@@ -471,6 +488,7 @@
             <a class="btn primary contactEmail" href="mailto:saikumarvemula.us@gmail.com">Email Me</a>
             <button class="btn ghost copyBtn" data-copy="saikumarvemula.us@gmail.com">Copy Email</button>
             <a class="btn ghost" href="https://github.com/svemula17" target="_blank" rel="noreferrer">GitHub</a>
+            <a class="btn ghost" href="https://www.linkedin.com/in/sai-kumar-vemula1/" target="_blank" rel="noreferrer">LinkedIn</a>
             <a class="btn ghost" href="Sai_Kumar_Cybersecurity.pdf" download>Resume</a>
           </div>
           <div class="roleTargetNote">
@@ -479,6 +497,7 @@
           <div class="contactMeta" aria-label="Contact details">
             <span>saikumarvemula.us@gmail.com</span>
             <span>New Jersey, USA</span>
+            <span>linkedin.com/in/sai-kumar-vemula1</span>
             <span>Open to cybersecurity opportunities</span>
           </div>
         </div>
@@ -502,7 +521,7 @@
 
       <footer class="footer cleanFooter">
         <div class="footerInner">
-          <div class="footerBrand"><span class="brandMark mini">SV</span><div><div class="footerName">Sai Kumar Vemula</div><div class="footerRole">Cybersecurity Portfolio</div></div></div>
+          <div class="footerBrand"><span class="brandMark mini">SV</span><div><div class="footerName">Sai Kumar Vemula</div><div class="footerRole">Cybersecurity Analyst</div></div></div>
           <div class="footerRight"><a class="footerLink" href="#home">Home</a><a class="footerLink" href="#experience">Experience</a><a class="footerLink" href="#projects">Projects</a><a class="footerLink" href="#contact">Contact</a></div>
         </div>
         <div class="footerCopy">© <span id="year"></span> Sai Kumar Vemula. Built with HTML/CSS/JS.</div>
@@ -513,7 +532,7 @@
   </div>
 
   <script src="boot.js"></script>
-  <script src="script.js?v=7"></script>
+  <script src="script.js?v=8"></script>
 </body>
 
 </html>
