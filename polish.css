@@ -88,13 +88,14 @@
 }
 .aboutPremiumGrid{
   grid-template-columns: minmax(260px, .72fr) minmax(0, 1.28fr);
-  grid-auto-flow: dense;
+  grid-auto-flow: row;
+  align-items: start;
 }
 .aboutPortrait{
   min-height: 440px;
 }
 .educationCard{
-  grid-column: 1 / -1;
+  margin-top: 18px;
   padding: 22px;
 }
 .educationSplit{
@@ -984,7 +985,7 @@
     max-height: min(70vh, 680px);
   }
   .aboutStoryScroller{
-    min-height: 250vh;
+    min-height: 220vh;
   }
   .aboutStoryViewport{
     top: 104px;
@@ -1308,6 +1309,9 @@
     width: auto;
     min-width: 0;
     border-bottom: 1px solid var(--premium-line);
+  }
+  .educationCard{
+    margin-top: 14px;
   }
   .experienceCard{
     min-height: auto;

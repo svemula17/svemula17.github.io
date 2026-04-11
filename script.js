@@ -564,8 +564,8 @@ function setAboutSlide(index) {
 function syncAboutSlider() {
   if (!aboutStoryScroller || !aboutSlides.length || window.innerWidth <= 860) return;
   const rect = aboutStoryScroller.getBoundingClientRect();
-  const scrollable = aboutStoryScroller.offsetHeight - window.innerHeight;
-  const progress = Math.max(0, Math.min(1, -rect.top / Math.max(scrollable, 1)));
+  const scrollable = Math.max(aboutStoryScroller.offsetHeight - window.innerHeight, 1);
+  const progress = Math.max(0, Math.min(1, -rect.top / scrollable));
   setAboutSlide(Math.round(progress * (aboutSlides.length - 1)));
 }
 
@@ -575,7 +575,7 @@ aboutDots.forEach(dot => {
   dot.addEventListener("click", () => {
     const index = Number(dot.dataset.aboutSlide || 0);
     if (!aboutStoryScroller || !aboutSlides.length) return;
-    const scrollable = aboutStoryScroller.offsetHeight - window.innerHeight;
+    const scrollable = Math.max(aboutStoryScroller.offsetHeight - window.innerHeight, 1);
     const top = aboutStoryScroller.offsetTop + (scrollable * (index / Math.max(aboutSlides.length - 1, 1)));
     window.scrollTo({ top, behavior: "smooth" });
   });
