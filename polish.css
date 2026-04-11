@@ -961,17 +961,22 @@
   max-height: 540px;
 }
 .aboutStoryTrack{
-  display: flex;
-  width: 300%;
+  display: grid;
+  grid-template-columns: repeat(3, 100%);
+  width: 100%;
   transition: transform .7s var(--ease-out-pro);
+  will-change: transform;
 }
 .aboutPanelSlide{
-  flex: 0 0 calc(100% / 3);
-  width: calc(100% / 3);
-  min-width: calc(100% / 3);
+  width: 100%;
+  min-width: 100%;
   padding: 22px;
   min-height: 500px;
   background: linear-gradient(180deg, rgba(8,19,27,.72), rgba(4,10,15,.88));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 0;
 }
 @media (min-width: 1181px){
   .aboutPremiumGrid{
@@ -1043,12 +1048,12 @@
 }
 .aboutPhotoCard img{
   width: 100%;
-  height: 140px;
+  height: 118px;
   object-fit: cover;
   display: block;
 }
 .aboutPhotoCard div{
-  padding: 12px;
+  padding: 10px;
 }
 .aboutPhotoCard span{
   display: inline-block;
@@ -1062,16 +1067,14 @@
 .aboutPhotoCard strong{
   display: block;
   color: var(--text);
-  font-size: 17px;
-}
-.cricketCard{
-  grid-column: span 2;
+  font-size: 15px;
 }
 .musicPlayerCard{
   border: 1px solid var(--premium-line);
   border-radius: 24px;
   padding: 16px;
   background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  min-height: 0;
 }
 .musicPlayerTop{
   display: flex;
@@ -1118,13 +1121,16 @@
 }
 .musicEmbedWrap iframe{
   width: 100%;
-  height: 210px;
+  height: 168px;
   border: 0;
 }
 .songList{
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
+  max-height: 188px;
+  overflow: auto;
+  padding-right: 4px;
 }
 .songItem{
   text-align: left;
@@ -1142,6 +1148,13 @@
   color: var(--text);
   border-color: var(--accentBorder);
   background: rgba(0,255,170,.08);
+}
+.songList::-webkit-scrollbar{
+  width: 6px;
+}
+.songList::-webkit-scrollbar-thumb{
+  background: rgba(255,255,255,.16);
+  border-radius: 999px;
 }
 .aboutStoryProgress{
   display: flex;
@@ -1300,11 +1313,11 @@
   .aboutStoryTrack{
     width: 100%;
     display: grid;
+    grid-template-columns: 1fr;
     gap: 14px;
     transform: none !important;
   }
   .aboutPanelSlide{
-    flex: none;
     min-height: auto;
     width: auto;
     min-width: 0;
