@@ -972,6 +972,29 @@
   min-height: 500px;
   background: linear-gradient(180deg, rgba(8,19,27,.72), rgba(4,10,15,.88));
 }
+@media (min-width: 1181px){
+  .aboutPremiumGrid{
+    grid-template-columns: minmax(300px, .86fr) minmax(0, 1.14fr);
+    align-items: start;
+  }
+  .aboutPortrait{
+    position: sticky;
+    top: 104px;
+    min-height: min(70vh, 680px);
+    max-height: min(70vh, 680px);
+  }
+  .aboutStoryScroller{
+    min-height: 250vh;
+  }
+  .aboutStoryViewport{
+    top: 104px;
+    min-height: min(70vh, 680px);
+    max-height: min(70vh, 680px);
+  }
+  .aboutPanelSlide{
+    min-height: min(70vh, 680px);
+  }
+}
 .aboutSlideHeader{
   display: flex;
   justify-content: space-between;
@@ -1089,7 +1112,7 @@
 }
 .songList{
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 8px;
 }
 .songList span{
