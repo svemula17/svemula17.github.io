@@ -145,23 +145,6 @@
         </div>
       </section>
 
-      <section id="snapshot" class="section recruiterSnapshot bgMode" data-bgmode="1" aria-label="Recruiter snapshot">
-        <div class="snapshotPanel glass hoverGlow">
-          <div>
-            <p class="eyebrow">Recruiter Snapshot</p>
-            <h2>Security analyst ready for SOC, cloud security, and threat detection work.</h2>
-          </div>
-          <div class="snapshotGrid">
-            <span>SOC alert triage</span>
-            <span>Splunk SIEM</span>
-            <span>Nessus / Qualys</span>
-            <span>AWS security projects</span>
-            <span>CompTIA Security+</span>
-            <span>Python automation</span>
-          </div>
-        </div>
-      </section>
-
       <section id="about" class="section premiumSection bgMode" data-bgmode="0">
         <div class="sectionHeading">
           <p class="eyebrow">About</p>
@@ -172,47 +155,103 @@
           <div class="aboutPortrait glass hoverGlow">
             <img src="profile_new.jpg" alt="Sai Kumar Vemula profile photo" loading="lazy" />
           </div>
-          <div class="aboutNarrative glass hoverGlow">
-            <p>
-              I am a cybersecurity professional currently pursuing an M.S. in Cybersecurity at Yeshiva University.
-              My background spans SOC alert triage, incident investigation, vulnerability management, endpoint and
-              access support, and cloud security projects.
-            </p>
-            <p>
-              I like security work that produces evidence: clean detections, clear investigation notes, prioritized
-              remediation, and tooling that helps analysts move faster without losing context.
-            </p>
-            <div class="aboutFocusGrid">
-              <div><span>Strength</span><strong>Detection and response</strong></div>
-              <div><span>Tools</span><strong>Splunk, Nessus, Qualys, AWS, Python</strong></div>
-              <div><span>Mindset</span><strong>Threat-aware, practical, documented</strong></div>
-            </div>
-            <div class="aboutScrollerIntro">
-              <span>Beyond Security</span>
-              <p>Hover this strip and scroll to slide through a few favorite things outside work.</p>
-            </div>
-            <div id="aboutHoverRail" class="aboutHoverRail" aria-label="Favorite things">
-              <article class="aboutSlide cricketSlide">
-                <div class="aboutSlideContent">
-                  <span>Favorite Thing</span>
-                  <h3>Playing Cricket</h3>
-                  <p>Competitive energy, quick decisions, and team rhythm are a big part of why I enjoy cricket.</p>
-                </div>
-              </article>
-              <article class="aboutSlide biryaniSlide">
-                <div class="aboutSlideContent">
-                  <span>Favorite Food</span>
-                  <h3>Biryani</h3>
-                  <p>A proper biryani always wins. It is the comfort food that never gets old.</p>
-                </div>
-              </article>
-              <article class="aboutSlide chickenSlide">
-                <div class="aboutSlideContent">
-                  <span>Favorite Food</span>
-                  <h3>Chicken Fry</h3>
-                  <p>Crisp, spicy, and simple. It is one of my go-to favorites when I want something bold.</p>
-                </div>
-              </article>
+          <div class="aboutStoryScroller" id="aboutStoryScroller">
+            <div class="aboutStoryViewport glass hoverGlow">
+              <div class="aboutStoryTrack" id="aboutStoryTrack">
+                <article class="aboutPanelSlide is-active">
+                  <div class="aboutSlideHeader">
+                    <span class="aboutPanelEyebrow">Technical Snapshot</span>
+                    <span class="aboutPanelCount">01</span>
+                  </div>
+                  <h3>Security work that stays practical, clear, and evidence-driven.</h3>
+                  <p>
+                    I am a cybersecurity professional currently pursuing an M.S. in Cybersecurity at Yeshiva University.
+                    My background spans SOC alert triage, incident investigation, vulnerability management, endpoint and
+                    access support, and cloud security projects.
+                  </p>
+                  <p>
+                    I like security work that produces evidence: clean detections, clear investigation notes, prioritized
+                    remediation, and tooling that helps analysts move faster without losing context.
+                  </p>
+                  <div class="aboutFocusGrid">
+                    <div><span>Strength</span><strong>Detection and response</strong></div>
+                    <div><span>Tools</span><strong>Splunk, Nessus, Qualys, AWS, Python</strong></div>
+                    <div><span>Mindset</span><strong>Threat-aware, practical, documented</strong></div>
+                  </div>
+                </article>
+
+                <article class="aboutPanelSlide aboutLifeSlide">
+                  <div class="aboutSlideHeader">
+                    <span class="aboutPanelEyebrow">Food and Cricket</span>
+                    <span class="aboutPanelCount">02</span>
+                  </div>
+                  <h3>Outside cybersecurity, food and cricket are an easy yes.</h3>
+                  <p>I enjoy playing cricket, and when it comes to food, biryani and chicken fry are always at the top of the list.</p>
+                  <div class="aboutLifeGrid">
+                    <article class="aboutPhotoCard cricketCard">
+                      <img src="desktop-wallpaper-cricket-gully-cricket-logo-teahub-io-children-playing-1709904075359-compressed.jpeg" alt="Cricket" loading="lazy">
+                      <div>
+                        <span>Favorite Sport</span>
+                        <strong>Cricket</strong>
+                      </div>
+                    </article>
+                    <article class="aboutPhotoCard biryaniCard">
+                      <img src="Ambur-Chicken-Biriyani.jpg" alt="Biryani" loading="lazy">
+                      <div>
+                        <span>Favorite Food</span>
+                        <strong>Biryani</strong>
+                      </div>
+                    </article>
+                    <article class="aboutPhotoCard chickenCard">
+                      <img src="easy-kerala-chicken-fry.jpg" alt="Chicken fry" loading="lazy">
+                      <div>
+                        <span>Favorite Food</span>
+                        <strong>Chicken Fry</strong>
+                      </div>
+                    </article>
+                  </div>
+                </article>
+
+                <article class="aboutPanelSlide aboutMusicSlide">
+                  <div class="aboutSlideHeader">
+                    <span class="aboutPanelEyebrow">Playlist Mode</span>
+                    <span class="aboutPanelCount">03</span>
+                  </div>
+                  <div class="musicPlayerCard">
+                    <div class="musicPlayerTop">
+                      <div>
+                        <span>Now Playing</span>
+                        <strong>Sai's Focus Playlist</strong>
+                      </div>
+                      <div class="musicControls"><i></i><i></i><i></i></div>
+                    </div>
+                    <div class="musicWave"></div>
+                    <div class="songList">
+                      <span>Blinding Lights</span>
+                      <span>Shape of You</span>
+                      <span>Perfect</span>
+                      <span>Someone You Loved</span>
+                      <span>Closer</span>
+                      <span>Believer</span>
+                      <span>Attention</span>
+                      <span>Levitating</span>
+                      <span>As It Was</span>
+                      <span>Sunflower</span>
+                      <span>Heat Waves</span>
+                      <span>Peaches</span>
+                      <span>Stay</span>
+                      <span>Lovely</span>
+                      <span>Senorita</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="aboutStoryProgress" aria-hidden="true">
+                <span>Scroll</span>
+                <button class="aboutDot is-active" data-about-slide="0" aria-label="Show about slide 1"></button>
+                <button class="aboutDot" data-about-slide="1" aria-label="Show about slide 2"></button>
+                <button class="aboutDot" data-about-slide="2" aria-label="Show about slide 3"></button>
+              </div>
             </div>
           </div>
           <div class="educationCard glass hoverGlow">
@@ -321,10 +360,12 @@
           <h2>Technical Skills</h2>
         </div>
         <div class="skillBoard">
-          <article class="skillBlock glass hoverGlow"><p class="cardLabel">SOC and Detection</p><h3>Investigate fast, document clearly.</h3><div class="skillChips"><span>Splunk SIEM</span><span>Alert Triage</span><span>Threat Hunting</span><span>Incident Response</span><span>Wireshark</span></div><p class="skillUse">Used in: daily alert triage, investigation notes, escalation context, and detection review.</p></article>
-          <article class="skillBlock glass hoverGlow"><p class="cardLabel">Vulnerability Management</p><h3>Find, prioritize, and remediate risk.</h3><div class="skillChips"><span>Nessus</span><span>Qualys</span><span>Patch Management</span><span>Nmap</span><span>Remediation SLAs</span></div><p class="skillUse">Used in: scan review, risk prioritization, patch tracking, and remediation follow-up.</p></article>
-          <article class="skillBlock glass hoverGlow"><p class="cardLabel">Offensive Security</p><h3>Think like an attacker to defend better.</h3><div class="skillChips"><span>Burp Suite</span><span>OWASP Top 10</span><span>DVWA</span><span>Metasploit</span><span>Web Testing</span></div><p class="skillUse">Used in: lab testing, attack-path documentation, and remediation-minded reporting.</p></article>
-          <article class="skillBlock glass hoverGlow"><p class="cardLabel">Cloud and Automation</p><h3>Build useful security workflows.</h3><div class="skillChips"><span>AWS</span><span>Python</span><span>Linux</span><span>Bash</span><span>SQL</span><span>Java</span></div><p class="skillUse">Used in: cloud workflows, scripting, Linux operations, dashboards, and data handling.</p></article>
+          <article class="skillBlock glass hoverGlow"><div class="skillTop"><span class="skillIcon">SI</span><span class="skillLevel">Advanced</span></div><h3>SOC Operations</h3><p class="skillUse">Splunk SIEM, alert triage, escalation context, investigation notes, and detection review.</p><div class="skillChips"><span>Splunk</span><span>Triage</span><span>Threat Hunting</span></div></article>
+          <article class="skillBlock glass hoverGlow"><div class="skillTop"><span class="skillIcon">VM</span><span class="skillLevel">Advanced</span></div><h3>Vulnerability Management</h3><p class="skillUse">Nessus, Qualys, remediation follow-up, patch tracking, and risk prioritization.</p><div class="skillChips"><span>Nessus</span><span>Qualys</span><span>Nmap</span></div></article>
+          <article class="skillBlock glass hoverGlow"><div class="skillTop"><span class="skillIcon">OF</span><span class="skillLevel">Practical</span></div><h3>Offensive Security Labs</h3><p class="skillUse">Burp Suite, OWASP testing, DVWA labs, and remediation-minded reporting.</p><div class="skillChips"><span>Burp Suite</span><span>DVWA</span><span>OWASP</span></div></article>
+          <article class="skillBlock glass hoverGlow"><div class="skillTop"><span class="skillIcon">CL</span><span class="skillLevel">Advanced</span></div><h3>Cloud Security</h3><p class="skillUse">AWS-focused projects, posture thinking, cloud workflows, and secure build patterns.</p><div class="skillChips"><span>AWS</span><span>Cloud Labs</span><span>Security</span></div></article>
+          <article class="skillBlock glass hoverGlow"><div class="skillTop"><span class="skillIcon">PY</span><span class="skillLevel">Advanced</span></div><h3>Python Automation</h3><p class="skillUse">Security workflow scripting, analyst tooling, quick automation, and data handling.</p><div class="skillChips"><span>Python</span><span>Automation</span><span>Scripting</span></div></article>
+          <article class="skillBlock glass hoverGlow"><div class="skillTop"><span class="skillIcon">LX</span><span class="skillLevel">Daily</span></div><h3>Linux and Systems</h3><p class="skillUse">Linux operations, shell usage, access support, troubleshooting, and environment setup.</p><div class="skillChips"><span>Linux</span><span>Bash</span><span>Support</span></div></article>
         </div>
       </section>
 

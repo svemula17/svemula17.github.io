@@ -926,9 +926,6 @@
 .premiumSection{
   padding: clamp(42px, 5vw, 68px) 0 0;
 }
-.recruiterSnapshot{
-  padding: 18px 0 0;
-}
 .cleanStats{
   padding: 0 0 18px;
 }
@@ -949,21 +946,38 @@
   font-size: 14px;
   line-height: 1.6;
 }
-.aboutNarrative{
-  padding: clamp(20px, 3vw, 30px);
+.aboutStoryScroller{
+  position: relative;
+  min-height: 230vh;
 }
-.aboutNarrative p{
-  font-size: 16px;
-  line-height: 1.7;
+.aboutStoryViewport{
+  position: sticky;
+  top: calc(var(--headerH) + 18px);
+  overflow: hidden;
+  padding: 0;
+  border-radius: 30px;
+  min-height: 620px;
 }
-.aboutScrollerIntro{
+.aboutStoryTrack{
+  display: flex;
+  width: 300%;
+  transition: transform .7s var(--ease-out-pro);
+}
+.aboutPanelSlide{
+  width: 100%;
+  min-width: 100%;
+  padding: 28px;
+  min-height: 620px;
+  background: linear-gradient(180deg, rgba(8,19,27,.72), rgba(4,10,15,.88));
+}
+.aboutSlideHeader{
   display: flex;
   justify-content: space-between;
-  gap: 18px;
-  align-items: start;
-  margin-top: 20px;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
 }
-.aboutScrollerIntro span{
+.aboutPanelEyebrow{
   color: var(--accent2);
   font-family: var(--mono);
   font-size: 11px;
@@ -971,76 +985,141 @@
   letter-spacing: .14em;
   text-transform: uppercase;
 }
-.aboutScrollerIntro p{
-  margin: 0;
+.aboutPanelCount{
+  color: rgba(255,255,255,.45);
+  font-family: var(--mono);
   font-size: 13px;
+}
+.aboutPanelSlide h3{
+  margin: 0 0 14px;
+  color: var(--text);
+  font-size: clamp(26px, 2.5vw, 34px);
+  line-height: 1.08;
+  letter-spacing: -.04em;
+}
+.aboutPanelSlide p{
+  margin: 0 0 14px;
   color: var(--muted);
+  font-size: 16px;
+  line-height: 1.72;
 }
-.aboutHoverRail{
+.aboutLifeGrid{
   display: grid;
-  grid-auto-flow: column;
-  grid-auto-columns: minmax(220px, 260px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
-  margin-top: 14px;
-  overflow-x: auto;
-  padding-bottom: 4px;
-  scrollbar-width: none;
+  margin-top: 18px;
 }
-.aboutHoverRail::-webkit-scrollbar{
-  display: none;
-}
-.aboutSlide{
-  position: relative;
-  min-height: 240px;
-  border-radius: 24px;
-  overflow: hidden;
+.aboutPhotoCard{
   border: 1px solid var(--premium-line);
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  scroll-snap-align: start;
+  border-radius: 22px;
+  overflow: hidden;
+  background: rgba(255,255,255,.04);
 }
-.aboutSlide::before{
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(4,10,15,.08), rgba(4,10,15,.82));
+.aboutPhotoCard img{
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
 }
-.aboutSlideContent{
-  position: absolute;
-  inset: auto 0 0 0;
-  z-index: 1;
-  padding: 16px;
+.aboutPhotoCard div{
+  padding: 14px;
 }
-.aboutSlideContent span{
+.aboutPhotoCard span{
   display: inline-block;
-  margin-bottom: 8px;
-  color: rgba(255,255,255,.78);
+  margin-bottom: 6px;
+  color: var(--accent2);
   font-family: var(--mono);
   font-size: 10px;
   letter-spacing: .14em;
   text-transform: uppercase;
 }
-.aboutSlideContent h3{
-  margin: 0 0 8px;
-  color: #fff;
+.aboutPhotoCard strong{
+  display: block;
+  color: var(--text);
+  font-size: 20px;
+}
+.cricketCard{
+  grid-column: span 2;
+}
+.musicPlayerCard{
+  border: 1px solid var(--premium-line);
+  border-radius: 24px;
+  padding: 20px;
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+}
+.musicPlayerTop{
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  align-items: center;
+}
+.musicPlayerTop span{
+  display: inline-block;
+  margin-bottom: 8px;
+  color: var(--accent2);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.musicPlayerTop strong{
+  color: var(--text);
   font-size: 24px;
-  line-height: 1;
 }
-.aboutSlideContent p{
-  margin: 0;
-  color: rgba(240,247,249,.84);
+.musicControls{
+  display: flex;
+  gap: 8px;
+}
+.musicControls i{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: .75;
+}
+.musicWave{
+  height: 72px;
+  margin: 18px 0;
+  border-radius: 18px;
+  background:
+    linear-gradient(90deg, transparent 0 3%, rgba(255,255,255,.07) 3% 6%, transparent 6% 10%, rgba(255,255,255,.12) 10% 13%, transparent 13% 18%, rgba(255,255,255,.08) 18% 22%, transparent 22% 27%, rgba(255,255,255,.16) 27% 31%, transparent 31% 36%, rgba(255,255,255,.1) 36% 39%, transparent 39% 44%, rgba(255,255,255,.14) 44% 48%, transparent 48% 54%, rgba(255,255,255,.09) 54% 58%, transparent 58% 64%, rgba(255,255,255,.15) 64% 68%, transparent 68% 73%, rgba(255,255,255,.08) 73% 77%, transparent 77% 83%, rgba(255,255,255,.12) 83% 88%, transparent 88% 100%),
+    linear-gradient(135deg, rgba(0,255,170,.22), rgba(83,243,255,.08));
+}
+.songList{
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.songList span{
+  border: 1px solid var(--premium-line);
+  border-radius: 14px;
+  padding: 10px 12px;
+  color: var(--muted);
+  background: rgba(255,255,255,.03);
   font-size: 13px;
-  line-height: 1.55;
+  line-height: 1.4;
 }
-.cricketSlide{
-  background-image: url("https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=900&q=80");
+.aboutStoryProgress{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 28px 24px;
+  font-family: var(--mono);
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  font-size: 11px;
+  color: var(--muted);
 }
-.biryaniSlide{
-  background-image: url("https://images.unsplash.com/photo-1701579231373-43f0ec2f25a7?auto=format&fit=crop&w=900&q=80");
+.aboutDot{
+  width: 38px;
+  height: 4px;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(255,255,255,.2);
+  cursor: pointer;
 }
-.chickenSlide{
-  background-image: url("https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?auto=format&fit=crop&w=900&q=80");
+.aboutDot.is-active{
+  background: linear-gradient(90deg, var(--accent2), var(--accent));
 }
 .experienceDeck{
   min-height: 460px;
@@ -1065,13 +1144,42 @@
   margin-top: auto;
 }
 .skillBoard{
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 12px;
 }
 .skillBlock{
   min-height: auto;
   padding: 18px;
   border-radius: 24px;
+}
+.skillTop{
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.skillIcon{
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 14px;
+  background: rgba(255,255,255,.05);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 14px;
+  font-weight: 700;
+}
+.skillLevel{
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--premium-line);
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .12em;
 }
 .skillBlock h3{
   margin: 0 0 12px;
@@ -1131,14 +1239,30 @@
   .skillBoard{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  .songList{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 @media (max-width: 860px){
-  .aboutScrollerIntro{
-    display: grid;
-    gap: 8px;
+  .aboutStoryScroller{
+    min-height: auto;
   }
-  .aboutHoverRail{
-    grid-auto-columns: 84%;
+  .aboutStoryViewport{
+    position: relative;
+    top: 0;
+    min-height: auto;
+  }
+  .aboutStoryTrack{
+    width: 100%;
+    display: grid;
+    gap: 14px;
+    transform: none !important;
+  }
+  .aboutPanelSlide{
+    min-height: auto;
+    width: auto;
+    min-width: 0;
+    border-bottom: 1px solid var(--premium-line);
   }
   .experienceCard{
     min-height: auto;
@@ -1146,6 +1270,13 @@
   }
   .certGridFeatured{
     grid-template-columns: 1fr;
+  }
+  .aboutLifeGrid,
+  .songList{
+    grid-template-columns: 1fr;
+  }
+  .cricketCard{
+    grid-column: auto;
   }
 }
 @media (max-width: 560px){
@@ -1158,10 +1289,13 @@
   .heroCopy h1{
     font-size: clamp(32px, 10.5vw, 44px);
   }
-  .aboutSlide{
-    min-height: 220px;
-  }
   .skillBoard{
     grid-template-columns: 1fr;
+  }
+  .aboutPanelSlide{
+    padding: 20px;
+  }
+  .aboutPhotoCard img{
+    height: 160px;
   }
 }

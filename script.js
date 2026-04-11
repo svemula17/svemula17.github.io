@@ -519,6 +519,10 @@ const projectScroller = document.getElementById("projectScroller");
 const projectSlideTrack = document.getElementById("projectSlideTrack");
 const projectDots = [...document.querySelectorAll(".projectDot")];
 const projectSlides = [...document.querySelectorAll(".projectSlide")];
+const aboutStoryScroller = document.getElementById("aboutStoryScroller");
+const aboutStoryTrack = document.getElementById("aboutStoryTrack");
+const aboutDots = [...document.querySelectorAll(".aboutDot")];
+const aboutSlides = [...document.querySelectorAll(".aboutPanelSlide")];
 
 function setProjectSlide(index) {
   if (!projectSlideTrack || !projectSlides.length) return;
@@ -549,12 +553,41 @@ projectDots.forEach(dot => {
 });
 syncProjectSlider();
 
+function setAboutSlide(index) {
+  if (!aboutStoryTrack || !aboutSlides.length) return;
+  const safeIndex = Math.max(0, Math.min(index, aboutSlides.length - 1));
+  aboutStoryTrack.style.transform = `translateX(-${safeIndex * 100}%)`;
+  aboutSlides.forEach((slide, i) => slide.classList.toggle("is-active", i === safeIndex));
+  aboutDots.forEach((dot, i) => dot.classList.toggle("is-active", i === safeIndex));
+}
+
+function syncAboutSlider() {
+  if (!aboutStoryScroller || !aboutSlides.length || window.innerWidth <= 860) return;
+  const rect = aboutStoryScroller.getBoundingClientRect();
+  const scrollable = aboutStoryScroller.offsetHeight - window.innerHeight;
+  const progress = Math.max(0, Math.min(1, -rect.top / Math.max(scrollable, 1)));
+  setAboutSlide(Math.round(progress * (aboutSlides.length - 1)));
+}
+
+window.addEventListener("scroll", syncAboutSlider, { passive: true });
+window.addEventListener("resize", syncAboutSlider);
+aboutDots.forEach(dot => {
+  dot.addEventListener("click", () => {
+    const index = Number(dot.dataset.aboutSlide || 0);
+    if (!aboutStoryScroller || !aboutSlides.length) return;
+    const scrollable = aboutStoryScroller.offsetHeight - window.innerHeight;
+    const top = aboutStoryScroller.offsetTop + (scrollable * (index / Math.max(aboutSlides.length - 1, 1)));
+    window.scrollTo({ top, behavior: "smooth" });
+  });
+});
+syncAboutSlider();
+
 
 
 /* =========================
    Scroll reveal polish
 ========================= */
-const revealTargets = document.querySelectorAll(".premiumSection, .statCard, .experienceCard, .skillBlock, .certRow, .contactBand, .eduMiniCard, .projectSlide, .snapshotPanel, .socVisual, .projectShot, .aboutSlide, .roleTargetNote");
+const revealTargets = document.querySelectorAll(".premiumSection, .statCard, .experienceCard, .skillBlock, .certRow, .contactBand, .eduMiniCard, .projectSlide, .aboutPanelSlide, .socVisual, .projectShot, .roleTargetNote");
 revealTargets.forEach((el, index) => {
   el.classList.add("revealUp");
   el.style.setProperty("--reveal-delay", `${Math.min(index % 6, 5) * 55}ms`);
@@ -723,12 +756,3 @@ certToggle?.addEventListener("click", () => {
   certToggle.setAttribute("aria-expanded", String(shouldOpen));
   certToggle.textContent = shouldOpen ? "Show fewer certifications" : "View all certifications";
 });
-
-const aboutHoverRail = document.getElementById("aboutHoverRail");
-aboutHoverRail?.addEventListener("wheel", (event) => {
-  event.preventDefault();
-  aboutHoverRail.scrollBy({
-    left: event.deltaY * 1.2,
-    behavior: "smooth"
-  });
-}, { passive: false });
