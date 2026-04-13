@@ -479,10 +479,30 @@ function drawParticles(mode, accent, driftY) {
 }
 
 let t = 0;
+let isCanvasVisible = true;
+let isAnimating = true;
+
+const homeSect = document.getElementById("home");
+if (homeSect && window.IntersectionObserver) {
+  const fxObserver = new IntersectionObserver((entries) => {
+    isCanvasVisible = entries[0].isIntersecting;
+    if (isCanvasVisible && !isAnimating) {
+      isAnimating = true;
+      requestAnimationFrame(draw);
+    }
+  }, { rootMargin: "100px" });
+  fxObserver.observe(homeSect);
+}
+
 function draw(){
-  const accent = cssVar("--accent") || "rgba(0,255,170,0.95)";
-  const accent2 = cssVar("--accent2") || "rgba(83,243,255,0.85)";
-  const fxFade = cssVar("--fxFade") || "rgba(0,0,0,0.18)";
+  if (!isCanvasVisible) {
+    isAnimating = false;
+    return;
+  }
+  
+  const accent = cssVar("--accent") || "rgba(139,92,246,0.95)";
+  const accent2 = cssVar("--accent2") || "rgba(196,181,253,0.85)";
+  const fxFade = cssVar("--fxFade") || "rgba(250,245,255,0.30)";
 
   t += 0.015;
 
@@ -521,7 +541,6 @@ const projectDots = [...document.querySelectorAll(".projectDot")];
 const projectSlides = [...document.querySelectorAll(".projectSlide")];
 const aboutStoryScroller = document.getElementById("aboutStoryScroller");
 const aboutStoryTrack = document.getElementById("aboutStoryTrack");
-const aboutDots = [...document.querySelectorAll(".aboutDot")];
 const aboutSlides = [...document.querySelectorAll(".aboutPanelSlide")];
 
 function setProjectSlide(index) {
@@ -553,34 +572,7 @@ projectDots.forEach(dot => {
 });
 syncProjectSlider();
 
-function setAboutSlide(index) {
-  if (!aboutStoryTrack || !aboutSlides.length) return;
-  const safeIndex = Math.max(0, Math.min(index, aboutSlides.length - 1));
-  aboutStoryTrack.style.transform = `translateX(-${safeIndex * 100}%)`;
-  aboutSlides.forEach((slide, i) => slide.classList.toggle("is-active", i === safeIndex));
-  aboutDots.forEach((dot, i) => dot.classList.toggle("is-active", i === safeIndex));
-}
-
-function syncAboutSlider() {
-  if (!aboutStoryScroller || !aboutSlides.length || window.innerWidth <= 860) return;
-  const rect = aboutStoryScroller.getBoundingClientRect();
-  const scrollable = Math.max(aboutStoryScroller.offsetHeight - window.innerHeight, 1);
-  const progress = Math.max(0, Math.min(1, -rect.top / scrollable));
-  setAboutSlide(Math.round(progress * (aboutSlides.length - 1)));
-}
-
-window.addEventListener("scroll", syncAboutSlider, { passive: true });
-window.addEventListener("resize", syncAboutSlider);
-aboutDots.forEach(dot => {
-  dot.addEventListener("click", () => {
-    const index = Number(dot.dataset.aboutSlide || 0);
-    if (!aboutStoryScroller || !aboutSlides.length) return;
-    const scrollable = Math.max(aboutStoryScroller.offsetHeight - window.innerHeight, 1);
-    const top = aboutStoryScroller.offsetTop + (scrollable * (index / Math.max(aboutSlides.length - 1, 1)));
-    window.scrollTo({ top, behavior: "smooth" });
-  });
-});
-syncAboutSlider();
+/* About section slider removed per user request for simplification */
 
 const musicFrame = document.getElementById("musicFrame");
 const musicNowPlaying = document.getElementById("musicNowPlaying");
