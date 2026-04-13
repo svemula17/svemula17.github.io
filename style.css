@@ -1526,8 +1526,8 @@ body{
 .splitHeading{ display:flex; justify-content:space-between; gap: 24px; align-items:end; }
 .splitHeading > p{ max-width: 420px; margin: 0; color: var(--muted); line-height: 1.7; }
 .aboutPremiumGrid{ display:grid; grid-template-columns: .8fr 1.2fr; gap: 18px; align-items:stretch; }
-.aboutPortrait{ min-height: 520px; border-radius: 34px; overflow:hidden; border:1px solid var(--premium-line); }
-.aboutPortrait img{ width:100%; height:100%; object-fit:cover; object-position:center top; filter:saturate(.96) contrast(1.04); }
+.aboutPortrait{ position:relative; min-height: 520px; border-radius: 34px; overflow:hidden; border:1px solid var(--premium-line); }
+.aboutPortrait img{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top; filter:saturate(.96) contrast(1.04); display:block; }
 .aboutNarrative,
 .educationCard,
 .skillBlock,
