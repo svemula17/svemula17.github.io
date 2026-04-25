@@ -1,12 +1,19 @@
 /* =========================
    Theme switching
 ========================= */
-document.querySelectorAll(".themeDot").forEach(btn => {
+const themeDots = [...document.querySelectorAll(".themeDot")];
+function syncThemeDots() {
+  const current = document.documentElement.getAttribute("data-theme");
+  themeDots.forEach(d => d.setAttribute("aria-pressed", String(d.getAttribute("data-theme") === current)));
+}
+themeDots.forEach(btn => {
   btn.addEventListener("click", () => {
     const t = btn.getAttribute("data-theme");
     document.documentElement.setAttribute("data-theme", t);
+    syncThemeDots();
   });
 });
+syncThemeDots();
 
 /* =========================
    Light/Dark switch (FIXED)
@@ -539,9 +546,6 @@ const projectScroller = document.getElementById("projectScroller");
 const projectSlideTrack = document.getElementById("projectSlideTrack");
 const projectDots = [...document.querySelectorAll(".projectDot")];
 const projectSlides = [...document.querySelectorAll(".projectSlide")];
-const aboutStoryScroller = document.getElementById("aboutStoryScroller");
-const aboutStoryTrack = document.getElementById("aboutStoryTrack");
-const aboutSlides = [...document.querySelectorAll(".aboutPanelSlide")];
 
 function setProjectSlide(index) {
   if (!projectSlideTrack || !projectSlides.length) return;
@@ -571,35 +575,6 @@ projectDots.forEach(dot => {
   });
 });
 syncProjectSlider();
-
-/* About section slider removed per user request for simplification */
-
-const musicFrame = document.getElementById("musicFrame");
-const musicNowPlaying = document.getElementById("musicNowPlaying");
-const musicPrev = document.getElementById("musicPrev");
-const musicNext = document.getElementById("musicNext");
-const songItems = [...document.querySelectorAll(".songItem")];
-let currentSongIndex = 0;
-
-function updateMusicPlayer(index) {
-  if (!musicFrame || !songItems.length) return;
-  currentSongIndex = (index + songItems.length) % songItems.length;
-  const activeSong = songItems[currentSongIndex];
-  const youtubeId = activeSong.dataset.youtube;
-  const title = activeSong.dataset.title || activeSong.textContent.trim();
-  musicFrame.src = `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
-  if (musicNowPlaying) musicNowPlaying.textContent = title;
-  songItems.forEach((item, i) => item.classList.toggle("is-active", i === currentSongIndex));
-}
-
-songItems.forEach((item, index) => {
-  item.addEventListener("click", () => updateMusicPlayer(index));
-});
-
-musicPrev?.addEventListener("click", () => updateMusicPlayer(currentSongIndex - 1));
-musicNext?.addEventListener("click", () => updateMusicPlayer(currentSongIndex + 1));
-
-
 
 /* =========================
    Scroll reveal polish
@@ -692,12 +667,12 @@ function openCaseStudy(key, trigger) {
   const data = caseStudies[key];
   if (!caseModal || !data) return;
   lastCaseTrigger = trigger || null;
-  caseTitle.textContent = data.title;
-  caseProblem.textContent = data.problem;
-  caseBuilt.textContent = data.built;
-  caseTools.textContent = data.tools;
-  caseOutcome.textContent = data.outcome;
-  caseLink.href = data.link;
+  if (caseTitle) caseTitle.textContent = data.title;
+  if (caseProblem) caseProblem.textContent = data.problem;
+  if (caseBuilt) caseBuilt.textContent = data.built;
+  if (caseTools) caseTools.textContent = data.tools;
+  if (caseOutcome) caseOutcome.textContent = data.outcome;
+  if (caseLink) caseLink.href = data.link;
   caseModal.classList.add("open");
   caseModal.setAttribute("aria-hidden", "false");
   document.body.classList.add("case-modal-open");
