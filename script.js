@@ -716,27 +716,25 @@ window.addEventListener("scroll", syncProgressRail, { passive: true });
 window.addEventListener("resize", syncProgressRail);
 syncProgressRail();
 
-document.querySelectorAll(".experienceCard").forEach((card, index) => {
-  const toggle = card.querySelector(".experienceToggle");
-  if (!toggle) return;
-  const setOpen = (open) => {
-    card.classList.toggle("is-open", open);
-    toggle.setAttribute("aria-expanded", String(open));
-    toggle.textContent = open ? "Hide details" : "Tap to view details";
-  };
-  if (index === 0 && window.innerWidth <= 860) setOpen(true);
-  toggle.addEventListener("click", () => {
-    const next = !card.classList.contains("is-open");
-    document.querySelectorAll(".experienceCard.is-open").forEach(openCard => {
-      if (openCard !== card) {
-        openCard.classList.remove("is-open");
-        const openToggle = openCard.querySelector(".experienceToggle");
-        openToggle?.setAttribute("aria-expanded", "false");
-        if (openToggle) openToggle.textContent = "Tap to view details";
-      }
-    });
-    setOpen(next);
+const expRows = [...document.querySelectorAll(".expRow")];
+expRows.forEach(row => {
+  const open = (state) => row.classList.toggle("is-open", state);
+  row.addEventListener("click", () => {
+    const next = !row.classList.contains("is-open");
+    expRows.forEach(r => r !== row && r.classList.remove("is-open"));
+    open(next);
   });
+  row.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      row.click();
+    } else if (e.key === "Escape") {
+      open(false);
+    }
+  });
+});
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".expRow")) expRows.forEach(r => r.classList.remove("is-open"));
 });
 
 const certToggle = document.getElementById("certToggle");
