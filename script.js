@@ -606,10 +606,10 @@ revealTargets.forEach(el => revealObserver.observe(el));
 const caseStudies = {
   siem: {
     title: "Smart SIEM Risk Engine",
-    problem: "SOC teams face alert fatigue when high-volume IDS and network logs are not normalized, scored, or prioritized for analyst action.",
-    built: "A Python/FastAPI pipeline that validates raw alerts, normalizes fields, scores risk, maps MITRE ATT&CK techniques, triggers playbook-style responses, and streams updates to a WebSocket dashboard.",
-    tools: "Python, FastAPI, WebSockets, SQLite, Pydantic, Chart.js, Jinja2, MITRE ATT&CK, Suricata/Zeek-style datasets.",
-    outcome: "A stronger analyst workflow with risk bands, active blocked-IP state, live threat feeds, hunting queries, and clearer escalation context.",
+    problem: "SOC teams drown in high-volume IDS and network alerts that aren't normalized, scored, or prioritized — leading to alert fatigue and missed real threats.",
+    built: "A full Python/FastAPI SOC platform: ingestion, normalization, hybrid risk scoring (heuristic + Isolation-Forest anomaly detection), MITRE ATT&CK mapping, playbook automation, UEBA profiles, IOC intelligence, suppression rules, FP feedback loop for ML retraining, and a 15-tab WebSocket dashboard. Recent additions: AI Investigator chat (grounded on live data via Claude), pivot search across IPs/alerts/incidents, MITRE ATT&CK heatmap, GeoIP world map, SLA tracking with breach alerts, bulk incident operations, downloadable incident reports, and one-click quick actions (block IP, add IOC, create incident).",
+    tools: "Python, FastAPI, WebSockets, SQLite, SQLAlchemy, Pydantic, scikit-learn (Isolation Forest), Claude API, Leaflet, Chart.js, Jinja2, MITRE ATT&CK, Suricata/Zeek-style datasets.",
+    outcome: "Analyst workflow with risk bands, anomaly detection, live threat feeds, hunting queries, kill-chain views, automated playbooks, geo-located source-IP map, AI-assisted investigation, and downloadable executive incident reports.",
     link: "https://github.com/svemula17/smart-siem-risk-engine"
   },
   cloud: {
